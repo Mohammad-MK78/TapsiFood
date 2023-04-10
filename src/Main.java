@@ -5,5 +5,6 @@ public class Main {
         System.out.println("mmd");
         System.out.println("test");
         System.out.println("mmd2");
+        System.out.println("test2");
     }
 }
