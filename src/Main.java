@@ -4,5 +4,6 @@ public class Main {
         System.out.println("salam");
         System.out.println("sepehr");
         System.out.println("mmd");
+        System.out.println("test");
     }
 }
