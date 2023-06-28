@@ -13,7 +13,10 @@ public class SnappFoodAdminMenu {
         while (true) {
             command = scanner.nextLine();
 
-            if(SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.LOGOUT) != null) return;
+            if(SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.LOGOUT) != null){
+                System.out.println("user logged out successfully");
+                return;
+            }
 
             else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.ADD_RESTAURANT)) != null)
                 System.out.println(SnappFoodAdminMenuController.addRestaurant(matcher));

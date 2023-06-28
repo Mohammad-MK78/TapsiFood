@@ -9,6 +9,7 @@ public enum LoginMenuEnums {
     VALID_USERNAME ("[\\w_]*[a-zA-Z][\\w_]*"),
     VALID_PASSWORD ("[\\w_]+"),
     LOGIN ("\\s*login\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s*"),
+    DELIVERY_REGISTER ("\\s*delivery\\s+register\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s+(?<location>\\S+)\\s*"),
     CHANGE_PASSWORD ("\\s*change\\s+password\\s+(?<username>\\S+)\\s+(?<oldPassword>\\S+)\\s+(?<newPassword>\\S+)\\s*"),
     REMOVE_ACCOUNT ("\\s*remove\\s+account\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s*"),
     EXIT ("\\s*exit\\s*"),

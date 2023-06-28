@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Customer;
+import Model.Delivery;
 import Model.SnappFood;
 import Model.SnappFoodManager;
 import View.LoginMenuEnums;
@@ -36,6 +37,30 @@ public class LoginMenuController {
         else {
             SnappFood.addCustomer(new Customer(username, password));
             return "register successful";
+        }
+    }
+    public static String deliveryRegister(Matcher matcher) {
+        String username = matcher.group("username");
+        String password = matcher.group("password");
+        int location = Integer.parseInt(matcher.group("location"));
+        if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
+            return "register failed: invalid username format";
+
+        else if(SnappFood.getUserByUsername(username) != null)
+            return "register failed: username already exists";
+
+        else if(LoginMenuEnums.getMatcher(password, LoginMenuEnums.VALID_PASSWORD) == null)
+            return "register failed: invalid password format";
+
+        else if(password.length() < 5 ||
+                !Pattern.compile("[a-z]").matcher(password).find() ||
+                !Pattern.compile("[A-Z]").matcher(password).find() ||
+                !Pattern.compile("\\d").matcher(password).find())
+            return "register failed: weak password";
+
+        else {
+            SnappFood.addDelivery(new Delivery(username, password, location));
+            return "delivery register successful";
         }
     }
 

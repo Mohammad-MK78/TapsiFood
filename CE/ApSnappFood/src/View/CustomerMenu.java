@@ -17,8 +17,10 @@ public class CustomerMenu {
         while(true) {
             command = scanner.nextLine();
 
-            if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.LOGOUT) != null) return;
-
+            if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.LOGOUT) != null){
+                System.out.println("user logged out successfully");
+                return;
+            }
             else if((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.CHARGE_ACCOUNT)) != null)
                 System.out.println(CustomerMenuController.chargeAccount(matcher));
 

@@ -15,7 +15,10 @@ public class RestaurantAdminMenu {
         while(true) {
             command = scanner.nextLine();
 
-            if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.LOGOUT) != null) return;
+            if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.LOGOUT) != null){
+                System.out.println("user logged out successfully");
+                return;
+            }
 
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.CHARGE_ACCOUNT)) != null)
                 System.out.println(RestaurantAdminMenuController.chargeAccount(matcher));

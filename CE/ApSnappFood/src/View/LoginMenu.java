@@ -2,11 +2,12 @@ package View;
 
 import Controller.LoginMenuController;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class LoginMenu {
-    public static void run(Scanner scanner) {
+    public static void run(Scanner scanner) throws IOException {
         Matcher matcher;
         String command;
 
@@ -18,11 +19,15 @@ public class LoginMenu {
         while (true) {
             command = scanner.nextLine();
 
-            if(LoginMenuEnums.getMatcher(command, LoginMenuEnums.EXIT) != null) return;
+            if(LoginMenuEnums.getMatcher(command, LoginMenuEnums.EXIT) != null){
+                System.out.println("Bye Bye <3");
+                return;
+            }
 
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.REGISTER)) != null)
                 System.out.println(LoginMenuController.register(matcher));
-
+            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.DELIVERY_REGISTER)) != null)
+                System.out.println(LoginMenuController.deliveryRegister(matcher));
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.LOGIN)) != null) {
                 String result = LoginMenuController.login(matcher);
 

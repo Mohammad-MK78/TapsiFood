@@ -8,43 +8,28 @@ public class SnappFood {
     private static SnappFoodManager snappFoodManager;
     private static ArrayList<Customer> customers = new ArrayList<>();
     private static ArrayList<RestaurantManager> restaurantManagers = new ArrayList<>();
+    private static ArrayList<Delivery> deliveries = new ArrayList<>();
     private static ArrayList<Discount> discounts = new ArrayList<>();
 
     public static void addDiscount(Discount discount) {
         discounts.add(discount);
         discount.getDiscountUser().addDiscount(discount);
     }
-
     public static ArrayList<Discount> getDiscounts() {
         return discounts;
     }
-
     public static Discount getDiscountByCode(String code) {
         for(Discount discount : discounts)
             if(discount.getCode().equals(code))
                 return discount;
         return null;
     }
-    public static SnappFoodManager getSnappFoodManager() {
-        return snappFoodManager;
+    public static ArrayList<Delivery> getDeliveries() {
+        return deliveries;
     }
-
-    public static ArrayList<Customer> getCustomers() {
-        return customers;
-    }
-
     public static ArrayList<RestaurantManager> getRestaurantManagers() {
         return restaurantManagers;
     }
-
-    public static ArrayList<User> getUsers() {
-        return users;
-    }
-
-    public static void addUser(User user) {
-        users.add(user);
-    }
-
     public static void removeUser(User user) {
         users.remove(user);
         if(user instanceof Customer)
@@ -66,6 +51,10 @@ public class SnappFood {
     public static void addRestaurantManager(RestaurantManager restaurantManager) {
         restaurantManagers.add(restaurantManager);
         users.add(restaurantManager);
+    }
+    public static void addDelivery(Delivery delivery) {
+        deliveries.add(delivery);
+        users.add(delivery);
     }
 
     public static User getUserByUsername(String username) {
