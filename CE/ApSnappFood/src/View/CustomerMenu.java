@@ -1,6 +1,7 @@
 package View;
 
 import Controller.CustomerMenuController;
+import Model.Customer;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -47,7 +48,8 @@ public class CustomerMenu {
 
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("customer menu");
-
+            else if((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SET_LOCATION)) != null)
+                System.out.println(CustomerMenuController.setLocation(matcher));
             else
                 System.out.println("invalid command!");
         }

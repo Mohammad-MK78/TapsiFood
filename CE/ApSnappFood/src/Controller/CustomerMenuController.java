@@ -27,6 +27,15 @@ public class CustomerMenuController {
     public static int showBalance() {
         return currentUser.getBalance();
     }
+    public static String setLocation(Matcher matcher) {
+        int location = Integer.parseInt(matcher.group("location"));
+
+        if(location < 1 || location > 1000)
+            return "set location failed: invalid location";
+
+        currentUser.setLocation(location);
+        return "set location successful";
+    }
 
     public static void showRestaurant(String command) {
         Pattern typePattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_RESTAURANT_OPTION));

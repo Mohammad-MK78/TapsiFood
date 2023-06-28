@@ -12,7 +12,7 @@ public enum CustomerMenuEnums {
     SHOW_RESTAURANT_OPTION ("\\s+-t\\s+(?<type>\\S+)"),
     SHOW_MENU ("\\s*show\\s+menu\\s+(?<restaurantName>\\S+)(\\s+-c\\s+(?<category>\\S+))?\\s*"),
     SHOW_MENU_OPTION ("\\s+-c\\s+(?<category>\\S+)"),
-    SET_LOCATION ("\\s*set\\s+location\\s+(?<location>)?\\s*"),
+    SET_LOCATION ("\\s*set\\s+location\\s+(?<location>-?\\d+)\\s*"),
     ADD_TO_CART ("\\s*add\\s+to\\s+cart\\s+(?<restaurantName>\\S+)\\s+(?<foodName>\\S+)(\\s+-n\\s+(?<number>-?\\d+))?\\s*"),
     NUMBER_OPTION ("\\s+-n\\s+(?<number>-?\\d+)"),
     REMOVE_FROM_CART ("\\s*remove\\s+from\\s+cart\\s+(?<restaurantName>\\S+)\\s+(?<foodName>\\S+)(\\s+-n\\s+(?<number>-?\\d+))?\\s*"),

@@ -5,13 +5,18 @@ import java.util.ArrayList;
 public class Customer extends User{
     private ArrayList<Discount> discounts;
     private ArrayList<Order> cart;
-    private int debt;
+    private int debt, location;
 
     public Customer(String username, String password) {
         super(username, password);
         discounts = new ArrayList<>();
         cart = new ArrayList<>();
         debt = 0;
+        location = 0;
+    }
+    public void setLocation(int location) {
+        this.location = location;
+        System.out.println("location set successfully");
     }
 
     public void addDiscount(Discount discount) {
