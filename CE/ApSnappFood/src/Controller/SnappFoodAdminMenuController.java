@@ -14,6 +14,7 @@ public class SnappFoodAdminMenuController {
         String name = matcher.group("name");
         String password = matcher.group("password");
         String type = matcher.group("type");
+        int location = Integer.parseInt(matcher.group("location"));
 
         if(SnappFoodAdminMenuEnums.getMatcher(name, SnappFoodAdminMenuEnums.VALID_USERNAME) == null)
             return "add restaurant failed: invalid username format";
@@ -32,9 +33,10 @@ public class SnappFoodAdminMenuController {
 
         else if(SnappFoodAdminMenuEnums.getMatcher(type, SnappFoodAdminMenuEnums.VALID_TYPE) == null)
             return "add restaurant failed: invalid type format";
-
+        else if (location < 1 || location > 1000)
+            return "add restaurant failed: invalid location format";
         else {
-            SnappFood.addRestaurantManager(new RestaurantManager(name, password, type));
+            SnappFood.addRestaurantManager(new RestaurantManager(name, password, type, location));
             return "restaurant added successfully";
         }
     }
@@ -43,18 +45,17 @@ public class SnappFoodAdminMenuController {
         Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
         int index = 1;
-
         if(typeMatcher.find()) {
             String type = typeMatcher.group("type");
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
                 if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant);
+                    System.out.println(index + ") " + restaurant + " -> loc :" + restaurant.getLocation());
                     index++;
                 }
         }
         else {
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant);
+                System.out.println(index + ") " + restaurant + " -> loc :" + restaurant.getLocation());
                 index++;
             }
         }

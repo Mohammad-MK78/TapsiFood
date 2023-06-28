@@ -16,7 +16,6 @@ public class Customer extends User{
     }
     public void setLocation(int location) {
         this.location = location;
-        System.out.println("location set successfully");
     }
 
     public void addDiscount(Discount discount) {

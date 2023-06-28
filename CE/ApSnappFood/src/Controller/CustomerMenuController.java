@@ -36,24 +36,21 @@ public class CustomerMenuController {
         currentUser.setLocation(location);
         return "set location successful";
     }
-
     public static void showRestaurant(String command) {
         Pattern typePattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
         int index = 1;
-
         if(typeMatcher.find()) {
             String type = typeMatcher.group("type");
-
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
                 if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType());
+                    System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + " -> " + restaurant.getLocation());
                     index++;
                 }
         }
         else {
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType());
+                System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + " -> " + restaurant.getLocation());
                 index++;
             }
         }

@@ -4,20 +4,24 @@ import java.util.ArrayList;
 
 public class RestaurantManager extends User{
     private String type;
+    private int location;
     private ArrayList<Food> menu;
     private ArrayList<Food> Starter;
     private ArrayList<Food> MainMeal;
     private ArrayList<Food> Dessert;
 
-    public RestaurantManager(String username, String password, String type) {
+    public RestaurantManager(String username, String password, String type, int location) {
         super(username, password);
         this.type = type;
+        this.location = location;
         menu = new ArrayList<>();
         Starter = new ArrayList<>();
         MainMeal = new ArrayList<>();
         Dessert = new ArrayList<>();
     }
-
+    public int getLocation() {
+         return location;
+    }
     public String getType() {
         return type;
     }
@@ -73,6 +77,6 @@ public class RestaurantManager extends User{
     }
     @Override
     public String toString() {
-        return this.getUsername() + ": type = " + type + " balance = " + this.getBalance();
+        return this.getUsername() + ": type = " + type + " | balance = " + this.getBalance();
     }
 }
