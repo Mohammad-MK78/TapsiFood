@@ -1,10 +1,6 @@
 package Controller;
 
-import Model.Customer;
-import Model.RestaurantManager;
-import Model.SnappFood;
-import Model.SnappFoodManager;
-import View.MainMenu;
+import Model.*;
 import View.MainMenuEnums;
 
 import java.util.regex.Matcher;
@@ -17,6 +13,11 @@ public class MainMenuController {
         if(MainMenuEnums.getMatcher(menuName, MainMenuEnums.CUSTOMER_MENU) != null)
             return (SnappFood.getCurrentUser() instanceof Customer) ?
                     MainMenuEnums.getString(MainMenuEnums.CUSTOMER_MENU_SUCCESSFUL) :
+                    MainMenuEnums.getString(MainMenuEnums.ACCESS_DENIED_ERROR);
+
+        else if(MainMenuEnums.getMatcher(menuName, MainMenuEnums.DELIVERY_MENU) != null)
+            return (SnappFood.getCurrentUser() instanceof Delivery) ?
+                    MainMenuEnums.getString(MainMenuEnums.DELIVERY_MENU_SUCCESSFUL) :
                     MainMenuEnums.getString(MainMenuEnums.ACCESS_DENIED_ERROR);
 
         else if(MainMenuEnums.getMatcher(menuName, MainMenuEnums.RESTAURANT_ADMIN_MENU) != null)

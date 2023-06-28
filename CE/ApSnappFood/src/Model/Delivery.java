@@ -2,9 +2,11 @@ package Model;
 
 public class Delivery extends User{
     private int location, restaurant, destination;
+    public boolean is_busy;
     public Delivery(String username, String password, int location) {
         super(username, password);
         this.location = location;
+        this.is_busy = false;
     }
     public void setLocation(int location) {
         this.location = location;

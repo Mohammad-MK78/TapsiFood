@@ -1,14 +1,15 @@
 package View;
 
 import Controller.CustomerMenuController;
-import Model.Customer;
+import Controller.DeliveryMenuController;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class CustomerMenu {
 
-    public static void run(Scanner scanner) {
+    public static void run(Scanner scanner) throws IOException {
         Matcher matcher;
         String command;
 
@@ -42,9 +43,12 @@ public class CustomerMenu {
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_CART) != null)
                 CustomerMenuController.showCart();
 
+            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.CHOOSE_DELIVERY) != null)
+                CustomerMenuController.chooseDelivery();
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DISCOUNTS) != null)
                 CustomerMenuController.showDiscounts();
-
+            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DISTANCE) != null)
+                CustomerMenuController.show_distance();
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.PURCHASE_CART) != null)
                 System.out.println(CustomerMenuController.purchaseCart(command));
 

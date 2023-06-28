@@ -10,6 +10,8 @@ public enum MainMenuEnums {
     CUSTOMER_MENU ("customer menu\\s*"),
     RESTAURANT_ADMIN_MENU ("restaurant admin menu\\s*"),
     SNAPP_FOOD_ADMIN_MENU ("Snappfood admin menu\\s*"),
+    DELIVERY_MENU ("delivery menu\\s*"),
+    DELIVERY_MENU_SUCCESSFUL ("enter menu successful: You are in the delivery menu!"),
     CUSTOMER_MENU_SUCCESSFUL ("enter menu successful: You are in the customer menu!"),
     RESTAURANT_ADMIN_MENU_SUCCESSFUL ("enter menu successful: You are in the restaurant admin menu!"),
     SNAPP_FOOD_ADMIN_MENU_SUCCESSFUL ("enter menu successful: You are in the Snappfood admin menu!"),

@@ -2,8 +2,8 @@ package Controller;
 
 import Model.*;
 import View.CustomerMenuEnums;
-import View.SnappFoodAdminMenuEnums;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,13 +44,13 @@ public class CustomerMenuController {
             String type = typeMatcher.group("type");
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
                 if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + " -> " + restaurant.getLocation());
+                    System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + "| loc -> " + restaurant.getLocation());
                     index++;
                 }
         }
         else {
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + " -> " + restaurant.getLocation());
+                System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + "| loc -> " + restaurant.getLocation());
                 index++;
             }
         }
@@ -184,7 +184,21 @@ public class CustomerMenuController {
 
         System.out.println("Total: " + totalPrice);
     }
-
+    public static void chooseDelivery() {
+        if (currentUser.getCart().size() < 1) {
+            System.out.println("choose delivery failed: cart is empty");
+            return;
+        }
+        for (Delivery delivery : SnappFood.getDeliveries()) {
+            if (!delivery.is_busy) {
+                currentUser.setDelivery(delivery);
+                delivery.setRestaurant(currentUser.getCart().get(0).getFood().getRestaurant().getLocation());
+                delivery.setDestination(currentUser.getLocation());
+                System.out.println("delivery set successfully");
+                return;
+            }
+        }
+    }
     public static void showDiscounts() {
         int index = 1;
 
@@ -193,12 +207,26 @@ public class CustomerMenuController {
             index++;
         }
     }
+    public static void show_distance() throws IOException {
+        int location = currentUser.getCart().get(0).getFood().getRestaurant().getLocation(), destination = currentUser.getLocation();
+        CityGraph cityGraph = new CityGraph();
+        int[][] graph = new int[1001][1001];
+        for(int i = 0; i < cityGraph.city.rows; i++) {
+            if (cityGraph.city.cols >= 0) System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
+        }
+        ShortestPath gfg = new ShortestPath(graph);
+        int distance = gfg.shortestPath(location, destination);
+        System.out.println("distance : " + distance);
+    }
 
     public static String purchaseCart(String command) {
         Matcher discountMatcher = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.PURCHASE_CART_OPTION)).matcher(command);
         int discountAmount = 0;
         Discount discount = null;
 
+        if (currentUser.getDelivery() == null) {
+            return "purchase failed: choose delivery first";
+        }
         if(discountMatcher.find()) {
 
             if((discount = currentUser.getDiscountByCode(discountMatcher.group("discountCode"))) == null)
@@ -220,6 +248,7 @@ public class CustomerMenuController {
         currentUser.resetCart();
 
         SnappFood.removeDiscount(discount);
+        currentUser.setDelivery(null);
 
         return "purchase successful";
     }

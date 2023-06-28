@@ -20,7 +20,7 @@ public class DeliveryMenuController {
         System.out.println("location : " + currentUser.getLocation());
     }
     public static void show_distance() throws IOException {
-        int location = currentUser.getLocation(), destination = currentUser.getDestination();
+        int location = currentUser.getRestaurant(), destination = currentUser.getDestination();
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
@@ -31,7 +31,7 @@ public class DeliveryMenuController {
         System.out.println("distance : " + distance);
     }
     public static void show_path() throws IOException {
-        int location = currentUser.getLocation(), destination = currentUser.getDestination();
+        int location = currentUser.getRestaurant(), destination = currentUser.getDestination();
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {

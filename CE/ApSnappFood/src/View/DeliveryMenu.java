@@ -1,6 +1,5 @@
 package View;
 
-import Controller.CustomerMenuController;
 import Controller.DeliveryMenuController;
 
 import java.io.IOException;
@@ -33,7 +32,8 @@ public class DeliveryMenu {
                 DeliveryMenuController.show_distance();
             else if(DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("delivery menu");
-
+            else
+                System.out.println("invalid command!");
         }
     }
 }

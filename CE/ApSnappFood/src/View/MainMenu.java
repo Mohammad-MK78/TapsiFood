@@ -35,8 +35,9 @@ public class MainMenu {
                     case "enter menu successful: You are in the Snappfood admin menu!":
                         SnappFoodAdminMenu.run(scanner);
                         return;
-                    case "enter menu successful: You are in the Delivery menu!":
+                    case "enter menu successful: You are in the delivery menu!":
                         DeliveryMenu.run(scanner);
+                        return;
                 }
 
             }

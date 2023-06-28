@@ -6,6 +6,7 @@ public class Customer extends User{
     private ArrayList<Discount> discounts;
     private ArrayList<Order> cart;
     private int debt, location;
+    private Delivery delivery;
 
     public Customer(String username, String password) {
         super(username, password);
@@ -13,11 +14,22 @@ public class Customer extends User{
         cart = new ArrayList<>();
         debt = 0;
         location = 0;
+        delivery = null;
     }
     public void setLocation(int location) {
         this.location = location;
     }
 
+    public int getLocation() {
+        return location;
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
+    }
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
+    }
     public void addDiscount(Discount discount) {
         discounts.add(discount);
     }

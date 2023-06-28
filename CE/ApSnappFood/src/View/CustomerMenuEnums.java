@@ -17,6 +17,8 @@ public enum CustomerMenuEnums {
     NUMBER_OPTION ("\\s+-n\\s+(?<number>-?\\d+)"),
     REMOVE_FROM_CART ("\\s*remove\\s+from\\s+cart\\s+(?<restaurantName>\\S+)\\s+(?<foodName>\\S+)(\\s+-n\\s+(?<number>-?\\d+))?\\s*"),
     SHOW_CART ("\\s*show\\s+cart\\s*"),
+    CHOOSE_DELIVERY ("\\s*choose\\s+delivery\\s*"),
+    SHOW_DISTANCE ("\\s*show\\s+distance\\s*"),
     SHOW_DISCOUNTS ("\\s*show\\s+discounts\\s*"),
     PURCHASE_CART ("\\s*purchase\\s+cart(\\s+-d\\s+(?<discountCode>\\S+))?\\s*"),
     PURCHASE_CART_OPTION ("\\s+-d\\s+(?<discountCode>\\S+)");
