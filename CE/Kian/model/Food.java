@@ -5,12 +5,12 @@ import model.user.Restaurant;
 public class Food {
     private String name;
     private Restaurant restaurant;
-    private int price;
-    private int cost;
+    private double price;
+    private double cost;
 
     private String category;
 
-    public Food(String name, String category, Restaurant restaurant, int price, int cost) {
+    public Food(String name, String category, Restaurant restaurant, double price, double cost) {
         this.name = name;
         this.category = category;
         this.restaurant = restaurant;
@@ -26,7 +26,7 @@ public class Food {
         return category;
     }
 
-    public int getPrice(){
+    public double getPrice(){
         return price;
     }
 

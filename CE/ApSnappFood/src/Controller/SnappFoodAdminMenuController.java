@@ -35,7 +35,7 @@ public class SnappFoodAdminMenuController {
 
         else {
             SnappFood.addRestaurantManager(new RestaurantManager(name, password, type));
-            return "add restaurant successful";
+            return "restaurant added successfully";
         }
     }
 
@@ -87,7 +87,7 @@ public class SnappFoodAdminMenuController {
 
         else {
             SnappFood.addDiscount(new Discount(SnappFood.getCustomerByUsername(customerUsername), discountAmount, code));
-            return "set discount successful";
+            return "discount set successfully";
         }
     }
 

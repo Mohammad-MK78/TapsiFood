@@ -34,7 +34,7 @@ public class RestaurantAdminMenuController {
         int price = Integer.parseInt(matcher.group("price"));
         int cost = Integer.parseInt(matcher.group("cost"));
 
-        if(!category.equals("starter") && !category.equals("entree") && !category.equals("dessert"))
+        if(!category.equals("Starter") && !category.equals("MainMeal") && !category.equals("Dessert"))
             return "add food failed: invalid category";
 
         else if(RestaurantAdminMenuEnums.getMatcher(name, RestaurantAdminMenuEnums.VALID_FOOD_NAME) == null)

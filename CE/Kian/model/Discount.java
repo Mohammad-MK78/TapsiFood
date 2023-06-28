@@ -5,9 +5,9 @@ import model.user.User;
 public class Discount {
     private User owner;
     private String code;
-    private int amount;
+    private double amount;
 
-    public Discount(User owner, String code, int amount) {
+    public Discount(User owner, String code, double amount) {
         this.owner = owner;
         this.code = code;
         this.amount = amount;

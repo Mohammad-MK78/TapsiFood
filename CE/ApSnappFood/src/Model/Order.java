@@ -1,5 +1,4 @@
 package Model;
-
 public class Order {
     private Food food;
     private int number;

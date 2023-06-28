@@ -15,7 +15,6 @@ public enum LoginMenuEnums {
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*");
 
     private String regex;
-
     LoginMenuEnums(String string) {
         this.regex = string;
     }

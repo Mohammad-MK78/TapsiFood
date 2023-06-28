@@ -10,7 +10,6 @@ public class SnappFood {
     private static ArrayList<RestaurantManager> restaurantManagers = new ArrayList<>();
     private static ArrayList<Discount> discounts = new ArrayList<>();
 
-
     public static void addDiscount(Discount discount) {
         discounts.add(discount);
         discount.getDiscountUser().addDiscount(discount);

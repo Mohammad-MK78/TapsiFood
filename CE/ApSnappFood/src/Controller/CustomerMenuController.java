@@ -38,13 +38,13 @@ public class CustomerMenuController {
 
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
                 if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant.getUsername() + ": type=" + restaurant.getType());
+                    System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType());
                     index++;
                 }
         }
         else {
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant.getUsername() + ": type=" + restaurant.getType());
+                System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType());
                 index++;
             }
         }
@@ -64,17 +64,17 @@ public class CustomerMenuController {
 
             String category = categoryMatcher.group("category");
 
-            if(category.equals("starter"))
+            if(category.equals("Starter"))
                 for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
-                    System.out.println(food.getName() + " | price=" + food.getPrice());
+                    System.out.println(food.getName() + " : price=" + food.getPrice());
 
-            else if(category.equals("entree"))
+            else if(category.equals("MainMeal"))
                 for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getEntree())
-                    System.out.println(food.getName() + " | price=" + food.getPrice());
+                    System.out.println(food.getName() + " : price=" + food.getPrice());
 
-            else if(category.equals("dessert"))
+            else if(category.equals("Dessert"))
                 for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getDessert())
-                    System.out.println(food.getName() + " | price=" + food.getPrice());
+                    System.out.println(food.getName() + " : price=" + food.getPrice());
 
             else
                 System.out.println("show menu failed: invalid category");
@@ -84,15 +84,15 @@ public class CustomerMenuController {
         else {
             System.out.println("<< STARTER >>");
             for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
-                System.out.println(food.getName() + " | price=" + food.getPrice());
+                System.out.println(food.getName() + " : price=" + food.getPrice());
 
-            System.out.println("<< ENTREE >>");
+            System.out.println("<< MAIN MEAL >>");
             for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getEntree())
-                System.out.println(food.getName() + " | price=" + food.getPrice());
+                System.out.println(food.getName() + " : price=" + food.getPrice());
 
             System.out.println("<< DESSERT >>");
             for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getDessert())
-                System.out.println(food.getName() + " | price=" + food.getPrice());
+                System.out.println(food.getName() + " : price=" + food.getPrice());
         }
     }
 
@@ -183,7 +183,7 @@ public class CustomerMenuController {
         int index = 1;
 
         for(Discount discount : currentUser.getDiscounts()) {
-            System.out.println(index + ") " + discount.getCode() + " | amount=" + discount.getDiscountAmount());
+            System.out.println(index + ") " + discount.getCode() + " : amount=" + discount.getDiscountAmount());
             index++;
         }
     }

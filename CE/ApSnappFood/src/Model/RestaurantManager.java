@@ -5,48 +5,45 @@ import java.util.ArrayList;
 public class RestaurantManager extends User{
     private String type;
     private ArrayList<Food> menu;
-    private ArrayList<Food> starterMenu;
-    private ArrayList<Food> entreeMenu;
-    private ArrayList<Food> dessertMenu;
+    private ArrayList<Food> Starter;
+    private ArrayList<Food> MainMeal;
+    private ArrayList<Food> Dessert;
 
     public RestaurantManager(String username, String password, String type) {
         super(username, password);
         this.type = type;
         menu = new ArrayList<>();
-        starterMenu = new ArrayList<>();
-        entreeMenu = new ArrayList<>();
-        dessertMenu = new ArrayList<>();
+        Starter = new ArrayList<>();
+        MainMeal = new ArrayList<>();
+        Dessert = new ArrayList<>();
     }
 
     public String getType() {
         return type;
     }
-
-
     public ArrayList<Food> getStarter() {
-        return starterMenu;
+        return Starter;
     }
 
     public ArrayList<Food> getEntree() {
-        return entreeMenu;
+        return MainMeal;
     }
 
     public ArrayList<Food> getDessert() {
-        return dessertMenu;
+        return Dessert;
     }
 
     public void addFood(Food food) {
         menu.add(food);
-
         switch (food.getCategory()) {
-            case "starter":
-                starterMenu.add(food);
+            case "Starter":
+                Starter.add(food);
                 break;
-            case "entree":
-                entreeMenu.add(food);
+            case "MainMeal":
+                MainMeal.add(food);
                 break;
-            case "dessert":
-                dessertMenu.add(food);
+            case "Dessert":
+                Dessert.add(food);
         }
     }
 
@@ -61,19 +58,21 @@ public class RestaurantManager extends User{
         menu.remove(food);
 
         switch (food.getCategory()) {
-            case "starter":
-                starterMenu.remove(food);
+            case "Starter":
+                Starter.remove(food);
                 break;
-            case "entree":
-                entreeMenu.remove(food);
+            case "MainMeal":
+                MainMeal.remove(food);
                 break;
-            case "dessert":
-                dessertMenu.remove(food);
+            case "Dessert":
+                Dessert.remove(food);
         }
     }
-
+    public void chengeType(String type) {
+        this.type = type;
+    }
     @Override
     public String toString() {
-        return this.getUsername() + ": type=" + type + " balance=" + this.getBalance();
+        return this.getUsername() + ": type = " + type + " balance = " + this.getBalance();
     }
 }
