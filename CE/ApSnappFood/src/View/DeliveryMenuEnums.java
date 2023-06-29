@@ -7,7 +7,7 @@ public enum DeliveryMenuEnums {
     SHOW_RESTAURANT ("\\s*show\\s+restaurant\\s*"),
     SHOW_DESTINATION ("\\s*show\\s+destination\\s*"),
     SHOW_LOCATION ("\\s*show\\s+location\\s*"),
-    SHOW_DISTANCE ("\\s*show\\s+distance\\s*"),
+    SHOW_TIME ("\\s*show\\s+time\\s*"),
     SHOW_PATH ("\\s*show\\s+path\\s*");
 
     private String string;

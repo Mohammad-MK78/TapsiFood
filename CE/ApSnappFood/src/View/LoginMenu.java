@@ -24,7 +24,7 @@ public class LoginMenu {
                 return;
             }
 
-            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.REGISTER)) != null)
+            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.CUSTOMER_REGISTER)) != null)
                 System.out.println(LoginMenuController.register(matcher));
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.DELIVERY_REGISTER)) != null)
                 System.out.println(LoginMenuController.deliveryRegister(matcher));

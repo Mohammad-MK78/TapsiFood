@@ -8,15 +8,15 @@ public class Customer extends User{
     private int debt, location;
     private Delivery delivery;
 
-    public Customer(String username, String password) {
+    public Customer(String username, String password, int location) {
         super(username, password);
         discounts = new ArrayList<>();
         cart = new ArrayList<>();
         debt = 0;
-        location = 0;
+        this.location = location;
         delivery = null;
     }
-    public void setLocation(int location) {
+    public void changeLocation(int location) {
         this.location = location;
     }
 

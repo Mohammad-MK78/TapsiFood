@@ -1,7 +1,6 @@
 package View;
 
 import Controller.CustomerMenuController;
-import Controller.DeliveryMenuController;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -47,15 +46,15 @@ public class CustomerMenu {
                 CustomerMenuController.chooseDelivery();
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DISCOUNTS) != null)
                 CustomerMenuController.showDiscounts();
-            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DISTANCE) != null)
+            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_TIME) != null)
                 CustomerMenuController.show_distance();
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.PURCHASE_CART) != null)
                 System.out.println(CustomerMenuController.purchaseCart(command));
 
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("customer menu");
-            else if((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SET_LOCATION)) != null)
-                System.out.println(CustomerMenuController.setLocation(matcher));
+            else if((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.CHANGE_LOCATION)) != null)
+                System.out.println(CustomerMenuController.changeLocation(matcher));
             else
                 System.out.println("invalid command!");
         }

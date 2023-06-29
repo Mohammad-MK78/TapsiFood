@@ -28,7 +28,7 @@ public class DeliveryMenu {
                 DeliveryMenuController.showLocation();
             else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_PATH) != null)
                 DeliveryMenuController.show_path();
-            else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_DISTANCE) != null)
+            else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_TIME) != null)
                 DeliveryMenuController.show_distance();
             else if(DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("delivery menu");

@@ -18,6 +18,7 @@ public class LoginMenuController {
     public static String register(Matcher matcher) {
         String username = matcher.group("username");
         String password = matcher.group("password");
+        int location = Integer.parseInt(matcher.group("location"));
 
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
             return "register failed: invalid username format";
@@ -33,10 +34,12 @@ public class LoginMenuController {
                 !Pattern.compile("[A-Z]").matcher(password).find() ||
                 !Pattern.compile("\\d").matcher(password).find())
             return "register failed: weak password";
-
+        else if (location < 1 || location > 1000) {
+            return "register failed: invalid location";
+        }
         else {
-            SnappFood.addCustomer(new Customer(username, password));
-            return "register successful";
+            SnappFood.addCustomer(new Customer(username, password, location));
+            return "customer register successful";
         }
     }
     public static String deliveryRegister(Matcher matcher) {

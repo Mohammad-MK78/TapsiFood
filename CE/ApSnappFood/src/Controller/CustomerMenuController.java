@@ -27,14 +27,14 @@ public class CustomerMenuController {
     public static int showBalance() {
         return currentUser.getBalance();
     }
-    public static String setLocation(Matcher matcher) {
+    public static String changeLocation(Matcher matcher) {
         int location = Integer.parseInt(matcher.group("location"));
 
         if(location < 1 || location > 1000)
-            return "set location failed: invalid location";
+            return "change location failed: invalid location";
 
-        currentUser.setLocation(location);
-        return "set location successful";
+        currentUser.changeLocation(location);
+        return "change location successful";
     }
     public static void showRestaurant(String command) {
         Pattern typePattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_RESTAURANT_OPTION));
@@ -216,7 +216,7 @@ public class CustomerMenuController {
         }
         ShortestPath gfg = new ShortestPath(graph);
         int distance = gfg.shortestPath(location, destination);
-        System.out.println("distance : " + distance);
+        System.out.println("estimated time : " + distance + " minutes");
     }
 
     public static String purchaseCart(String command) {
@@ -245,10 +245,7 @@ public class CustomerMenuController {
 
         currentUser.changeDebt(-currentUser.getDebt());
 
-        currentUser.resetCart();
-
         SnappFood.removeDiscount(discount);
-        currentUser.setDelivery(null);
 
         return "purchase successful";
     }
