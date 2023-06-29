@@ -175,39 +175,36 @@ public class CustomerMenuController {
     public static void showCart() {
         int index = 1;
         int totalPrice = 0;
-
+        if (currentUser.getCart().size() == 0) {
+            System.out.println("cart is empty");
+            return;
+        }
         for(Order order : currentUser.getCart()) {
             System.out.println(index + ") " + order);
             totalPrice += order.getNumber() * order.getFood().getPrice();
             index++;
         }
+        System.out.println("Food price : " + totalPrice);
+        System.out.println("Delivery price : " + totalPrice / 5);
+        System.out.println("Total: " + (totalPrice + totalPrice / 5));
+    }
 
-        System.out.println("Total: " + totalPrice);
-    }
-    public static void chooseDelivery() {
-        if (currentUser.getCart().size() < 1) {
-            System.out.println("choose delivery failed: cart is empty");
-            return;
-        }
-        for (Delivery delivery : SnappFood.getDeliveries()) {
-            if (!delivery.is_busy) {
-                currentUser.setDelivery(delivery);
-                delivery.setRestaurant(currentUser.getCart().get(0).getFood().getRestaurant().getLocation());
-                delivery.setDestination(currentUser.getLocation());
-                System.out.println("delivery set successfully");
-                return;
-            }
-        }
-    }
     public static void showDiscounts() {
         int index = 1;
-
+        if (currentUser.getDiscounts().size() == 0) {
+            System.out.println("no discount");
+            return;
+        }
         for(Discount discount : currentUser.getDiscounts()) {
             System.out.println(index + ") " + discount.getCode() + " : amount=" + discount.getDiscountAmount());
             index++;
         }
     }
     public static void show_distance() throws IOException {
+        if (currentUser.getCart().size() == 0) {
+            System.out.println("there is no ongoing order");
+            return;
+        }
         int location = currentUser.getCart().get(0).getFood().getRestaurant().getLocation(), destination = currentUser.getLocation();
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
@@ -223,10 +220,10 @@ public class CustomerMenuController {
         Matcher discountMatcher = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.PURCHASE_CART_OPTION)).matcher(command);
         int discountAmount = 0;
         Discount discount = null;
-
-        if (currentUser.getDelivery() == null) {
-            return "purchase failed: choose delivery first";
+        if (currentUser.getCart().size() == 0) {
+            return "purchase failed: cart is empty";
         }
+
         if(discountMatcher.find()) {
 
             if((discount = currentUser.getDiscountByCode(discountMatcher.group("discountCode"))) == null)
@@ -238,15 +235,43 @@ public class CustomerMenuController {
         if(currentUser.getBalance() < currentUser.getDebt() - discountAmount)
             return "purchase failed: inadequate money";
 
+        for (Delivery delivery : SnappFood.getDeliveries()) {
+            if (!delivery.is_busy) {
+                currentUser.setDelivery(delivery);
+                delivery.setRestaurant(currentUser.getCart().get(0).getFood().getRestaurant().getLocation());
+                delivery.setDestination(currentUser.getLocation());
+                break;
+            }
+        }
         for(Order order : currentUser.getCart())
             order.getFood().getRestaurant().changeBalance(order.getNumber() * (order.getFood().getPrice() - order.getFood().getCost()));
 
-        currentUser.changeBalance(discountAmount - currentUser.getDebt());
+        int price = currentUser.getDebt() + currentUser.getDebt() / 5;
+        currentUser.changeBalance(discountAmount - price);
 
         currentUser.changeDebt(-currentUser.getDebt());
 
         SnappFood.removeDiscount(discount);
 
         return "purchase successful";
+    }
+    public static void showDelivery() {
+        if (currentUser.getDelivery() == null) {
+            System.out.println("no delivery");
+            return;
+        }
+        System.out.println("delivery name : " + currentUser.getDelivery().getUsername());
+    }
+    public static void collected() {
+        currentUser.getDelivery().is_busy = false;
+        currentUser.getDelivery().setLocation(currentUser.getLocation());
+        int totalprice = 0;
+        for (Order order : currentUser.getCart()) {
+            totalprice += order.getNumber() * order.getFood().getPrice();
+        }
+        currentUser.getDelivery().changeBalance(totalprice / 5);
+        currentUser.resetCart();
+        currentUser.setDelivery(null);
+        System.out.println("food collected successfully");
     }
 }

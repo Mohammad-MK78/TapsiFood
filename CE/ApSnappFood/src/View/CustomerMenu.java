@@ -42,12 +42,14 @@ public class CustomerMenu {
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_CART) != null)
                 CustomerMenuController.showCart();
 
-            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.CHOOSE_DELIVERY) != null)
-                CustomerMenuController.chooseDelivery();
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DISCOUNTS) != null)
                 CustomerMenuController.showDiscounts();
             else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_TIME) != null)
                 CustomerMenuController.show_distance();
+            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DELIVERY) != null)
+                CustomerMenuController.showDelivery();
+            else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.COLLECTED) != null)
+                CustomerMenuController.collected();
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.PURCHASE_CART) != null)
                 System.out.println(CustomerMenuController.purchaseCart(command));
 
