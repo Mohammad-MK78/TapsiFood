@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class RestaurantManager extends User{
     private String type;
     private int location;
+    private ArrayList<String> comments;
+    private ArrayList<String> replies;
     private ArrayList<Food> menu;
     private ArrayList<Food> Starter;
     private ArrayList<Food> MainMeal;
@@ -18,6 +20,8 @@ public class RestaurantManager extends User{
         Starter = new ArrayList<>();
         MainMeal = new ArrayList<>();
         Dessert = new ArrayList<>();
+        comments = new ArrayList<>();
+        replies = new ArrayList<>();
     }
     public int getLocation() {
          return location;
@@ -36,7 +40,13 @@ public class RestaurantManager extends User{
     public ArrayList<Food> getDessert() {
         return Dessert;
     }
+    public ArrayList<String> getComments() {
+        return comments;
+    }
 
+    public void reply(int num, String message) {
+        replies.add(num, message);
+    }
     public void addFood(Food food) {
         menu.add(food);
         switch (food.getCategory()) {

@@ -5,6 +5,7 @@ import Model.RestaurantManager;
 import Model.SnappFood;
 import View.RestaurantAdminMenuEnums;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 
 public class RestaurantAdminMenuController {
@@ -28,6 +29,11 @@ public class RestaurantAdminMenuController {
         return currentUser.getBalance();
     }
 
+    public static String changeType(Matcher matcher) {
+        String type = matcher.group("type");
+        currentUser.chengeType(type);
+        return "type changed successfully";
+    }
     public static String addFood(Matcher matcher) {
         String name = matcher.group("name");
         String category = matcher.group("category");
@@ -50,6 +56,14 @@ public class RestaurantAdminMenuController {
         return "add food successful";
     }
 
+    public static String reply(Matcher matcher) {
+        int num = Integer.parseInt(matcher.group("commentNum"));
+        String message = matcher.group("comment");
+        if (num > currentUser.getComments().size() || currentUser.getComments().get(num) == null)
+            return "comment not found!";
+        currentUser.reply(num, message);
+        return "reply added!";
+    }
     public static String removeFood(Matcher matcher) {
         String name = matcher.group("name");
 
@@ -58,5 +72,8 @@ public class RestaurantAdminMenuController {
 
         currentUser.removeFood(currentUser.getFoodByName(name));
         return "";
+    }
+    public static ArrayList showComment() {
+        return currentUser.getComments();
     }
 }

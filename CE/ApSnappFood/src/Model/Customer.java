@@ -87,4 +87,7 @@ public class Customer extends User{
     public void resetCart() {
         this.cart.clear();
     }
+    public void addComment(String message) {
+
+    }
 }

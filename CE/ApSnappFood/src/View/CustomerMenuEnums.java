@@ -21,6 +21,7 @@ public enum CustomerMenuEnums {
     SHOW_TIME ("\\s*show\\s+time\\s*"),
     SHOW_DELIVERY ("\\s*show\\s+delivery\\s*"),
     COLLECTED ("\\s*food\\s+collected"),
+    ADD_COMMENT ("\\s*add\\s+comment\\s*\n(?<message>)"),
     SHOW_DISCOUNTS ("\\s*show\\s+discounts\\s*"),
     PURCHASE_CART ("\\s*purchase\\s+cart(\\s+-d\\s+(?<discountCode>\\S+))?\\s*"),
     PURCHASE_CART_OPTION ("\\s+-d\\s+(?<discountCode>\\S+)");

@@ -29,6 +29,15 @@ public class RestaurantAdminMenu {
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ADD_FOOD)) != null)
                 System.out.println(RestaurantAdminMenuController.addFood(matcher));
 
+            else if (RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_COMMENTS) != null)
+                System.out.println(RestaurantAdminMenuController.showComment());
+
+            else if ((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REPLY_TO_COMMENT)) != null)
+                System.out.println(RestaurantAdminMenuController.reply(matcher));
+
+            else if ((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.CHANGE_TYPE)) != null)
+                System.out.println(RestaurantAdminMenuController.changeType(matcher));
+
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_FOOD)) != null)
                 System.out.printf(RestaurantAdminMenuController.removeFood(matcher));
 

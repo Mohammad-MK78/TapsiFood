@@ -10,6 +10,9 @@ public enum RestaurantAdminMenuEnums {
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
     ADD_FOOD ("\\s*add\\s+food\\s+(?<name>\\S+)\\s+(?<category>\\S+)\\s+(?<price>-?\\d+)\\s+(?<cost>-?\\d+)\\s*"),
     VALID_FOOD_NAME ("[a-z\\-]+"),
+    SHOW_COMMENTS ("\\s*show\\s+comments\\s*"),
+    CHANGE_TYPE ("\\s*change\\s+type\\s+(?<type>\\S+)\\s*"),
+    REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*\n(?<comment>)"),
     REMOVE_FOOD ("\\s*remove\\s+food\\s+(?<name>\\S+)\\s*");
 
     private String string;
