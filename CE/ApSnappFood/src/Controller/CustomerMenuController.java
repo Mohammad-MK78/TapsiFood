@@ -44,13 +44,13 @@ public class CustomerMenuController {
             String type = typeMatcher.group("type");
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
                 if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + "| loc -> " + restaurant.getLocation());
+                    System.out.println(index + ") " + restaurant.getUsername() + "-> type : " + restaurant.getType() + " | rating : " + restaurant.getRating() +  " | loc : " + restaurant.getLocation());
                     index++;
                 }
         }
         else {
             for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant.getUsername() + ": type = " + restaurant.getType() + "| loc -> " + restaurant.getLocation());
+                System.out.println(index + ") " + restaurant.getUsername() + "-> type : " + restaurant.getType() + " | rating : " + restaurant.getRating() + " | loc : " + restaurant.getLocation());
                 index++;
             }
         }
@@ -252,7 +252,7 @@ public class CustomerMenuController {
         currentUser.changeDebt(-currentUser.getDebt());
 
         SnappFood.removeDiscount(discount);
-
+        currentUser.getCarts().add(new Cart(currentUser.getCart()));
         return "purchase successful";
     }
     public static void showDelivery() {
@@ -261,6 +261,11 @@ public class CustomerMenuController {
             return;
         }
         System.out.println("delivery name : " + currentUser.getDelivery().getUsername());
+    }
+    public static void addComment(Matcher matcher) {
+        String message = matcher.group("message");
+        currentUser.addComment(message);
+        System.out.println("comment added successfully");
     }
     public static void collected() {
         currentUser.getDelivery().is_busy = false;
@@ -273,5 +278,9 @@ public class CustomerMenuController {
         currentUser.resetCart();
         currentUser.setDelivery(null);
         System.out.println("food collected successfully");
+    }
+    public static void addRating(Matcher matcher) {
+        int rate = Integer.parseInt(matcher.group("rate"));
+        currentUser.addRating(rate);
     }
 }

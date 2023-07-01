@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Customer extends User{
     private ArrayList<Discount> discounts;
+    private ArrayList<Cart> carts;
     private ArrayList<Order> cart;
     private int debt, location;
     private Delivery delivery;
@@ -12,6 +13,7 @@ public class Customer extends User{
         super(username, password);
         discounts = new ArrayList<>();
         cart = new ArrayList<>();
+        carts = new ArrayList<>();
         debt = 0;
         this.location = location;
         delivery = null;
@@ -47,6 +49,9 @@ public class Customer extends User{
 
     public ArrayList<Order> getCart() {
         return cart;
+    }
+    public ArrayList<Cart> getCarts() {
+        return carts;
     }
 
     public void addToCart(Order order) {
@@ -88,6 +93,10 @@ public class Customer extends User{
         this.cart.clear();
     }
     public void addComment(String message) {
-
+        this.carts.get(0).orders.get(0).getFood().getRestaurant().getComments().add(message + " : " + this.carts.get(0).orders.get(0).getCustomer().getUsername());
+    }
+    public void addRating(int rate) {
+        this.carts.get(0).rating = rate;
+        this.carts.get(0).orders.get(0).getFood().getRestaurant().addRating(rate);
     }
 }

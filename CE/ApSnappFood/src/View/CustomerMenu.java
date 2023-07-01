@@ -42,6 +42,10 @@ public class CustomerMenu {
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_CART) != null)
                 CustomerMenuController.showCart();
 
+            else if ((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.ADD_RATING)) != null)
+                CustomerMenuController.addRating(matcher);
+            else if ((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.ADD_COMMENT)) != null)
+                CustomerMenuController.addComment(matcher);
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_DISCOUNTS) != null)
                 CustomerMenuController.showDiscounts();
             else if (CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_TIME) != null)

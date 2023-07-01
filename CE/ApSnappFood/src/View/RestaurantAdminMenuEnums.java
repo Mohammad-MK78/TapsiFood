@@ -12,7 +12,7 @@ public enum RestaurantAdminMenuEnums {
     VALID_FOOD_NAME ("[a-z\\-]+"),
     SHOW_COMMENTS ("\\s*show\\s+comments\\s*"),
     CHANGE_TYPE ("\\s*change\\s+type\\s+(?<type>\\S+)\\s*"),
-    REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*\n(?<comment>)"),
+    REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*(?<comment>)"),
     REMOVE_FOOD ("\\s*remove\\s+food\\s+(?<name>\\S+)\\s*");
 
     private String string;
