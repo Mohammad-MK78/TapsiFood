@@ -283,4 +283,5 @@ public class CustomerMenuController {
         int rate = Integer.parseInt(matcher.group("rate"));
         currentUser.addRating(rate);
     }
+
 }

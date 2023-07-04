@@ -10,6 +10,8 @@ public enum CustomerMenuEnums {
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
     SHOW_RESTAURANT ("\\s*show\\s+restaurant(\\s+-t\\s+(?<type>\\S+))?\\s*"),
     SHOW_RESTAURANT_OPTION ("\\s+-t\\s+(?<type>\\S+)"),
+    SHOW_RESTAURANT_COMMENTS ("\\s*show\\s+comments\\s+(?<restaurantName>\\S+)\\s*"),
+    SHOW_RATING ("\\s*show\\s+rating\\s+(?<restaurantName>\\S+)\\s*"),
     SHOW_MENU ("\\s*show\\s+menu\\s+(?<restaurantName>\\S+)(\\s+-c\\s+(?<category>\\S+))?\\s*"),
     SHOW_MENU_OPTION ("\\s+-c\\s+(?<category>\\S+)"),
     CHANGE_LOCATION ("\\s*set\\s+location\\s+(?<location>-?\\d+)\\s*"),
