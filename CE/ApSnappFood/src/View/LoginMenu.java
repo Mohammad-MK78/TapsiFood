@@ -1,20 +1,35 @@
 package View;
 
 import Controller.LoginMenuController;
-
+import com.sun.tools.javac.Main;
+import java.sql.*;
 import java.io.IOException;
+import java.sql.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class LoginMenu {
-    public static void run(Scanner scanner) throws IOException {
+    public static void run(Scanner scanner) throws IOException, SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
-
-        String username = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
-        String password = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
-
-        LoginMenuController.setSnappFoodAdmin(username, password);
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sql = "INSERT INTO tapsifood.accounts(username,location,password) VALUES ('slm2', 87, 'hello')";
+        statement.executeUpdate(sql);
+        boolean check = true;
+        while (check) {
+            System.out.println("be");
+            String username = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
+            String password = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
+            System.out.println("af");
+            String sql2 = "SELECT * FROM tapsifood.accounts where username='" + username + "' and password='" + password + "'";
+            ResultSet rs = statement.executeQuery(sql2);
+            if (rs.next())
+                check = false;
+            LoginMenuController.setSnappFoodAdmin(username, password);
+        }
+        System.out.println("yo");
 
         while (true) {
             command = scanner.nextLine();
