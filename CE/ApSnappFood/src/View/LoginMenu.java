@@ -15,7 +15,7 @@ public class LoginMenu {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-        String sql = "INSERT INTO tapsifood.accounts(username,location,password) VALUES ('slm2', 87, 'hello')";
+        String sql = "INSERT INTO tapsifood.accounts(id, username, password, location) VALUES (1, 'slm2', 'hello', 87)";
         statement.executeUpdate(sql);
         boolean check = true;
         while (check) {
