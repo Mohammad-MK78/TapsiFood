@@ -53,6 +53,9 @@ public class Customer extends User{
     public ArrayList<Cart> getCarts() {
         return carts;
     }
+    public void addCart(Cart cart) {
+        this.carts.add(cart);
+    }
 
     public void addToCart(Order order) {
         cart.add(order);

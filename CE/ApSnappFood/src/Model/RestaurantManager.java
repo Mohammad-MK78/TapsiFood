@@ -7,6 +7,7 @@ public class RestaurantManager extends User{
     private int location;
     private double rating, num;
     private ArrayList<String> comments;
+    private ArrayList<Cart> history;
     private ArrayList<String> replies;
     private ArrayList<Food> menu;
     private ArrayList<Food> Starter;
