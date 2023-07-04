@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class RestaurantManager extends User{
     private String type;
-    private int location;
     private double rating, num;
     private ArrayList<String> comments;
     private ArrayList<Cart> history;
@@ -15,11 +14,10 @@ public class RestaurantManager extends User{
     private ArrayList<Food> Dessert;
 
     public RestaurantManager(String username, String password, String type, int location) {
-        super(username, password);
+        super(username, password, location);
         this.type = type;
         this.rating = 0;
         this.num = 0;
-        this.location = location;
         menu = new ArrayList<>();
         Starter = new ArrayList<>();
         MainMeal = new ArrayList<>();
@@ -34,9 +32,7 @@ public class RestaurantManager extends User{
     public double getRating(){
         return rating / num;
     }
-    public int getLocation() {
-         return location;
-    }
+
     public String getType() {
         return type;
     }
@@ -93,7 +89,7 @@ public class RestaurantManager extends User{
                 Dessert.remove(food);
         }
     }
-    public void chengeType(String type) {
+    public void changeType(String type) {
         this.type = type;
     }
     @Override

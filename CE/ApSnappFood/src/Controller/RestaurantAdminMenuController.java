@@ -31,7 +31,7 @@ public class RestaurantAdminMenuController {
 
     public static String changeType(Matcher matcher) {
         String type = matcher.group("type");
-        currentUser.chengeType(type);
+        currentUser.changeType(type);
         return "type changed successfully";
     }
     public static String addFood(Matcher matcher) {

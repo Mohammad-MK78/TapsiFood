@@ -33,7 +33,7 @@ public class CustomerMenuController {
         if(location < 1 || location > 1000)
             return "change location failed: invalid location";
 
-        currentUser.changeLocation(location);
+        currentUser.setLocation(location);
         return "change location successful";
     }
     public static void showRestaurant(String command) {
@@ -270,11 +270,11 @@ public class CustomerMenuController {
     public static void collected() {
         currentUser.getDelivery().is_busy = false;
         currentUser.getDelivery().setLocation(currentUser.getLocation());
-        int totalprice = 0;
+        int totalPrice = 0;
         for (Order order : currentUser.getCart()) {
-            totalprice += order.getNumber() * order.getFood().getPrice();
+            totalPrice += order.getNumber() * order.getFood().getPrice();
         }
-        currentUser.getDelivery().changeBalance(totalprice / 5);
+        currentUser.getDelivery().changeBalance(totalPrice / 5);
         currentUser.resetCart();
         currentUser.setDelivery(null);
         System.out.println("food collected successfully");

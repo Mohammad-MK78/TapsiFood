@@ -15,22 +15,20 @@ public class LoginMenu {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-        String sql = "INSERT INTO tapsifood.accounts(id, username, password, location) VALUES (1, 'slm2', 'hello', 87)";
-        statement.executeUpdate(sql);
-        boolean check = true;
-        while (check) {
-            System.out.println("be");
-            String username = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
-            String password = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
-            System.out.println("af");
-            String sql2 = "SELECT * FROM tapsifood.accounts where username='" + username + "' and password='" + password + "'";
-            ResultSet rs = statement.executeQuery(sql2);
-            if (rs.next())
-                check = false;
-            LoginMenuController.setSnappFoodAdmin(username, password);
+        String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where id='" + 0 + "'";
+        ResultSet regAdminCheck = statement.executeQuery(sqlRegAdmin);
+        String username, password;
+        if (!regAdminCheck.next()){
+            System.out.println("TapsiFood admin register:");
+            String regCheck = "";
+            while (!regCheck.equals("TapsiFood admin register successful")) {
+                username = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
+                password = LoginMenuEnums.getMatcher(scanner.nextLine(), LoginMenuEnums.SNAPP_FOOD_ADMIN_INPUT).group("input");
+                regCheck = LoginMenuController.setSnappFoodAdmin(username, password);
+                System.out.println(regCheck);
+            }
         }
-        System.out.println("yo");
-
+        System.out.println("Welcome:)");
         while (true) {
             command = scanner.nextLine();
 

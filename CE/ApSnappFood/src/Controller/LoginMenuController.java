@@ -6,13 +6,39 @@ import Model.SnappFood;
 import Model.SnappFoodManager;
 import View.LoginMenuEnums;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginMenuController {
 
-    public static void setSnappFoodAdmin(String username, String password) {
-        SnappFood.setSnappFoodManager(new SnappFoodManager(username, password));
+    public static String setSnappFoodAdmin(String username, String password) throws ClassNotFoundException, SQLException {
+        if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
+            return "register failed: invalid username format";
+
+        else if(SnappFood.getUserByUsername(username) != null)
+            return "register failed: username already exists";
+
+        else if(LoginMenuEnums.getMatcher(password, LoginMenuEnums.VALID_PASSWORD) == null)
+            return "register failed: invalid password format";
+
+        else if(password.length() < 5 ||
+                !Pattern.compile("[a-z]").matcher(password).find() ||
+                !Pattern.compile("[A-Z]").matcher(password).find() ||
+                !Pattern.compile("\\d").matcher(password).find())
+            return "register failed: weak password";
+        else {
+            SnappFood.setSnappFoodManager(new SnappFoodManager(username, password));
+            String sql = "INSERT INTO tapsifood.accounts(id, username, password, location) VALUES (0, '"+username+"', '"+password+"' ,0)";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+            return "TapsiFood admin register successful";
+        }
     }
 
     public static String register(Matcher matcher) {
