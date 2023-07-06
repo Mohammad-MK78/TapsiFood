@@ -1,14 +1,14 @@
 package View;
 
 import Controller.MainMenuController;
-import Model.SnappFood;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class MainMenu {
-    public static void run(Scanner scanner) throws IOException {
+    public static void run(Scanner scanner) throws IOException, SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
 

@@ -2,11 +2,12 @@ package View;
 
 import Controller.SnappFoodAdminMenuController;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class SnappFoodAdminMenu {
-    public static void run(Scanner scanner) {
+    public static void run(Scanner scanner) throws SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
 

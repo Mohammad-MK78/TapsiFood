@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 public class SnappFood {
@@ -57,21 +58,29 @@ public class SnappFood {
         users.add(delivery);
     }
 
-    public static User getUserByUsername(String username) {
-        for(User user : users)
-            if(user.getUsername().equals(username)) return user;
+    public static User getUserByUsername(String username) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where username='" + username + "'";
+        ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
+        if (usernameCheck.next())
+            System.out.println("هست");
+//        User user = new User()
+        for(User userx : users)
+            if(userx.getUsername().toLowerCase().equals(username)) return userx;
         return null;
     }
 
     public static Customer getCustomerByUsername(String username) {
         for(Customer customer : customers)
-            if(customer.getUsername().equals(username)) return customer;
+            if(customer.getUsername().toLowerCase().equals(username)) return customer;
         return null;
     }
 
     public static RestaurantManager getRestaurantManagerByUsername(String username) {
         for(RestaurantManager restaurantManager : restaurantManagers)
-            if (restaurantManager.getUsername().equals(username)) return restaurantManager;
+            if (restaurantManager.getUsername().toLowerCase().equals(username)) return restaurantManager;
         return null;
     }
 

@@ -14,7 +14,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginMenuController {
-
     public static String setSnappFoodAdmin(String username, String password) throws ClassNotFoundException, SQLException {
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
             return "register failed: invalid username format";
@@ -32,7 +31,7 @@ public class LoginMenuController {
             return "register failed: weak password";
         else {
             SnappFood.setSnappFoodManager(new SnappFoodManager(username, password));
-            String sql = "INSERT INTO tapsifood.accounts(id, username, password, location) VALUES (0, '"+username+"', '"+password+"' ,0)";
+            String sql = "INSERT INTO tapsifood.accounts(position, username, password, location) VALUES ('admin', '"+username+"', '"+password+"' ,0)";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
@@ -41,7 +40,7 @@ public class LoginMenuController {
         }
     }
 
-    public static String register(Matcher matcher) {
+    public static String register(Matcher matcher) throws ClassNotFoundException, SQLException {
         String username = matcher.group("username");
         String password = matcher.group("password");
         int location = Integer.parseInt(matcher.group("location"));
@@ -64,11 +63,16 @@ public class LoginMenuController {
             return "register failed: invalid location";
         }
         else {
+            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'customer')";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
             SnappFood.addCustomer(new Customer(username, password, location));
             return "customer register successful";
         }
     }
-    public static String deliveryRegister(Matcher matcher) {
+    public static String deliveryRegister(Matcher matcher) throws SQLException, ClassNotFoundException {
         String username = matcher.group("username");
         String password = matcher.group("password");
         int location = Integer.parseInt(matcher.group("location"));
@@ -88,12 +92,17 @@ public class LoginMenuController {
             return "register failed: weak password";
 
         else {
+            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position) VALUES ('"+username+"', '"+password+"' ,'"+location+"', delivery)";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
             SnappFood.addDelivery(new Delivery(username, password, location));
             return "delivery register successful";
         }
     }
 
-    public static String login(Matcher matcher) {
+    public static String login(Matcher matcher) throws SQLException, ClassNotFoundException {
         String username = matcher.group("username");
         String password = matcher.group("password");
 
@@ -109,7 +118,7 @@ public class LoginMenuController {
         }
     }
 
-    public static String changePassword(Matcher matcher) {
+    public static String changePassword(Matcher matcher) throws SQLException, ClassNotFoundException {
         String username = matcher.group("username");
         String oldPassword = matcher.group("oldPassword");
         String newPassword = matcher.group("newPassword");
@@ -135,7 +144,7 @@ public class LoginMenuController {
         }
     }
 
-    public static String removeAccount(Matcher matcher) {
+    public static String removeAccount(Matcher matcher) throws SQLException, ClassNotFoundException {
         String username = matcher.group("username");
         String password = matcher.group("password");
 

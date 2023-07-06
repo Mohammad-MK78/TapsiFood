@@ -5,12 +5,13 @@ import Model.RestaurantManager;
 import Model.SnappFood;
 import View.SnappFoodAdminMenuEnums;
 
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SnappFoodAdminMenuController {
 
-    public static String addRestaurant(Matcher matcher) {
+    public static String addRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
         String password = matcher.group("password");
         String type = matcher.group("type");

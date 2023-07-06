@@ -1,10 +1,8 @@
 package View;
 
 import Controller.LoginMenuController;
-import com.sun.tools.javac.Main;
 import java.sql.*;
 import java.io.IOException;
-import java.sql.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
@@ -15,7 +13,7 @@ public class LoginMenu {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-        String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where id='" + 0 + "'";
+        String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where position='admin'";
         ResultSet regAdminCheck = statement.executeQuery(sqlRegAdmin);
         String username, password;
         if (!regAdminCheck.next()){
@@ -43,9 +41,7 @@ public class LoginMenu {
                 System.out.println(LoginMenuController.deliveryRegister(matcher));
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.LOGIN)) != null) {
                 String result = LoginMenuController.login(matcher);
-
                 System.out.println(result);
-
                 if(result.equals("login successful"))
                     MainMenu.run(scanner);
             }
