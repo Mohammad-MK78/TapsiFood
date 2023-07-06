@@ -1,5 +1,7 @@
 package Model;
 
+import java.sql.*;
+
 public class User {
     private String username;
     private String password;
@@ -20,7 +22,17 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) throws ClassNotFoundException, SQLException {
+        String username = getUsername();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where username='" + username + "'";
+        ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
+        if (usernameCheck.next()) {
+            String change = "UPDATE tapsifood.accounts SET password='" + password + "' WHERE username='" + username + "'";
+            statement.executeUpdate(change);
+        }
         this.password = password;
     }
 

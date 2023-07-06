@@ -62,7 +62,7 @@ public class SnappFoodAdminMenuController {
         }
     }
 
-    public static String removeRestaurant(Matcher matcher) {
+    public static String removeRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
         String restaurantName = matcher.group("name");
 
         if(SnappFood.getRestaurantManagerByUsername(restaurantName) != null) {

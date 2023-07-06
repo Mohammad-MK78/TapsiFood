@@ -31,7 +31,18 @@ public class SnappFood {
     public static ArrayList<RestaurantManager> getRestaurantManagers() {
         return restaurantManagers;
     }
-    public static void removeUser(User user) {
+    public static void removeUser(User user) throws ClassNotFoundException, SQLException {
+        String username = user.getUsername();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where username='" + username + "'";
+        ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
+        if (usernameCheck.next()) {
+            String remove = "DELETE FROM tapsifood.accounts WHERE username='" + username + "'";
+            statement.executeUpdate(remove);
+        }
+
         users.remove(user);
         if(user instanceof Customer)
             customers.remove(user);
@@ -64,11 +75,11 @@ public class SnappFood {
         Statement statement = connection.createStatement();
         String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where username='" + username + "'";
         ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
-        if (usernameCheck.next())
-            System.out.println("هست");
-//        User user = new User()
-        for(User userx : users)
-            if(userx.getUsername().toLowerCase().equals(username)) return userx;
+        if (usernameCheck.next()) {
+            String password = usernameCheck.getString("password");
+            int location = usernameCheck.getInt("location");
+            return new User(username, password, location);
+        }
         return null;
     }
 

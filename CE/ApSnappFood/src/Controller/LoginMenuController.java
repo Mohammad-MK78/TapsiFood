@@ -31,7 +31,7 @@ public class LoginMenuController {
             return "register failed: weak password";
         else {
             SnappFood.setSnappFoodManager(new SnappFoodManager(username, password));
-            String sql = "INSERT INTO tapsifood.accounts(position, username, password, location) VALUES ('admin', '"+username+"', '"+password+"' ,0)";
+            String sql = "INSERT INTO tapsifood.accounts(position, username, password) VALUES ('admin', '"+username+"', '"+password+"')";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
