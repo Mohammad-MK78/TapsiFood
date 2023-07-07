@@ -13,8 +13,8 @@ public class RestaurantManager extends User{
     private ArrayList<Food> MainMeal;
     private ArrayList<Food> Dessert;
 
-    public RestaurantManager(String username, String password, String type, int location) {
-        super(username, password, location);
+    public RestaurantManager(String username, String password, String type, int location, String security_question) {
+        super(username, password, location, security_question);
         this.type = type;
         this.rating = 0;
         this.num = 0;

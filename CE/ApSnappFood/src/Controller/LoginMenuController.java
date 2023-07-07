@@ -43,6 +43,7 @@ public class LoginMenuController {
     public static String register(Matcher matcher) throws ClassNotFoundException, SQLException {
         String username = matcher.group("username");
         String password = matcher.group("password");
+        String security_question = matcher.group("securityQuestion");
         int location = Integer.parseInt(matcher.group("location"));
 
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
@@ -63,18 +64,19 @@ public class LoginMenuController {
             return "register failed: invalid location";
         }
         else {
-            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'customer')";
+            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position, security_question) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'customer', '"+security_question+"')";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addCustomer(new Customer(username, password, location));
+            SnappFood.addCustomer(new Customer(username, password, location, security_question));
             return "customer register successful";
         }
     }
     public static String deliveryRegister(Matcher matcher) throws SQLException, ClassNotFoundException {
         String username = matcher.group("username");
         String password = matcher.group("password");
+        String security_question = matcher.group("security_question");
         int location = Integer.parseInt(matcher.group("location"));
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
             return "register failed: invalid username format";
@@ -92,12 +94,12 @@ public class LoginMenuController {
             return "register failed: weak password";
 
         else {
-            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position) VALUES ('"+username+"', '"+password+"' ,'"+location+"', delivery)";
+            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position, security_question) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'delivery', '"+security_question+"')";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addDelivery(new Delivery(username, password, location));
+            SnappFood.addDelivery(new Delivery(username, password, location, security_question));
             return "delivery register successful";
         }
     }
@@ -141,6 +143,20 @@ public class LoginMenuController {
         else {
             SnappFood.getUserByUsername(username).setPassword(newPassword);
             return "password change successful";
+        }
+    }
+    public static String forgotPassword(Matcher matcher) throws SQLException, ClassNotFoundException {
+        String username = matcher.group("username");
+        String security_question = matcher.group("securityQuestion");
+
+        if(SnappFood.getUserByUsername(username) == null)
+            return "password show failed: username not found";
+
+        else if(!SnappFood.getUserByUsername(username).getSecurity_question().toLowerCase().equals(security_question))
+            return "password show failed: incorrect security question";
+
+        else {
+            return "your password: " + SnappFood.getUserByUsername(username).getPassword();
         }
     }
 

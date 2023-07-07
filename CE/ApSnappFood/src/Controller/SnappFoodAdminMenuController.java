@@ -37,7 +37,7 @@ public class SnappFoodAdminMenuController {
         else if (location < 1 || location > 1000)
             return "add restaurant failed: invalid location format";
         else {
-            SnappFood.addRestaurantManager(new RestaurantManager(name, password, type, location));
+            SnappFood.addRestaurantManager(new RestaurantManager(name, password, type, location, "security_question"));
             return "restaurant added successfully";
         }
     }

@@ -3,14 +3,14 @@ package Model;
 import java.sql.*;
 
 public class User {
-    private String username;
-    private String password;
+    private String username, password, security_question;
     private int balance, location;
 
-    public User(String username, String password, int location) {
+    public User(String username, String password, int location, String security_question) {
         this.username = username;
         this.password = password;
         this.location = location;
+        this.security_question = security_question;
         balance = 0;
     }
 
@@ -20,6 +20,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getSecurity_question() {
+        return security_question;
     }
 
     public void setPassword(String password) throws ClassNotFoundException, SQLException {
