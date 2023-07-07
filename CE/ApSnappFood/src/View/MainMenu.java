@@ -1,10 +1,8 @@
 package View;
-
 import Model.SnappFood;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
-
 public class MainMenu {
     public static void run(Scanner scanner) throws IOException, SQLException, ClassNotFoundException {
         String position = SnappFood.getCurrentUser().getPosition();
