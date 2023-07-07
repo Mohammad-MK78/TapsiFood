@@ -67,24 +67,22 @@ public class CustomerMenuController {
         }
 
         if(categoryMatcher.find()) {
-
             String category = categoryMatcher.group("category");
-
-            if(category.equals("Starter"))
-                for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
-                    System.out.println(food.getName() + " : price=" + food.getPrice());
-
-            else if(category.equals("MainMeal"))
-                for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getEntree())
-                    System.out.println(food.getName() + " : price=" + food.getPrice());
-
-            else if(category.equals("Dessert"))
-                for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getDessert())
-                    System.out.println(food.getName() + " : price=" + food.getPrice());
-
-            else
-                System.out.println("show menu failed: invalid category");
-
+            switch (category) {
+                case "Starter": {
+                    for (Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
+                        System.out.println(food.getName() + " : price=" + food.getPrice());
+                }
+                case "MainMeal": {
+                    for (Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getEntree())
+                        System.out.println(food.getName() + " : price=" + food.getPrice());
+                }
+                case "Dessert": {
+                    for (Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getDessert())
+                        System.out.println(food.getName() + " : price=" + food.getPrice());
+                }
+                default: System.out.println("show menu failed: invalid category");
+            }
         }
 
         else {
@@ -211,8 +209,8 @@ public class CustomerMenuController {
         for(int i = 0; i < cityGraph.city.rows; i++) {
             if (cityGraph.city.cols >= 0) System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
         }
-        ShortestPath gfg = new ShortestPath(graph);
-        int distance = gfg.shortestPath(location, destination);
+        ShortestPath sp = new ShortestPath(graph);
+        int distance = sp.shortestPath(location, destination);
         System.out.println("estimated time : " + distance + " minutes");
     }
 

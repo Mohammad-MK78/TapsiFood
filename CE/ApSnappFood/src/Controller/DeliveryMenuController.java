@@ -24,7 +24,8 @@ public class DeliveryMenuController {
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
-            if (cityGraph.city.cols >= 0) System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
+            if (cityGraph.city.cols >= 0)
+                System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
         }
         ShortestPath gfg = new ShortestPath(graph);
         int distance = gfg.shortestPath(location, destination);
@@ -35,10 +36,11 @@ public class DeliveryMenuController {
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
-            if (cityGraph.city.cols >= 0) System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
+            if (cityGraph.city.cols >= 0)
+                System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
         }
-        ShortestPath gfg = new ShortestPath(graph);
-        ArrayList<Integer> path = gfg.findShortestPath(location, destination);
+        ShortestPath sp = new ShortestPath(graph);
+        ArrayList<Integer> path = sp.findShortestPath(location, destination);
         System.out.println("path : " + path.toString());
     }
 }

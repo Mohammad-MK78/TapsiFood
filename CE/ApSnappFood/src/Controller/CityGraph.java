@@ -4,7 +4,7 @@ import java.io.*;
 public class CityGraph {
     Matrix city = new Matrix(1001, 1001);
     public CityGraph() throws IOException {
-        File file = new File("F:\\telegram\\oop\\پروژه\\phase 1\\graph.txt");
+        File file = new File("graph.txt");
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String s;
         while ((s = bufferedReader.readLine()) != null) {
