@@ -13,7 +13,6 @@ public class DeliveryMenu {
 
         DeliveryMenuController.setCurrentUser();
 
-
         while (true) {
             command = scanner.nextLine();
 
