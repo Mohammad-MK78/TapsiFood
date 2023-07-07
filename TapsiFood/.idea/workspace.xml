@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ef398c40-3988-4fbb-b476-091f2d6cf0a8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/CustomerMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/CustomerMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/LoginMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/MainMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/RestaurantAdminMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/RestaurantAdminMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/SnappFoodAdminMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Controller/SnappFoodAdminMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Model/RestaurantManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/Model/RestaurantManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/CustomerMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/CustomerMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/LoginMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/LoginMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/LoginMenuEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/LoginMenuEnums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/RestaurantAdminMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/RestaurantAdminMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/SnappFoodAdminMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/View/SnappFoodAdminMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/apSnappFood.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/out/production/ApSnappFood/apSnappFood1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/src/Model/SnappFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/src/Model/SnappFood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/ApSnappFood/src/View/LoginMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/ApSnappFood/src/View/LoginMenuEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/Kian/model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/Kian/model/Discount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CE/Kian/model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CE/Kian/model/Food.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2RmgEAlDHWA1hIbg3DD8My6gE7X" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/java/project",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef398c40-3988-4fbb-b476-091f2d6cf0a8" name="Changes" comment="" />
+      <created>1687860561767</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687860561767</updated>
+      <workItem from="1687860563692" duration="36000" />
+      <workItem from="1687861551909" duration="51000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
