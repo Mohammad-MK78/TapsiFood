@@ -174,11 +174,11 @@ public class CustomerMenuController {
     public static void showCart() {
         int index = 1;
         int totalPrice = 0;
-        if (currentUser.getCart().size() == 0) {
+        if (currentUser.getCartOrder().size() == 0) {
             System.out.println("cart is empty");
             return;
         }
-        for(Order order : currentUser.getCart()) {
+        for(Order order : currentUser.getCartOrder()) {
             System.out.println(index + ") " + order);
             totalPrice += order.getNumber() * order.getFood().getPrice();
             index++;
@@ -200,11 +200,11 @@ public class CustomerMenuController {
         }
     }
     public static void show_distance() throws IOException {
-        if (currentUser.getCart().size() == 0) {
+        if (currentUser.getCartOrder().size() == 0) {
             System.out.println("there is no ongoing order");
             return;
         }
-        int location = currentUser.getCart().get(0).getFood().getRestaurant().getLocation(), destination = currentUser.getLocation();
+        int location = currentUser.getCartOrder().get(0).getFood().getRestaurant().getLocation(), destination = currentUser.getLocation();
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
@@ -219,7 +219,7 @@ public class CustomerMenuController {
         Matcher discountMatcher = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.PURCHASE_CART_OPTION)).matcher(command);
         int discountAmount = 0;
         Discount discount = null;
-        if (currentUser.getCart().size() == 0) {
+        if (currentUser.getCartOrder().size() == 0) {
             return "purchase failed: cart is empty";
         }
 
@@ -236,13 +236,13 @@ public class CustomerMenuController {
 
         for (Delivery delivery : SnappFood.getDeliveries()) {
             if (!delivery.is_busy) {
-                currentUser.setDelivery(delivery);
-                delivery.setRestaurant(currentUser.getCart().get(0).getFood().getRestaurant().getLocation());
+                currentUser.getCart().setDelivery(delivery);
+                delivery.setRestaurant(currentUser.getCartOrder().get(0).getFood().getRestaurant().getLocation());
                 delivery.setDestination(currentUser.getLocation());
                 break;
             }
         }
-        for(Order order : currentUser.getCart())
+        for(Order order : currentUser.getCartOrder())
             order.getFood().getRestaurant().changeBalance(order.getNumber() * (order.getFood().getPrice() - order.getFood().getCost()));
 
         int price = currentUser.getDebt() + currentUser.getDebt() / 5;
@@ -251,7 +251,7 @@ public class CustomerMenuController {
         currentUser.changeDebt(-currentUser.getDebt());
 
         SnappFood.removeDiscount(discount);
-        currentUser.getCarts().add(new Cart(currentUser.getCart()));
+        currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));
         return "purchase successful";
     }
     public static void showDelivery() {
@@ -270,12 +270,11 @@ public class CustomerMenuController {
         currentUser.getDelivery().is_busy = false;
         currentUser.getDelivery().setLocation(currentUser.getLocation());
         int totalPrice = 0;
-        for (Order order : currentUser.getCart()) {
+        for (Order order : currentUser.getCartOrder()) {
             totalPrice += order.getNumber() * order.getFood().getPrice();
         }
         currentUser.getDelivery().changeBalance(totalPrice / 5);
         currentUser.resetCart();
-        currentUser.setDelivery(null);
         System.out.println("food collected successfully");
     }
     public static void addRating(Matcher matcher) {
