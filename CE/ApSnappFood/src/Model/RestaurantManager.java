@@ -94,6 +94,6 @@ public class RestaurantManager extends User{
     }
     @Override
     public String toString() {
-        return this.getUsername() + ": type = " + type + " | balance = " + this.getBalance();
+        return this.getUsername() + ": type = " + type + " | balance = " + this.getCredit();
     }
 }

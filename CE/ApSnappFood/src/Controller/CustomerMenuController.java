@@ -11,7 +11,8 @@ public class CustomerMenuController {
     private static Customer currentUser;
 
     public static void setCurrentUser() {
-        currentUser = (Customer) SnappFood.getCurrentUser();
+        User user = SnappFood.getCurrentUser();
+        currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question());
     }
 
     public static String chargeAccount(Matcher matcher) {
@@ -25,7 +26,7 @@ public class CustomerMenuController {
     }
 
     public static int showBalance() {
-        return currentUser.getBalance();
+        return currentUser.getCredit();
     }
     public static String changeLocation(Matcher matcher) {
         int location = Integer.parseInt(matcher.group("location"));
@@ -230,7 +231,7 @@ public class CustomerMenuController {
             discountAmount = discount.getDiscountAmount();
         }
 
-        if(currentUser.getBalance() < currentUser.getDebt() - discountAmount)
+        if(currentUser.getCredit() < currentUser.getDebt() - discountAmount)
             return "purchase failed: inadequate money";
 
         for (Delivery delivery : SnappFood.getDeliveries()) {

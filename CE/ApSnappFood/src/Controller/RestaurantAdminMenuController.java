@@ -1,8 +1,6 @@
 package Controller;
 
-import Model.Food;
-import Model.RestaurantManager;
-import Model.SnappFood;
+import Model.*;
 import View.RestaurantAdminMenuEnums;
 
 import java.util.ArrayList;
@@ -12,7 +10,8 @@ public class RestaurantAdminMenuController {
     private static RestaurantManager currentUser;
 
     public static void setCurrentUser() {
-        currentUser = (RestaurantManager) SnappFood.getCurrentUser();
+        User user = SnappFood.getCurrentUser();
+        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(),"type", user.getLocation(), user.getSecurity_question());
     }
 
     public static String chargeAccount(Matcher matcher) {
@@ -26,7 +25,7 @@ public class RestaurantAdminMenuController {
     }
 
     public static int showBalance() {
-        return currentUser.getBalance();
+        return currentUser.getCredit();
     }
 
     public static String changeType(Matcher matcher) {

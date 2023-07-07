@@ -2,13 +2,16 @@ package Controller;
 
 import Model.Delivery;
 import Model.SnappFood;
+import Model.User;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class DeliveryMenuController {
     private static Delivery currentUser;
     public static void setCurrentUser() {
-        currentUser = (Delivery) SnappFood.getCurrentUser();
+        User user = SnappFood.getCurrentUser();
+        currentUser = new Delivery(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question());
     }
     public static void showRestaurant() {
         System.out.println("restaurant location : " + currentUser.getRestaurant());

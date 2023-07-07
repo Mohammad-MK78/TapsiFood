@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class User {
     private String username, password, position, security_question;
-    private int balance, location;
+    private int credit, location;
 
     public User(String username, String password, int location,String position, String security_question) {
         this.username = username;
@@ -12,7 +12,7 @@ public class User {
         this.location = location;
         this.position = position;
         this.security_question = security_question;
-        balance = 0;
+        credit = 0;
     }
 
     public String getUsername() {
@@ -45,12 +45,12 @@ public class User {
         this.password = password;
     }
 
-    public int getBalance() {
-        return balance;
+    public int getCredit() {
+        return credit;
     }
 
     public void changeBalance(int amount) {
-        balance += amount;
+        credit += amount;
     }
 
     public void setLocation(int location) {
