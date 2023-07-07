@@ -77,9 +77,10 @@ public class SnappFood {
         ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
         if (usernameCheck.next()) {
             String password = usernameCheck.getString("password");
+            String position = usernameCheck.getString("position");
             String security_question = usernameCheck.getString("security_question");
             int location = usernameCheck.getInt("location");
-            return new User(username, password, location, security_question);
+            return new User(username, password, location,position, security_question);
         }
         return null;
     }

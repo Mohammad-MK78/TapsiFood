@@ -3,13 +3,14 @@ package Model;
 import java.sql.*;
 
 public class User {
-    private String username, password, security_question;
+    private String username, password, position, security_question;
     private int balance, location;
 
-    public User(String username, String password, int location, String security_question) {
+    public User(String username, String password, int location,String position, String security_question) {
         this.username = username;
         this.password = password;
         this.location = location;
+        this.position = position;
         this.security_question = security_question;
         balance = 0;
     }
@@ -20,6 +21,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getPosition() {
+        return position;
     }
 
     public String getSecurity_question() {
