@@ -9,8 +9,6 @@ public enum RestaurantAdminMenuEnums {
     VALID_USERNAME ("[\\w_]*[a-zA-Z][\\w_]*"),
     VALID_PASSWORD ("[\\w_]+"),
     VALID_TYPE ("[a-z\\-]+"),
-    REMOVE_RESTAURANT ("\\s*remove\\s+restaurant\\s+(?<name>\\S+)\\s*"),
-
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
     CHARGE_ACCOUNT ("\\s*charge\\s+account\\s+(?<amount>-?\\d+)\\s*"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
