@@ -11,7 +11,7 @@ public class DeliveryMenuController {
     private static Delivery currentUser;
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new Delivery(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question());
+        currentUser = new Delivery(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question(),user.getIs_busy());
     }
     public static void showRestaurant() {
         System.out.println("restaurant location : " + currentUser.getRestaurant());

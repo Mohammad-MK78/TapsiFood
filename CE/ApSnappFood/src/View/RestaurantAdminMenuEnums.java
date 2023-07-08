@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 
 public enum RestaurantAdminMenuEnums {
     LOGOUT ("\\s*logout\\s*"),
+    ADD_RESTAURANT ("\\s*add\\s+restaurant\\s+(?<name>\\S+)\\s+(?<password>\\S+)\\s+(?<type>\\S+)\\s+(?<location>-?\\d+)\\s*"),
+    VALID_USERNAME ("[\\w_]*[a-zA-Z][\\w_]*"),
+    VALID_PASSWORD ("[\\w_]+"),
+    VALID_TYPE ("[a-z\\-]+"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
     CHARGE_ACCOUNT ("\\s*charge\\s+account\\s+(?<amount>-?\\d+)\\s*"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),

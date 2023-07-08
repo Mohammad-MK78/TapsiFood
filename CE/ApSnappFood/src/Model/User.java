@@ -4,14 +4,16 @@ import java.sql.*;
 
 public class User {
     private String username, password, position, security_question;
-    private int credit, location;
+    private int credit, location, debt, is_busy;
 
-    public User(String username, String password, int location,String position, String security_question) {
+    public User(String username, String password, int location,String position, String security_question, int debt, int is_busy) {
         this.username = username;
         this.password = password;
         this.location = location;
         this.position = position;
         this.security_question = security_question;
+        this.debt = debt;
+        this.is_busy = is_busy;
         credit = 0;
     }
 
@@ -29,6 +31,14 @@ public class User {
 
     public String getSecurity_question() {
         return security_question;
+    }
+
+    public int getDebt() {
+        return debt;
+    }
+
+    public int getIs_busy() {
+        return is_busy;
     }
 
     public void setPassword(String password) throws ClassNotFoundException, SQLException {

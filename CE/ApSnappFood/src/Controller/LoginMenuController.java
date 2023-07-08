@@ -69,7 +69,7 @@ public class LoginMenuController {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addCustomer(new Customer(username, password, location, security_question));
+            SnappFood.addCustomer(new Customer(username, password, location, security_question,SnappFood.getUserByUsername(username).getDebt()));
             return "customer register successful";
         }
     }
@@ -99,7 +99,7 @@ public class LoginMenuController {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addDelivery(new Delivery(username, password, location, security_question));
+            SnappFood.addDelivery(new Delivery(username, password, location, security_question,SnappFood.getUserByUsername(username).getIs_busy()));
             return "delivery register successful";
         }
     }

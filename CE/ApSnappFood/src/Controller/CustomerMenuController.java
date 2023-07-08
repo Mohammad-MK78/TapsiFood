@@ -12,7 +12,7 @@ public class CustomerMenuController {
 
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question());
+        currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question(), user.getDebt());
     }
 
     public static String chargeAccount(Matcher matcher) {

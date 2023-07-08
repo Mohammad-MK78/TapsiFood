@@ -8,12 +8,12 @@ public class Customer extends User{
     private Cart cart;
     private int debt;
 
-    public Customer(String username, String password, int location, String security_question) {
-        super(username, password, location, "customer",security_question);
+    public Customer(String username, String password, int location, String security_question, int debt) {
+        super(username, password, location, "customer",security_question, debt, 0);
         discounts = new ArrayList<>();
         cart = new Cart(new ArrayList<>());
         carts = new ArrayList<>();
-        debt = 0;
+        this.debt = debt;
     }
 
     public Delivery getDelivery() {
