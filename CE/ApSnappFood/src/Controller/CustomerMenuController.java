@@ -85,7 +85,6 @@ public class CustomerMenuController {
                 default: System.out.println("show menu failed: invalid category");
             }
         }
-
         else {
             System.out.println("<< STARTER >>");
             for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
