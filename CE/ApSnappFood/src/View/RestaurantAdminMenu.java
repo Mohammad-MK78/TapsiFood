@@ -2,11 +2,12 @@ package View;
 
 import Controller.RestaurantAdminMenuController;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class RestaurantAdminMenu {
-    public static void run(Scanner scanner) {
+    public static void run(Scanner scanner) throws SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
 
@@ -19,6 +20,12 @@ public class RestaurantAdminMenu {
                 System.out.println("user logged out successfully");
                 return;
             }
+
+            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ADD_RESTAURANT)) != null)
+                System.out.println(RestaurantAdminMenuController.addRestaurant(matcher));
+
+            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_RESTAURANT)) != null)
+                System.out.printf(RestaurantAdminMenuController.removeRestaurant(matcher));
 
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.CHARGE_ACCOUNT)) != null)
                 System.out.println(RestaurantAdminMenuController.chargeAccount(matcher));
