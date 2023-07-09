@@ -40,7 +40,7 @@ public class LoginMenuController {
         }
     }
 
-    public static String register(Matcher matcher) throws ClassNotFoundException, SQLException {
+    public static String customerRegister(Matcher matcher) throws ClassNotFoundException, SQLException {
         String username = matcher.group("username");
         String password = matcher.group("password");
         String security_question = matcher.group("securityQuestion");

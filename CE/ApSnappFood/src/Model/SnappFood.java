@@ -128,7 +128,7 @@ public class SnappFood {
             String password = usernameCheck.getString("password");
             String security_question = usernameCheck.getString("security_question");
             int location = usernameCheck.getInt("location");
-            return new RestaurantManager(username, password, location, security_question);
+            return new RestaurantManager(username, password, security_question);
         }
         return null;
     }

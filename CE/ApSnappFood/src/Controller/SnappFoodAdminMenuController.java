@@ -1,8 +1,7 @@
 package Controller;
 
-import Model.Discount;
-import Model.Restaurant;
-import Model.SnappFood;
+import Model.*;
+import View.LoginMenuEnums;
 import View.SnappFoodAdminMenuEnums;
 
 import java.sql.*;
@@ -11,6 +10,46 @@ import java.util.regex.Pattern;
 
 public class SnappFoodAdminMenuController {
 
+    public static String restaurantManagerRegister(Matcher matcher) throws ClassNotFoundException, SQLException {
+        String username = matcher.group("username");
+        String password = matcher.group("password");
+        String security_question = matcher.group("securityQuestion");
+
+        if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
+            return "Register failed: invalid username format";
+
+        else if(SnappFood.getUserByUsername(username) != null)
+            return "Register failed: username already exists";
+
+        else if(LoginMenuEnums.getMatcher(password, LoginMenuEnums.VALID_PASSWORD) == null)
+            return "Register failed: invalid password format";
+
+        else if(password.length() < 5 ||
+                !Pattern.compile("[a-z]").matcher(password).find() ||
+                !Pattern.compile("[A-Z]").matcher(password).find() ||
+                !Pattern.compile("\\d").matcher(password).find())
+            return "Register failed: weak password";
+        else {
+            String sql = "INSERT INTO tapsifood.accounts(username, password, position, security_question) VALUES ('"+username+"', '"+password+"', 'manager', '"+security_question+"')";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+            SnappFood.addRestaurantManager(new RestaurantManager(username, password, security_question));
+            return "Manager Register successful";
+        }
+    }
+    public static String removeRestaurantManager(Matcher matcher) throws SQLException, ClassNotFoundException {
+        String username = matcher.group("username");
+
+        if(SnappFood.getUserByUsername(username) == null)
+            return "remove account failed: username not found";
+
+        else {
+            SnappFood.removeUser(SnappFood.getUserByUsername(username));
+            return "remove account successful";
+        }
+    }
     public static void showRestaurant(String command) throws ClassNotFoundException, SQLException {
         Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);

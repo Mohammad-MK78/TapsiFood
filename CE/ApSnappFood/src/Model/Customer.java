@@ -60,7 +60,7 @@ public class Customer extends User{
     public Order getOrderByFoodNameAndRestaurantName(String foodName, String restaurantName) {
         for(Order order : cart.getOrders())
             if(order.getFood().getName().equals(foodName) &&
-                order.getFood().getRestaurant().getUsername().equals(restaurantName))
+                order.getFood().getRestaurant().getName().equals(restaurantName))
                 return order;
         return null;
     }
