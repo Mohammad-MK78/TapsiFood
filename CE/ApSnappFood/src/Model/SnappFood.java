@@ -96,8 +96,8 @@ public class SnappFood {
         ResultSet nameCheck = statement.executeQuery(sqlCheckRestaurant);
         if (nameCheck.next()) {
             String type = nameCheck.getString("type");
-            String position = nameCheck.getString("position");
             int location = nameCheck.getInt("location");
+
             return new Restaurant(name, type, location);
         }
         return null;

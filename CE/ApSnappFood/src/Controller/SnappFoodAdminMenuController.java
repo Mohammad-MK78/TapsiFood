@@ -66,27 +66,32 @@ public class SnappFoodAdminMenuController {
             while (typeCheck.next()) {
                 managerID = typeCheck.getInt("managerID");
                 String sqlManagerType = "SELECT * FROM tapsifood.accounts where id='" + managerID + "'";
-                ResultSet managerCheck = statement.executeQuery(sqlManagerType);
-                String managerName = managerCheck.getString("username");
+                Statement statement2 = connection.createStatement();
+                ResultSet managerCheck = statement2.executeQuery(sqlManagerType);
+                String managerName = "";
+                if (managerCheck.next())
+                    managerName = managerCheck.getString("username");
                 String name = typeCheck.getString("name");
                 Restaurant restaurant = SnappFood.getRestaurantByName(name);
-                System.out.println((index++) + ". " + restaurant.getName() + " | Manager: " + managerName + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
+                System.out.println((index++) + ". " + restaurant.getName() + " | Manager: " + managerName + " -> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
             }
         }
         else {
-            String type = typeMatcher.group("type");
             Class.forName("com.mysql.cj.jdbc.Driver");
             String sqlCheckRestaurant = "SELECT * FROM tapsifood.restaurants";
             ResultSet restaurantCheck = statement.executeQuery(sqlCheckRestaurant);
             int index = 1, managerID;
             while (restaurantCheck.next()) {
+                String name = restaurantCheck.getString("name");
                 managerID = restaurantCheck.getInt("managerID");
                 String sqlManagerType = "SELECT * FROM tapsifood.accounts where id='" + managerID + "'";
-                ResultSet managerCheck = statement.executeQuery(sqlManagerType);
-                String managerName = managerCheck.getString("username");
-                String name = restaurantCheck.getString("name");
+                Statement statement2 = connection.createStatement();
+                ResultSet managerCheck = statement2.executeQuery(sqlManagerType);
+                String managerName = "";
+                if (managerCheck.next())
+                    managerName = managerCheck.getString("username");
                 Restaurant restaurant = SnappFood.getRestaurantByName(name);
-                System.out.println((index++) + ". " + restaurant.getName() + " | Manager: " + managerName + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
+                System.out.println((index++) + ". " + restaurant.getName() + " | Manager: " + managerName + " -> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
             }
         }
     }
