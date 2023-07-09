@@ -1,7 +1,7 @@
 package Controller;
 
 import Model.*;
-import View.SnappFoodAdminMenuEnums;
+import View.RestaurantAdminMenuEnums;
 
 import java.sql.*;
 import java.util.regex.Matcher;
@@ -12,41 +12,31 @@ public class RestaurantAdminMenuController {
 
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question());
+        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getSecurity_question());
     }
     public static String addRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
-        String password = matcher.group("password");
         String type = matcher.group("type");
         int location = Integer.parseInt(matcher.group("location"));
 
-        if(SnappFoodAdminMenuEnums.getMatcher(name, SnappFoodAdminMenuEnums.VALID_USERNAME) == null)
+        if(RestaurantAdminMenuEnums.getMatcher(name, RestaurantAdminMenuEnums.VALID_NAME) == null)
             return "add restaurant failed: invalid username format";
 
         else if(SnappFood.getUserByUsername(name) != null)
             return "add restaurant failed: username already exists";
 
-        else if(SnappFoodAdminMenuEnums.getMatcher(password, SnappFoodAdminMenuEnums.VALID_PASSWORD) == null)
-            return "add restaurant failed: invalid password format";
-
-        else if(password.length() < 5 ||
-                !Pattern.compile("[a-z]").matcher(password).find() ||
-                !Pattern.compile("[A-Z]").matcher(password).find() ||
-                !Pattern.compile("\\d").matcher(password).find())
-            return "add restaurant failed: weak password";
-
-        else if(SnappFoodAdminMenuEnums.getMatcher(type, SnappFoodAdminMenuEnums.VALID_TYPE) == null)
+        else if(RestaurantAdminMenuEnums.getMatcher(type, RestaurantAdminMenuEnums.VALID_TYPE) == null)
             return "add restaurant failed: invalid type format";
         else if (location < 1 || location > 1000)
             return "add restaurant failed: invalid location format";
         else {
-            SnappFood.addRestaurantManager(new RestaurantManager(name, password, location, "security_question"));
+            currentUser.addRestaurant(new Restaurant(name, type, location));
             return "restaurant added successfully";
         }
     }
 
     public static void showRestaurants(String command) throws ClassNotFoundException, SQLException {
-        Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));
+        Pattern typePattern = Pattern.compile(RestaurantAdminMenuEnums.getString(RestaurantAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");

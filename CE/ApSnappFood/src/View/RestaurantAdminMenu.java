@@ -1,8 +1,6 @@
 package View;
 
 import Controller.RestaurantAdminMenuController;
-import Controller.SnappFoodAdminMenuController;
-
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -27,8 +25,12 @@ public class RestaurantAdminMenu {
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_RESTAURANTS) != null)
                 RestaurantAdminMenuController.showRestaurants(command);
 
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ENTER_RESTAURANT)) != null)
-                System.out.println(RestaurantAdminMenuController.enterRestaurant(matcher));
+            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ENTER_RESTAURANT)) != null) {
+                String result = RestaurantAdminMenuController.enterRestaurant(matcher);
+                System.out.println(result);
+                if(result.equals("enter successful"))
+                    RestaurantMenu.run(scanner);
+            }
 
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_RESTAURANT)) != null)
                 System.out.println(RestaurantAdminMenuController.removeRestaurant(matcher));
