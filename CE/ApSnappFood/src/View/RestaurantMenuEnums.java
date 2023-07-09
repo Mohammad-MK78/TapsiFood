@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum RestaurantMenuEnums {
-    LOGOUT ("\\s*logout\\s*"),
+    BACK ("\\s*logout\\s*"),
 
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
     ADD_FOOD ("\\s*add\\s+food\\s+(?<name>\\S+)\\s+(?<category>\\S+)\\s+(?<price>-?\\d+)\\s+(?<cost>-?\\d+)\\s*"),

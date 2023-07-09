@@ -16,8 +16,8 @@ public class RestaurantMenu {
         while(true) {
             command = scanner.nextLine();
 
-            if(RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.LOGOUT) != null){
-                System.out.println("user logged out successfully");
+            if(RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.BACK) != null){
+                System.out.println("back successfully");
                 return;
             }
 
@@ -40,7 +40,7 @@ public class RestaurantMenu {
                 System.out.printf(RestaurantMenuController.removeFood(matcher));
 
             else if(RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_CURRENT_MENU) != null)
-                System.out.println("restaurant admin menu");
+                System.out.println("restaurant menu");
 
             else
                 System.out.println("invalid command!");

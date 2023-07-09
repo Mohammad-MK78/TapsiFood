@@ -52,11 +52,10 @@ public class CustomerMenuController {
             while (typeCheck.next()) {
                 String name = typeCheck.getString("name");
                 Restaurant restaurant = SnappFood.getRestaurantByName(name);
-                System.out.println((index++) + ". " + restaurant.getName() + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
+                System.out.println((index++) + ". " + restaurant.getName() + " -> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
             }
         }
         else {
-            String type = typeMatcher.group("type");
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
@@ -66,7 +65,7 @@ public class CustomerMenuController {
             while (typeCheck.next()) {
                 String name = typeCheck.getString("name");
                 Restaurant restaurant = SnappFood.getRestaurantByName(name);
-                System.out.println((index++) + ". " + restaurant.getName() + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
+                System.out.println((index++) + ". " + restaurant.getName() + " -> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
             }
         }
     }
@@ -76,7 +75,7 @@ public class CustomerMenuController {
         Pattern categoryPattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_MENU_OPTION));
         Matcher categoryMatcher = categoryPattern.matcher(command);
         int restaurantID = 0;
-        if(SnappFood.getRestaurantManagerByUsername(restaurantName) == null) {
+        if(SnappFood.getRestaurantByName(restaurantName) == null) {
             System.out.println("show menu failed: restaurant not found");
             return;
         }

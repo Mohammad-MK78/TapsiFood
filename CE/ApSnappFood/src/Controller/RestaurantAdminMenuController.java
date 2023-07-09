@@ -40,7 +40,7 @@ public class RestaurantAdminMenuController {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-        String getManagerID = "SELECT * FROM tapsifood.accounts where name='" + currentUser.getUsername() + "'";
+        String getManagerID = "SELECT * FROM tapsifood.accounts where username='" + currentUser.getUsername() + "'";
         int managerID = 0;
         ResultSet getID = statement.executeQuery(getManagerID);
         if (getID.next())
@@ -59,7 +59,6 @@ public class RestaurantAdminMenuController {
             }
         }
         else {
-            String type = typeMatcher.group("type");
             Class.forName("com.mysql.cj.jdbc.Driver");
             String sqlCheckType = "SELECT * FROM tapsifood.restaurants where managerID='" + managerID + "'";
             ResultSet typeCheck = statement.executeQuery(sqlCheckType);
