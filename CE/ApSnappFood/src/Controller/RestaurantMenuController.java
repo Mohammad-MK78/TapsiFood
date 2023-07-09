@@ -2,19 +2,15 @@ package Controller;
 
 import Model.*;
 import View.RestaurantMenuEnums;
-import View.SnappFoodAdminMenuEnums;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class RestaurantMenuController {
     private static Restaurant currentRestaurant;
 
     public static void setCurrentRestaurant() { //TODO
-        Restaurant restaurant = SnappFood.getcurrentRestaurant();
-        currentRestaurant = new RestaurantManager(user.getUsername(), user.getPassword(),"type", user.getLocation(), user.getSecurity_question());
+        Restaurant restaurant = SnappFood.getCurrentRestaurant();
+        currentRestaurant = new Restaurant(restaurant.getName(), restaurant.getType(), restaurant.getLocation());
     }
 
     public static int showBalance() {

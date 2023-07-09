@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class SnappFood {
     private static User currentUser;
+    private static Restaurant currentRestaurant;
     private static ArrayList<User> users = new ArrayList<>();
     private static SnappFoodManager snappFoodManager;
     private static ArrayList<Customer> customers = new ArrayList<>();
@@ -87,6 +88,20 @@ public class SnappFood {
         return null;
     }
 
+    public static Restaurant getRestaurantByName(String name) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlCheckRestaurant = "SELECT * FROM tapsifood.restaurants where name='" + name + "'";
+        ResultSet nameCheck = statement.executeQuery(sqlCheckRestaurant);
+        if (nameCheck.next()) {
+            String type = nameCheck.getString("type");
+            String position = nameCheck.getString("position");
+            int location = nameCheck.getInt("location");
+            return new Restaurant(name, type, location);
+        }
+        return null;
+    }
     public static Customer getCustomerByUsername(String username) {
         for(Customer customer : customers)
             if(customer.getUsername().toLowerCase().equals(username)) return customer;
@@ -99,12 +114,21 @@ public class SnappFood {
         return null;
     }
 
+
     public static User getCurrentUser() {
         return currentUser;
     }
 
     public static void setCurrentUser(User currentUser) {
         SnappFood.currentUser = currentUser;
+    }
+
+    public static Restaurant getCurrentRestaurant() {
+        return currentRestaurant;
+    }
+
+    public static void setCurrentRestaurant(Restaurant currentRestaurant) {
+        SnappFood.currentRestaurant = currentRestaurant;
     }
 
     public static void removeDiscount(Discount discount) {

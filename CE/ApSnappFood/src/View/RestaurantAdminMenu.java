@@ -3,11 +3,12 @@ package View;
 import Controller.RestaurantAdminMenuController;
 import Controller.SnappFoodAdminMenuController;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class RestaurantAdminMenu {
-    public static void run(Scanner scanner) {
+    public static void run(Scanner scanner) throws SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
 
@@ -37,12 +38,6 @@ public class RestaurantAdminMenu {
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_BALANCE) != null)
                 System.out.println(RestaurantAdminMenuController.showBalance());
-
-            else if (RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_COMMENTS) != null)
-                System.out.println(RestaurantAdminMenuController.showComment());
-
-            else if ((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REPLY_TO_COMMENT)) != null)
-                System.out.println(RestaurantAdminMenuController.reply(matcher));
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("restaurant admin menu");

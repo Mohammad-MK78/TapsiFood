@@ -1,11 +1,8 @@
 package Controller;
 
 import Model.*;
-import View.RestaurantAdminMenuEnums;
 import View.SnappFoodAdminMenuEnums;
-
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -90,15 +87,13 @@ public class RestaurantAdminMenuController {
         return currentUser.getCredit();
     }
 
-    public static String reply(Matcher matcher) {
-        int num = Integer.parseInt(matcher.group("commentNum"));
-        String message = matcher.group("comment");
-        if (num > currentUser.getComments().size() || currentUser.getComments().get(num) == null)
-            return "comment not found!";
-        currentUser.reply(num, message);
-        return "reply added!";
-    }
-    public static ArrayList showComment() {
-        return currentUser.getComments();
-    }
+
+    public static String enterRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
+        String name = matcher.group("name");
+        if(SnappFood.getRestaurantByName(name) == null)
+            return "enter failed: name not found";
+        else {
+            SnappFood.setCurrentRestaurant(SnappFood.getRestaurantByName(name));
+            return "enter successful";
+        }    }
 }

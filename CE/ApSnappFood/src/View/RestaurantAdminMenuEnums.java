@@ -14,9 +14,7 @@ public enum RestaurantAdminMenuEnums {
     VALID_TYPE ("[a-z\\-]+"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
     CHARGE_ACCOUNT ("\\s*charge\\s+account\\s+(?<amount>-?\\d+)\\s*"),
-    SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
-    SHOW_COMMENTS ("\\s*show\\s+comments\\s*"),
-    REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*(?<comment>)"),
+    SHOW_BALANCE ("\\s*show\\s+balance\\s*");
 
     private String string;
 
