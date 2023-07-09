@@ -90,11 +90,11 @@ public class Restaurant{
         }
     }
 
-    public Food getFoodByName(String name) throws ClassNotFoundException, SQLException {
+    public static Food getFoodByName(String name, String restaurantName) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-        String getResID = "SELECT * FROM tapsifood.restaurants where name='" + getName() + "'";
+        String getResID = "SELECT * FROM tapsifood.restaurants where name='" + restaurantName + "'";
         int restaurantID = 0;
         ResultSet getID = statement.executeQuery(getResID);
         if (getID.next())
@@ -102,7 +102,7 @@ public class Restaurant{
         String sqlCheckFood = "SELECT * FROM tapsifood.foods where name='" + name + "' AND restaurantID='" + restaurantID + "'";
         ResultSet nameCheck = statement.executeQuery(sqlCheckFood);
         if (nameCheck.next()) {
-            Restaurant restaurant = this;
+            Restaurant restaurant = SnappFood.getRestaurantByName(restaurantName);
             String category = nameCheck.getString("category");
             int price = nameCheck.getInt("price");
             int cost = nameCheck.getInt("cost");

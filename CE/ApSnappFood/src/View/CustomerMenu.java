@@ -3,12 +3,13 @@ package View;
 import Controller.CustomerMenuController;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
 public class CustomerMenu {
 
-    public static void run(Scanner scanner) throws IOException {
+    public static void run(Scanner scanner) throws IOException, SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
 

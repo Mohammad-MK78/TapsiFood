@@ -4,7 +4,7 @@ import Model.*;
 import View.CustomerMenuEnums;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,22 +38,35 @@ public class CustomerMenuController {
         currentUser.setLocation(location);
         return "change location successful";
     }
-    public static void showRestaurant(String command) {
+    public static void showRestaurant(String command) throws ClassNotFoundException, SQLException {
         Pattern typePattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
-        int index = 1;
         if(typeMatcher.find()) {
             String type = typeMatcher.group("type");
-            for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
-                if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant.getUsername() + "-> type : " + restaurant.getType() + " | rating : " + restaurant.getRating() +  " | loc : " + restaurant.getLocation());
-                    index++;
-                }
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            String sqlCheckType = "SELECT * FROM tapsifood.restaurants where type='" + type + "'";
+            ResultSet typeCheck = statement.executeQuery(sqlCheckType);
+            int index = 1;
+            while (typeCheck.next()) {
+                String name = typeCheck.getString("name");
+                Restaurant restaurant = SnappFood.getRestaurantByName(name);
+                System.out.println((index++) + ". " + restaurant.getName() + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
+            }
         }
         else {
-            for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant.getUsername() + "-> type : " + restaurant.getType() + " | rating : " + restaurant.getRating() + " | loc : " + restaurant.getLocation());
-                index++;
+            String type = typeMatcher.group("type");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            String sqlCheckType = "SELECT * FROM tapsifood.restaurants";
+            ResultSet typeCheck = statement.executeQuery(sqlCheckType);
+            int index = 1;
+            while (typeCheck.next()) {
+                String name = typeCheck.getString("name");
+                Restaurant restaurant = SnappFood.getRestaurantByName(name);
+                System.out.println((index++) + ". " + restaurant.getName() + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
             }
         }
     }
@@ -62,53 +75,83 @@ public class CustomerMenuController {
         String restaurantName = matcher.group("restaurantName");
         Pattern categoryPattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_MENU_OPTION));
         Matcher categoryMatcher = categoryPattern.matcher(command);
-
+        int restaurantID = 0;
         if(SnappFood.getRestaurantManagerByUsername(restaurantName) == null) {
             System.out.println("show menu failed: restaurant not found");
             return;
         }
+        else { //for check restaurantID
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            String sqlCheckRestaurant = "SELECT * FROM tapsifood.restaurants where name='" + restaurantName + "'";
+            ResultSet restaurantCheck = statement.executeQuery(sqlCheckRestaurant);
+            if (restaurantCheck.next())
+                restaurantID = restaurantCheck.getInt("id");
+        }
 
         if(categoryMatcher.find()) {
             String category = categoryMatcher.group("category");
-            switch (category) {
-                case "Starter": {
-                    for (Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
-                        System.out.println(food.getName() + " : price=" + food.getPrice());
-                }
-                case "MainMeal": {
-                    for (Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getEntree())
-                        System.out.println(food.getName() + " : price=" + food.getPrice());
-                }
-                case "Dessert": {
-                    for (Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getDessert())
-                        System.out.println(food.getName() + " : price=" + food.getPrice());
-                }
-                default: System.out.println("show menu failed: invalid category");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            String sqlCheckType = "SELECT * FROM tapsifood.foods where restaurantID='" + restaurantID + "' AND category = '" + category + "'";
+            ResultSet typeCheck = statement.executeQuery(sqlCheckType);
+            if (typeCheck.next())
+                System.out.println("<< " + category + " >>");
+            while (typeCheck.next()) {
+                String name = typeCheck.getString("name");
+                Food food = Restaurant.getFoodByName(name, restaurantName);
+                System.out.println(food.getName() + ": price=" + food.getPrice());
             }
         }
 
         else {
-            System.out.println("<< STARTER >>");
-            for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getStarter())
-                System.out.println(food.getName() + " : price=" + food.getPrice());
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            String sqlCheckStarter = "SELECT * FROM tapsifood.foods where restaurantID='" + restaurantID + "' AND category = 'starter'";
+            ResultSet StarterCheck = statement.executeQuery(sqlCheckStarter);
 
-            System.out.println("<< MAIN MEAL >>");
-            for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getEntree())
-                System.out.println(food.getName() + " : price=" + food.getPrice());
+            String sqlCheckEntree = "SELECT * FROM tapsifood.foods where restaurantID='" + restaurantID + "' AND category = 'starter'";
+            ResultSet EntreeCheck = statement.executeQuery(sqlCheckEntree);
 
-            System.out.println("<< DESSERT >>");
-            for(Food food : SnappFood.getRestaurantManagerByUsername(restaurantName).getDessert())
-                System.out.println(food.getName() + " : price=" + food.getPrice());
+            String sqlCheckDessert = "SELECT * FROM tapsifood.foods where restaurantID='" + restaurantID + "' AND category = 'starter'";
+            ResultSet DessertCheck = statement.executeQuery(sqlCheckDessert);
+
+            if (StarterCheck.next())
+                System.out.println("<< STARTER >>");
+            while (StarterCheck.next()) {
+                String name = StarterCheck.getString("name");
+                Food food = Restaurant.getFoodByName(name, restaurantName);
+                System.out.println(food.getName() + ": price=" + food.getPrice());
+            }
+
+            if (EntreeCheck.next())
+                System.out.println("<< MAIN MEAL >>");
+            while (EntreeCheck.next()) {
+                String name = EntreeCheck.getString("name");
+                Food food = Restaurant.getFoodByName(name, restaurantName);
+                System.out.println(food.getName() + ": price=" + food.getPrice());
+            }
+
+            if (DessertCheck.next())
+                System.out.println("<< DESSERT >>");
+            while (DessertCheck.next()) {
+                String name = DessertCheck.getString("name");
+                Food food = Restaurant.getFoodByName(name, restaurantName);
+                System.out.println(food.getName() + ": price=" + food.getPrice());
+            }
         }
     }
 
     public static String addToCart(Matcher matcher, String command) throws SQLException, ClassNotFoundException {
-        RestaurantManager restaurant = SnappFood.getRestaurantManagerByUsername(matcher.group("restaurantName"));
+        Restaurant restaurant = SnappFood.getRestaurantByName(matcher.group("restaurantName"));
 
         if(restaurant == null)
             return "add to cart failed: restaurant not found";
 
-        Food food = restaurant.getFoodByName(matcher.group("foodName"));
+        Food food = Restaurant.getFoodByName(matcher.group("foodName"), restaurant.getName());
 
         if(food == null)
             return "add to cart failed: food not found";

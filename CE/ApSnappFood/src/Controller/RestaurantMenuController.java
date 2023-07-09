@@ -36,7 +36,7 @@ public class RestaurantMenuController {
         else if(RestaurantMenuEnums.getMatcher(name, RestaurantMenuEnums.VALID_FOOD_NAME) == null)
             return "add food failed: invalid food name";
 
-        else if(currentRestaurant.getFoodByName(name) != null)
+        else if(Restaurant.getFoodByName(name, currentRestaurant.getName()) != null)
             return "add food failed: food already exists";
 
         else if(price < 1 || cost < 1)
@@ -57,10 +57,10 @@ public class RestaurantMenuController {
     public static String removeFood(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
 
-        if(currentRestaurant.getFoodByName(name) == null)
+        if(Restaurant.getFoodByName(name, currentRestaurant.getName()) == null)
             return "remove food failed: food not found\n";
 
-        currentRestaurant.removeFood(currentRestaurant.getFoodByName(name));
+        Restaurant.getFoodByName(name, currentRestaurant.getName());
         return "";
     }
     public static ArrayList showComment() {
