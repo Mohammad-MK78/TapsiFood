@@ -1,32 +1,53 @@
 package Controller;
 
 import Model.Discount;
-import Model.RestaurantManager;
+import Model.Restaurant;
 import Model.SnappFood;
 import View.SnappFoodAdminMenuEnums;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SnappFoodAdminMenuController {
 
-    public static void showRestaurant(String command) {
+    public static void showRestaurant(String command) throws ClassNotFoundException, SQLException {
         Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
-        int index = 1;
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+
         if(typeMatcher.find()) {
             String type = typeMatcher.group("type");
-            for(RestaurantManager restaurant : SnappFood.getRestaurantManagers())
-                if(restaurant.getType().equals(type)) {
-                    System.out.println(index + ") " + restaurant + " -> loc :" + restaurant.getLocation());
-                    index++;
-                }
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String sqlCheckType = "SELECT * FROM tapsifood.restaurants where type='" + type + "'";
+            ResultSet typeCheck = statement.executeQuery(sqlCheckType);
+            int index = 1, managerID;
+            while (typeCheck.next()) {
+                managerID = typeCheck.getInt("managerID");
+                String sqlManagerType = "SELECT * FROM tapsifood.accounts where id='" + managerID + "'";
+                ResultSet managerCheck = statement.executeQuery(sqlManagerType);
+                String managerName = managerCheck.getString("username");
+                String name = typeCheck.getString("name");
+                Restaurant restaurant = SnappFood.getRestaurantByName(name);
+                System.out.println((index++) + ". " + restaurant.getName() + " | Manager: " + managerName + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
+            }
         }
         else {
-            for(RestaurantManager restaurant : SnappFood.getRestaurantManagers()) {
-                System.out.println(index + ") " + restaurant + " -> loc :" + restaurant.getLocation());
-                index++;
+            String type = typeMatcher.group("type");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String sqlCheckRestaurant = "SELECT * FROM tapsifood.restaurants";
+            ResultSet restaurantCheck = statement.executeQuery(sqlCheckRestaurant);
+            int index = 1, managerID;
+            while (restaurantCheck.next()) {
+                managerID = restaurantCheck.getInt("managerID");
+                String sqlManagerType = "SELECT * FROM tapsifood.accounts where id='" + managerID + "'";
+                ResultSet managerCheck = statement.executeQuery(sqlManagerType);
+                String managerName = managerCheck.getString("username");
+                String name = restaurantCheck.getString("name");
+                Restaurant restaurant = SnappFood.getRestaurantByName(name);
+                System.out.println((index++) + ". " + restaurant.getName() + " | Manager: " + managerName + "-> type: " + restaurant.getType() + " | rating: " + restaurant.getRating() +  " | loc: " + restaurant.getLocation());
             }
         }
     }
