@@ -5,19 +5,19 @@ import java.util.ArrayList;
 public class Customer extends User{
     private ArrayList<Discount> discounts;
     private ArrayList<Cart> carts;
-    private Cart cart;
+    private Cart currentCart;
     private int debt;
 
     public Customer(String username, String password, int location, String security_question, int debt) {
         super(username, password, location, "customer",security_question, debt, 0);
         discounts = new ArrayList<>();
-        cart = new Cart(new ArrayList<>());
+        currentCart = new Cart(new ArrayList<>());
         carts = new ArrayList<>();
         this.debt = debt;
     }
 
     public Delivery getDelivery() {
-        return cart.getDelivery();
+        return currentCart.getDelivery();
     }
     public void addDiscount(Discount discount) {
         discounts.add(discount);
@@ -33,11 +33,11 @@ public class Customer extends User{
                 return discount;
         return null;
     }
-    public Cart getCart() {
-        return cart;
+    public Cart getCurrentCart() {
+        return currentCart;
     }
     public ArrayList<Order> getCartOrder() {
-        return cart.getOrders();
+        return currentCart.getOrders();
     }
     public ArrayList<Cart> getCarts() {
         return carts;
@@ -47,18 +47,18 @@ public class Customer extends User{
     }
 
     public void addToCart(Order order) {
-        cart.addToCart(order);
+        currentCart.addToCart(order);
     }
 
     public Order getOrderByFood(Food food) {
-        for(Order order : cart.getOrders())
+        for(Order order : currentCart.getOrders())
             if(order.getFood().equals(food))
                 return order;
         return null;
     }
 
     public Order getOrderByFoodNameAndRestaurantName(String foodName, String restaurantName) {
-        for(Order order : cart.getOrders())
+        for(Order order : currentCart.getOrders())
             if(order.getFood().getName().equals(foodName) &&
                 order.getFood().getRestaurant().getName().equals(restaurantName))
                 return order;
@@ -66,7 +66,7 @@ public class Customer extends User{
     }
 
     public void removeOrder(Order order) {
-        cart.removeOrder(order);
+        currentCart.removeOrder(order);
     }
 
     public int getDebt() {
@@ -82,13 +82,12 @@ public class Customer extends User{
     }
 
     public void resetCart() {
-        this.cart.resetCart();
+        this.currentCart.resetCart();
     }
-    public void addComment(String message) {
-        this.carts.get(0).orders.get(0).getFood().getRestaurant().getComments().add(message + " : " + this.carts.get(0).orders.get(0).getCustomer().getUsername());
+    public void addComment(String message, String restaurantName) {
+        SnappFood.getRestaurantByName(restaurantName).getComments().add(message + " : " + this.getUsername());
     }
-    public void addRating(int rate) {
-        this.carts.get(0).rating = rate;
-        this.carts.get(0).orders.get(0).getFood().getRestaurant().addRating(rate);
+    public void addRating(int rate, int orderNumber) {
+        this.carts.get(orderNumber-1).getRestaurant().addRating(rate);
     }
 }

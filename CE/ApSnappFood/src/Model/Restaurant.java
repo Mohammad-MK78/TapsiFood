@@ -6,9 +6,10 @@ import java.util.ArrayList;
 public class Restaurant{
     private String name, type;
     private int location, credit;
-    private double rating, num;
+    private ArrayList<Integer> rating;
     private ArrayList<String> comments;
     private ArrayList<Cart> history;
+    private ArrayList<Cart> ongoingOrders;
     private ArrayList<String> replies;
     private ArrayList<Food> menu;
     private ArrayList<Food> Starter;
@@ -19,9 +20,10 @@ public class Restaurant{
         this.name = name;
         this.type = type;
         this.location = location;
-        this.rating = 0;
-        this.num = 0;
+        this.rating = new ArrayList<>();
         this.credit = 0;
+        ongoingOrders = new ArrayList<>();
+        history = new ArrayList<>();
         menu = new ArrayList<>();
         Starter = new ArrayList<>();
         MainMeal = new ArrayList<>();
@@ -30,8 +32,7 @@ public class Restaurant{
         replies = new ArrayList<>();
     }
     public void addRating(int rate) {
-        rating += rate;
-        num++;
+        rating.add(rate);
     }
 
     public String getName() {
@@ -46,8 +47,29 @@ public class Restaurant{
         return credit;
     }
 
+    public ArrayList<Cart> getHistory() {
+        return history;
+    }
+
+    public ArrayList<Cart> getOngoingOrders() {
+        return ongoingOrders;
+    }
+
+    public void addCartToHistory(Cart cart) {
+        history.add(cart);
+    }
+    public void addCartToOngoings(Cart cart) {
+        ongoingOrders.add(cart);
+    }
+    public void removeFromOngoing(Cart cart) {
+        ongoingOrders.remove(cart);
+    }
     public double getRating(){
-        return rating / num;
+        double totalRate = 0;
+        for (int i : rating) {
+            totalRate += i;
+        }
+        return totalRate / rating.size();
     }
 
     public String getType() {

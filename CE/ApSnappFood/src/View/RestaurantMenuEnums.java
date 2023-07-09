@@ -11,6 +11,8 @@ public enum RestaurantMenuEnums {
     VALID_FOOD_NAME ("[a-z\\-]+"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
     CHANGE_TYPE ("\\s*change\\s+type\\s+(?<type>\\S+)\\s*"),
+    SHOW_ORDER_HISTORY ("\\s*show\\s+history\\s*"),
+    SHOW_ONGOING_ORDERS ("\\s*show\\s+ongoing\\s*"),
     SHOW_COMMENTS ("\\s*show\\s+comments\\s*"),
     REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*(?<comment>)"),
     REMOVE_FOOD ("\\s*remove\\s+food\\s+(?<name>\\S+)\\s*");

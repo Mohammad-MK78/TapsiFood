@@ -10,12 +10,10 @@ public class RestaurantMenu {
     public static void run(Scanner scanner) throws SQLException, ClassNotFoundException {
         Matcher matcher;
         String command;
-
         RestaurantMenuController.setCurrentRestaurant();
 
         while(true) {
             command = scanner.nextLine();
-
             if(RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.BACK) != null){
                 System.out.println("back successfully");
                 return;
@@ -29,6 +27,10 @@ public class RestaurantMenu {
 
             else if (RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_COMMENTS) != null)
                 System.out.println(RestaurantMenuController.showComment());
+            else if (RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_ORDER_HISTORY) != null)
+                RestaurantMenuController.showOrderHistory();
+            else if (RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_ONGOING_ORDERS) != null)
+                RestaurantMenuController.showOngoingOrders();
 
             else if ((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.REPLY_TO_COMMENT)) != null)
                 System.out.println(RestaurantMenuController.reply(matcher));

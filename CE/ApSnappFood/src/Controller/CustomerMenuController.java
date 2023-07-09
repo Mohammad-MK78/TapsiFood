@@ -215,20 +215,7 @@ public class CustomerMenuController {
     }
 
     public static void showCart() {
-        int index = 1;
-        int totalPrice = 0;
-        if (currentUser.getCartOrder().size() == 0) {
-            System.out.println("cart is empty");
-            return;
-        }
-        for(Order order : currentUser.getCartOrder()) {
-            System.out.println(index + ") " + order);
-            totalPrice += order.getNumber() * order.getFood().getPrice();
-            index++;
-        }
-        System.out.println("Food price : " + totalPrice);
-        System.out.println("Delivery price : " + totalPrice / 5);
-        System.out.println("Total: " + (totalPrice + totalPrice / 5));
+        currentUser.getCurrentCart().showCart();
     }
 
     public static void showDiscounts() {
@@ -247,7 +234,7 @@ public class CustomerMenuController {
             System.out.println("there is no ongoing order");
             return;
         }
-        int location = currentUser.getCartOrder().get(0).getFood().getRestaurant().getLocation(), destination = currentUser.getLocation();
+        int location = currentUser.getCurrentCart().getRestaurant().getLocation(), destination = currentUser.getLocation();
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
@@ -279,8 +266,8 @@ public class CustomerMenuController {
 
         for (Delivery delivery : SnappFood.getDeliveries()) {
             if (!delivery.is_busy) {
-                currentUser.getCart().setDelivery(delivery);
-                delivery.setRestaurant(currentUser.getCartOrder().get(0).getFood().getRestaurant().getLocation());
+                currentUser.getCurrentCart().setDelivery(delivery);
+                delivery.setRestaurant(currentUser.getCurrentCart().getRestaurant().getLocation());
                 delivery.setDestination(currentUser.getLocation());
                 break;
             }
@@ -295,6 +282,7 @@ public class CustomerMenuController {
 
         SnappFood.removeDiscount(discount);
         currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));
+        currentUser.getCurrentCart().getRestaurant().addCartToOngoings(currentUser.getCurrentCart());
         return "purchase successful";
     }
     public static void showDelivery() {
@@ -304,10 +292,13 @@ public class CustomerMenuController {
         }
         System.out.println("delivery name : " + currentUser.getDelivery().getUsername());
     }
-    public static void addComment(Matcher matcher) {
+    public static String addComment(Matcher matcher) {
         String message = matcher.group("message");
-        currentUser.addComment(message);
-        System.out.println("comment added successfully");
+        String restaurantName = matcher.group("restaurantName");
+        if (SnappFood.getRestaurantByName(restaurantName) == null)
+            return "restaurant doesn't exist";
+        currentUser.addComment(message, restaurantName);
+        return "comment added successfully";
     }
     public static void collected() {
         currentUser.getDelivery().is_busy = false;
@@ -317,12 +308,35 @@ public class CustomerMenuController {
             totalPrice += order.getNumber() * order.getFood().getPrice();
         }
         currentUser.getDelivery().changeBalance(totalPrice / 5);
+        currentUser.getCurrentCart().getRestaurant().addCartToHistory(currentUser.getCurrentCart());
+        currentUser.getCurrentCart().getRestaurant().removeFromOngoing(currentUser.getCurrentCart());
         currentUser.resetCart();
         System.out.println("food collected successfully");
     }
-    public static void addRating(Matcher matcher) {
-        int rate = Integer.parseInt(matcher.group("rate"));
-        currentUser.addRating(rate);
+    public static String addRating(Matcher matcher) {
+        int rate = Integer.parseInt(matcher.group("rate")), orderNumber = Integer.parseInt(matcher.group("orderNumber"));
+        if (currentUser.getCarts() == null || orderNumber > currentUser.getCarts().size() || orderNumber < 1)
+            return "no cart available";
+        currentUser.addRating(rate, orderNumber);
+        return "rate added successfully";
     }
-
+    public static void showRestaurantComments(Matcher matcher) {
+        String restaurantName = matcher.group("restaurantName");
+        if (SnappFood.getRestaurantByName(restaurantName).getComments().size() == 0)
+            System.out.println("no comments");
+        else {
+            System.out.println("comments :");
+            for (String comment : SnappFood.getRestaurantByName(restaurantName).getComments()) {
+                System.out.println("{ " + comment + " }");
+            }
+        }
+    }
+    public static void showOrderHistory() {
+        int index = 1;
+        for (Cart cart : currentUser.getCarts()) {
+            System.out.println(index + ")");
+            cart.showCart();
+            index++;
+        }
+    }
 }

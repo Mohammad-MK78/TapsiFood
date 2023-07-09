@@ -4,7 +4,6 @@ import Model.*;
 import View.RestaurantMenuEnums;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 
 public class RestaurantMenuController {
@@ -52,7 +51,7 @@ public class RestaurantMenuController {
         if (num > currentRestaurant.getComments().size() || currentRestaurant.getComments().get(num) == null)
             return "comment not found!";
         currentRestaurant.reply(num, message);
-        return "reply added!";
+        return "replied successfully!";
     }
     public static String removeFood(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
@@ -63,7 +62,23 @@ public class RestaurantMenuController {
         Restaurant.getFoodByName(name, currentRestaurant.getName());
         return "";
     }
-    public static ArrayList showComment() {
-        return currentRestaurant.getComments();
+    public static String showComment() {
+        return currentRestaurant.getComments().toString();
+    }
+    public static void showOrderHistory() {
+        int index = 1;
+        for (Cart cart : currentRestaurant.getHistory()) {
+            System.out.println(index + ")");
+            cart.showCart();
+            index++;
+        }
+    }
+    public static void showOngoingOrders() {
+        int index = 1;
+        for (Cart cart : currentRestaurant.getOngoingOrders()) {
+            System.out.println(index + ")");
+            cart.showCart();
+            index++;
+        }
     }
 }
