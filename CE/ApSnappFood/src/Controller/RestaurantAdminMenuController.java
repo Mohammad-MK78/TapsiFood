@@ -43,6 +43,7 @@ public class RestaurantAdminMenuController {
             return "restaurant added successfully";
         }
     }
+
     public static void showRestaurants(String command) {
         Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
