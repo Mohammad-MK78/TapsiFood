@@ -1,13 +1,13 @@
 package Model;
 
 public class Food {
-    private RestaurantManager restaurant;
+    private Restaurant restaurant;
     private String name;
     private String category;
     private int price;
     private int cost;
 
-    public Food(RestaurantManager restaurant, String name, String category, int price, int cost) {
+    public Food(Restaurant restaurant, String name, String category, int price, int cost) {
         this.restaurant = restaurant;
         this.name = name;
         this.category = category;
@@ -15,7 +15,7 @@ public class Food {
         this.cost = cost;
     }
 
-    public RestaurantManager getRestaurant() {
+    public Restaurant getRestaurant() {
         return restaurant;
     }
 

@@ -1,6 +1,7 @@
 package View;
 
 import Controller.RestaurantAdminMenuController;
+import Controller.SnappFoodAdminMenuController;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -19,6 +20,17 @@ public class RestaurantAdminMenu {
                 System.out.println("user logged out successfully");
                 return;
             }
+            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ADD_RESTAURANT)) != null)
+                System.out.println(RestaurantAdminMenuController.addRestaurant(matcher));
+
+            else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_RESTAURANTS) != null)
+                RestaurantAdminMenuController.showRestaurants(command);
+
+            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ENTER_RESTAURANT)) != null)
+                System.out.println(RestaurantAdminMenuController.enterRestaurant(matcher));
+
+            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_RESTAURANT)) != null)
+                System.out.println(RestaurantAdminMenuController.removeRestaurant(matcher));
 
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.CHARGE_ACCOUNT)) != null)
                 System.out.println(RestaurantAdminMenuController.chargeAccount(matcher));
@@ -26,20 +38,11 @@ public class RestaurantAdminMenu {
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_BALANCE) != null)
                 System.out.println(RestaurantAdminMenuController.showBalance());
 
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ADD_FOOD)) != null)
-                System.out.println(RestaurantAdminMenuController.addFood(matcher));
-
             else if (RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_COMMENTS) != null)
                 System.out.println(RestaurantAdminMenuController.showComment());
 
             else if ((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REPLY_TO_COMMENT)) != null)
                 System.out.println(RestaurantAdminMenuController.reply(matcher));
-
-            else if ((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.CHANGE_TYPE)) != null)
-                System.out.println(RestaurantAdminMenuController.changeType(matcher));
-
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_FOOD)) != null)
-                System.out.printf(RestaurantAdminMenuController.removeFood(matcher));
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("restaurant admin menu");
