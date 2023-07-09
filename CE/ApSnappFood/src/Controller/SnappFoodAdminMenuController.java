@@ -11,36 +11,6 @@ import java.util.regex.Pattern;
 
 public class SnappFoodAdminMenuController {
 
-    public static String addRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String name = matcher.group("name");
-        String password = matcher.group("password");
-        String type = matcher.group("type");
-        int location = Integer.parseInt(matcher.group("location"));
-
-        if(SnappFoodAdminMenuEnums.getMatcher(name, SnappFoodAdminMenuEnums.VALID_USERNAME) == null)
-            return "add restaurant failed: invalid username format";
-
-        else if(SnappFood.getUserByUsername(name) != null)
-            return "add restaurant failed: username already exists";
-
-        else if(SnappFoodAdminMenuEnums.getMatcher(password, SnappFoodAdminMenuEnums.VALID_PASSWORD) == null)
-            return "add restaurant failed: invalid password format";
-
-        else if(password.length() < 5 ||
-                !Pattern.compile("[a-z]").matcher(password).find() ||
-                !Pattern.compile("[A-Z]").matcher(password).find() ||
-                !Pattern.compile("\\d").matcher(password).find())
-            return "add restaurant failed: weak password";
-
-        else if(SnappFoodAdminMenuEnums.getMatcher(type, SnappFoodAdminMenuEnums.VALID_TYPE) == null)
-            return "add restaurant failed: invalid type format";
-        else if (location < 1 || location > 1000)
-            return "add restaurant failed: invalid location format";
-        else {
-            SnappFood.addRestaurantManager(new RestaurantManager(name, password, type, location, "security_question"));
-            return "restaurant added successfully";
-        }
-    }
     public static void showRestaurant(String command) {
         Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
@@ -59,17 +29,6 @@ public class SnappFoodAdminMenuController {
                 index++;
             }
         }
-    }
-
-    public static String removeRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String restaurantName = matcher.group("name");
-
-        if(SnappFood.getRestaurantManagerByUsername(restaurantName) != null) {
-            SnappFood.removeUser(SnappFood.getRestaurantManagerByUsername(restaurantName));
-            return "";
-        }
-
-        return "remove restaurant failed: restaurant not found\n";
     }
 
     public static String addDiscount(Matcher matcher) {

@@ -3,97 +3,34 @@ package Model;
 import java.util.ArrayList;
 
 public class RestaurantManager extends User{
-    private String type;
-    private double rating, num;
-    private ArrayList<String> comments;
-    private ArrayList<Cart> history;
-    private ArrayList<String> replies;
-    private ArrayList<Food> menu;
-    private ArrayList<Food> Starter;
-    private ArrayList<Food> MainMeal;
-    private ArrayList<Food> Dessert;
+    private ArrayList<Restaurant> restaurants;
 
     public RestaurantManager(String username, String password, String type, int location, String security_question) {
         super(username, password, location,"manager", security_question, 0, 0);
-        this.type = type;
-        this.rating = 0;
-        this.num = 0;
-        menu = new ArrayList<>();
-        Starter = new ArrayList<>();
-        MainMeal = new ArrayList<>();
-        Dessert = new ArrayList<>();
-        comments = new ArrayList<>();
-        replies = new ArrayList<>();
-    }
-    public void addRating(int rate) {
-        rating += rate;
-        num++;
-    }
-    public double getRating(){
-        return rating / num;
+        this.restaurants = new ArrayList<>();
     }
 
-    public String getType() {
-        return type;
-    }
-    public ArrayList<Food> getStarter() {
-        return Starter;
+    public void addRestaurant(Restaurant restaurant) {
+        restaurants.add(restaurant);
     }
 
-    public ArrayList<Food> getEntree() {
-        return MainMeal;
-    }
-
-    public ArrayList<Food> getDessert() {
-        return Dessert;
-    }
-    public ArrayList<String> getComments() {
-        return comments;
-    }
-
-    public void reply(int num, String message) {
-        replies.add(num, message);
-    }
-    public void addFood(Food food) {
-        menu.add(food);
-        switch (food.getCategory()) {
-            case "Starter":
-                Starter.add(food);
-                break;
-            case "MainMeal":
-                MainMeal.add(food);
-                break;
-            case "Dessert":
-                Dessert.add(food);
-        }
-    }
-
-    public Food getFoodByName(String name) {
-        for(Food food : menu)
-            if(food.getName().equals(name))
-                return food;
+    public Restaurant getRestaurantByName(String name) {
+        for(Restaurant restaurant : restaurants)
+            if(restaurant.getName().equals(name))
+                return restaurant;
         return null;
     }
 
-    public void removeFood(Food food) {
-        menu.remove(food);
-
-        switch (food.getCategory()) {
-            case "Starter":
-                Starter.remove(food);
-                break;
-            case "MainMeal":
-                MainMeal.remove(food);
-                break;
-            case "Dessert":
-                Dessert.remove(food);
-        }
+    public void removeFood(Restaurant restaurant) {
+        restaurants.remove(restaurant);
     }
-    public void changeType(String type) {
-        this.type = type;
+    public void changeType(String name, String type) {
+        for(Restaurant restaurant : restaurants)
+            if(restaurant.getName().equals(name))
+                restaurant.setType(type);
     }
     @Override
     public String toString() {
-        return this.getUsername() + ": type = " + type + " | balance = " + this.getCredit();
+        return this.getUsername() + ": Number of restaurants = " + this.restaurants.size() + " | balance = " + this.getCredit();
     }
 }

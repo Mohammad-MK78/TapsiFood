@@ -19,14 +19,16 @@ public class SnappFoodAdminMenu {
                 return;
             }
 
-            else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.ADD_RESTAURANT)) != null)
-                System.out.println(SnappFoodAdminMenuController.addRestaurant(matcher));
+            else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.ADD_RESTAURANT_MANAGER)) != null)
+                System.out.println(SnappFoodAdminMenuController.addRestaurantManager(matcher));
+
+            else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.REMOVE_RESTAURANT_MANAGER)) != null)
+                System.out.printf(SnappFoodAdminMenuController.removeRestaurantManager(matcher));
+
 
             else if(SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.SHOW_RESTAURANT) != null)
                 SnappFoodAdminMenuController.showRestaurant(command);
 
-            else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.REMOVE_RESTAURANT)) != null)
-                System.out.printf(SnappFoodAdminMenuController.removeRestaurant(matcher));
 
             else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.SET_DISCOUNT)) != null)
                 System.out.println(SnappFoodAdminMenuController.addDiscount(matcher));
