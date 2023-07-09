@@ -2,6 +2,8 @@ package Controller;
 
 import Model.*;
 import View.RestaurantMenuEnums;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 
@@ -22,7 +24,7 @@ public class RestaurantMenuController {
         currentRestaurant.changeType(type);
         return "type changed successfully";
     }
-    public static String addFood(Matcher matcher) {
+    public static String addFood(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
         String category = matcher.group("category");
         int price = Integer.parseInt(matcher.group("price"));
@@ -52,7 +54,7 @@ public class RestaurantMenuController {
         currentRestaurant.reply(num, message);
         return "reply added!";
     }
-    public static String removeFood(Matcher matcher) {
+    public static String removeFood(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
 
         if(currentRestaurant.getFoodByName(name) == null)

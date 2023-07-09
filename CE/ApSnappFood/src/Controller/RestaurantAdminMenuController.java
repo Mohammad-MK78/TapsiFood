@@ -11,7 +11,7 @@ public class RestaurantAdminMenuController {
 
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(),"type", user.getLocation(), user.getSecurity_question());
+        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question());
     }
     public static String addRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
@@ -39,7 +39,7 @@ public class RestaurantAdminMenuController {
         else if (location < 1 || location > 1000)
             return "add restaurant failed: invalid location format";
         else {
-            SnappFood.addRestaurantManager(new RestaurantManager(name, password, type, location, "security_question"));
+            SnappFood.addRestaurantManager(new RestaurantManager(name, password, location, "security_question"));
             return "restaurant added successfully";
         }
     }

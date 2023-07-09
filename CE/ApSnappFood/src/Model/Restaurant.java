@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 public class Restaurant{
@@ -89,10 +90,24 @@ public class Restaurant{
         }
     }
 
-    public Food getFoodByName(String name) {
-        for(Food food : menu)
-            if(food.getName().equals(name))
-                return food;
+    public Food getFoodByName(String name) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String getResID = "SELECT * FROM tapsifood.restaurants where name='" + getName() + "'";
+        int restaurantID = 0;
+        ResultSet getID = statement.executeQuery(getResID);
+        if (getID.next())
+            restaurantID = getID.getInt("id");
+        String sqlCheckFood = "SELECT * FROM tapsifood.foods where name='" + name + "' AND restaurantID='" + restaurantID + "'";
+        ResultSet nameCheck = statement.executeQuery(sqlCheckFood);
+        if (nameCheck.next()) {
+            Restaurant restaurant = this;
+            String category = nameCheck.getString("category");
+            int price = nameCheck.getInt("price");
+            int cost = nameCheck.getInt("cost");
+            return new Food(restaurant, name, category, price, cost);
+        }
         return null;
     }
 
@@ -116,5 +131,8 @@ public class Restaurant{
     @Override
     public String toString() {
         return this.getName() + ": type = " + type + " | balance = " + this.getCredit();
+    }
+    public void changeBalance(int amount) {
+        credit += amount;
     }
 }

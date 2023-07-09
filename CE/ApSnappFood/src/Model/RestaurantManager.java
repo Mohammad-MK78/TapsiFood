@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RestaurantManager extends User{
     private ArrayList<Restaurant> restaurants;
 
-    public RestaurantManager(String username, String password, String type, int location, String security_question) {
+    public RestaurantManager(String username, String password, int location, String security_question) {
         super(username, password, location,"manager", security_question, 0, 0);
         this.restaurants = new ArrayList<>();
     }

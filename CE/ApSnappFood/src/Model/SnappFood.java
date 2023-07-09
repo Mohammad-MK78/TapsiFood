@@ -102,15 +102,34 @@ public class SnappFood {
         }
         return null;
     }
-    public static Customer getCustomerByUsername(String username) {
-        for(Customer customer : customers)
-            if(customer.getUsername().toLowerCase().equals(username)) return customer;
+    public static Customer getCustomerByUsername(String username) throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlCheckCustomer = "SELECT * FROM tapsifood.accounts where username='" + username + "' AND position='customer'";
+        ResultSet usernameCheck = statement.executeQuery(sqlCheckCustomer);
+        if (usernameCheck.next()) {
+            String password = usernameCheck.getString("password");
+            String security_question = usernameCheck.getString("security_question");
+            int location = usernameCheck.getInt("location");
+            int debt = usernameCheck.getInt("debt");
+            return new Customer(username, password, location, security_question, debt);
+        }
         return null;
     }
 
-    public static RestaurantManager getRestaurantManagerByUsername(String username) {
-        for(RestaurantManager restaurantManager : restaurantManagers)
-            if (restaurantManager.getUsername().toLowerCase().equals(username)) return restaurantManager;
+    public static RestaurantManager getRestaurantManagerByUsername(String username) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlCheckCustomer = "SELECT * FROM tapsifood.accounts where username='" + username + "' AND position='manager'";
+        ResultSet usernameCheck = statement.executeQuery(sqlCheckCustomer);
+        if (usernameCheck.next()) {
+            String password = usernameCheck.getString("password");
+            String security_question = usernameCheck.getString("security_question");
+            int location = usernameCheck.getInt("location");
+            return new RestaurantManager(username, password, location, security_question);
+        }
         return null;
     }
 

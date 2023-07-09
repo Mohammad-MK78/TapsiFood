@@ -31,7 +31,7 @@ public class SnappFoodAdminMenuController {
         }
     }
 
-    public static String addDiscount(Matcher matcher) {
+    public static String addDiscount(Matcher matcher) throws SQLException, ClassNotFoundException {
         String customerUsername = matcher.group("username");
         int discountAmount = Integer.parseInt(matcher.group("amount"));
         String code = matcher.group("code");

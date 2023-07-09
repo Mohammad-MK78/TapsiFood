@@ -4,6 +4,7 @@ import Model.*;
 import View.CustomerMenuEnums;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,7 +58,7 @@ public class CustomerMenuController {
         }
     }
 
-    public static void showMenu(Matcher matcher, String command) {
+    public static void showMenu(Matcher matcher, String command) throws SQLException, ClassNotFoundException {
         String restaurantName = matcher.group("restaurantName");
         Pattern categoryPattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_MENU_OPTION));
         Matcher categoryMatcher = categoryPattern.matcher(command);
@@ -101,7 +102,7 @@ public class CustomerMenuController {
         }
     }
 
-    public static String addToCart(Matcher matcher, String command) {
+    public static String addToCart(Matcher matcher, String command) throws SQLException, ClassNotFoundException {
         RestaurantManager restaurant = SnappFood.getRestaurantManagerByUsername(matcher.group("restaurantName"));
 
         if(restaurant == null)

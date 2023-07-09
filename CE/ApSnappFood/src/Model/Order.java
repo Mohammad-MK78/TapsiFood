@@ -28,6 +28,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return this.food.getName() + " | restaurant=" + this.food.getRestaurant().getUsername() + " price=" + this.number * this.food.getPrice();
+        return this.food.getName() + " | restaurant=" + this.food.getRestaurant().getName() + " price=" + this.number * this.food.getPrice();
     }
 }
