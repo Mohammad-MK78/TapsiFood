@@ -1,0 +1,102 @@
+#loginMenu {
+    -fx-background-color: #ff2189;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36;
+}
+#loginMenuExit {
+     -fx-background-color: #ffcccf;
+     -fx-border-color: #ff2189;
+     -fx-text-fill: #ff2189;
+     -fx-background-radius: 90;
+     -fx-border-radius: 90;
+     -fx-pref-width: 60;
+     -fx-pref-height: 60;
+     -fx-font-size: 16;
+}
+#login {
+      -fx-background-color: #ffcccf;
+      -fx-border-color: #ff2189;
+      -fx-text-fill: #ff2189;
+      -fx-background-radius: 90;
+      -fx-border-radius: 90;
+      -fx-pref-width: 90;
+      -fx-pref-height: 60;
+      -fx-font-size: 22;
+}
+#backToMainMenu {
+       -fx-background-color: #ffcccf;
+       -fx-border-color: #ff2189;
+       -fx-text-fill: #ff2189;
+       -fx-background-radius: 90;
+       -fx-border-radius: 90;
+       -fx-pref-width: 60;
+       -fx-pref-height: 60;
+       -fx-font-size: 18;
+}
+#username {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#password {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#securityQuestion {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#usernameLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 20;
+}
+#passwordLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 20;
+}
+#securityQuestionLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 22;
+    -fx-pref-width: 240;
+}
+#notAppropriateUsername {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 16;
+}
+#notAppropriatePassword {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 16;
+}
+#wrongSecurityQuestion {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 16;
+}
+#yourPassword {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 20;
+}
+#recoverPassword {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#securityLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 20;
+}

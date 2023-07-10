@@ -1,0 +1,28 @@
+#mainMenuLabel {
+    -fx-background-color: #ff2189;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36;
+    -fx-font-style: italic;
+}
+#loginButton {
+    -fx-background-color: #ff2189;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16;
+}
+#registerButton {
+    -fx-background-color: #ff2189;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16;
+}
+#welcomeLabel {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 27;
+}
