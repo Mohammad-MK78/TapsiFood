@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Customer extends User{
@@ -84,7 +85,7 @@ public class Customer extends User{
     public void resetCart() {
         this.currentCart.resetCart();
     }
-    public void addComment(String message, String restaurantName) {
+    public void addComment(String message, String restaurantName) throws SQLException, ClassNotFoundException {
         SnappFood.getRestaurantByName(restaurantName).getComments().add(message + " : " + this.getUsername());
     }
     public void addRating(int rate, int orderNumber) {
