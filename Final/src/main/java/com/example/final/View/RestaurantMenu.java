@@ -1,6 +1,6 @@
-package View;
+package com.example.Final.View;
 
-import Controller.RestaurantMenuController;
+import com.example.Final.Controller.RestaurantMenuController;
 
 import java.sql.SQLException;
 import java.util.Scanner;

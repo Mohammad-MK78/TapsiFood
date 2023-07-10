@@ -1,5 +1,6 @@
-package com.example.Final;
+package com.example.Final.FXMLConttroller;
 
+import com.example.Final.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,17 +51,17 @@ public class LoginMenuController {
     public void loginComplete() throws IOException {
         if (!password.getText().equals("")) {
             if (password.getText().equals("farzan2831")) {
-                FXMLLoader Loader = new FXMLLoader(HelloApplication.class.getResource("CustomerMenu.fxml"));
+                FXMLLoader Loader = new FXMLLoader(Main.class.getResource("CustomerMenu.fxml"));
                 Scene scene = new Scene(Loader.load());
-                HelloApplication.getStage().setScene(scene);
+                Main.getStage().setScene(scene);
             } else {
                 notAppropriatePassword.setVisible(true);
             }
         }
     }
     public void goBackToMainMenu() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(HelloApplication.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
-        HelloApplication.getStage().setScene(scene);
+        Main.getStage().setScene(scene);
     }
 }

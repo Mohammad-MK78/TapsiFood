@@ -1,8 +1,8 @@
-package Controller;
+package com.example.Final.Controller;
 
-import Model.Delivery;
-import Model.SnappFood;
-import Model.User;
+import com.example.Final.Model.Delivery;
+import com.example.Final.Model.SnappFood;
+import com.example.Final.Model.User;
 
 import java.io.IOException;
 import java.util.ArrayList;

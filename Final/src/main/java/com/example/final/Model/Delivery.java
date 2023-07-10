@@ -1,4 +1,4 @@
-package Model;
+package com.example.Final.Model;
 
 public class Delivery extends User{
     private int restaurant, destination;

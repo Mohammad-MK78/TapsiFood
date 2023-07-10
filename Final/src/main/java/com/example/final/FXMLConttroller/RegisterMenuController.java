@@ -1,5 +1,6 @@
-package com.example.Final;
+package com.example.Final.FXMLConttroller;
 
+import com.example.Final.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,14 +34,14 @@ public class RegisterMenuController {
         backToMainMenu.setVisible(false);
     }
     public void registerComplete() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(HelloApplication.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
-        HelloApplication.getStage().setScene(scene);
+        Main.getStage().setScene(scene);
     }
     public void goBackToMainMenu() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(HelloApplication.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
-        HelloApplication.getStage().setScene(scene);
+        Main.getStage().setScene(scene);
     }
     public void goBackToRegisterMenu() {
         registerChoices.setVisible(!registerChoices.isVisible());

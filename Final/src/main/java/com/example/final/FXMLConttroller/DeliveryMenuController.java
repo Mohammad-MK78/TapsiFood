@@ -1,5 +1,6 @@
-package com.example.Final;
+package com.example.Final.FXMLConttroller;
 
+import com.example.Final.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
@@ -31,9 +32,9 @@ public class DeliveryMenuController {
 
     }
     public void logout() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(HelloApplication.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
-        HelloApplication.getStage().setScene(scene);
+        Main.getStage().setScene(scene);
     }
     public void backToDeliveryMenu() {
 

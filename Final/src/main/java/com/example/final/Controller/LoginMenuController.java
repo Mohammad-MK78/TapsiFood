@@ -1,10 +1,10 @@
-package Controller;
+package com.example.Final.Controller;
 
-import Model.Customer;
-import Model.Delivery;
-import Model.SnappFood;
-import Model.SnappFoodManager;
-import View.LoginMenuEnums;
+import com.example.Final.Model.Customer;
+import com.example.Final.Model.Delivery;
+import com.example.Final.Model.SnappFood;
+import com.example.Final.Model.SnappFoodManager;
+import com.example.Final.View.LoginMenuEnums;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

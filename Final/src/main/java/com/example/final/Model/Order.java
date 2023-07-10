@@ -1,4 +1,4 @@
-package Model;
+package com.example.Final.Model;
 public class Order {
     private Food food;
     private int number;

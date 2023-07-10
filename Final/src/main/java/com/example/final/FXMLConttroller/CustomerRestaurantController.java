@@ -1,4 +1,4 @@
-package com.example.Final;
+package com.example.Final.FXMLConttroller;
 
 public class CustomerRestaurantController {
 

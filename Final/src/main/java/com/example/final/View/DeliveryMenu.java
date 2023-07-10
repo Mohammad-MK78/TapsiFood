@@ -1,6 +1,6 @@
-package View;
+package com.example.Final.View;
 
-import Controller.DeliveryMenuController;
+import com.example.Final.Controller.DeliveryMenuController;
 
 import java.io.IOException;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
-package View;
+package com.example.Final.View;
 
-import Controller.RestaurantAdminMenuController;
+import com.example.Final.Controller.RestaurantAdminMenuController;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Matcher;

@@ -1,4 +1,4 @@
-package Model;
+package com.example.Final.Model;
 
 public class SnappFoodManager extends User{
     public SnappFoodManager(String username, String password) {

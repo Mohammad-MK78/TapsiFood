@@ -1,4 +1,4 @@
-package Model;
+package com.example.Final.Model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

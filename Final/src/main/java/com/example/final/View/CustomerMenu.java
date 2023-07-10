@@ -1,6 +1,6 @@
-package View;
+package com.example.Final.View;
 
-import Controller.CustomerMenuController;
+import com.example.Final.Controller.CustomerMenuController;
 
 import java.io.IOException;
 import java.sql.SQLException;

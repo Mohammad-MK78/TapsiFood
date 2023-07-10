@@ -1,5 +1,5 @@
-package View;
-import Model.SnappFood;
+package com.example.Final.View;
+import com.example.Final.Model.SnappFood;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;

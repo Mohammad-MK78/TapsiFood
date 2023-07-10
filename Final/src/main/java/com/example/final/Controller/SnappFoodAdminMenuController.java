@@ -1,8 +1,8 @@
-package Controller;
+package com.example.Final.Controller;
 
-import Model.*;
-import View.LoginMenuEnums;
-import View.SnappFoodAdminMenuEnums;
+import com.example.Final.Model.*;
+import com.example.Final.View.LoginMenuEnums;
+import com.example.Final.View.SnappFoodAdminMenuEnums;
 
 import java.sql.*;
 import java.util.regex.Matcher;

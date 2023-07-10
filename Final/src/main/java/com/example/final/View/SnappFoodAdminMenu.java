@@ -1,6 +1,6 @@
-package View;
+package com.example.Final.View;
 
-import Controller.SnappFoodAdminMenuController;
+import com.example.Final.Controller.SnappFoodAdminMenuController;
 
 import java.sql.SQLException;
 import java.util.Scanner;

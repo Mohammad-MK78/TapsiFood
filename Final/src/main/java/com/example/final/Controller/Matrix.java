@@ -1,4 +1,4 @@
-package Controller;
+package com.example.Final.Controller;
 
 public class Matrix {
     int rows;

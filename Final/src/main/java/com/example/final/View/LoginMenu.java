@@ -1,6 +1,6 @@
-package View;
+package com.example.Final.View;
 
-import Controller.LoginMenuController;
+import com.example.Final.Controller.LoginMenuController;
 import java.sql.*;
 import java.io.IOException;
 import java.util.Scanner;
