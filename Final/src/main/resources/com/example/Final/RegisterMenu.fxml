@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="registerMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../RegisterTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.RegisterMenuController">
+   <children>
+      <Button fx:id="registerMenuExit" layoutX="740.0" mnemonicParsing="false" onAction="#exit" text="exit" />
+      <Button fx:id="backToMainMenu" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" />
+      <Button fx:id="register" layoutX="335.0" layoutY="441.0" mnemonicParsing="false" onAction="#registerComplete" prefHeight="60.0" prefWidth="150.0" text="Register" visible="false" />
+      <Button fx:id="backToRegisterMenu" mnemonicParsing="false" onAction="#goBackToRegisterMenu" text="←" visible="false" />
+      <VBox fx:id="registerChoices" layoutX="310.0" layoutY="212.0" prefHeight="340.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="customerLogin" mnemonicParsing="false" onAction="#register" prefHeight="100.0" prefWidth="200.0" text="Customer" />
+            <Button fx:id="deliveryLogin" mnemonicParsing="false" onAction="#register" prefHeight="100.0" prefWidth="200.0" text="Delivery" />
+            <Button fx:id="adminLogin" mnemonicParsing="false" onAction="#register" prefHeight="100.0" prefWidth="200.0" text="Manager" textFill="#faffc3" />
+         </children>
+      </VBox>
+      <VBox fx:id="welcomeVBox" layoutX="210.0" layoutY="30.0" prefHeight="160.0" prefWidth="400.0" spacing="10.0">
+         <children>
+            <Label fx:id="welcome" alignment="CENTER" prefHeight="100.0" prefWidth="400.0" text="Register Menu" textFill="#ff0070" />
+            <Label fx:id="registerSelect" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="Select from below ↓" textFill="#ff00f6" />
+         </children>
+      </VBox>
+      <HBox fx:id="registerHBox" layoutX="170.0" layoutY="118.0" prefHeight="300.0" prefWidth="480.0" visible="false">
+         <children>
+            <VBox prefHeight="300.0" prefWidth="260.0" spacing="40.0">
+               <children>
+                  <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="260.0" text="Username:  " />
+                  <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="260.0" text="Password:  " />
+                  <Label fx:id="securityQuestionLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="265.0" text="Ur elementary school:  " />
+                  <Label fx:id="securityQuestionNotice" alignment="CENTER" prefHeight="30.0" prefWidth="260.0" text="in case you forgot your password :)" />
+               </children>
+            </VBox>
+            <VBox prefHeight="300.0" prefWidth="220.0" spacing="40.0">
+               <children>
+                  <TextField fx:id="username" prefHeight="50.0" prefWidth="200.0" />
+                  <PasswordField fx:id="password" prefHeight="50.0" prefWidth="200.0" />
+                  <TextField fx:id="securityQuestion" prefHeight="50.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
