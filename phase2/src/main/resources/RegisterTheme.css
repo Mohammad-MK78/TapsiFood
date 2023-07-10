@@ -1,0 +1,86 @@
+Button {
+    -fx-background-radius: 60;
+    -fx-text-fill: #ff2189;
+    -fx-border-radius: 60;
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 24;
+}
+#welcome {
+    -fx-background-color: #ff2189;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36;
+}
+#registerSelect {
+    -fx-font-size: 24;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-text-fill: #ff2189;
+}
+#registerMenuExit {
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 18;
+}
+#username {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#password {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#securityQuestion {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#usernameLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 24;
+}
+#passwordLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 24;
+}
+#securityQuestionLabel {
+    -fx-text-fill: #ff2189;
+    -fx-font-size: 22;
+    -fx-pref-width: 240;
+}
+#securityQuestionNotice {
+    -fx-font-size: 14;
+    -fx-text-fill: #ff0000;
+}
+#login {
+    -fx-font-size: 18;
+}
+#backToMainMenu {
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 18;
+}
+#backToRegisterMenu {
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 18;
+}
