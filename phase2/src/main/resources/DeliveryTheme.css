@@ -1,0 +1,97 @@
+#DeliveryMenu {
+    -fx-background-color: #ff2189;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36;
+}
+#showPath {
+    -fx-background-radius: 60;
+    -fx-text-fill: #ff2189;
+    -fx-border-radius: 60;
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 24;
+}
+#showTime {
+    -fx-background-radius: 60;
+    -fx-text-fill: #ff2189;
+    -fx-border-radius: 60;
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 24;
+}
+#showDestination {
+    -fx-background-radius: 60;
+    -fx-text-fill: #ff2189;
+    -fx-border-radius: 60;
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 24;
+}
+#showLocation {
+    -fx-background-radius: 60;
+    -fx-text-fill: #ff2189;
+    -fx-border-radius: 60;
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 24;
+}
+#showRestaurant {
+    -fx-background-radius: 60;
+    -fx-text-fill: #ff2189;
+    -fx-border-radius: 60;
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 24;
+}
+#DeliveryMenuOptions {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 24;
+}
+#DeliveryMenuCharge {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#DeliveryMenuLogout {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#DeliveryMenuShowBalance {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#backToDeliveryMenu {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 24;
+}
