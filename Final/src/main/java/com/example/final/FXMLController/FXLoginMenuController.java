@@ -1,4 +1,4 @@
-package com.example.Final.FXMLConttroller;
+package com.example.Final.FXMLController;
 
 import com.example.Final.Main;
 import javafx.application.Platform;
@@ -13,7 +13,7 @@ import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 
-public class LoginMenuController {
+public class FXLoginMenuController {
     @FXML
     Hyperlink forgotPassword;
     @FXML
@@ -51,7 +51,7 @@ public class LoginMenuController {
     public void loginComplete() throws IOException {
         if (!password.getText().equals("")) {
             if (password.getText().equals("farzan2831")) {
-                FXMLLoader Loader = new FXMLLoader(Main.class.getResource("CustomerMenu.fxml"));
+                FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerMenu.fxml"));
                 Scene scene = new Scene(Loader.load());
                 Main.getStage().setScene(scene);
             } else {
@@ -60,7 +60,7 @@ public class LoginMenuController {
         }
     }
     public void goBackToMainMenu() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
     }

@@ -1,4 +1,4 @@
-package com.example.Final.FXMLConttroller;
+package com.example.Final.FXMLController;
 
 import com.example.Final.Main;
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class ManagerMenuController {
+public class FXManagerMenuController {
     @FXML
     Label ManageMenu;
     @FXML
@@ -47,7 +47,7 @@ public class ManagerMenuController {
         ManagerMenuShowBalance.setVisible(!ManagerMenuShowBalance.isVisible());
     }
     public void logout() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
     }

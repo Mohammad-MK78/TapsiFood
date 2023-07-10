@@ -3,15 +3,15 @@ package com.example.Final.Model;
 import java.sql.*;
 
 public class User {
-    private String username, password, position, security_question;
+    private String username, password, position, securityQuestion;
     private int credit, location, debt, is_busy;
 
-    public User(String username, String password, int location,String position, String security_question, int credit, int debt, int is_busy) {
+    public User(String username, String password, int location,String position, String securityQuestion, int credit, int debt, int is_busy) {
         this.username = username;
         this.password = password;
         this.location = location;
         this.position = position;
-        this.security_question = security_question;
+        this.securityQuestion = securityQuestion;
         this.credit = credit;
         this.debt = debt;
         this.is_busy = is_busy;
@@ -29,8 +29,8 @@ public class User {
         return position;
     }
 
-    public String getSecurity_question() {
-        return security_question;
+    public String getSecurityQuestion() {
+        return securityQuestion;
     }
 
     public int getDebt() {

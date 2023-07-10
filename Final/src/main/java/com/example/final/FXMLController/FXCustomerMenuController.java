@@ -1,4 +1,4 @@
-package com.example.Final.FXMLConttroller;
+package com.example.Final.FXMLController;
 
 import com.example.Final.Main;
 import javafx.fxml.FXML;
@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class CustomerMenuController {
+public class FXCustomerMenuController {
     @FXML
     TableView restaurantsByType = new TableView<>(), totalRestaurants = new TableView<>();
     @FXML
@@ -34,7 +34,7 @@ public class CustomerMenuController {
             showBalance.setVisible(!showBalance.isVisible());
     }
     public void logout() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
     }

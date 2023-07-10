@@ -4,26 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Add Package">
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Add Folders">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXCustomerRestaurantController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXDeliveryMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXLoginMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXMainMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXManagerMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXRegisterMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXRestaurantMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CustomerRestaurantTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CustomerRestaurantTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CustomerTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DeliveryTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/DeliveryTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LoginTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainMenuTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/MainMenuTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ManagerMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/ManagerMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/RegisterTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/RestaurantTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/RestaurantTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/CustomerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/CustomerMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/CustomerRestaurant.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/DeliveryMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/DeliveryMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/LoginMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/LoginMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/ManagerMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/RegisterMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/RegisterMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/Final/RestaurantMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/fxml/RestaurantMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/restaurantsICON.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Pictures/restaurantsICON.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/searchICON.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Pictures/searchICON.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/LoginMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/CustomerMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/CustomerRestaurantController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/DeliveryMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/LoginMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/MainMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/ManagerMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/RegisterMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/RestaurantMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/final/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/CustomerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/DeliveryMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/LoginMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/RegisterMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RegisterMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/RestaurantMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RestaurantMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +54,29 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Uni/OOP/TapsiFood/Final",
+    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.33.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "SQL Dialects",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Uni\OOP\TapsiFood\Final\src\main\resources\fxml" />
       <recent name="D:\Uni\OOP\TapsiFood\Final\src\main\resources\Pictures" />
       <recent name="D:\Uni\OOP\TapsiFood\Final\src\main\resources\css" />
     </key>
@@ -78,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689000599747</updated>
-      <workItem from="1689000600786" duration="1738000" />
+      <workItem from="1689000600786" duration="6596000" />
     </task>
     <task id="LOCAL-00001" summary="Add Final">
       <option name="closed" value="true" />
@@ -112,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689002115645</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add Folders">
+      <option name="closed" value="true" />
+      <created>1689002471351</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689002471351</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +150,11 @@
     <MESSAGE value="Add Final" />
     <MESSAGE value="modify imports &amp; packages" />
     <MESSAGE value="Add Package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Package" />
+    <MESSAGE value="Add Folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Folders" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

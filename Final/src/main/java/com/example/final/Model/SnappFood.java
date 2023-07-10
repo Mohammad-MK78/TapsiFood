@@ -79,12 +79,12 @@ public class SnappFood {
         if (usernameCheck.next()) {
             String password = usernameCheck.getString("password");
             String position = usernameCheck.getString("position");
-            String security_question = usernameCheck.getString("security_question");
+            String securityQuestion = usernameCheck.getString("security_question");
             int location = usernameCheck.getInt("location");
             int credit = usernameCheck.getInt("credit");
             int debt = usernameCheck.getInt("debt");
             int is_busy = usernameCheck.getInt("is_busy");
-            return new User(username, password, location,position, security_question, credit, debt, is_busy);
+            return new User(username, password, location,position, securityQuestion, credit, debt, is_busy);
         }
         return null;
     }

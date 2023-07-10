@@ -1,4 +1,4 @@
-package com.example.Final.FXMLConttroller;
+package com.example.Final.FXMLController;
 
 import com.example.Final.Main;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
-public class DeliveryMenuController {
+public class FXDeliveryMenuController {
     public void showPath() {
 
     }
@@ -32,7 +32,7 @@ public class DeliveryMenuController {
 
     }
     public void logout() throws IOException {
-        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
     }

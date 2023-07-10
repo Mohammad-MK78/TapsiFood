@@ -5,7 +5,6 @@ import com.example.Final.Model.Delivery;
 import com.example.Final.Model.SnappFood;
 import com.example.Final.Model.SnappFoodManager;
 import com.example.Final.View.LoginMenuEnums;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -40,11 +39,7 @@ public class LoginMenuController {
         }
     }
 
-    public static String customerRegister(Matcher matcher) throws ClassNotFoundException, SQLException {
-        String username = matcher.group("username");
-        String password = matcher.group("password");
-        String security_question = matcher.group("securityQuestion");
-        int location = Integer.parseInt(matcher.group("location"));
+    public static String customerRegister(String username, String password, int location, String securityQuestion) throws ClassNotFoundException, SQLException {
 
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
             return "register failed: invalid username format";
@@ -64,20 +59,16 @@ public class LoginMenuController {
             return "register failed: invalid location";
         }
         else {
-            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position, security_question) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'customer', '"+security_question+"')";
+            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position, security_question) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'customer', '"+securityQuestion+"')";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addCustomer(new Customer(username, password, location, security_question, 0, SnappFood.getUserByUsername(username).getDebt()));
+            SnappFood.addCustomer(new Customer(username, password, location, securityQuestion, 0, SnappFood.getUserByUsername(username).getDebt()));
             return "customer register successful";
         }
     }
-    public static String deliveryRegister(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String username = matcher.group("username");
-        String password = matcher.group("password");
-        String security_question = matcher.group("security_question");
-        int location = Integer.parseInt(matcher.group("location"));
+    public static String deliveryRegister(String username, String password, int location, String securityQuestion) throws SQLException, ClassNotFoundException {
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
             return "register failed: invalid username format";
 
@@ -94,12 +85,12 @@ public class LoginMenuController {
             return "register failed: weak password";
 
         else {
-            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position, security_question) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'delivery', '"+security_question+"')";
+            String sql = "INSERT INTO tapsifood.accounts(username, password, location, position, security_question) VALUES ('"+username+"', '"+password+"' ,'"+location+"', 'delivery', '"+securityQuestion+"')";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addDelivery(new Delivery(username, password, location, security_question, 0, SnappFood.getUserByUsername(username).getIs_busy()));
+            SnappFood.addDelivery(new Delivery(username, password, location, securityQuestion, 0, SnappFood.getUserByUsername(username).getIs_busy()));
             return "delivery register successful";
         }
     }
@@ -152,7 +143,7 @@ public class LoginMenuController {
         if(SnappFood.getUserByUsername(username) == null)
             return "password show failed: username not found";
 
-        else if(!SnappFood.getUserByUsername(username).getSecurity_question().toLowerCase().equals(security_question))
+        else if(!SnappFood.getUserByUsername(username).getSecurityQuestion().toLowerCase().equals(security_question))
             return "password show failed: incorrect security question";
 
         else {
