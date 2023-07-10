@@ -4,38 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Add Folders">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXCustomerRestaurantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXDeliveryMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXLoginMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXMainMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXManagerMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXRegisterMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXRestaurantMenuController.java" afterDir="false" />
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="OOF">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/LoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/CustomerMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/CustomerRestaurantController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/DeliveryMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/LoginMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/MainMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/ManagerMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/RegisterMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLConttroller/RestaurantMenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/final/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/CustomerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/DeliveryMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/LoginMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/RegisterMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RegisterMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/fxml/RestaurantMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RestaurantMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +20,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="2SNwyJDgGckNKobvChJfhCs1xBp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -98,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689000599747</updated>
-      <workItem from="1689000600786" duration="6596000" />
+      <workItem from="1689000600786" duration="8494000" />
     </task>
     <task id="LOCAL-00001" summary="Add Final">
       <option name="closed" value="true" />
@@ -140,18 +118,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689002471351</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="OOF">
+      <option name="closed" value="true" />
+      <created>1689009823034</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689009823034</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add Final" />
     <MESSAGE value="modify imports &amp; packages" />
     <MESSAGE value="Add Package" />
     <MESSAGE value="Add Folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Folders" />
+    <MESSAGE value="OOF" />
+    <option name="LAST_COMMIT_MESSAGE" value="OOF" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -35,7 +35,7 @@
        -fx-pref-height: 60;
        -fx-font-size: 18;
 }
-#username {
+#usernameInp {
     -fx-background-color: #ffcccf;
     -fx-border-color: #ff2189;
     -fx-font-size: 20;
@@ -43,7 +43,7 @@
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
-#password {
+#passwordInp {
     -fx-background-color: #ffcccf;
     -fx-border-color: #ff2189;
     -fx-font-size: 20;
@@ -51,7 +51,7 @@
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
-#securityQuestion {
+#securityQuestionInp {
     -fx-background-color: #ffcccf;
     -fx-border-color: #ff2189;
     -fx-font-size: 20;

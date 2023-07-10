@@ -30,11 +30,11 @@
             </VBox>
             <VBox prefHeight="170.0" prefWidth="250.0" spacing="6.33">
                <children>
-                  <TextField fx:id="username" prefHeight="50.0" prefWidth="200.0" />
+                  <TextField fx:id="usernameInp" prefHeight="50.0" prefWidth="200.0" />
                   <Label fx:id="notAppropriateUsername" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" visible="false" />
-                  <PasswordField fx:id="password" onKeyPressed="#loginWithEnterKey" prefHeight="50.0" prefWidth="200.0" />
+                  <PasswordField fx:id="passwordInp" onKeyPressed="#loginWithEnterKey" prefHeight="50.0" prefWidth="200.0" />
                   <Label fx:id="notAppropriatePassword" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="wrong password!!!" visible="false" />
-                  <TextField fx:id="securityQuestion" onKeyPressed="#showPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
+                  <TextField fx:id="securityQuestionInp" onKeyPressed="#showPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
                   <Label fx:id="wrongSecurityQuestion" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="vaghean koskholi" visible="false" />
                   <Label fx:id="recoverPassword" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" text="farzan2831" visible="false" />
                </children>
