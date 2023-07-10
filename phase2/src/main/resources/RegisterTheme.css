@@ -61,7 +61,6 @@ Button {
 #securityQuestionLabel {
     -fx-text-fill: #ff2189;
     -fx-font-size: 22;
-    -fx-pref-width: 240;
 }
 #securityQuestionNotice {
     -fx-font-size: 14;

@@ -13,20 +13,18 @@ import java.io.IOException;
 
 public class RegisterMenuController {
     @FXML
-    Button customerLogin, deliveryLogin, adminLogin, register, backToMainMenu, backToRegisterMenu;
+    Button register, backToMainMenu, backToRegisterMenu;
     @FXML
     Label securityQuestionNotice;
     @FXML
     HBox registerHBox;
     @FXML
-    VBox welcomeVBox;
+    VBox welcomeVBox, registerChoices;
     public void exit() {
         Platform.exit();
     }
     public void register() {
-        customerLogin.setVisible(!customerLogin.isVisible());
-        deliveryLogin.setVisible(!deliveryLogin.isVisible());
-        adminLogin.setVisible(!adminLogin.isVisible());
+        registerChoices.setVisible(!registerChoices.isVisible());
         welcomeVBox.setVisible(!welcomeVBox.isVisible());
         securityQuestionNotice.setVisible(!securityQuestionNotice.isVisible());
         registerHBox.setVisible(!registerHBox.isVisible());
@@ -45,9 +43,7 @@ public class RegisterMenuController {
         HelloApplication.getStage().setScene(scene);
     }
     public void goBackToRegisterMenu() {
-        customerLogin.setVisible(!customerLogin.isVisible());
-        deliveryLogin.setVisible(!deliveryLogin.isVisible());
-        adminLogin.setVisible(!adminLogin.isVisible());
+        registerChoices.setVisible(!registerChoices.isVisible());
         welcomeVBox.setVisible(!welcomeVBox.isVisible());
         registerHBox.setVisible(!registerHBox.isVisible());
         securityQuestionNotice.setVisible(!securityQuestionNotice.isVisible());
