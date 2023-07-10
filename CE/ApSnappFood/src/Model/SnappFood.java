@@ -81,9 +81,10 @@ public class SnappFood {
             String position = usernameCheck.getString("position");
             String security_question = usernameCheck.getString("security_question");
             int location = usernameCheck.getInt("location");
+            int credit = usernameCheck.getInt("credit");
             int debt = usernameCheck.getInt("debt");
             int is_busy = usernameCheck.getInt("is_busy");
-            return new User(username, password, location,position, security_question, debt, is_busy);
+            return new User(username, password, location,position, security_question, credit, debt, is_busy);
         }
         return null;
     }
@@ -112,8 +113,9 @@ public class SnappFood {
             String password = usernameCheck.getString("password");
             String security_question = usernameCheck.getString("security_question");
             int location = usernameCheck.getInt("location");
+            int credit = usernameCheck.getInt("credit");
             int debt = usernameCheck.getInt("debt");
-            return new Customer(username, password, location, security_question, debt);
+            return new Customer(username, password, location, security_question, credit, debt);
         }
         return null;
     }
@@ -128,7 +130,8 @@ public class SnappFood {
             String password = usernameCheck.getString("password");
             String security_question = usernameCheck.getString("security_question");
             int location = usernameCheck.getInt("location");
-            return new RestaurantManager(username, password, security_question);
+            int credit = usernameCheck.getInt("credit");
+            return new RestaurantManager(username, password, security_question, credit);
         }
         return null;
     }

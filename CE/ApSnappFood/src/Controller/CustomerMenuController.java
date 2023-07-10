@@ -13,10 +13,10 @@ public class CustomerMenuController {
 
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question(), user.getDebt());
+        currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurity_question(), user.getCredit(), user.getDebt());
     }
 
-    public static String chargeAccount(Matcher matcher) {
+    public static String chargeAccount(Matcher matcher) throws SQLException, ClassNotFoundException {
         int amount = Integer.parseInt(matcher.group("amount"));
 
         if(amount < 1)
@@ -29,7 +29,7 @@ public class CustomerMenuController {
     public static int showBalance() {
         return currentUser.getCredit();
     }
-    public static String changeLocation(Matcher matcher) {
+    public static String changeLocation(Matcher matcher) throws SQLException, ClassNotFoundException {
         int location = Integer.parseInt(matcher.group("location"));
 
         if(location < 1 || location > 1000)
@@ -245,7 +245,7 @@ public class CustomerMenuController {
         System.out.println("estimated time : " + distance + " minutes");
     }
 
-    public static String purchaseCart(String command) {
+    public static String purchaseCart(String command) throws SQLException, ClassNotFoundException {
         Matcher discountMatcher = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.PURCHASE_CART_OPTION)).matcher(command);
         int discountAmount = 0;
         Discount discount = null;
@@ -300,7 +300,7 @@ public class CustomerMenuController {
         currentUser.addComment(message, restaurantName);
         return "comment added successfully";
     }
-    public static void collected() {
+    public static void collected() throws SQLException, ClassNotFoundException {
         currentUser.getDelivery().is_busy = false;
         currentUser.getDelivery().setLocation(currentUser.getLocation());
         int totalPrice = 0;

@@ -11,7 +11,7 @@ public class RestaurantAdminMenuController {
 
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getSecurity_question());
+        currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getSecurity_question(), user.getCredit());
     }
     public static String addRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");
@@ -81,7 +81,7 @@ public class RestaurantAdminMenuController {
         return "remove restaurant failed: restaurant not found\n";
     }
 
-    public static String chargeAccount(Matcher matcher) {
+    public static String chargeAccount(Matcher matcher) throws SQLException, ClassNotFoundException {
         int amount = Integer.parseInt(matcher.group("amount"));
 
         if(amount < 1)

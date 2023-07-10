@@ -35,7 +35,7 @@ public class SnappFoodAdminMenuController {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            SnappFood.addRestaurantManager(new RestaurantManager(username, password, security_question));
+            SnappFood.addRestaurantManager(new RestaurantManager(username, password, security_question, 0));
             return "Manager Register successful";
         }
     }
