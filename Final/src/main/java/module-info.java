@@ -1,6 +1,7 @@
-module com.example.phase2 {
+module com.example.Final {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.Final to javafx.fxml;
