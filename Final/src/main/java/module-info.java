@@ -6,6 +6,6 @@ module com.example.Final {
 
     opens com.example.Final to javafx.fxml;
     exports com.example.Final;
-    exports com.example.Final.FXMLConttroller;
-    opens com.example.Final.FXMLConttroller to javafx.fxml;
+    exports com.example.Final.FXMLController;
+    opens com.example.Final.FXMLController to javafx.fxml;
 }

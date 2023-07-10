@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="customerMenu" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../CustomerTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLConttroller.CustomerMenuController">
+<AnchorPane fx:id="customerMenu" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../../css/CustomerTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.CustomerMenuController">
    <children>
       <Button fx:id="customerMenuBack" layoutY="1.0" mnemonicParsing="false" onAction="#goBackToCustomerMenu" text="←" visible="false" />
       <VBox fx:id="CustomerMenuVBox" layoutX="200.0" layoutY="40.0" prefHeight="520.0" prefWidth="400.0" spacing="120.0">
@@ -24,7 +24,7 @@
                      <children>
                         <ImageView fx:id="restaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#totalRestaurants" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../restaurantsICON.png" />
+                              <Image url="@../../../Pictures/restaurantsICON.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="restaurantsLabel" alignment="CENTER" prefHeight="20.0" prefWidth="160.0" text="restaurants" />
@@ -34,7 +34,7 @@
                      <children>
                         <ImageView fx:id="searchRestaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#showRestaurants" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../searchICON.png" />
+                              <Image url="@../../../Pictures/searchICON.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="restaurantsSearchLabel" alignment="CENTER" prefHeight="20.0" prefWidth="160.0" text="search by type" />
