@@ -292,7 +292,7 @@ public class CustomerMenuController {
         }
         System.out.println("delivery name : " + currentUser.getDelivery().getUsername());
     }
-    public static String addComment(Matcher matcher) {
+    public static String addComment(Matcher matcher) throws SQLException, ClassNotFoundException {
         String message = matcher.group("message");
         String restaurantName = matcher.group("restaurantName");
         if (SnappFood.getRestaurantByName(restaurantName) == null)
@@ -320,7 +320,7 @@ public class CustomerMenuController {
         currentUser.addRating(rate, orderNumber);
         return "rate added successfully";
     }
-    public static void showRestaurantComments(Matcher matcher) {
+    public static void showRestaurantComments(Matcher matcher) throws SQLException, ClassNotFoundException {
         String restaurantName = matcher.group("restaurantName");
         if (SnappFood.getRestaurantByName(restaurantName).getComments().size() == 0)
             System.out.println("no comments");
