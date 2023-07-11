@@ -7,13 +7,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class FXManagerMenuController {
     @FXML
-    Label ManagerMenu;
+    Label ManagerMenu, showBalance;
+    @FXML
+    TextField chargeBalance;
     @FXML
     VBox addRestaurantVBox;
     @FXML
@@ -65,5 +68,11 @@ public class FXManagerMenuController {
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
         myRestaurantsPrime.setVisible(!myRestaurantsPrime.isVisible());
+    }
+    public void showChargeAccount() {
+        chargeBalance.setVisible(!chargeBalance.isVisible());
+    }
+    public void showBalance() {
+        showBalance.setVisible(!showBalance.isVisible());
     }
 }
