@@ -1,28 +1,15 @@
-#mainMenuLabel {
-    -fx-background-color: #f5cea6;
-    -fx-background-radius: 50;
-    -fx-border-radius: 50;
-    -fx-text-fill: #f15e22;
-    -fx-font-size: 36;
-    -fx-font-style: italic;
-}
 #loginButton {
     -fx-background-color: #f5cea6;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #f15e22;
-    -fx-font-size: 16;
+    -fx-font: 17px "Airfool";
+
 }
 #registerButton {
     -fx-background-color: #f5cea6;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #f15e22;
-    -fx-font-size: 16;
-}
-#welcomeLabel {
-    -fx-background-radius: 50;
-    -fx-border-radius: 50;
-    -fx-text-fill: #f5cea6;
-    -fx-font-size: 27;
+    -fx-font: 17px "Airfool";
 }
