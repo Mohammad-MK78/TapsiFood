@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Forgot Password">
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Charge &amp; Show balance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXLoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXLoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689076549487</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Charge &amp; Show balance">
+      <option name="closed" value="true" />
+      <created>1689078237281</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689078237281</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +162,8 @@
     <MESSAGE value="OOF" />
     <MESSAGE value="Ok - Login Modify" />
     <MESSAGE value="Forgot Password" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot Password" />
+    <MESSAGE value="Charge &amp; Show balance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Charge &amp; Show balance" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
