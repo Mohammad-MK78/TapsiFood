@@ -30,32 +30,32 @@ Button {
 #usernameInp {
     -fx-background-color: #f5cea6;
     -fx-border-color: #f15e22;
-    -fx-font: 17px "Airfool";
-    -fx-text-fill: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #passwordInp {
     -fx-background-color: #f5cea6;
     -fx-border-color: #f15e22;
-    -fx-font: 17px "Airfool";
-    -fx-text-fill: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #locationInp {
     -fx-background-color: #f5cea6;
     -fx-border-color: #f15e22;
-    -fx-font: 17px "Airfool";
-    -fx-text-fill: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #securityQuestionInp {
     -fx-background-color: #f5cea6;
     -fx-border-color: #f15e22;
-    -fx-font: 17px "Airfool";
-    -fx-text-fill: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }

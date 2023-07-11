@@ -52,7 +52,7 @@ public class FXRegisterMenuController {
         String password = passwordInp.getText();
         int location = Integer.parseInt(locationInp.getText());
         String securityQuestion = securityQuestionInp.getText();
-        String result = "";
+        String result;
         switch (position){
             case "customer":
                 result = LoginMenuController.customerRegister(username, password, location, securityQuestion);

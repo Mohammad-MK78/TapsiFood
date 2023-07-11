@@ -1,13 +1,7 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.CustomerMenuController;
-import com.example.Final.Controller.DeliveryMenuController;
 import com.example.Final.Main;
-import com.example.Final.Model.Customer;
-import com.example.Final.Model.SnappFood;
-import com.example.Final.Model.User;
-import com.example.Final.View.CustomerMenu;
-import com.mysql.cj.result.Row;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -36,9 +30,6 @@ public class FXCustomerMenuController {
     TableView<Restaurant> restaurantsByTypeTableView = new TableView<>(), totalRestaurantsTableView = new TableView<>();
     @FXML
     void initialize(){
-        //totalRestaurantsTableView.setRowFactory(tv -> {
-        //    Row row;
-        //});
         CustomerMenuController.setCurrentUser();
     }
     public void showOptions() {
