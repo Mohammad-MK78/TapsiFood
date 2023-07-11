@@ -10,11 +10,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CustomerRestaurantTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCustomerRestaurantController">
    <children>
       <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" />
-      <Button fx:id="backToCustomerMenu" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#goBackToCustomerMenu" text="←" />
+      <Button fx:id="backToCustomerMenu" mnemonicParsing="false" onMouseClicked="#goBackToCustomerMenu" text="←" />
       <Button fx:id="backToMenuSelect" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
       <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="195.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0">
          <children>

@@ -4,9 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Restaurant{
-    private String name, type;
-    private int location, credit;
-    private Double rate;
+    public String name, type;
+    public int location, credit;
+    public Double rate;
     private ArrayList<Integer> rating;
     private ArrayList<String> comments;
     private ArrayList<Cart> history;

@@ -55,6 +55,8 @@ public class FXCustomerRestaurantController {
     }
     public void goBackToSelectFood() {
         selectFoodVBox.setVisible(false);
+        backToMenuSelect.setVisible(false);
+        backToCustomerMenu.setVisible(true);
     }
     public void foodSelected() {
         selectFoodVBox.setVisible(true);

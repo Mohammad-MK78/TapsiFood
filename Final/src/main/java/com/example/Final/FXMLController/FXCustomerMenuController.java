@@ -3,6 +3,7 @@ package com.example.Final.FXMLController;
 import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Controller.SnappFoodAdminMenuController;
 import com.example.Final.Main;
+import com.example.Final.Model.Restaurant;
 import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +16,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import com.example.Final.Model.Restaurant;
 
 public class FXCustomerMenuController {
     //public static String restaurantName;
@@ -34,21 +34,29 @@ public class FXCustomerMenuController {
     @FXML
     void initialize(){
         CustomerMenuController.setCurrentUser();
-        TableColumn<Restaurant, String> nameC = new TableColumn<>("Name");
-        nameC.setCellValueFactory(new PropertyValueFactory<>("name"));
-        TableColumn<Restaurant, String> typeC = new TableColumn<>("Type");
-        typeC.setCellValueFactory(new PropertyValueFactory<>("type"));
-        TableColumn<Restaurant, Double> rateC = new TableColumn<>("Rating");
-        rateC.setCellValueFactory(new PropertyValueFactory<>("rate"));
-        TableColumn<Restaurant, Integer> addressC = new TableColumn<>("Location");
-        addressC.setCellValueFactory(new PropertyValueFactory<>("location"));
 
-        TableColumn<Restaurant, String> nameC2 = new TableColumn<>("Name");
+        TableColumn<Restaurant, String> nameC = new TableColumn<>("name");
+        nameC.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameC.setPrefWidth(100);
+        TableColumn<Restaurant, String> typeC = new TableColumn<>("type");
+        typeC.setCellValueFactory(new PropertyValueFactory<>("type"));
+        typeC.setPrefWidth(100);
+        TableColumn<Restaurant, Double> rateC = new TableColumn<>("rating");
+        rateC.setCellValueFactory(new PropertyValueFactory<>("rate"));
+        rateC.setPrefWidth(100);
+        TableColumn<Restaurant, Integer> addressC = new TableColumn<>("location");
+        addressC.setCellValueFactory(new PropertyValueFactory<>("location"));
+        addressC.setPrefWidth(100);
+
+        TableColumn<Restaurant, String> nameC2 = new TableColumn<>("name");
         nameC2.setCellValueFactory(new PropertyValueFactory<>("name"));
-        TableColumn<Restaurant, Double> rateC2 = new TableColumn<>("Rating");
+        nameC2.setPrefWidth(133);
+        TableColumn<Restaurant, Double> rateC2 = new TableColumn<>("rating");
         rateC2.setCellValueFactory(new PropertyValueFactory<>("rate"));
-        TableColumn<Restaurant, Integer> addressC2 = new TableColumn<>("Location");
+        rateC2.setPrefWidth(133);
+        TableColumn<Restaurant, Integer> addressC2 = new TableColumn<>("location");
         addressC2.setCellValueFactory(new PropertyValueFactory<>("location"));
+        addressC2.setPrefWidth(133);
 
         totalRestaurantsTableView.getColumns().addAll(nameC,typeC,rateC,addressC);
         totalRestaurantsTableView.getItems().addAll(SnappFoodAdminMenuController.getRestaurants());
@@ -61,7 +69,7 @@ public class FXCustomerMenuController {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
                     FXCustomerRestaurantController.restaurant = row.getItem();
-                    FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurantController.fxml"));
+                    FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurant.fxml"));
                     Scene scene;
                     try {
                         scene = new Scene(Loader.load());
@@ -122,7 +130,7 @@ public class FXCustomerMenuController {
         int balance = CustomerMenuController.showBalance();
         showBalance.setText("$" + balance);
     }
-    public void showRestaurants() {
+    public void showRestaurants() { //TODO رستوراانا باید نشون داده شه برحسب تایپشون
         searchRestaurantByTypeVBox.setVisible(true);
         totalRestaurantVBox.setVisible(false);
         CustomerMenuVBox.setVisible(false);
@@ -134,14 +142,14 @@ public class FXCustomerMenuController {
         CustomerMenuVBox.setVisible(false);
         customerMenuBack.setVisible(true);
     }
-    public void goBackToCustomerMenu() { //TODO رستوراانا باید نشون داده شه برحسب تایپشون
+    public void goBackToCustomerMenu() {
         searchRestaurantByTypeVBox.setVisible(false);
         totalRestaurantVBox.setVisible(false);
         CustomerMenuVBox.setVisible(true);
         customerMenuBack.setVisible(false);
     }
     public void searchRestaurantsByType() {
-
+        initialize();
     }
     public void openRestaurantByType() throws IOException {
         //restaurantName = restaurantsByTypeTableView.getSelectionModel().getSelectedItem().getName();
