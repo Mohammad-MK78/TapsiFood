@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="customerMenu" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CustomerTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCustomerMenuController">
    <children>
-      <Button fx:id="customerMenuBack" mnemonicParsing="false" onAction="#goBackToCustomerMenu" text="←" />
+      <Button fx:id="customerMenuBack" mnemonicParsing="false" onAction="#goBackToCustomerMenu" text="←" visible="false" />
       <VBox fx:id="CustomerMenuVBox" layoutX="200.0" layoutY="30.0" prefHeight="520.0" prefWidth="400.0" spacing="120.0">
          <children>
             <Label fx:id="CustomerMenu" alignment="CENTER" prefHeight="100.0" prefWidth="400.0" text="Customer Menu" textFill="#ff0070" />
@@ -49,10 +49,10 @@
             <HBox prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
                   <TextField fx:id="searchBox" prefHeight="60.0" prefWidth="340.0" HBox.hgrow="ALWAYS" />
-                  <Button fx:id="searchDone" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="✓" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="searchDone" mnemonicParsing="false" onMouseClicked="#searchRestaurantsByType" prefHeight="50.0" prefWidth="50.0" text="✓" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <TableView fx:id="restaurantsByType" prefHeight="400.0" prefWidth="400.0">
+            <TableView fx:id="restaurantsByTypeTableView" onMouseClicked="#openRestaurantByType" prefHeight="400.0" prefWidth="400.0">
               <columns>
                 <TableColumn prefWidth="100.0" text="name" />
                 <TableColumn prefWidth="100.0" text="type" />
@@ -72,7 +72,7 @@
                   <Label fx:id="totalRestaurantsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Restaurants" />
                </children>
             </HBox>
-            <TableView fx:id="totalRestaurants" prefHeight="400.0" prefWidth="400.0">
+            <TableView fx:id="totalRestaurantsTableView" onMouseClicked="#openRestaurant" prefHeight="400.0" prefWidth="400.0">
                <columns>
                   <TableColumn prefWidth="100.0" text="name" />
                   <TableColumn prefWidth="100.0" text="type" />
@@ -89,11 +89,12 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <TextField fx:id="chargeBalance" onKeyPressed="#chargeAccount" prefHeight="60.0" prefWidth="100.0" visible="false" />
+                  <Label fx:id="chargeStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" />
+                  <TextField fx:id="chargeBalance" alignment="CENTER" onKeyPressed="#chargeAccount" prefHeight="60.0" prefWidth="100.0" visible="false" />
                   <Label fx:id="showBalance" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" text="\$" visible="false" />
                </children>
                <padding>
-                  <Insets top="140.0" />
+                  <Insets top="110.0" />
                </padding>
             </VBox>
             <VBox fx:id="optionsVBox" prefHeight="270.0" prefWidth="60.0" spacing="10.0">

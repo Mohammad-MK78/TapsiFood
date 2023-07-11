@@ -16,14 +16,16 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import com.example.Final.Model.Restaurant;
 
 public class FXCustomerMenuController {
+    public static String restaurantName;
     @FXML
     TableView restaurantsByType = new TableView<>(), totalRestaurants = new TableView<>();
     @FXML
     Button customerMenuBack;
     @FXML
-    Label showBalance;
+    Label showBalance, chargeStatus;
     @FXML
     TextField chargeBalance, searchBox;
     @FXML
@@ -31,10 +33,10 @@ public class FXCustomerMenuController {
     @FXML
     Button customerMenuOptions, customerMenuLogout, customerMenuCharge, customerMenuShowBalance;
     @FXML
+    TableView<Restaurant> restaurantsByTypeTableView = new TableView<>(), totalRestaurantsTableView = new TableView<>();
+    @FXML
     void initialize(){
         CustomerMenuController.setCurrentUser();
-    }
-    public void showRestaurantsByType() {
     }
     public void showOptions() {
         customerMenuLogout.setVisible(!customerMenuLogout.isVisible());
@@ -52,12 +54,20 @@ public class FXCustomerMenuController {
     }
     public void showChargeAccount() {
         chargeBalance.setVisible(!chargeBalance.isVisible());
+        chargeBalance.setText("");
+        chargeStatus.setText("");
     }
     public void chargeAccount(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode() == KeyCode.ENTER) {
-            int amount = Integer.parseInt(chargeBalance.getText());
-            String result = CustomerMenuController.chargeAccount(amount);
-            System.out.println(result);
+            String result;
+            if (!chargeBalance.getText().matches("\\d+"))
+                result = "Invalid";
+            else {
+                int amount = Integer.parseInt(chargeBalance.getText());
+                result = CustomerMenuController.chargeAccount(amount);
+            }
+            chargeStatus.setText(result);
+            chargeBalance.setText("");
         }
         updateBalance();
     }
@@ -67,14 +77,13 @@ public class FXCustomerMenuController {
     }
     public void updateBalance() {
         int balance = CustomerMenuController.showBalance();
-        showBalance.setText(balance + "$");
+        showBalance.setText("$" + balance);
     }
     public void showRestaurants() {
         searchRestaurantByTypeVBox.setVisible(true);
         totalRestaurantVBox.setVisible(false);
         CustomerMenuVBox.setVisible(false);
         customerMenuBack.setVisible(true);
-        //restaurantsByType.setUserData(new Button());
     }
     public void totalRestaurants() {
         totalRestaurantVBox.setVisible(true);
@@ -88,4 +97,20 @@ public class FXCustomerMenuController {
         CustomerMenuVBox.setVisible(true);
         customerMenuBack.setVisible(false);
     }
+    public void searchRestaurantsByType() {
+
+    }
+    public void openRestaurantByType() throws IOException {
+        restaurantName = restaurantsByTypeTableView.getSelectionModel().getSelectedItem().getName();
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurantMenu.fxml"));
+        Scene scene = new Scene(loader.load());
+        Main.getStage().setScene(scene);
+    }
+    public void openRestaurant() throws IOException {
+        restaurantName = totalRestaurantsTableView.getSelectionModel().getSelectedItem().getName();
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurantMenu.fxml"));
+        Scene scene = new Scene(loader.load());
+        Main.getStage().setScene(scene);
+    }
+
 }

@@ -18,10 +18,10 @@ public class CustomerMenuController {
     public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
 
         if(amount < 1)
-            return "charge account failed: invalid cost or price";
+            return "Invalid";
 
         currentUser.changeBalance(amount);
-        return "charge account successful";
+        return "Successful";
     }
 
     public static int showBalance() {
