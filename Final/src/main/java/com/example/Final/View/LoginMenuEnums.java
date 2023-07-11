@@ -5,13 +5,9 @@ import java.util.regex.Pattern;
 
 public enum LoginMenuEnums {
     SNAPP_FOOD_ADMIN_INPUT ("\\s*(?<input>\\S+)\\s*"),
-    CUSTOMER_REGISTER("\\s*customer\\s+register\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s+(?<location>\\S+)\\s+(?<securityQuestion>\\S+)\\s*"),
     VALID_USERNAME ("[\\w_]*[a-zA-Z][\\w_]*"),
     VALID_PASSWORD ("[\\w_]+"),
-    LOGIN ("\\s*login\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s*"),
-    DELIVERY_REGISTER ("\\s*delivery\\s+register\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s+(?<location>\\S+)\\s+(?<securityQuestion>\\S+)\\s*"),
     CHANGE_PASSWORD ("\\s*change\\s+password\\s+(?<username>\\S+)\\s+(?<oldPassword>\\S+)\\s+(?<newPassword>\\S+)\\s*"),
-    FORGOT_PASSWORD ("\\s*forgot\\s+password\\s+(?<username>\\S+)\\s+(?<securityQuestion>\\S+)\\s*"),
     REMOVE_ACCOUNT ("\\s*remove\\s+account\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s*"),
     EXIT ("\\s*exit\\s*"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*");

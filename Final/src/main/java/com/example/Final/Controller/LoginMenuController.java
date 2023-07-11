@@ -1,9 +1,6 @@
 package com.example.Final.Controller;
 
-import com.example.Final.Model.Customer;
-import com.example.Final.Model.Delivery;
-import com.example.Final.Model.SnappFood;
-import com.example.Final.Model.SnappFoodManager;
+import com.example.Final.Model.*;
 import com.example.Final.View.LoginMenuEnums;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -95,19 +92,18 @@ public class LoginMenuController {
         }
     }
 
-    public static String login(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String username = matcher.group("username");
-        String password = matcher.group("password");
+    public static String login(String username, String password) throws SQLException, ClassNotFoundException {
 
-        if(SnappFood.getUserByUsername(username) == null)
+         if(SnappFood.getUserByUsername(username) == null)
             return "login failed: username not found";
 
         else if(!SnappFood.getUserByUsername(username).getPassword().equals(password))
             return "login failed: incorrect password";
 
         else {
-            SnappFood.setCurrentUser(SnappFood.getUserByUsername(username));
-            return "login successful";
+            User user = SnappFood.getUserByUsername(username);
+            SnappFood.setCurrentUser(user);
+            return user.getPosition();
         }
     }
 
@@ -136,18 +132,35 @@ public class LoginMenuController {
             return "password change successful";
         }
     }
-    public static String forgotPassword(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String username = matcher.group("username");
-        String security_question = matcher.group("securityQuestion");
+    public static String setNewPassword(String username , String newPassword) throws SQLException, ClassNotFoundException {
+
+        if(SnappFood.getUserByUsername(username) == null)
+            return "password change failed: username not found";
+
+        else if(LoginMenuEnums.getMatcher(newPassword, LoginMenuEnums.VALID_PASSWORD) == null)
+            return "password change failed: invalid new password";
+
+        else if(newPassword.length() < 5 ||
+                !Pattern.compile("[a-z]").matcher(newPassword).find() ||
+                !Pattern.compile("[A-Z]").matcher(newPassword).find() ||
+                !Pattern.compile("\\d").matcher(newPassword).find())
+            return "password change failed: weak new password";
+
+        else {
+            SnappFood.getUserByUsername(username).setPassword(newPassword);
+            return "password change successful";
+        }
+    }
+    public static String forgotPassword(String username, String securityQuestion) throws SQLException, ClassNotFoundException {
 
         if(SnappFood.getUserByUsername(username) == null)
             return "password show failed: username not found";
 
-        else if(!SnappFood.getUserByUsername(username).getSecurityQuestion().toLowerCase().equals(security_question))
+        else if(!SnappFood.getUserByUsername(username).getSecurityQuestion().toLowerCase().equals(securityQuestion))
             return "password show failed: incorrect security question";
 
         else {
-            return "your password: " + SnappFood.getUserByUsername(username).getPassword();
+            return "securityQuestion is ok";
         }
     }
 
