@@ -99,7 +99,7 @@ public class SnappFood {
             String type = nameCheck.getString("type");
             int location = nameCheck.getInt("location");
 
-            return new Restaurant(name, type, location);
+            return new Restaurant(name, type, location, 0);
         }
         return null;
     }

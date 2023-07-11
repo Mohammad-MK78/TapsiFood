@@ -1,6 +1,7 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Main;
+import com.example.Final.Model.Restaurant;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,6 +15,8 @@ public class FXCustomerRestaurantController {
     VBox selectMenuVBox, totalMenuVbox, starterMenuVbox, mainMealMenuVbox, dessertMenuVbox, selectFoodVBox;
     @FXML
     Button backToCustomerMenu, backToMenuSelect;
+
+    public static Restaurant restaurant;
     public void openTotalMenu() {
         selectFoodVBox.setVisible(false);
         backToCustomerMenu.setVisible(false);

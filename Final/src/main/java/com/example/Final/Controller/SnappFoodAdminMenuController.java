@@ -5,6 +5,7 @@ import com.example.Final.View.LoginMenuEnums;
 import com.example.Final.View.SnappFoodAdminMenuEnums;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,6 +50,24 @@ public class SnappFoodAdminMenuController {
             SnappFood.removeUser(SnappFood.getUserByUsername(username));
             return "remove account successful";
         }
+    }
+    public static ArrayList<Restaurant> getRestaurants() {
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        restaurants.add(new Restaurant("khar", "FastFood", 25, 0));
+        restaurants.add(new Restaurant("khar2", "Kababi", 36, 0));
+        restaurants.add(new Restaurant("khar3", "jigaraki", 78, 0));
+        return restaurants;
+    }
+    public static ArrayList<Restaurant> getRestaurantsByType(String searchBox) {
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        restaurants.add(new Restaurant("khar", "FastFood", 25, 0));
+        restaurants.add(new Restaurant("khar2", "Kababi", 36, 0));
+        restaurants.add(new Restaurant("khar3", "jigaraki", 78, 0));
+        ArrayList<Restaurant> result = new ArrayList<>();
+        for (Restaurant restaurant : restaurants)
+            if (restaurant.getType().toLowerCase().equals(searchBox))
+                result.add(restaurant);
+        return result;
     }
     public static void showRestaurant(String command) throws ClassNotFoundException, SQLException {
         Pattern typePattern = Pattern.compile(SnappFoodAdminMenuEnums.getString(SnappFoodAdminMenuEnums.SHOW_RESTAURANT_OPTION));

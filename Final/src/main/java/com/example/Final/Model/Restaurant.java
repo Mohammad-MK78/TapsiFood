@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Restaurant{
     private String name, type;
     private int location, credit;
+    private Double rate;
     private ArrayList<Integer> rating;
     private ArrayList<String> comments;
     private ArrayList<Cart> history;
@@ -16,10 +17,11 @@ public class Restaurant{
     private ArrayList<Food> MainMeal;
     private ArrayList<Food> Dessert;
 
-    public Restaurant(String name, String type, int location) {
+    public Restaurant(String name, String type, int location, double rate) {
         this.name = name;
         this.type = type;
         this.location = location;
+        this.rate = rate;
         this.rating = new ArrayList<>();
         this.credit = 0;
         ongoingOrders = new ArrayList<>();
@@ -66,10 +68,18 @@ public class Restaurant{
     }
     public double getRating(){
         double totalRate = 0;
-        for (int i : rating) {
-            totalRate += i;
+        if (rating != null) {
+            for (int i : rating) {
+                totalRate += i;
+            }
+            return totalRate / rating.size();
         }
-        return totalRate / rating.size();
+        else
+            return 0;
+    }
+
+    public Double getRate() {
+        return rate;
     }
 
     public String getType() {

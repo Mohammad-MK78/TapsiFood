@@ -29,7 +29,7 @@ public class RestaurantAdminMenuController {
         else if (location < 1 || location > 1000)
             return "add restaurant failed: invalid location format";
         else {
-            currentUser.addRestaurant(new Restaurant(name, type, location));
+            currentUser.addRestaurant(new Restaurant(name, type, location, 0));
             return "restaurant added successfully";
         }
     }

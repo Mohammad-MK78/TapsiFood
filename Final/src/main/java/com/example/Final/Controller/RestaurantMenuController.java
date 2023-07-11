@@ -11,7 +11,7 @@ public class RestaurantMenuController {
 
     public static void setCurrentRestaurant() { //TODO
         Restaurant restaurant = SnappFood.getCurrentRestaurant();
-        currentRestaurant = new Restaurant(restaurant.getName(), restaurant.getType(), restaurant.getLocation());
+        currentRestaurant = new Restaurant(restaurant.getName(), restaurant.getType(), restaurant.getLocation(), restaurant.getRate());
     }
 
     public static int showBalance() {
