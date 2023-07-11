@@ -20,7 +20,7 @@ public class FXLoginMenuController {
     @FXML
     Hyperlink forgotPassword;
     @FXML
-    Label recoverPassword, yourPassword, securityLabel, wrongSecurityQuestion, notAppropriatePassword;
+    Label yourPassword, securityLabel, wrongSecurityQuestion, notAppropriatePassword;
     @FXML
     TextField usernameInp, securityQuestionInp, recoverPasswordInp;
     @FXML
