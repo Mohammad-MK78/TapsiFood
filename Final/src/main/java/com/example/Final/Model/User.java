@@ -69,7 +69,7 @@ public class User {
         ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
         if (usernameCheck.next()) {
             int oldCredit = usernameCheck.getInt("credit");
-            String change = "UPDATE tapsifood.accounts SET credit='" + (user.getCredit() + oldCredit) + "' WHERE username='" + user.getUsername() + "'";
+            String change = "UPDATE tapsifood.accounts SET credit='" + (amount + oldCredit) + "' WHERE username='" + user.getUsername() + "'";
             statement.executeUpdate(change);
         }
     }

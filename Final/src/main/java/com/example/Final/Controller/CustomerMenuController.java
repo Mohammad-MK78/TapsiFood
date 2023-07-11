@@ -15,8 +15,7 @@ public class CustomerMenuController {
         currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getDebt());
     }
 
-    public static String chargeAccount(Matcher matcher) throws SQLException, ClassNotFoundException {
-        int amount = Integer.parseInt(matcher.group("amount"));
+    public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
 
         if(amount < 1)
             return "charge account failed: invalid cost or price";

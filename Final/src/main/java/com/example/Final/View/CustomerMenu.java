@@ -22,8 +22,6 @@ public class CustomerMenu {
                 System.out.println("user logged out successfully");
                 return;
             }
-            else if((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.CHARGE_ACCOUNT)) != null)
-                System.out.println(CustomerMenuController.chargeAccount(matcher));
 
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_BALANCE) != null)
                 System.out.println(CustomerMenuController.showBalance());

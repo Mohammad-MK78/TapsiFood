@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 public enum CustomerMenuEnums {
     LOGOUT ("\\s*logout\\s*"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
-    CHARGE_ACCOUNT ("\\s*charge\\s+account\\s+(?<amount>-?\\d+)\\s*"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
     SHOW_RESTAURANT ("\\s*show\\s+restaurant(\\s+-t\\s+(?<type>\\S+))?\\s*"),
     SHOW_RESTAURANT_OPTION ("\\s+-t\\s+(?<type>\\S+)"),
