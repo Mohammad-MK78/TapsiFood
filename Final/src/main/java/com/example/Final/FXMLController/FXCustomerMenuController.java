@@ -32,7 +32,7 @@ public class FXCustomerMenuController {
     @FXML
     TableView<Restaurant> restaurantsByTypeTableView, totalRestaurantsTableView;
     @FXML
-    void initialize(){
+    void initialize() throws SQLException, ClassNotFoundException {
         CustomerMenuController.setCurrentUser();
 
         TableColumn<Restaurant, String> nameC = new TableColumn<>("name");
@@ -153,7 +153,7 @@ public class FXCustomerMenuController {
         customerMenuBack.setVisible(false);
 
     }
-    public void searchRestaurantsByType() {
+    public void searchRestaurantsByType() throws SQLException, ClassNotFoundException {
         initialize();
     }
 }

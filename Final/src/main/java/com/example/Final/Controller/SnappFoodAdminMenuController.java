@@ -51,21 +51,36 @@ public class SnappFoodAdminMenuController {
             return "remove account successful";
         }
     }
-    public static ArrayList<Restaurant> getRestaurants() {
+    public static ArrayList<Restaurant> getRestaurants() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String sqlCheckRestaurant = "SELECT * FROM tapsifood.restaurants";
+        ResultSet restaurantCheck = statement.executeQuery(sqlCheckRestaurant);
         ArrayList<Restaurant> restaurants = new ArrayList<>();
-        restaurants.add(new Restaurant("khar", "FastFood", 25, 0));
-        restaurants.add(new Restaurant("khar2", "Kababi", 36, 0));
-        restaurants.add(new Restaurant("khar3", "jigaraki", 78, 0));
+        while (restaurantCheck.next()) {
+            String name = restaurantCheck.getString("name");
+            restaurants.add(SnappFood.getRestaurantByName(name));
+        }
         return restaurants;
     }
-    public static ArrayList<Restaurant> getRestaurantsByType(String searchBox) {
+    public static ArrayList<Restaurant> getRestaurantsByType(String type) throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String sqlCheckType = "SELECT * FROM tapsifood.restaurants where type='" + type + "'";
+        ResultSet typeCheck = statement.executeQuery(sqlCheckType);
         ArrayList<Restaurant> restaurants = new ArrayList<>();
-        restaurants.add(new Restaurant("khar", "FastFood", 25, 0));
-        restaurants.add(new Restaurant("khar2", "Kababi", 36, 0));
-        restaurants.add(new Restaurant("khar3", "jigaraki", 78, 0));
+        while (typeCheck.next()) {
+            String name = typeCheck.getString("name");
+            restaurants.add(SnappFood.getRestaurantByName(name));
+        }
         ArrayList<Restaurant> result = new ArrayList<>();
         for (Restaurant restaurant : restaurants)
-            if (restaurant.getType().toLowerCase().equals(searchBox))
+            if (type.toLowerCase().equals(restaurant.getType()))
                 result.add(restaurant);
         return result;
     }
