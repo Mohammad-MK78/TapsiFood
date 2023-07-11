@@ -20,7 +20,7 @@
       <Button fx:id="registerMenuExit" layoutX="718.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="68.0" prefWidth="68.0" text="exit" />
       <Button fx:id="backToMainMenu" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" />
       <Button fx:id="register" layoutX="240.0" layoutY="502.0" mnemonicParsing="false" onAction="#registerComplete" prefHeight="60.0" prefWidth="169.0" text="Register" visible="false" />
-      <Button fx:id="backToRegisterMenu" mnemonicParsing="false" onAction="#goBackToRegisterMenu" text="←" visible="false" />
+      <Button fx:id="backToRegisterMenu" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToRegisterMenu" text="←" visible="false" />
       <VBox fx:id="registerChoices" layoutX="310.0" layoutY="239.0" prefWidth="200.0" spacing="50.0">
          <children>
             <Button fx:id="customerRegister" accessibleText="customer" mnemonicParsing="false" onMouseClicked="#chooseRegister" prefHeight="100.0" prefWidth="200.0" text="Customer" />
