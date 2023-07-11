@@ -1,78 +1,79 @@
 Button {
+    -fx-font: 28px "Airfool";
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-font-size: 24;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
 }
 #welcome {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #ef825a;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 36;
+    -fx-text-fill: #c50505;
+    -fx-font: 48px "Algerian";
 }
 #registerSelect {
-    -fx-font-size: 24;
+    -fx-font: 30px "Airfool";
     -fx-background-radius: 30;
     -fx-border-radius: 30;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
 }
 #registerMenuExit {
+    -fx-font: 1px "Airfool";
     -fx-background-radius: 90;
     -fx-border-radius: 90;
-    -fx-pref-width: 60;
-    -fx-pref-height: 60;
+    -fx-pref-width: 67;
+    -fx-pref-height: 67;
     -fx-font-size: 18;
 }
 #usernameInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px "Airfool";
+    -fx-text-fill: #f15e22;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #passwordInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px "Airfool";
+    -fx-text-fill: #f15e22;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #locationInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px "Airfool";
+    -fx-text-fill: #f15e22;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #securityQuestionInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px "Airfool";
+    -fx-text-fill: #f15e22;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #usernameLabel {
-    -fx-text-fill: #ff2189;
-    -fx-font-size: 24;
+    -fx-font: 24px "Airfool";
+    -fx-text-fill: #f2906b;
 }
 #passwordLabel {
-    -fx-text-fill: #ff2189;
-    -fx-font-size: 24;
+    -fx-text-fill: #f2906b;
+    -fx-font: 24px "Airfool";
 }
 #locationLabel {
-    -fx-text-fill: #ff2189;
-    -fx-font-size: 22;
+    -fx-text-fill: #f2906b;
+    -fx-font: 24px "Airfool";
 }
 #securityQuestionLabel {
-    -fx-text-fill: #ff2189;
-    -fx-font-size: 22;
+    -fx-text-fill: #f2906b;
+    -fx-font: 24px "Airfool";
 }
 #securityQuestionNotice {
     -fx-font-size: 14;
@@ -82,16 +83,17 @@ Button {
     -fx-font-size: 18;
 }
 #backToMainMenu {
+    -fx-font: 20px "Airfool";
+    -fx-text-fill: #ff0000;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
-    -fx-pref-width: 60;
-    -fx-pref-height: 60;
-    -fx-font-size: 18;
+    -fx-pref-width: 67;
+    -fx-pref-height: 67;
 }
 #backToRegisterMenu {
+    -fx-font: 20px "Airfool";
     -fx-background-radius: 90;
     -fx-border-radius: 90;
-    -fx-pref-width: 60;
-    -fx-pref-height: 60;
-    -fx-font-size: 18;
+    -fx-pref-width: 67;
+    -fx-pref-height: 67;
 }
