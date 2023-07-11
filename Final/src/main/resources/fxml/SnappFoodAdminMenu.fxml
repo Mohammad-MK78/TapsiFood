@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/SnappFoodAdminTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXSnappFoodAdminMenuController">
+   <children>
+      <Label fx:id="SnappFoodAdminMenu" alignment="CENTER" layoutX="200.0" layoutY="34.0" prefHeight="100.0" prefWidth="400.0" text="SnappFood Admin Menu">
+         <font>
+            <Font name="Cambria Bold Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -81,14 +81,13 @@ public class RestaurantAdminMenuController {
         return "remove restaurant failed: restaurant not found\n";
     }
 
-    public static String chargeAccount(Matcher matcher) throws SQLException, ClassNotFoundException {
-        int amount = Integer.parseInt(matcher.group("amount"));
+    public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
 
         if(amount < 1)
-            return "charge account failed: invalid cost or price";
+            return "Invalid";
 
         currentUser.changeBalance(amount);
-        return "charge account successful";
+        return "Successful";
     }
 
     public static int showBalance() {

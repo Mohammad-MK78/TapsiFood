@@ -13,7 +13,6 @@ public enum RestaurantAdminMenuEnums {
     VALID_NAME ("[a-z\\-]+"),
     VALID_TYPE ("[a-z\\-]+"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
-    CHARGE_ACCOUNT ("\\s*charge\\s+account\\s+(?<amount>-?\\d+)\\s*"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*");
 
     private String string;

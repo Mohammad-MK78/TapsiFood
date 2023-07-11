@@ -5,6 +5,7 @@ import com.example.Final.Model.SnappFood;
 import com.example.Final.Model.User;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DeliveryMenuController {
@@ -21,6 +22,17 @@ public class DeliveryMenuController {
     }
     public static void showLocation() {
         System.out.println("location : " + currentUser.getLocation());
+    }
+    public static int showBalance() {
+        return currentUser.getCredit();
+    }
+    public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
+
+        if(amount < 1)
+            return "Invalid";
+
+        currentUser.changeBalance(amount);
+        return "Successful";
     }
     public static void show_distance() throws IOException {
         int location = currentUser.getRestaurant(), destination = currentUser.getDestination();

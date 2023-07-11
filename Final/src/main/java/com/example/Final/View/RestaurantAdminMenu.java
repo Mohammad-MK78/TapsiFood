@@ -35,8 +35,6 @@ public class RestaurantAdminMenu {
             else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_RESTAURANT)) != null)
                 System.out.println(RestaurantAdminMenuController.removeRestaurant(matcher));
 
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.CHARGE_ACCOUNT)) != null)
-                System.out.println(RestaurantAdminMenuController.chargeAccount(matcher));
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_BALANCE) != null)
                 System.out.println(RestaurantAdminMenuController.showBalance());

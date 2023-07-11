@@ -95,3 +95,19 @@
     -fx-pref-height: 60;
     -fx-font-size: 24;
 }
+#showBalance {
+    -fx-background-color: #ffcccf;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+}
+#chargeBalance {
+    -fx-background-color: #ffcccf;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+}
