@@ -2,6 +2,7 @@ package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Main;
+import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -42,6 +43,8 @@ public class FXCustomerMenuController {
             showBalance.setVisible(!showBalance.isVisible());
     }
     public void logout() throws IOException {
+        SnappFood.setCurrentUser(null);
+        CustomerMenuController.setCurrentUser();
         FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
@@ -79,13 +82,13 @@ public class FXCustomerMenuController {
         CustomerMenuVBox.setVisible(false);
         customerMenuBack.setVisible(true);
     }
-    public void totalRestaurants() {
+    public void totalRestaurants() { //TODO رستوراانا باید نشون داده شه همشون
         totalRestaurantVBox.setVisible(true);
         searchRestaurantByTypeVBox.setVisible(false);
         CustomerMenuVBox.setVisible(false);
         customerMenuBack.setVisible(true);
     }
-    public void goBackToCustomerMenu() {
+    public void goBackToCustomerMenu() { //TODO رستوراانا باید نشون داده شه برحسب تایپشون
         searchRestaurantByTypeVBox.setVisible(false);
         totalRestaurantVBox.setVisible(false);
         CustomerMenuVBox.setVisible(true);

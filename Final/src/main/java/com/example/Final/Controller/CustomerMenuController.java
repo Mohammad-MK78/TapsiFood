@@ -12,7 +12,10 @@ public class CustomerMenuController {
 
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
-        currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getDebt());
+        if (user == null)
+            currentUser = null;
+        else
+            currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getDebt());
     }
 
     public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
