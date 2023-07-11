@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f1131d4-c912-4095-8dc7-7625cb5f49a5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_33.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Phase1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CityGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CustomerMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DeliveryMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/LoginMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RestaurantAdminMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RestaurantMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ShortestPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SnappFoodAdminMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Delivery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Discount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/RestaurantManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/SnappFood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/SnappFoodManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/CustomerMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/CustomerMenuEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/DeliveryMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/DeliveryMenuEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/LoginMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/LoginMenuEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/MainMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/RestaurantAdminMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/RestaurantAdminMenuEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/RestaurantMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/RestaurantMenuEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/SnappFoodAdminMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/SnappFoodAdminMenuEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Final/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2SR2a9p6QhcPkyNlpYTzzonD7YJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.33.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Phase1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f1131d4-c912-4095-8dc7-7625cb5f49a5" name="Changes" comment="" />
+      <created>1689095137096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689095137096</updated>
+      <workItem from="1689095138147" duration="142000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
