@@ -3,6 +3,7 @@ package com.example.Final.FXMLController;
 import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Controller.RestaurantAdminMenuController;
 import com.example.Final.Main;
+import com.example.Final.Model.Restaurant;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -21,14 +22,13 @@ public class FXManagerMenuController {
     @FXML
     Label ManagerMenu, showBalance, chargeStatus;
     @FXML
-    TextField chargeBalance;
+    TextField chargeBalance, restaurantName, restaurantType, restaurantLocation;
     @FXML
     VBox addRestaurantVBox;
     @FXML
     Button addRestaurant, ManagerMenuLogout, ManagerMenuCharge, ManagerMenuShowBalance, showRestaurants, backToManagerMenu, removeRestaurant;
     @FXML
-    TableView myRestaurants, myRestaurantsPrime;
-    //ObservableList<Re> t;
+    TableView<Restaurant> myRestaurants, myRestaurantsPrime;
     @FXML
     void initialize(){
         RestaurantAdminMenuController.setCurrentUser();

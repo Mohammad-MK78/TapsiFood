@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -15,8 +16,14 @@ public class FXCustomerRestaurantController {
     VBox selectMenuVBox, totalMenuVbox, starterMenuVbox, mainMealMenuVbox, dessertMenuVbox, selectFoodVBox;
     @FXML
     Button backToCustomerMenu, backToMenuSelect;
+    @FXML
+    Label restaurantName;
 
     public static Restaurant restaurant;
+    @FXML
+    void initialize() {
+        restaurantName.setText(restaurant.getName());
+    }
     public void openTotalMenu() {
         selectFoodVBox.setVisible(false);
         backToCustomerMenu.setVisible(false);

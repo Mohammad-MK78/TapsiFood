@@ -58,10 +58,14 @@ public class FXCustomerMenuController {
         addressC2.setCellValueFactory(new PropertyValueFactory<>("location"));
         addressC2.setPrefWidth(133);
 
+        totalRestaurantsTableView.getColumns().clear();
         totalRestaurantsTableView.getColumns().addAll(nameC,typeC,rateC,addressC);
+        totalRestaurantsTableView.getItems().clear();
         totalRestaurantsTableView.getItems().addAll(SnappFoodAdminMenuController.getRestaurants());
 
+        restaurantsByTypeTableView.getColumns().clear();
         restaurantsByTypeTableView.getColumns().addAll(nameC2,rateC2,addressC2);
+        restaurantsByTypeTableView.getItems().clear();
         restaurantsByTypeTableView.getItems().addAll(SnappFoodAdminMenuController.getRestaurantsByType(getSearchBox()));
 
         totalRestaurantsTableView.setRowFactory(tv -> {
@@ -147,21 +151,9 @@ public class FXCustomerMenuController {
         totalRestaurantVBox.setVisible(false);
         CustomerMenuVBox.setVisible(true);
         customerMenuBack.setVisible(false);
+
     }
     public void searchRestaurantsByType() {
         initialize();
     }
-    public void openRestaurantByType() throws IOException {
-        //restaurantName = restaurantsByTypeTableView.getSelectionModel().getSelectedItem().getName();
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurantMenu.fxml"));
-        Scene scene = new Scene(loader.load());
-        Main.getStage().setScene(scene);
-    }
-    public void openRestaurant() throws IOException {
-        //restaurantName = totalRestaurantsTableView.getSelectionModel().getSelectedItem().getName();
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurantMenu.fxml"));
-        Scene scene = new Scene(loader.load());
-        Main.getStage().setScene(scene);
-    }
-
 }

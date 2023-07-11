@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Ok">
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="GA fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerRestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerRestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" afterDir="false" />
     </list>
@@ -195,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689096741617</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="GA fixed">
+      <option name="closed" value="true" />
+      <created>1689106617477</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689106617477</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +234,8 @@
     <MESSAGE value="Add Phase1" />
     <MESSAGE value="reg theme" />
     <MESSAGE value="Ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ok" />
+    <MESSAGE value="GA fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="GA fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

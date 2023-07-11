@@ -51,7 +51,7 @@
                   <Button fx:id="searchDone" mnemonicParsing="false" onMouseClicked="#searchRestaurantsByType" prefHeight="50.0" prefWidth="50.0" text="✓" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <TableView fx:id="restaurantsByTypeTableView" onMouseClicked="#openRestaurantByType" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="restaurantsByTypeTableView" prefHeight="400.0" prefWidth="400.0" />
          </children>
          <padding>
             <Insets top="10.0" />
@@ -64,7 +64,7 @@
                   <Label fx:id="totalRestaurantsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Restaurants" />
                </children>
             </HBox>
-            <TableView fx:id="totalRestaurantsTableView" onMouseClicked="#openRestaurant" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="totalRestaurantsTableView" prefHeight="400.0" prefWidth="400.0" />
          </children>
          <padding>
             <Insets top="10.0" />

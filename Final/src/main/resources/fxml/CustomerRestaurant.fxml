@@ -17,10 +17,10 @@
       <Button fx:id="backToMenuSelect" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
       <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="195.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0">
          <children>
-            <Button fx:id="totalMenu" mnemonicParsing="false" onMouseClicked="#openTotalMenu" prefHeight="80.0" prefWidth="240.0" text="show restaurants" />
-            <Button fx:id="starterMenu" mnemonicParsing="false" onMouseClicked="#openStarterMenu" prefHeight="80.0" prefWidth="240.0" text="add restaurant" />
-            <Button fx:id="mainMealMenu" mnemonicParsing="false" onMouseClicked="#openMainMealMenu" prefHeight="80.0" prefWidth="240.0" text="remove restaurant" />
-            <Button fx:id="dessertMenu" mnemonicParsing="false" onMouseClicked="#openDessertMenu" prefHeight="80.0" prefWidth="240.0" text="remove restaurant" />
+            <Button fx:id="totalMenu" mnemonicParsing="false" onMouseClicked="#openTotalMenu" prefHeight="80.0" prefWidth="240.0" text="Menu" />
+            <Button fx:id="starterMenu" mnemonicParsing="false" onMouseClicked="#openStarterMenu" prefHeight="80.0" prefWidth="240.0" text="Starter Menu" />
+            <Button fx:id="mainMealMenu" mnemonicParsing="false" onMouseClicked="#openMainMealMenu" prefHeight="80.0" prefWidth="240.0" text="MainMeal Menu" />
+            <Button fx:id="dessertMenu" mnemonicParsing="false" onMouseClicked="#openDessertMenu" prefHeight="80.0" prefWidth="240.0" text="Dessert Menu" />
          </children>
       </VBox>
       <VBox fx:id="totalMenuVbox" layoutX="200.0" layoutY="135.0" prefHeight="450.0" prefWidth="400.0" visible="false">
