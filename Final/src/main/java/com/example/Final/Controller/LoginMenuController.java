@@ -1,9 +1,6 @@
 package com.example.Final.Controller;
 
-import com.example.Final.Model.Customer;
-import com.example.Final.Model.Delivery;
-import com.example.Final.Model.SnappFood;
-import com.example.Final.Model.SnappFoodManager;
+import com.example.Final.Model.*;
 import com.example.Final.View.LoginMenuEnums;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -95,19 +92,18 @@ public class LoginMenuController {
         }
     }
 
-    public static String login(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String username = matcher.group("username");
-        String password = matcher.group("password");
+    public static String login(String username, String password) throws SQLException, ClassNotFoundException {
 
-        if(SnappFood.getUserByUsername(username) == null)
+         if(SnappFood.getUserByUsername(username) == null)
             return "login failed: username not found";
 
         else if(!SnappFood.getUserByUsername(username).getPassword().equals(password))
             return "login failed: incorrect password";
 
         else {
-            SnappFood.setCurrentUser(SnappFood.getUserByUsername(username));
-            return "login successful";
+            User user = SnappFood.getUserByUsername(username);
+            SnappFood.setCurrentUser(user);
+            return user.getPosition();
         }
     }
 

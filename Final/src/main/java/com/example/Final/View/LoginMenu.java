@@ -35,17 +35,6 @@ public class LoginMenu {
                 return;
             }
 
-//            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.CUSTOMER_REGISTER)) != null)
-//                System.out.println(LoginMenuController.customerRegister(matcher));
-//            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.DELIVERY_REGISTER)) != null)
-//                System.out.println(LoginMenuController.deliveryRegister(matcher));
-            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.LOGIN)) != null) {
-                String result = LoginMenuController.login(matcher);
-                System.out.println(result);
-                if(result.equals("login successful"))
-                    MainMenu.run(scanner);
-            }
-
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.CHANGE_PASSWORD)) != null)
                 System.out.println(LoginMenuController.changePassword(matcher));
 
