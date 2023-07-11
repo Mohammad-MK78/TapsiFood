@@ -6,49 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="com.example.final -&gt; com.example.Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/CityGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CityGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/CustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/DeliveryMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/DeliveryMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/LoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/RestaurantAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantAdminMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/RestaurantMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/ShortestPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/ShortestPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Controller/SnappFoodAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/SnappFoodAdminMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXCustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXCustomerRestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerRestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXDeliveryMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXDeliveryMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXLoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXLoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXMainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXMainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXManagerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXRegisterMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXRegisterMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/FXMLController/FXRestaurantMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXRestaurantMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Delivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Discount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/RestaurantManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/RestaurantManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/SnappFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/SnappFoodManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFoodManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/CustomerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/CustomerMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/DeliveryMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/DeliveryMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/DeliveryMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/DeliveryMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/LoginMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/LoginMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/LoginMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/LoginMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/RestaurantAdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/RestaurantAdminMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/RestaurantMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/RestaurantMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/SnappFoodAdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/SnappFoodAdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/final/View/SnappFoodAdminMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/SnappFoodAdminMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/ManagerMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/ManagerMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,31 +27,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.33.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "SQL Dialects",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.33.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SQL Dialects&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Uni\OOP\TapsiFood\Final\src\main\resources\fxml" />

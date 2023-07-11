@@ -6,34 +6,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class FXManagerMenuController {
     @FXML
-    Label ManageMenu;
+    Label ManagerMenu;
     @FXML
-    AnchorPane RestaurantPane;
+    VBox addRestaurantVBox;
     @FXML
-    Button addRestaurant, ManagerMenuOptions, ManagerMenuLogout, ManagerMenuCharge, ManagerMenuShowBalance, showRestaurants, backToManagerMenu, removeRestaurant;
+    Button addRestaurant, ManagerMenuLogout, ManagerMenuCharge, ManagerMenuShowBalance, showRestaurants, backToManagerMenu, removeRestaurant;
     @FXML
     TableView myRestaurants, myRestaurantsPrime;
-    @FXML
-    TableColumn myRestaurantName, myRestaurantType, myRestaurantLocation, myRestaurantRating;
     //ObservableList<Re> t;
     public void addRestaurant() {
-        ManageMenu.setVisible(!ManageMenu.isVisible());
+        ManagerMenu.setVisible(!ManagerMenu.isVisible());
         addRestaurant.setVisible(!addRestaurant.isVisible());
         showRestaurants.setVisible(!showRestaurants.isVisible());
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
-        RestaurantPane.setVisible(!RestaurantPane.isVisible());
+        addRestaurantVBox.setVisible(!addRestaurantVBox.isVisible());
     }
     public void showRestaurants() {
-        ManageMenu.setVisible(!ManageMenu.isVisible());
+        ManagerMenu.setVisible(!ManagerMenu.isVisible());
         addRestaurant.setVisible(!addRestaurant.isVisible());
         showRestaurants.setVisible(!showRestaurants.isVisible());
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
@@ -52,17 +49,17 @@ public class FXManagerMenuController {
         Main.getStage().setScene(scene);
     }
     public void goBackToManagerMenu() {
-        ManageMenu.setVisible(true);
+        ManagerMenu.setVisible(true);
         addRestaurant.setVisible(true);
         showRestaurants.setVisible(true);
         removeRestaurant.setVisible(true);
         backToManagerMenu.setVisible(false);
         myRestaurants.setVisible(false);
-        RestaurantPane.setVisible(false);
+        addRestaurantVBox.setVisible(false);
         myRestaurantsPrime.setVisible(false);
     }
     public void removeRestaurant() {
-        ManageMenu.setVisible(!ManageMenu.isVisible());
+        ManagerMenu.setVisible(!ManagerMenu.isVisible());
         addRestaurant.setVisible(!addRestaurant.isVisible());
         showRestaurants.setVisible(!showRestaurants.isVisible());
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());

@@ -15,7 +15,7 @@
       <Button fx:id="loginMenuExit" layoutX="740.0" mnemonicParsing="false" onAction="#exit" text="exit" />
       <Button fx:id="login" layoutX="355.0" layoutY="501.0" mnemonicParsing="false" onAction="#loginComplete" text="login" />
       <Button fx:id="backToMainMenu" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" />
-      <HBox layoutX="150.0" layoutY="175.0" onMouseEntered="#showPassword" prefHeight="300.0" prefWidth="500.0">
+      <HBox layoutX="150.0" layoutY="175.0" prefHeight="300.0" prefWidth="500.0">
          <children>
             <VBox prefHeight="190.0" prefWidth="250.0" spacing="6.33">
                <children>
