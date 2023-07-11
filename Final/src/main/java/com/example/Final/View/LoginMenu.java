@@ -38,8 +38,6 @@ public class LoginMenu {
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.CHANGE_PASSWORD)) != null)
                 System.out.println(LoginMenuController.changePassword(matcher));
 
-            else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.FORGOT_PASSWORD)) != null)
-                System.out.println(LoginMenuController.forgotPassword(matcher));
 
             else if((matcher = LoginMenuEnums.getMatcher(command, LoginMenuEnums.REMOVE_ACCOUNT)) != null)
                 System.out.println(LoginMenuController.removeAccount(matcher));

@@ -8,7 +8,6 @@ public enum LoginMenuEnums {
     VALID_USERNAME ("[\\w_]*[a-zA-Z][\\w_]*"),
     VALID_PASSWORD ("[\\w_]+"),
     CHANGE_PASSWORD ("\\s*change\\s+password\\s+(?<username>\\S+)\\s+(?<oldPassword>\\S+)\\s+(?<newPassword>\\S+)\\s*"),
-    FORGOT_PASSWORD ("\\s*forgot\\s+password\\s+(?<username>\\S+)\\s+(?<securityQuestion>\\S+)\\s*"),
     REMOVE_ACCOUNT ("\\s*remove\\s+account\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s*"),
     EXIT ("\\s*exit\\s*"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*");

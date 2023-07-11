@@ -22,7 +22,7 @@ public class FXLoginMenuController {
     @FXML
     Label recoverPassword, yourPassword, securityLabel, wrongSecurityQuestion, notAppropriatePassword;
     @FXML
-    TextField usernameInp, securityQuestionInp;
+    TextField usernameInp, securityQuestionInp, recoverPasswordInp;
     @FXML
     PasswordField passwordInp;
     public void exit() {
@@ -33,21 +33,32 @@ public class FXLoginMenuController {
         securityLabel.setVisible(true);
         securityQuestionInp.setVisible(true);
     }
-    public void showPassword() {
-        if (!securityQuestionInp.getText().equals("")) {
-            if (securityQuestionInp.getText().equals("doroste")) {
-                yourPassword.setVisible(true);
-                recoverPassword.setVisible(true);
-                wrongSecurityQuestion.setVisible(false);
-            }
-            else {
-                wrongSecurityQuestion.setVisible(true);
-            }
-        }
-    }
-    public void showPasswordWithEnter(KeyEvent keyEvent) {
+    public void forgotPasswordWithEnter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER))
-            showPassword();
+            forgotPassword();
+    }
+    public void forgotPassword() throws SQLException, ClassNotFoundException {
+        boolean securityQuestionTrue = false;
+        String username = usernameInp.getText();
+        String securityQuestion = securityQuestionInp.getText();
+        String securityQuestionResult = LoginMenuController.forgotPassword(username, securityQuestion);
+        if (securityQuestionResult.equals("securityQuestion is ok"))
+            securityQuestionTrue = true;
+        if (securityQuestionTrue){
+            yourPassword.setVisible(true);
+            recoverPasswordInp.setVisible(true);
+            wrongSecurityQuestion.setVisible(false);
+        }
+        else
+            wrongSecurityQuestion.setVisible(true);
+    }
+    public void setNewPasswordWithEnter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            String username = usernameInp.getText();
+            String newPassword = recoverPasswordInp.getText();
+            String changePassResult = LoginMenuController.setNewPassword(username, newPassword);
+            System.out.println(changePassResult);
+        }
     }
     public void loginWithEnterKey(KeyEvent keyEvent) throws IOException, SQLException, ClassNotFoundException {
         if (keyEvent.getCode() == KeyCode.ENTER)
@@ -84,17 +95,6 @@ public class FXLoginMenuController {
                     scene = new Scene(loader.load());
                     Main.getStage().setScene(scene);
                     break;
-            }
-        }
-
-
-        if (!passwordInp.getText().equals("")) {
-            if (passwordInp.getText().equals("farzan2831")) {
-                FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerMenu.fxml"));
-                Scene scene = new Scene(Loader.load());
-                Main.getStage().setScene(scene);
-            } else {
-                notAppropriatePassword.setVisible(true);
             }
         }
     }

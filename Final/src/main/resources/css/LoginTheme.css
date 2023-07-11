@@ -59,6 +59,14 @@
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
+#recoverPasswordInp {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
 #usernameLabel {
     -fx-text-fill: #ff2189;
     -fx-font-size: 20;
@@ -87,14 +95,6 @@
 #yourPassword {
     -fx-text-fill: #ff2189;
     -fx-font-size: 20;
-}
-#recoverPassword {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
-    -fx-background-radius: 30;
-    -fx-border-radius: 30;
 }
 #securityLabel {
     -fx-text-fill: #ff2189;

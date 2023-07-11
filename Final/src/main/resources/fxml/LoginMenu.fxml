@@ -15,7 +15,7 @@
       <Button fx:id="loginMenuExit" layoutX="740.0" mnemonicParsing="false" onAction="#exit" text="exit" />
       <Button fx:id="login" layoutX="355.0" layoutY="501.0" mnemonicParsing="false" onAction="#loginComplete" text="login" />
       <Button fx:id="backToMainMenu" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" />
-      <HBox layoutX="150.0" layoutY="175.0" onMouseEntered="#showPassword" prefHeight="300.0" prefWidth="500.0">
+      <HBox layoutX="150.0" layoutY="175.0" prefHeight="300.0" prefWidth="500.0">
          <children>
             <VBox prefHeight="190.0" prefWidth="250.0" spacing="6.33">
                <children>
@@ -25,7 +25,7 @@
                   <Hyperlink fx:id="forgotPassword" alignment="CENTER_RIGHT" onAction="#showSecurityQuestionForForgottenPassword" prefHeight="20.0" prefWidth="250.0" text="forgot your password? bk     " />
                   <Label fx:id="securityLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="your elementary school:   " visible="false" />
                   <Label alignment="CENTER" prefHeight="20.0" prefWidth="250.0" />
-                  <Label fx:id="yourPassword" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="Your Password:   " visible="false" />
+                  <Label fx:id="yourPassword" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="Set New Password:   " visible="false" />
                </children>
             </VBox>
             <VBox prefHeight="170.0" prefWidth="250.0" spacing="6.33">
@@ -34,9 +34,9 @@
                   <Label fx:id="notAppropriateUsername" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" visible="false" />
                   <PasswordField fx:id="passwordInp" onKeyPressed="#loginWithEnterKey" prefHeight="50.0" prefWidth="200.0" />
                   <Label fx:id="notAppropriatePassword" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="wrong password!!!" visible="false" />
-                  <TextField fx:id="securityQuestionInp" onKeyPressed="#showPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
+                  <TextField fx:id="securityQuestionInp" onKeyPressed="#forgotPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
                   <Label fx:id="wrongSecurityQuestion" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="vaghean koskholi" visible="false" />
-                  <Label fx:id="recoverPassword" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" text="farzan2831" visible="false" />
+                  <TextField fx:id="recoverPasswordInp" onKeyPressed="#setNewPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
                </children>
             </VBox>
          </children>
