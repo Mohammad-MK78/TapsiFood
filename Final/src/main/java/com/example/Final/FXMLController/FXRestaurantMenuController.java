@@ -24,7 +24,7 @@ public class FXRestaurantMenuController {
     @FXML
     Button backToManagerMenu, backToSelectMenu, RestaurantMenuOptions, RestaurantMenuShowBalance, RestaurantMenuChangeType, RestaurantMenuShowType, addNewFood;
     @FXML
-    Label showBalanceLabel, changeTypeStatus, showTypeLabel;
+    Label showBalanceLabel, changeTypeStatus, showTypeLabel, restaurantName;
     @FXML
     TextField changeTypeTextField, foodName, foodCategory, foodCost, foodPrice, foodName2;
     @FXML
@@ -42,6 +42,7 @@ public class FXRestaurantMenuController {
     void initialize() throws SQLException, ClassNotFoundException {
         SnappFood.setCurrentRestaurant(SnappFood.getRestaurantByName(restaurant.getName()));
         RestaurantMenuController.setCurrentRestaurant();
+        restaurantName.setText(RestaurantMenuController.getCurrentRestaurant().getName());
 
         TableColumn<Order, String> Foods = new TableColumn<>("Foods");
         Foods.setCellValueFactory(new PropertyValueFactory<>("Foods"));
