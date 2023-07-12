@@ -52,7 +52,6 @@ public class SnappFoodAdminMenuController {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-        Class.forName("com.mysql.cj.jdbc.Driver");
         String sqlCheckRestaurant = "SELECT * FROM tapsifood.restaurants";
         ResultSet restaurantCheck = statement.executeQuery(sqlCheckRestaurant);
         ArrayList<Restaurant> restaurants = new ArrayList<>();
@@ -66,8 +65,6 @@ public class SnappFoodAdminMenuController {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-
-        Class.forName("com.mysql.cj.jdbc.Driver");
         String sqlCheckType = "SELECT * FROM tapsifood.restaurants where type='" + type + "'";
         ResultSet typeCheck = statement.executeQuery(sqlCheckType);
         ArrayList<Restaurant> restaurants = new ArrayList<>();

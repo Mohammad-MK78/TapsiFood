@@ -19,8 +19,6 @@ public class RestaurantAdminMenu {
                 System.out.println("user logged out successfully");
                 return;
             }
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ADD_RESTAURANT)) != null)
-                System.out.println(RestaurantAdminMenuController.addRestaurant(matcher));
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_RESTAURANTS) != null)
                 RestaurantAdminMenuController.showRestaurants(command);

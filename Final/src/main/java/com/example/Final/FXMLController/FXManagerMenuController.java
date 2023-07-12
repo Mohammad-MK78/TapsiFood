@@ -1,6 +1,7 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.RestaurantAdminMenuController;
+import com.example.Final.Controller.SnappFoodAdminMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Restaurant;
 import javafx.fxml.FXML;
@@ -27,7 +28,7 @@ public class FXManagerMenuController {
     @FXML
     TableView<Restaurant> myRestaurants, myRestaurantsPrime;
     @FXML
-    void initialize(){
+    void initialize() throws SQLException, ClassNotFoundException {
         RestaurantAdminMenuController.setCurrentUser();
 
         TableColumn<Restaurant, String> name = new TableColumn<>("name");
@@ -59,12 +60,12 @@ public class FXManagerMenuController {
         myRestaurants.getColumns().clear();
         myRestaurants.getColumns().addAll(name, type, rate, address);
         myRestaurants.getItems().clear();
-        myRestaurants.getItems().addAll();//TODO get all restaurants owned by this manager
+        myRestaurants.getItems().addAll(RestaurantAdminMenuController.getRestaurants());
 
         myRestaurantsPrime.getColumns().clear();
         myRestaurantsPrime.getColumns().addAll(name, type, rate, address);
         myRestaurantsPrime.getItems().clear();
-        myRestaurantsPrime.getItems().addAll();//TODO get all restaurants owned by this manager
+        myRestaurantsPrime.getItems().addAll(RestaurantAdminMenuController.getRestaurants());
 
         myRestaurants.setRowFactory(tv -> {
             TableRow<Restaurant> row = new TableRow<>();
@@ -103,6 +104,14 @@ public class FXManagerMenuController {
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
         addRestaurantVBox.setVisible(!addRestaurantVBox.isVisible());
+    }
+    public void addRestaurantCompleted() throws SQLException, ClassNotFoundException {
+        String name = restaurantName.getText();
+        String type = restaurantType.getText();
+        int location = Integer.parseInt(restaurantLocation.getText());
+        String result = RestaurantAdminMenuController.addRestaurant(name, type, location);
+        System.out.println(result);
+        initialize();
     }
     public void showRestaurants() {
         ManagerMenu.setVisible(!ManagerMenu.isVisible());

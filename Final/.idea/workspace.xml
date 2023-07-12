@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="hosele nadaram2">
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="hosele nadaram3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantAdminMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/SnappFoodAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/SnappFoodAdminMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXDeliveryMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXDeliveryMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenuEnums.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/css/DeliveryTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/DeliveryTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +93,7 @@
       <updated>1689000599747</updated>
       <workItem from="1689000600786" duration="8494000" />
       <workItem from="1689151723304" duration="15072000" />
-      <workItem from="1689170817796" duration="9851000" />
+      <workItem from="1689170817796" duration="12368000" />
     </task>
     <task id="LOCAL-00001" summary="Add Final">
       <option name="closed" value="true" />
@@ -257,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689179836970</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="hosele nadaram3">
+      <option name="closed" value="true" />
+      <created>1689180874297</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689180874297</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +310,8 @@
     <MESSAGE value="managerMenufxml edited" />
     <MESSAGE value="hosele nadaram" />
     <MESSAGE value="hosele nadaram2" />
-    <option name="LAST_COMMIT_MESSAGE" value="hosele nadaram2" />
+    <MESSAGE value="hosele nadaram3" />
+    <option name="LAST_COMMIT_MESSAGE" value="hosele nadaram3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

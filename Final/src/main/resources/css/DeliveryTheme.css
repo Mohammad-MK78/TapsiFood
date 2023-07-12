@@ -112,5 +112,5 @@
     -fx-font-size: 20;
 }
 #DeliveryMenuAnchorPane {
-
+    -fx-background-image: url('Pictures/RegisterMenu.png');
 }

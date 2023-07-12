@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 public enum RestaurantAdminMenuEnums {
     LOGOUT ("\\s*logout\\s*"),
-    ADD_RESTAURANT ("\\s*add\\s+restaurant\\s+(?<name>\\S+)\\s+(?<type>\\S+)\\s+(?<location>-?\\d+)\\s*"),
     SHOW_RESTAURANTS ("\\s*show\\s+restaurant(\\s+-t\\s+(?<type>\\S+))?\\s*"),
     SHOW_RESTAURANT_OPTION ("\\s+-t\\s+(?<type>\\S+)"),
     ENTER_RESTAURANT ("\\s*enter\\s+restaurant\\s+(?<name>\\S+)\\s*"),

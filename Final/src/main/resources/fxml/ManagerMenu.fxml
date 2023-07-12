@@ -75,7 +75,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="addNewRestaurant" mnemonicParsing="false" text="add" />
+            <Button fx:id="addNewRestaurant" mnemonicParsing="false" onAction="#addRestaurantCompleted" text="add" />
          </children>
       </VBox>
       <VBox fx:id="myRestaurantsVBox" layoutX="200.0" layoutY="100.0" prefHeight="480.0" prefWidth="400.0" spacing="30.0" visible="false">

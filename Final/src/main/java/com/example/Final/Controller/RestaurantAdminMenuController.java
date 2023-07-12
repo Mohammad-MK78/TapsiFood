@@ -3,6 +3,7 @@ package com.example.Final.Controller;
 import com.example.Final.Model.*;
 import com.example.Final.View.RestaurantAdminMenuEnums;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,27 +14,53 @@ public class RestaurantAdminMenuController {
         User user = SnappFood.getCurrentUser();
         currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getSecurityQuestion(), user.getCredit());
     }
-    public static String addRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String name = matcher.group("name");
-        String type = matcher.group("type");
-        int location = Integer.parseInt(matcher.group("location"));
+    public static String addRestaurant(String name, String type, int location) throws SQLException, ClassNotFoundException {
 
         if(RestaurantAdminMenuEnums.getMatcher(name, RestaurantAdminMenuEnums.VALID_NAME) == null)
             return "add restaurant failed: invalid username format";
 
-        else if(SnappFood.getUserByUsername(name) != null)
-            return "add restaurant failed: username already exists";
+        else if(SnappFood.getRestaurantByName(name) != null)
+            return "add restaurant failed: name already exists";
 
         else if(RestaurantAdminMenuEnums.getMatcher(type, RestaurantAdminMenuEnums.VALID_TYPE) == null)
             return "add restaurant failed: invalid type format";
         else if (location < 1 || location > 1000)
             return "add restaurant failed: invalid location format";
         else {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+            String getManagerID = "SELECT * FROM tapsifood.accounts where username='" + currentUser.getUsername() + "'";
+            int managerID = 0;
+            ResultSet getID = statement.executeQuery(getManagerID);
+            if (getID.next())
+                managerID = getID.getInt("id");
+            String sql = "INSERT INTO tapsifood.restaurants(name, type, location, managerID) VALUES ('"+name+"', '"+type+"', '"+location+"', '"+managerID+"')";
+            statement.executeUpdate(sql);
             currentUser.addRestaurant(new Restaurant(name, type, location, 0));
             return "restaurant added successfully";
         }
     }
-
+    public static ArrayList<Restaurant> getRestaurants() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String getManagerID = "SELECT * FROM tapsifood.accounts where username='" + currentUser.getUsername() + "'";
+        int managerID = 0;
+        ResultSet getID = statement.executeQuery(getManagerID);
+        if (getID.next())
+            managerID = getID.getInt("id");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String sqlCheckType = "SELECT * FROM tapsifood.restaurants where managerID='" + managerID + "'";
+        ResultSet typeCheck = statement.executeQuery(sqlCheckType);
+        ArrayList<Restaurant> restaurants = new ArrayList<>();
+        while (typeCheck.next()) {
+            String name = typeCheck.getString("name");
+            Restaurant restaurant = SnappFood.getRestaurantByName(name);
+            restaurants.add(restaurant);
+        }
+        return restaurants;
+    }
     public static void showRestaurants(String command) throws ClassNotFoundException, SQLException {
         Pattern typePattern = Pattern.compile(RestaurantAdminMenuEnums.getString(RestaurantAdminMenuEnums.SHOW_RESTAURANT_OPTION));
         Matcher typeMatcher = typePattern.matcher(command);
