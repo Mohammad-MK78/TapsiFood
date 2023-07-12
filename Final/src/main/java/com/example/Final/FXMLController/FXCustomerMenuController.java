@@ -3,6 +3,8 @@ package com.example.Final.FXMLController;
 import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Controller.SnappFoodAdminMenuController;
 import com.example.Final.Main;
+import com.example.Final.Model.Cart;
+import com.example.Final.Model.Discount;
 import com.example.Final.Model.Restaurant;
 import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
@@ -30,6 +32,10 @@ public class FXCustomerMenuController {
     Button customerMenuOptions, customerMenuLogout, customerMenuCharge, customerMenuShowBalance, customerMenuChangeLocation, customerMenuShowLocation;
     @FXML
     TableView<Restaurant> restaurantsByTypeTableView, totalRestaurantsTableView;
+    @FXML
+    TableView<Discount> discountsTableView;
+    @FXML
+    TableView<Cart> orderHistoryTableView;
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         CustomerMenuController.setCurrentUser();
@@ -199,7 +205,10 @@ public class FXCustomerMenuController {
         backToCustomerMenuSelect.setVisible(true);
         customerMenuSelect.setVisible(!customerMenuSelect.isVisible());
     }
-    public void showCart() { //TODO cart
+    public void showCart() throws IOException {
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/Cart.fxml"));
+        Scene scene = new Scene(Loader.load());
+        Main.getStage().setScene(scene);
     }
     public void showRestaurants() {
         searchRestaurantByTypeVBox.setVisible(true);

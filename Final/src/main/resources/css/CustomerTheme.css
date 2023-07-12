@@ -203,3 +203,11 @@
     -fx-border-radius: 60;
     -fx-font-size: 20;
 }
+#discountsLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 30;
+}
+#orderHistoryLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 30;
+}

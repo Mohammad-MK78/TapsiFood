@@ -21,7 +21,7 @@
       </ImageView>
       <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="backToCustomerMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goBackToCustomerMenu" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
+      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="195.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
          <children>
             <Button fx:id="totalMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#openTotalMenu" prefHeight="80.0" prefWidth="240.0" text="Menu" VBox.vgrow="ALWAYS" />

@@ -1,8 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CartTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCartController">
-
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Pictures/RegisterMenu.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="MyCartLabel" alignment="CENTER" layoutX="208.0" layoutY="32.0" prefHeight="100.0" prefWidth="400.0" text="My Cart" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToCustomerMenu" layoutX="20.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToCustomerMenu" text="←" />
+      <Button fx:id="backToSelectMenu" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToSelectMenu" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="142.0" prefHeight="400.0" prefWidth="240.0" spacing="20.0">
+         <children>
+            <Button fx:id="showCart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openShowCart" prefHeight="80.0" prefWidth="240.0" text="show cart" VBox.vgrow="ALWAYS" />
+            <Button fx:id="purchaseCart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openPurchase" prefHeight="80.0" prefWidth="240.0" text="purchase" />
+            <Button fx:id="showTime" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openShowTime" prefHeight="80.0" prefWidth="240.0" text="show time" VBox.vgrow="ALWAYS" />
+            <Button fx:id="showDelivery" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openShowDelivery" prefHeight="80.0" prefWidth="240.0" text="show delivery" VBox.vgrow="ALWAYS" />
+            <Button fx:id="orderStatus" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#openOrderStatus" prefHeight="80.0" prefWidth="240.0" text="order status" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <HBox fx:id="showTimeHBox" layoutX="220.0" layoutY="220.0" prefHeight="80.0" prefWidth="360.0" visible="false">
+         <children>
+            <Label fx:id="estimatedTimeLabel" alignment="CENTER" prefHeight="120.0" prefWidth="180.0" text="estimated time:" />
+            <Label fx:id="showTimeLabel" alignment="CENTER" prefHeight="120.0" prefWidth="180.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="showDeliveryHBox" layoutX="220.0" layoutY="220.0" prefHeight="80.0" prefWidth="360.0" visible="false">
+         <children>
+            <Label fx:id="deliveryNameLabel" alignment="CENTER" prefHeight="120.0" prefWidth="180.0" text="delivery name:" />
+            <Label fx:id="showDeliveryLabel" alignment="CENTER" prefHeight="120.0" prefWidth="180.0" />
+         </children>
+      </HBox>
+      <VBox fx:id="orderStatusVBox" layoutX="280.0" layoutY="180.0" prefHeight="240.0" prefWidth="240.0" visible="false">
+         <children>
+            <Label fx:id="orderStatusLabel" alignment="CENTER" prefHeight="120.0" prefWidth="240.0" text="have you collected your food?" />
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="240.0" spacing="20.0">
+               <children>
+                  <Button fx:id="orderCollected" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Yes :)" />
+                  <Button fx:id="orderNotCollected" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="No :(" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="currentCartVBox" layoutX="206.0" layoutY="129.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
+         <children>
+            <Label fx:id="currentCartLabel" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="current cart" />
+            <TableView fx:id="currentCartTableView" prefHeight="400.0" prefWidth="400.0" />
+         </children>
+      </VBox>
+      <VBox fx:id="purchaseVBox" alignment="CENTER" layoutX="256.0" layoutY="180.0" prefHeight="240.0" prefWidth="300.0" spacing="10.0" visible="false">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="240.0" spacing="20.0">
+               <children>
+                  <Label fx:id="addDiscountLabel" alignment="CENTER" prefHeight="100.0" prefWidth="120.0" text="add discount" />
+                  <TextField fx:id="addDiscountTextField" prefHeight="100.0" prefWidth="160.0" />
+               </children>
+            </HBox>
+            <Button fx:id="purchase" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="purchase" />
+            <Label fx:id="purchaseStatusLabel" prefHeight="40.0" prefWidth="300.0" text="Label" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

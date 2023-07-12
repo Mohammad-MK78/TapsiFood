@@ -1,0 +1,135 @@
+#showCart{
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#purchaseCart {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#showTime {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#showDelivery {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#orderStatus {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#estimatedTimeLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#showTimeLabel {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#deliveryNameLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#showDeliveryLabel {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#orderStatusLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 18;
+}
+#orderCollected {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#orderNotCollected {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#currentCartLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 24;
+}
+#addDiscountLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#addDiscountTextField {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#purchase {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 14;
+}
+#backToSelectMenu {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 24;
+}
+#backToCustomerMenu {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 24;
+}
+#MyCartLabel {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 30;
+}

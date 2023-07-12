@@ -6,16 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="add/remove restaurant&#10;hosele nadaram5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantAdminMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/RestaurantMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXRestaurantMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXRestaurantMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantAdminMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/RestaurantMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/RestaurantMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RestaurantMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/CartTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CartTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Cart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SnappFoodAdminMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SnappFoodAdminMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
