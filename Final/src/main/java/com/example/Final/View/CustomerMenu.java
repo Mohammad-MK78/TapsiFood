@@ -62,8 +62,6 @@ public class CustomerMenu {
 
             else if(CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("customer menu");
-            else if((matcher = CustomerMenuEnums.getMatcher(command, CustomerMenuEnums.CHANGE_LOCATION)) != null)
-                System.out.println(CustomerMenuController.changeLocation(matcher));
             else
                 System.out.println("invalid command!");
         }

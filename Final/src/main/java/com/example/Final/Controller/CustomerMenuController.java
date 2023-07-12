@@ -34,14 +34,12 @@ public class CustomerMenuController {
     public static int showBalance() {
         return currentUser.getCredit();
     }
-    public static String changeLocation(Matcher matcher) throws SQLException, ClassNotFoundException {
-        int location = Integer.parseInt(matcher.group("location"));
-
-        if(location < 1 || location > 1000)
-            return "change location failed: invalid location";
-
+    public static String changeLocation(int location) throws SQLException, ClassNotFoundException {
         currentUser.setLocation(location);
-        return "change location successful";
+        return "successful";
+    }
+    public static int getLocation() {
+        return currentUser.getLocation();
     }
     public static void showRestaurant(String command) throws ClassNotFoundException, SQLException {
         Pattern typePattern = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.SHOW_RESTAURANT_OPTION));

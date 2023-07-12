@@ -13,30 +13,43 @@
 
 <AnchorPane fx:id="customerMenu" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CustomerTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCustomerMenuController">
    <children>
-      <Button fx:id="customerMenuBack" mnemonicParsing="false" onAction="#goBackToCustomerMenu" text="←" visible="false" />
-      <VBox fx:id="CustomerMenuVBox" layoutX="200.0" layoutY="30.0" prefHeight="520.0" prefWidth="400.0" spacing="120.0">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Pictures/RegisterMenu.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="CustomerMenu" alignment="CENTER" layoutX="198.0" layoutY="22.0" prefHeight="100.0" prefWidth="400.0" text="Customer Menu" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToCustomerMenuSelect" mnemonicParsing="false" onAction="#goBackToCustomerMenuSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToRestaurantSelect" mnemonicParsing="false" onAction="#goBackToRestaurantSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <VBox fx:id="customerMenuSelect" layoutX="278.0" layoutY="157.0" prefHeight="400.0" prefWidth="240.0" spacing="20.0">
          <children>
-            <Label fx:id="CustomerMenu" alignment="CENTER" prefHeight="100.0" prefWidth="400.0" text="Customer Menu" textFill="#ff0070" />
+            <Button fx:id="selectRestaurant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectRestaurant" prefHeight="80.0" prefWidth="240.0" text="select restaurant" />
+            <Button fx:id="showDiscounts" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDiscounts" prefHeight="80.0" prefWidth="240.0" text="discounts" />
+            <Button fx:id="showCart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCart" prefHeight="80.0" prefWidth="240.0" text="cart" />
+            <Button fx:id="showOrderHistory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showOrderHistory" prefHeight="80.0" prefWidth="240.0" text="order history" />
+         </children></VBox>
+      <VBox fx:id="CustomerRestaurantSelectVBox" alignment="CENTER" layoutX="198.0" layoutY="130.0" prefHeight="400.0" prefWidth="400.0" spacing="120.0" visible="false">
+         <children>
             <HBox prefHeight="210.0" prefWidth="400.0" spacing="80.0">
                <children>
-                  <VBox prefHeight="210.0" prefWidth="160.0" spacing="35.0">
+                  <VBox prefHeight="210.0" prefWidth="160.0" spacing="25.0">
                      <children>
                         <ImageView fx:id="restaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#totalRestaurants" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/restaurantsICON.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="restaurantsLabel" alignment="CENTER" prefHeight="20.0" prefWidth="160.0" text="restaurants" />
+                        <Label fx:id="restaurantsLabel" alignment="CENTER" prefHeight="30.0" prefWidth="160.0" text="restaurants" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="210.0" prefWidth="160.0" spacing="30.0">
+                  <VBox prefHeight="210.0" prefWidth="160.0" spacing="20.0">
                      <children>
                         <ImageView fx:id="searchRestaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#showRestaurants" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/searchICON.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="restaurantsSearchLabel" alignment="CENTER" prefHeight="20.0" prefWidth="160.0" text="search by type" />
+                        <Label fx:id="restaurantsSearchLabel" alignment="CENTER" prefHeight="30.0" prefWidth="160.0" text="search by type" />
                      </children>
                   </VBox>
                </children>
@@ -70,27 +83,44 @@
             <Insets top="10.0" />
          </padding>
       </VBox>
-      <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="400.0" prefWidth="180.0" spacing="20.0">
+      <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="440.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+            <VBox prefHeight="440.0" prefWidth="100.0" spacing="10.0">
                <children>
                   <Label fx:id="chargeStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" />
                   <TextField fx:id="chargeBalance" alignment="CENTER" onKeyPressed="#chargeAccount" prefHeight="60.0" prefWidth="100.0" visible="false" />
                   <Label fx:id="showBalance" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" text="\$" visible="false" />
+                  <TextField fx:id="changeLocationTextField" alignment="CENTER" onKeyPressed="#changeLocation" prefHeight="60.0" prefWidth="100.0" visible="false" />
+                  <Label fx:id="showLocation" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" visible="false" />
+                  <Label fx:id="changeLocationStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" />
                </children>
                <padding>
                   <Insets top="110.0" />
                </padding>
             </VBox>
-            <VBox fx:id="optionsVBox" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
+            <VBox fx:id="optionsVBox" prefHeight="440.0" prefWidth="60.0" spacing="10.0">
                <children>
                   <Button fx:id="customerMenuOptions" mnemonicParsing="false" onAction="#showOptions" text="⁝" />
                   <Button fx:id="customerMenuLogout" mnemonicParsing="false" onAction="#logout" text="logout" visible="false" />
                   <Button fx:id="customerMenuCharge" mnemonicParsing="false" onAction="#showChargeAccount" text="charge" visible="false" />
                   <Button fx:id="customerMenuShowBalance" mnemonicParsing="false" onAction="#showBalance" text="balance" visible="false" />
+                  <Button fx:id="customerMenuChangeLocation" mnemonicParsing="false" onAction="#showChangeLocation" text="change" visible="false" />
+                  <Button fx:id="customerMenuShowLocation" mnemonicParsing="false" onAction="#showLocation" text="location" visible="false" />
                </children>
             </VBox>
          </children>
       </HBox>
+      <VBox fx:id="discountsVBox" layoutX="200.0" layoutY="132.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
+         <children>
+            <Label fx:id="discountsLabel" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="discounts" textFill="#ff0070" />
+            <TableView fx:id="discountsTableView" prefHeight="400.0" prefWidth="400.0" />
+         </children>
+      </VBox>
+      <VBox fx:id="orderHistoryVBox" layoutX="200.0" layoutY="132.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
+         <children>
+            <Label fx:id="orderHistoryLabel" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="order history" textFill="#ff0070" />
+            <TableView fx:id="orderHistoryTableView" prefHeight="400.0" prefWidth="400.0" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

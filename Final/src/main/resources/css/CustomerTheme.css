@@ -41,6 +41,16 @@
     -fx-pref-height: 60;
     -fx-font-size: 12;
 }
+#customerMenuChangeLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
 #restaurantsLabel {
     -fx-text-fill: #f15e22;
     -fx-background-color: #f5cea6;
@@ -77,6 +87,24 @@
     -fx-border-radius: 60;
     -fx-font-size: 20;
 }
+#showLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+#customerMenuShowLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
 #chargeBalance {
     -fx-text-fill: #f15e22;
     -fx-background-color: #f5cea6;
@@ -85,7 +113,25 @@
     -fx-border-radius: 60;
     -fx-font-size: 20;
 }
-#customerMenuBack {
+#changeLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+#backToCustomerMenuSelect {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 24;
+}
+#backToRestaurantSelect {
     -fx-text-fill: #f15e22;
     -fx-background-color: #f5cea6;
     -fx-border-color: #f15e22;
@@ -116,4 +162,44 @@
     -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
+}
+#selectRestaurant {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#showDiscounts {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#showCart {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#showOrderHistory {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#changeLocationTextField {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
 }

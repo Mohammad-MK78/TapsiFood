@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Cart {
     ArrayList<Order> orders;
     private Delivery delivery;
+    private int time;
     private String Foods, customerName;
     private int totalPrice;
     public Cart(ArrayList<Order> order) {

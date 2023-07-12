@@ -2,6 +2,7 @@ package com.example.Final.FXMLController;
 
 
 import com.example.Final.Controller.DeliveryMenuController;
+import com.example.Final.Controller.SnappFoodAdminMenuController;
 import com.example.Final.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,8 +31,10 @@ public class FXDeliveryMenuController {
     void initialize(){
         DeliveryMenuController.setCurrentUser();
     }
-    public void showPath() {
-
+    public void showPath() throws IOException {
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/Map.fxml"));
+        Scene scene = new Scene(Loader.load());
+        Main.getStage().setScene(scene);
     }
     public void showTime() {
 

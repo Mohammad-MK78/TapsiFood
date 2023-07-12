@@ -19,15 +19,15 @@ import java.sql.SQLException;
 
 public class FXCustomerMenuController {
     @FXML
-    Button customerMenuBack;
+    Button backToCustomerMenuSelect, backToRestaurantSelect;
     @FXML
-    Label showBalance, chargeStatus;
+    Label showBalance, chargeStatus, showLocation, changeLocationStatus, CustomerMenu;
     @FXML
-    TextField chargeBalance, searchBox;
+    TextField chargeBalance, searchBox, changeLocationTextField;
     @FXML
-    VBox searchRestaurantByTypeVBox, totalRestaurantVBox, CustomerMenuVBox;
+    VBox searchRestaurantByTypeVBox, totalRestaurantVBox, CustomerRestaurantSelectVBox, customerMenuSelect, discountsVBox, orderHistoryVBox;
     @FXML
-    Button customerMenuOptions, customerMenuLogout, customerMenuCharge, customerMenuShowBalance;
+    Button customerMenuOptions, customerMenuLogout, customerMenuCharge, customerMenuShowBalance, customerMenuChangeLocation, customerMenuShowLocation;
     @FXML
     TableView<Restaurant> restaurantsByTypeTableView, totalRestaurantsTableView;
     @FXML
@@ -111,10 +111,16 @@ public class FXCustomerMenuController {
         customerMenuLogout.setVisible(!customerMenuLogout.isVisible());
         customerMenuCharge.setVisible(!customerMenuCharge.isVisible());
         customerMenuShowBalance.setVisible(!customerMenuShowBalance.isVisible());
+        customerMenuChangeLocation.setVisible(!customerMenuChangeLocation.isVisible());
+        customerMenuShowLocation.setVisible(!customerMenuShowLocation.isVisible());
         if (chargeBalance.isVisible())
             chargeBalance.setVisible(!chargeBalance.isVisible());
         if (showBalance.isVisible())
             showBalance.setVisible(!showBalance.isVisible());
+        if (changeLocationTextField.isVisible())
+            changeLocationTextField.setVisible(!changeLocationTextField.isVisible());
+        if (showLocation.isVisible())
+            showLocation.setVisible(!showLocation.isVisible());
     }
     public void logout() throws IOException {
         SnappFood.setCurrentUser(null);
@@ -132,7 +138,7 @@ public class FXCustomerMenuController {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             String result;
             if (!chargeBalance.getText().matches("\\d+"))
-                result = "Invalid";
+                result = "Invalid!";
             else {
                 int amount = Integer.parseInt(chargeBalance.getText());
                 result = CustomerMenuController.chargeAccount(amount);
@@ -150,24 +156,85 @@ public class FXCustomerMenuController {
         int balance = CustomerMenuController.showBalance();
         showBalance.setText("$" + balance);
     }
-    public void showRestaurants() { //TODO رستوراانا باید نشون داده شه برحسب تایپشون
+    public void showLocation() {
+        updateLocation();
+        showLocation.setVisible(!showLocation.isVisible());
+    }
+    public void showChangeLocation() {
+        changeLocationTextField.setVisible(!changeLocationTextField.isVisible());
+        changeLocationTextField.setText("");
+        changeLocationStatus.setText("");
+    }
+    public void changeLocation(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            String result;
+            if (!showLocation.getText().matches("\\d+") || Integer.parseInt(showLocation.getText()) < 0 || Integer.parseInt(showLocation.getText()) > 1000) {
+                result = "Invalid!";
+            }
+            else {
+                int location = Integer.parseInt(showLocation.getText());
+                result = CustomerMenuController.changeLocation(location); //TODO location is not updating
+            }
+            changeLocationStatus.setText(result);
+            changeLocationTextField.setText("");
+        }
+        updateLocation();
+    }
+    public void updateLocation() {
+        showLocation.setText(String.valueOf(CustomerMenuController.getLocation()));
+    }
+    public void selectRestaurant() {
+        CustomerRestaurantSelectVBox.setVisible(!CustomerRestaurantSelectVBox.isVisible());
+        customerMenuSelect.setVisible(!customerMenuSelect.isVisible());
+        backToCustomerMenuSelect.setVisible(true);
+        backToRestaurantSelect.setVisible(false);
+    }
+    public void showOrderHistory() {
+        orderHistoryVBox.setVisible(!orderHistoryVBox.isVisible());
+        backToCustomerMenuSelect.setVisible(true);
+        customerMenuSelect.setVisible(!customerMenuSelect.isVisible());
+    }
+    public void showDiscounts() {
+        discountsVBox.setVisible(!discountsVBox.isVisible());
+        backToCustomerMenuSelect.setVisible(true);
+        customerMenuSelect.setVisible(!customerMenuSelect.isVisible());
+    }
+    public void showCart() { //TODO cart
+    }
+    public void showRestaurants() {
         searchRestaurantByTypeVBox.setVisible(true);
         totalRestaurantVBox.setVisible(false);
-        CustomerMenuVBox.setVisible(false);
-        customerMenuBack.setVisible(true);
+        CustomerRestaurantSelectVBox.setVisible(false);
+        backToRestaurantSelect.setVisible(true);
+        backToCustomerMenuSelect.setVisible(false);
+        CustomerMenu.setVisible(false);
     }
-    public void totalRestaurants() { //TODO رستوراانا باید نشون داده شه همشون
+    public void totalRestaurants() {
         totalRestaurantVBox.setVisible(true);
         searchRestaurantByTypeVBox.setVisible(false);
-        CustomerMenuVBox.setVisible(false);
-        customerMenuBack.setVisible(true);
+        CustomerRestaurantSelectVBox.setVisible(false);
+        backToRestaurantSelect.setVisible(true);
+        backToCustomerMenuSelect.setVisible(false);
+        CustomerMenu.setVisible(false);
     }
-    public void goBackToCustomerMenu() {
+    public void goBackToCustomerMenuSelect() {
+        CustomerMenu.setVisible(true);
+        customerMenuSelect.setVisible(true);
         searchRestaurantByTypeVBox.setVisible(false);
         totalRestaurantVBox.setVisible(false);
-        CustomerMenuVBox.setVisible(true);
-        customerMenuBack.setVisible(false);
-
+        CustomerRestaurantSelectVBox.setVisible(false);
+        backToRestaurantSelect.setVisible(false);
+        backToCustomerMenuSelect.setVisible(false);
+        discountsVBox.setVisible(false);
+        orderHistoryVBox.setVisible(false);
+    }
+    public void goBackToRestaurantSelect() {
+        CustomerMenu.setVisible(true);
+        searchRestaurantByTypeVBox.setVisible(false);
+        totalRestaurantVBox.setVisible(false);
+        backToCustomerMenuSelect.setVisible(true);
+        backToRestaurantSelect.setVisible(false);
+        CustomerRestaurantSelectVBox.setVisible(true);
     }
     public void searchRestaurantsByType() throws SQLException, ClassNotFoundException {
         initialize();
