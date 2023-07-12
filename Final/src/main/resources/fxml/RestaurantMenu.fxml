@@ -68,7 +68,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="addNewFood" mnemonicParsing="false" onAction="#doAddNewFood" text="add" />
+            <Button fx:id="addNewFood" mnemonicParsing="false" onAction="#addFoodCompleted" text="add" />
          </children>
       </VBox>
       <VBox fx:id="removeFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="230.0" prefHeight="200.0" prefWidth="400.0" spacing="10.0" visible="false">
@@ -87,7 +87,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="removeFoodDone" mnemonicParsing="false" onAction="#doRemoveFood" text="remove" />
+            <Button fx:id="removeFoodDone" mnemonicParsing="false" onAction="#removeFoodCompleted" text="remove" />
          </children>
       </VBox>
       <TableView fx:id="orderHistoryTableView" layoutX="200.0" layoutY="154.0" prefHeight="400.0" prefWidth="400.0" visible="false" />

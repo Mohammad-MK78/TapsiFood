@@ -14,6 +14,10 @@ public class RestaurantMenuController {
         currentRestaurant = new Restaurant(restaurant.getName(), restaurant.getType(), restaurant.getLocation(), restaurant.getRate());
     }
 
+    public static Restaurant getCurrentRestaurant() {
+        return currentRestaurant;
+    }
+
     public static int showBalance() {
         return currentRestaurant.getCredit();
     }
@@ -25,26 +29,30 @@ public class RestaurantMenuController {
     public static String showType() {
         return currentRestaurant.getType();
     }
-    public static String addFood(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String name = matcher.group("name");
-        String category = matcher.group("category");
-        int price = Integer.parseInt(matcher.group("price"));
-        int cost = Integer.parseInt(matcher.group("cost"));
+    public static String addFood(String name, String category, int price, int cost) throws SQLException, ClassNotFoundException {
 
-        if(!category.equals("Starter") && !category.equals("MainMeal") && !category.equals("Dessert"))
-            return "add food failed: invalid category";
+        if(!category.equalsIgnoreCase("Starter") && !category.equalsIgnoreCase("MainMeal") && !category.equalsIgnoreCase("Dessert"))
+            return "invalid: category";
 
         else if(RestaurantMenuEnums.getMatcher(name, RestaurantMenuEnums.VALID_FOOD_NAME) == null)
-            return "add food failed: invalid food name";
+            return "invalid: food name";
 
         else if(Restaurant.getFoodByName(name, currentRestaurant.getName()) != null)
-            return "add food failed: food already exists";
+            return "invalid: food already exists";
 
         else if(price < 1 || cost < 1)
-            return "add food failed: invalid cost or price";
+            return "invalid: cost or price";
 
         currentRestaurant.addFood(new Food(currentRestaurant, name, category, price, cost));
-        return "add food successful";
+        return "Successful";
+    }
+    public static String removeFood(String name) throws SQLException, ClassNotFoundException {
+        Food food = Restaurant.getFoodByName(name, currentRestaurant.getName());
+        if(food == null)
+            return "failed: food not found";
+
+        Restaurant.removeFood(food);
+        return "Successful";
     }
 
     public static String reply(Matcher matcher) {
@@ -55,15 +63,7 @@ public class RestaurantMenuController {
         currentRestaurant.reply(num, message);
         return "replied successfully!";
     }
-    public static String removeFood(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String name = matcher.group("name");
 
-        if(Restaurant.getFoodByName(name, currentRestaurant.getName()) == null)
-            return "remove food failed: food not found\n";
-
-        Restaurant.getFoodByName(name, currentRestaurant.getName());
-        return "";
-    }
     public static String showComment() {
         return currentRestaurant.getComments().toString();
     }

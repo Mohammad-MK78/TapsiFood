@@ -22,20 +22,26 @@ public class FXRestaurantMenuController {
     @FXML
     VBox selectMenuVBox, addFoodVBox, removeFoodVBox, replyVBox;
     @FXML
-    Button backToManagerMenu, backToSelectMenu, RestaurantMenuOptions, RestaurantMenuShowBalance, RestaurantMenuChangeType, RestaurantMenuShowType;
+    Button backToManagerMenu, backToSelectMenu, RestaurantMenuOptions, RestaurantMenuShowBalance, RestaurantMenuChangeType, RestaurantMenuShowType, addNewFood;
     @FXML
     Label showBalanceLabel, changeTypeStatus, showTypeLabel;
     @FXML
-    TextField changeTypeTextField;
+    TextField changeTypeTextField, foodName, foodCategory, foodCost, foodPrice, foodName2;
     @FXML
     TableView<Order> orderHistoryTableView, ongoingOrdersTableView;
     @FXML
     TableView<String> commentsTableView; //TODO create class Comment :..)
 
     public static Restaurant restaurant;
+
+    public static void setRestaurant(Restaurant restaurant) {
+        FXRestaurantMenuController.restaurant = restaurant;
+    }
+
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         SnappFood.setCurrentRestaurant(SnappFood.getRestaurantByName(restaurant.getName()));
+        RestaurantMenuController.setCurrentRestaurant();
 
         TableColumn<Order, String> Foods = new TableColumn<>("Foods");
         Foods.setCellValueFactory(new PropertyValueFactory<>("Foods"));
@@ -75,6 +81,15 @@ public class FXRestaurantMenuController {
         backToManagerMenu.setVisible(false);
         backToSelectMenu.setVisible(true);
     }
+    public void addFoodCompleted() throws SQLException, ClassNotFoundException {
+        String name = foodName.getText();
+        String category = foodCategory.getText();
+        int price = Integer.parseInt(foodPrice.getText());
+        int cost = Integer.parseInt(foodCost.getText());
+        String result = RestaurantMenuController.addFood(name, category, price, cost);
+        System.out.println(result);
+        initialize();
+    }
     public void goBackToManagerMenu() throws IOException {
         FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/ManagerMenu.fxml"));
         Scene scene = new Scene(Loader.load());
@@ -96,6 +111,12 @@ public class FXRestaurantMenuController {
         selectMenuVBox.setVisible(!selectMenuVBox.isVisible());
         backToManagerMenu.setVisible(false);
         backToSelectMenu.setVisible(true);
+    }
+    public void removeFoodCompleted() throws SQLException, ClassNotFoundException {
+        String name = foodName2.getText();
+        String result = RestaurantMenuController.removeFood(name);
+        System.out.println(result);
+        initialize();
     }
     public void showOrderHistory() {
         orderHistoryTableView.setVisible(!orderHistoryTableView.isVisible());

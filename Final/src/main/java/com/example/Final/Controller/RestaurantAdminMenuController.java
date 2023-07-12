@@ -125,8 +125,7 @@ public class RestaurantAdminMenuController {
     }
 
 
-    public static String enterRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String name = matcher.group("name");
+    public static String enterRestaurant(String name) throws SQLException, ClassNotFoundException {
         if(SnappFood.getRestaurantByName(name) == null)
             return "enter failed: name not found";
         else {

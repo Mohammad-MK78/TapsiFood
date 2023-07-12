@@ -7,15 +7,12 @@ public enum RestaurantMenuEnums {
     BACK ("\\s*logout\\s*"),
 
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
-    ADD_FOOD ("\\s*add\\s+food\\s+(?<name>\\S+)\\s+(?<category>\\S+)\\s+(?<price>-?\\d+)\\s+(?<cost>-?\\d+)\\s*"),
     VALID_FOOD_NAME ("[a-z\\-]+"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
     SHOW_ORDER_HISTORY ("\\s*show\\s+history\\s*"),
     SHOW_ONGOING_ORDERS ("\\s*show\\s+ongoing\\s*"),
     SHOW_COMMENTS ("\\s*show\\s+comments\\s*"),
-    REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*(?<comment>)"),
-    REMOVE_FOOD ("\\s*remove\\s+food\\s+(?<name>\\S+)\\s*");
-
+    REPLY_TO_COMMENT ("\\s*reply\\s+to\\s+comment\\s+(?<commentNum>\\S+)\\s*(?<comment>)");
     private String string;
 
     RestaurantMenuEnums(String string) {

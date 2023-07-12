@@ -22,8 +22,6 @@ public class RestaurantMenu {
             else if(RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_BALANCE) != null)
                 System.out.println(RestaurantMenuController.showBalance());
 
-            else if((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.ADD_FOOD)) != null)
-                System.out.println(RestaurantMenuController.addFood(matcher));
 
             else if (RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_COMMENTS) != null)
                 System.out.println(RestaurantMenuController.showComment());
@@ -35,8 +33,6 @@ public class RestaurantMenu {
             else if ((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.REPLY_TO_COMMENT)) != null)
                 System.out.println(RestaurantMenuController.reply(matcher));
 
-            else if((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.REMOVE_FOOD)) != null)
-                System.out.printf(RestaurantMenuController.removeFood(matcher));
 
             else if(RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.SHOW_CURRENT_MENU) != null)
                 System.out.println("restaurant menu");

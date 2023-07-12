@@ -23,12 +23,6 @@ public class RestaurantAdminMenu {
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_RESTAURANTS) != null)
                 RestaurantAdminMenuController.showRestaurants(command);
 
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.ENTER_RESTAURANT)) != null) {
-                String result = RestaurantAdminMenuController.enterRestaurant(matcher);
-                System.out.println(result);
-                if(result.equals("enter successful"))
-                    RestaurantMenu.run(scanner);
-            }
 
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_BALANCE) != null)

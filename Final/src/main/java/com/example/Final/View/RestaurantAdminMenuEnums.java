@@ -7,7 +7,6 @@ public enum RestaurantAdminMenuEnums {
     LOGOUT ("\\s*logout\\s*"),
     SHOW_RESTAURANTS ("\\s*show\\s+restaurant(\\s+-t\\s+(?<type>\\S+))?\\s*"),
     SHOW_RESTAURANT_OPTION ("\\s+-t\\s+(?<type>\\S+)"),
-    ENTER_RESTAURANT ("\\s*enter\\s+restaurant\\s+(?<name>\\S+)\\s*"),
     VALID_NAME ("[a-z\\-]+"),
     VALID_TYPE ("[a-z\\-]+"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),

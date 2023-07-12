@@ -1,5 +1,7 @@
 package com.example.Final.Model;
 
+import com.example.Final.Controller.RestaurantMenuController;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -109,18 +111,18 @@ public class Restaurant{
     public void reply(int num, String message) {
         replies.add(num, message);
     }
-    public void addFood(Food food) {
+    public void addFood(Food food) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String getManagerID = "SELECT * FROM tapsifood.restaurants where name='" + RestaurantMenuController.getCurrentRestaurant().getName() + "'";
+        int restaurantID = 0;
+        ResultSet getID = statement.executeQuery(getManagerID);
+        if (getID.next())
+            restaurantID = getID.getInt("id");
+        String sql = "INSERT INTO tapsifood.foods(name, restaurantID, category, price, cost) VALUES ('"+food.getName()+"', '"+restaurantID+"' ,'"+food.getCategory()+"', '"+food.getPrice()+"', '"+food.getCost()+"')";
+        statement.executeUpdate(sql);
         menu.add(food);
-        switch (food.getCategory()) {
-            case "Starter":
-                Starter.add(food);
-                break;
-            case "MainMeal":
-                MainMeal.add(food);
-                break;
-            case "Dessert":
-                Dessert.add(food);
-        }
     }
 
     public static Food getFoodByName(String name, String restaurantName) throws ClassNotFoundException, SQLException {
@@ -144,18 +146,23 @@ public class Restaurant{
         return null;
     }
 
-    public void removeFood(Food food) {
-        menu.remove(food);
-
-        switch (food.getCategory()) {
-            case "Starter":
-                Starter.remove(food);
-                break;
-            case "MainMeal":
-                MainMeal.remove(food);
-                break;
-            case "Dessert":
-                Dessert.remove(food);
+    public static void removeFood(Food food) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        Restaurant restaurant = food.getRestaurant();
+        String restaurantName = restaurant.getName();
+        String getResID = "SELECT * FROM tapsifood.restaurants where name='" + restaurantName + "'";
+        int restaurantID = 0;
+        ResultSet getID = statement.executeQuery(getResID);
+        if (getID.next())
+            restaurantID = getID.getInt("id");
+        String name = food.getName();
+        String sqlRegAdmin = "SELECT * FROM tapsifood.foods where name='" + name + "' AND restaurantID= '" + restaurantID + "'";
+        ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
+        if (usernameCheck.next()) {
+            String remove = "DELETE FROM tapsifood.foods where name='" + name + "' AND restaurantID= '" + restaurantID + "'";
+            statement.executeUpdate(remove);
         }
     }
     public void changeType(String type) {

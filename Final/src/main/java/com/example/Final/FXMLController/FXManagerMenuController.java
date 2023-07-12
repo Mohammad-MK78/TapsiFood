@@ -1,9 +1,11 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.RestaurantAdminMenuController;
+import com.example.Final.Controller.RestaurantMenuController;
 import com.example.Final.Controller.SnappFoodAdminMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Restaurant;
+import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -71,7 +73,11 @@ public class FXManagerMenuController {
             TableRow<Restaurant> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    FXRestaurantMenuController.restaurant = row.getItem();
+                    try {
+                        enterRestaurant(row.getItem().getName());
+                    } catch (SQLException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                     FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/RestaurantMenu.fxml"));
                     Scene scene;
                     try {
@@ -123,6 +129,10 @@ public class FXManagerMenuController {
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
         myRestaurantsVBox.setVisible(!myRestaurantsVBox.isVisible());
+    }
+    public void enterRestaurant(String name) throws SQLException, ClassNotFoundException {
+        RestaurantAdminMenuController.enterRestaurant(name);
+        FXRestaurantMenuController.setRestaurant(SnappFood.getRestaurantByName(name));
     }
     public void showOptions() {
         ManagerMenuLogout.setVisible(!ManagerMenuLogout.isVisible());
