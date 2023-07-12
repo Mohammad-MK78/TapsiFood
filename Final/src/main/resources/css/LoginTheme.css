@@ -1,14 +1,14 @@
 #loginMenu {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #f15e22;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #ffffff;
     -fx-font-size: 36;
 }
 #loginMenuExit {
-     -fx-background-color: #ffcccf;
-     -fx-border-color: #ff2189;
-     -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
      -fx-background-radius: 90;
      -fx-border-radius: 90;
      -fx-pref-width: 60;
@@ -16,9 +16,9 @@
      -fx-font-size: 16;
 }
 #login {
-      -fx-background-color: #ffcccf;
-      -fx-border-color: #ff2189;
-      -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
       -fx-background-radius: 90;
       -fx-border-radius: 90;
       -fx-pref-width: 90;
@@ -26,9 +26,9 @@
       -fx-font-size: 22;
 }
 #backToMainMenu {
-       -fx-background-color: #ffcccf;
-       -fx-border-color: #ff2189;
-       -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
        -fx-background-radius: 90;
        -fx-border-radius: 90;
        -fx-pref-width: 60;
@@ -36,47 +36,47 @@
        -fx-font-size: 18;
 }
 #usernameInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #passwordInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #securityQuestionInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #recoverPasswordInp {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #usernameLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #passwordLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #securityQuestionLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 22;
     -fx-pref-width: 240;
 }
@@ -93,10 +93,10 @@
     -fx-font-size: 16;
 }
 #yourPassword {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #securityLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }

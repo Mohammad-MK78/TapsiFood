@@ -1,5 +1,5 @@
 #restaurantName {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #f15e22;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #ffffff;
@@ -7,72 +7,72 @@
 }
 #backToManagerMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #backToSelectMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #backToCommentsTableView {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #addFoodMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #removeFoodMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #orderHistoryMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #ongoingOrdersMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #commentMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #RestaurantMenuOptions {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -80,9 +80,9 @@
     -fx-font-size: 24;
 }
 #RestaurantMenuLogout {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -90,9 +90,9 @@
     -fx-font-size: 12;
 }
 #RestaurantMenuChangeType {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -100,9 +100,9 @@
     -fx-font-size: 12;
 }
 #RestaurantMenuShowBalance {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -110,9 +110,9 @@
     -fx-font-size: 12;
 }
 #RestaurantMenuShowType {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -120,36 +120,36 @@
     -fx-font-size: 12;
 }
 #showBalanceLabel {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #showTypeLabel {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #changeTypeTextField {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #changeTypeStatus {
     -fx-text-fill: #ff0000;
 }
 #addNewFood {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -157,57 +157,57 @@
     -fx-font-size: 16;
 }
 #foodNameLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #foodCategoryLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #foodCostLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #foodPriceLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #foodName {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #foodCategory {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #foodCost {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #foodPrice {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #removeFoodDone {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 80;
@@ -215,21 +215,21 @@
     -fx-font-size: 16;
 }
 #foodNameLabel2 {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #foodName2 {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #addReply {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 80;
@@ -237,14 +237,14 @@
     -fx-font-size: 16;
 }
 #reply {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #replyLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }

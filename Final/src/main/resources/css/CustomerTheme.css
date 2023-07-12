@@ -2,9 +2,9 @@
     -fx-background-color: #ffffff;
 }
 #customerMenuOptions {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -12,9 +12,9 @@
     -fx-font-size: 24;
 }
 #customerMenuLogout {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -22,9 +22,9 @@
     -fx-font-size: 12;
 }
 #customerMenuCharge {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -32,9 +32,9 @@
     -fx-font-size: 12;
 }
 #customerMenuShowBalance {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -42,53 +42,53 @@
     -fx-font-size: 12;
 }
 #restaurantsLabel {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
 }
 #restaurantsSearchLabel {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
 }
 #searchBox {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
 }
 #restaurantsByTypeMenu {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
 }
 #showBalance {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #chargeBalance {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #customerMenuBack {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -96,24 +96,24 @@
     -fx-font-size: 24;
 }
 #CustomerMenu {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #f15e22;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #ffffff;
     -fx-font-size: 36;
 }
 #searchDone {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-font-size: 20;
 }
 #totalRestaurantsLabel {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
 }

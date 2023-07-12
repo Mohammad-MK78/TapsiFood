@@ -84,7 +84,7 @@ Button {
 }
 #backToMainMenu {
     -fx-font: 20px "Airfool";
-    -fx-text-fill: #ff0000;
+    -fx-text-fill: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 67;
@@ -92,6 +92,7 @@ Button {
 }
 #backToRegisterMenu {
     -fx-font: 20px "Airfool";
+    -fx-text-fill: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 67;

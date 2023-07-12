@@ -1,5 +1,5 @@
 #restaurantName {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #f15e22;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #ffffff;
@@ -7,89 +7,89 @@
 }
 #totalMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #mainMealMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #starterMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #dessertMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #totalMenuLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #starterMenuLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #mainMealLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #dessertLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #backToCustomerMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #backToMenuSelect {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #backToSelectFood {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #selectFoodNumber {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 12;
 }
 #selectFood {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }

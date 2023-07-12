@@ -1,14 +1,14 @@
 #ManagerMenu {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #f15e22;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
     -fx-text-fill: #ffffff;
     -fx-font-size: 36;
 }
 #ManagerMenuOptions {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -16,9 +16,9 @@
     -fx-font-size: 24;
 }
 #ManagerMenuLogout {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -26,9 +26,9 @@
     -fx-font-size: 12;
 }
 #ManagerMenuCharge {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -36,9 +36,9 @@
     -fx-font-size: 12;
 }
 #ManagerMenuShowBalance {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -47,76 +47,76 @@
 }
 #addRestaurant {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #showRestaurants {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #removeRestaurant {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #backToManagerMenu {
     -fx-background-radius: 60;
-    -fx-text-fill: #ff2189;
     -fx-border-radius: 60;
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
 #restaurantNameLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #restaurantLocationLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #restaurantTypeLabel {
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
 #restaurantType {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #restaurantLocation {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #restaurantName {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-font-size: 20;
-    -fx-text-fill: #ff2189;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
 }
 #addNewRestaurant {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -124,9 +124,9 @@
     -fx-font-size: 16;
 }
 #managerMenuOptions {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -134,9 +134,9 @@
     -fx-font-size: 24;
 }
 #managerMenuLogout {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -144,9 +144,9 @@
     -fx-font-size: 12;
 }
 #managerMenuCharge {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -154,9 +154,9 @@
     -fx-font-size: 12;
 }
 #managerMenuShowBalance {
-    -fx-background-color: #ffcccf;
-    -fx-border-color: #ff2189;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
     -fx-pref-width: 60;
@@ -164,19 +164,19 @@
     -fx-font-size: 12;
 }
 #showBalance {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #chargeBalance {
-    -fx-background-color: #ffcccf;
-    -fx-text-fill: #ff2189;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
     -fx-background-radius: 60;
     -fx-border-radius: 60;
-    -fx-border-color: #ff2189;
     -fx-font-size: 20;
 }
 #chargeStatus {
