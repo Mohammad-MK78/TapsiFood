@@ -168,11 +168,11 @@ public class FXCustomerMenuController {
     public void changeLocation(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
             String result;
-            if (!showLocation.getText().matches("\\d+") || Integer.parseInt(showLocation.getText()) < 0 || Integer.parseInt(showLocation.getText()) > 1000) {
+            if (!changeLocationTextField.getText().matches("\\d+")) {
                 result = "Invalid!";
             }
             else {
-                int location = Integer.parseInt(showLocation.getText());
+                int location = Integer.parseInt(changeLocationTextField.getText());
                 result = CustomerMenuController.changeLocation(location); //TODO location is not updating
             }
             changeLocationStatus.setText(result);

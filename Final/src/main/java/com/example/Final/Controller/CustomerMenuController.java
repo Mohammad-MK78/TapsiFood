@@ -35,8 +35,11 @@ public class CustomerMenuController {
         return currentUser.getCredit();
     }
     public static String changeLocation(int location) throws SQLException, ClassNotFoundException {
+        if (location > 1000 || location < 1) {
+            return "Invalid!";
+        }
         currentUser.setLocation(location);
-        return "successful";
+        return "successful!";
     }
     public static int getLocation() {
         return currentUser.getLocation();

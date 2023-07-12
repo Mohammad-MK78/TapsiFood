@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="managerMenufxml edited">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/CartTheme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Cart.fxml" afterDir="false" />
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="hosele nadaram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXDeliveryMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXDeliveryMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/CustomerMenuEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +87,7 @@
       <updated>1689000599747</updated>
       <workItem from="1689000600786" duration="8494000" />
       <workItem from="1689151723304" duration="15072000" />
-      <workItem from="1689170817796" duration="7324000" />
+      <workItem from="1689170817796" duration="8831000" />
     </task>
     <task id="LOCAL-00001" summary="Add Final">
       <option name="closed" value="true" />
@@ -250,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689167465942</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="hosele nadaram">
+      <option name="closed" value="true" />
+      <created>1689178348567</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689178348567</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +286,8 @@
     <MESSAGE value="FXSnappFoodAdminMenuController semi done" />
     <MESSAGE value="themes semi done (except fonts)" />
     <MESSAGE value="managerMenufxml edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="managerMenufxml edited" />
+    <MESSAGE value="hosele nadaram" />
+    <option name="LAST_COMMIT_MESSAGE" value="hosele nadaram" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
