@@ -1,7 +1,6 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.CustomerMenuController;
-import com.example.Final.Controller.LoginMenuController;
 import com.example.Final.Controller.SnappFoodAdminMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Discount;

@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -12,15 +14,20 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CustomerRestaurantTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCustomerRestaurantController">
    <children>
-      <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" />
-      <Button fx:id="backToCustomerMenu" mnemonicParsing="false" onMouseClicked="#goBackToCustomerMenu" text="←" />
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Pictures/RegisterMenu.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToCustomerMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#goBackToCustomerMenu" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
-      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="195.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0">
+      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="195.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
          <children>
-            <Button fx:id="totalMenu" mnemonicParsing="false" onMouseClicked="#openTotalMenu" prefHeight="80.0" prefWidth="240.0" text="Menu" />
-            <Button fx:id="starterMenu" mnemonicParsing="false" onMouseClicked="#openStarterMenu" prefHeight="80.0" prefWidth="240.0" text="Starter Menu" />
-            <Button fx:id="mainMealMenu" mnemonicParsing="false" onMouseClicked="#openMainMealMenu" prefHeight="80.0" prefWidth="240.0" text="MainMeal Menu" />
-            <Button fx:id="dessertMenu" mnemonicParsing="false" onMouseClicked="#openDessertMenu" prefHeight="80.0" prefWidth="240.0" text="Dessert Menu" />
+            <Button fx:id="totalMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#openTotalMenu" prefHeight="80.0" prefWidth="240.0" text="Menu" VBox.vgrow="ALWAYS" />
+            <Button fx:id="starterMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#openStarterMenu" prefHeight="80.0" prefWidth="240.0" text="Starter Menu" VBox.vgrow="ALWAYS" />
+            <Button fx:id="mainMealMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#openMainMealMenu" prefHeight="80.0" prefWidth="240.0" text="MainMeal Menu" VBox.vgrow="ALWAYS" />
+            <Button fx:id="dessertMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#openDessertMenu" prefHeight="80.0" prefWidth="240.0" text="Dessert Menu" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
       <VBox fx:id="totalMenuVbox" layoutX="200.0" layoutY="135.0" prefHeight="450.0" prefWidth="400.0" visible="false">

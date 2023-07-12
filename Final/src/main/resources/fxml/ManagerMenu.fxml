@@ -6,45 +6,36 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/ManagerMenu.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXManagerMenuController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/ManagerMenu.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXManagerMenuController">
    <children>
-      <Label fx:id="ManagerMenu" alignment="CENTER" layoutX="200.0" layoutY="30.0" prefHeight="100.0" prefWidth="400.0" text="Manager Menu">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Pictures/RegisterMenu.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="ManagerMenu" alignment="CENTER" layoutX="200.0" layoutY="26.0" prefHeight="100.0" prefWidth="400.0" text="Manager Menu" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
       </Label>
       <Button fx:id="backToManagerMenu" mnemonicParsing="false" onAction="#goBackToManagerMenu" text="←" visible="false" />
-      <TableView fx:id="myRestaurants" layoutX="200.0" layoutY="156.0" prefHeight="400.0" prefWidth="400.0" visible="false">
-        <columns>
-          <TableColumn fx:id="myRestaurantName" prefWidth="100.0" text="name" />
-          <TableColumn fx:id="myRestaurantType" prefWidth="100.0" text="type" />
-            <TableColumn fx:id="myRestaurantLocation" prefWidth="100.0" text="location " />
-            <TableColumn fx:id="myRestaurantRating" prefWidth="100.0" text="rating" />
-        </columns>
-      </TableView>
-      <TableView fx:id="myRestaurantsPrime" layoutX="200.0" layoutY="156.0" prefHeight="400.0" prefWidth="400.0" visible="false">
-         <columns>
-            <TableColumn fx:id="myRestaurantName1" prefWidth="100.0" text="name" />
-            <TableColumn fx:id="myRestaurantType1" prefWidth="100.0" text="type" />
-            <TableColumn fx:id="myRestaurantLocation1" prefWidth="100.0" text="location " />
-            <TableColumn fx:id="myRestaurantRating1" prefWidth="100.0" text="rating" />
-         </columns>
-      </TableView>
-      <VBox layoutX="280.0" layoutY="216.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0">
+      <VBox layoutX="280.0" layoutY="216.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
          <children>
-            <Button fx:id="showRestaurants" mnemonicParsing="false" onAction="#showRestaurants" prefHeight="80.0" prefWidth="240.0" text="show restaurants" />
-            <Button fx:id="addRestaurant" mnemonicParsing="false" onAction="#addRestaurant" prefHeight="80.0" prefWidth="240.0" text="add restaurant" />
-            <Button fx:id="removeRestaurant" mnemonicParsing="false" onAction="#removeRestaurant" prefHeight="80.0" prefWidth="240.0" text="remove restaurant" />
+            <Button fx:id="showRestaurants" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showRestaurants" prefHeight="80.0" prefWidth="240.0" text="show restaurants" VBox.vgrow="ALWAYS" />
+            <Button fx:id="addRestaurant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addRestaurant" prefHeight="80.0" prefWidth="240.0" text="add restaurant" VBox.vgrow="ALWAYS" />
+            <Button fx:id="removeRestaurant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeRestaurant" prefHeight="80.0" prefWidth="240.0" text="remove restaurant" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="400.0" prefWidth="180.0" spacing="20.0">
+      <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="400.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label fx:id="chargeStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" />
                   <TextField fx:id="chargeBalance" alignment="CENTER" onKeyPressed="#chargeAccount" prefHeight="60.0" prefWidth="100.0" visible="false" />
@@ -54,7 +45,7 @@
                   <Insets top="110.0" />
                </padding>
             </VBox>
-            <VBox fx:id="optionsVBox" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
+            <VBox fx:id="optionsVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="270.0" prefWidth="60.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Button fx:id="managerMenuOptions" mnemonicParsing="false" onAction="#showOptions" text="⁝" />
                   <Button fx:id="ManagerMenuLogout" mnemonicParsing="false" onAction="#logout" text="logout" visible="false" />
@@ -85,6 +76,32 @@
                </children>
             </HBox>
             <Button fx:id="addNewRestaurant" mnemonicParsing="false" text="add" />
+         </children>
+      </VBox>
+      <VBox fx:id="myRestaurantsVBox" layoutX="200.0" layoutY="100.0" prefHeight="480.0" prefWidth="400.0" spacing="30.0" visible="false">
+         <children>
+            <Label fx:id="myRestaurantsLabel" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="my restaurants" />
+            <TableView fx:id="myRestaurants" prefHeight="400.0" prefWidth="400.0">
+              <columns>
+                <TableColumn fx:id="myRestaurantName" prefWidth="100.0" text="name" />
+                <TableColumn fx:id="myRestaurantType" prefWidth="100.0" text="type" />
+                  <TableColumn fx:id="myRestaurantLocation" prefWidth="100.0" text="location " />
+                  <TableColumn fx:id="myRestaurantRating" prefWidth="100.0" text="rating" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox fx:id="myRestaurantsPrimeVBox" layoutX="200.0" layoutY="100.0" prefHeight="480.0" prefWidth="400.0" spacing="30.0" visible="false">
+         <children>
+            <Label fx:id="myRestaurantsPrimeLabel" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="my restaurants" />
+            <TableView fx:id="myRestaurantsPrime" prefHeight="400.0" prefWidth="400.0">
+               <columns>
+                  <TableColumn fx:id="myRestaurantName1" prefWidth="100.0" text="name" />
+                  <TableColumn fx:id="myRestaurantType1" prefWidth="100.0" text="type" />
+                  <TableColumn fx:id="myRestaurantLocation1" prefWidth="100.0" text="location " />
+                  <TableColumn fx:id="myRestaurantRating1" prefWidth="100.0" text="rating" />
+               </columns>
+            </TableView>
          </children>
       </VBox>
    </children>

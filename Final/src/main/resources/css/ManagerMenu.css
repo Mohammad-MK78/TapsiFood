@@ -182,3 +182,11 @@
 #chargeStatus {
     -fx-text-fill: #ff0000;
 }
+#myRestaurantsPrimeLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#myRestaurantsLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}

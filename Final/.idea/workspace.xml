@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="FXSnappFoodAdminMenuController semi done">
+    <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="themes semi done (except fonts)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/CustomerRestaurantTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CustomerRestaurantTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/CustomerTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXManagerMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXSnappFoodAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXSnappFoodAdminMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/css/ManagerMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/ManagerMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/CustomerRestaurant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/DeliveryMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/LoginMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/ManagerMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/RegisterMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RegisterMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/SnappFoodAdminMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/SnappFoodAdminMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689000599747</updated>
       <workItem from="1689000600786" duration="8494000" />
-      <workItem from="1689151723304" duration="12646000" />
+      <workItem from="1689151723304" duration="15014000" />
     </task>
     <task id="LOCAL-00001" summary="Add Final">
       <option name="closed" value="true" />
@@ -226,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689163354473</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="themes semi done (except fonts)">
+      <option name="closed" value="true" />
+      <created>1689165384096</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689165384096</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +275,8 @@
     <MESSAGE value="4:44" />
     <MESSAGE value="FXRestaurantMenuController semi done" />
     <MESSAGE value="FXSnappFoodAdminMenuController semi done" />
-    <option name="LAST_COMMIT_MESSAGE" value="FXSnappFoodAdminMenuController semi done" />
+    <MESSAGE value="themes semi done (except fonts)" />
+    <option name="LAST_COMMIT_MESSAGE" value="themes semi done (except fonts)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,11 +1,8 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.RestaurantAdminMenuController;
-import com.example.Final.Controller.RestaurantMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Restaurant;
-import com.example.Final.Model.RestaurantManager;
-import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,7 +21,7 @@ public class FXManagerMenuController {
     @FXML
     TextField chargeBalance, restaurantName, restaurantType, restaurantLocation;
     @FXML
-    VBox addRestaurantVBox;
+    VBox addRestaurantVBox, myRestaurantsVBox, myRestaurantsPrimeVBox;
     @FXML
     Button addRestaurant, ManagerMenuLogout, ManagerMenuCharge, ManagerMenuShowBalance, showRestaurants, backToManagerMenu, removeRestaurant;
     @FXML
@@ -113,7 +110,7 @@ public class FXManagerMenuController {
         showRestaurants.setVisible(!showRestaurants.isVisible());
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
-        myRestaurants.setVisible(!myRestaurants.isVisible());
+        myRestaurantsVBox.setVisible(!myRestaurantsVBox.isVisible());
     }
     public void showOptions() {
         ManagerMenuLogout.setVisible(!ManagerMenuLogout.isVisible());
@@ -135,9 +132,9 @@ public class FXManagerMenuController {
         showRestaurants.setVisible(true);
         removeRestaurant.setVisible(true);
         backToManagerMenu.setVisible(false);
-        myRestaurants.setVisible(false);
+        myRestaurantsVBox.setVisible(false);
         addRestaurantVBox.setVisible(false);
-        myRestaurantsPrime.setVisible(false);
+        myRestaurantsPrimeVBox.setVisible(false);
     }
     public void removeRestaurant() {
         ManagerMenu.setVisible(!ManagerMenu.isVisible());
@@ -145,7 +142,7 @@ public class FXManagerMenuController {
         showRestaurants.setVisible(!showRestaurants.isVisible());
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
-        myRestaurantsPrime.setVisible(!myRestaurantsPrime.isVisible());
+        myRestaurantsPrimeVBox.setVisible(!myRestaurantsPrimeVBox.isVisible());
     }
     public void showChargeAccount() {
         chargeBalance.setVisible(!chargeBalance.isVisible());

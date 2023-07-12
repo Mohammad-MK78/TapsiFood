@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -14,26 +16,31 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/SnappFoodAdminTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXSnappFoodAdminMenuController">
    <children>
-      <Label fx:id="SnappFoodAdminMenu" alignment="CENTER" layoutX="200.0" layoutY="20.0" prefHeight="100.0" prefWidth="400.0" text="SnappFood Admin Menu">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Pictures/RegisterMenu.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="SnappFoodAdminMenu" alignment="CENTER" layoutX="200.0" layoutY="20.0" prefHeight="100.0" prefWidth="400.0" text="SnappFood Admin Menu" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="backToAdminMenu" mnemonicParsing="false" onMouseClicked="#goBackToAdminMenu" text="←" visible="false" />
-      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
-      <VBox fx:id="optionsVBox" layoutX="740.0" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
+      <Button fx:id="backToAdminMenu" mnemonicParsing="false" onMouseClicked="#goBackToAdminMenu" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <VBox fx:id="optionsVBox" layoutX="740.0" prefHeight="270.0" prefWidth="60.0" spacing="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <Button fx:id="adminMenuOptions" mnemonicParsing="false" onAction="#showOptions" prefHeight="60.0" prefWidth="60.0" text="⁝" />
-            <Button fx:id="adminMenuLogout" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="60.0" text="logout" visible="false" />
+            <Button fx:id="adminMenuOptions" mnemonicParsing="false" onAction="#showOptions" prefHeight="60.0" prefWidth="60.0" text="⁝" VBox.vgrow="ALWAYS" />
+            <Button fx:id="adminMenuLogout" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="60.0" text="logout" visible="false" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <VBox fx:id="selectVBox" layoutX="280.0" layoutY="184.0" prefHeight="300.0" prefWidth="240.0" spacing="12.5">
+      <VBox fx:id="selectVBox" layoutX="280.0" layoutY="184.0" prefHeight="300.0" prefWidth="240.0" spacing="12.5" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
          <children>
-            <Button fx:id="adminMenuAddManager" mnemonicParsing="false" onAction="#addManager" prefHeight="60.0" prefWidth="240.0" text="add manager" />
-            <Button fx:id="adminMenuRemoveManager" mnemonicParsing="false" onAction="#removeManager" prefHeight="60.0" prefWidth="240.0" text="remove manager" />
-            <Button fx:id="adminMenuShowRestaurants" mnemonicParsing="false" onAction="#showRestaurants" prefHeight="60.0" prefWidth="240.0" text="show restaurants" />
-            <Button fx:id="adminMenuSetDiscount" mnemonicParsing="false" onAction="#setDiscount" prefHeight="60.0" prefWidth="240.0" text="set discount" />
-            <Button fx:id="adminMenuShowDiscounts" mnemonicParsing="false" onAction="#showDiscounts" prefHeight="60.0" prefWidth="240.0" text="show discounts" />
+            <Button fx:id="adminMenuAddManager" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addManager" prefHeight="60.0" prefWidth="240.0" text="add manager" VBox.vgrow="ALWAYS" />
+            <Button fx:id="adminMenuRemoveManager" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeManager" prefHeight="60.0" prefWidth="240.0" text="remove manager" VBox.vgrow="ALWAYS" />
+            <Button fx:id="adminMenuShowRestaurants" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showRestaurants" prefHeight="60.0" prefWidth="240.0" text="show restaurants" VBox.vgrow="ALWAYS" />
+            <Button fx:id="adminMenuSetDiscount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setDiscount" prefHeight="60.0" prefWidth="240.0" text="set discount" VBox.vgrow="ALWAYS" />
+            <Button fx:id="adminMenuShowDiscounts" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDiscounts" prefHeight="60.0" prefWidth="240.0" text="show discounts" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
       <HBox fx:id="adminAddManagerHBox" layoutX="42.0" layoutY="167.0" prefHeight="350.0" prefWidth="516.0" visible="false">
