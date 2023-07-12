@@ -11,13 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/DeliveryTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXDeliveryMenuController">
+<AnchorPane fx:id="DeliveryMenuAnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/DeliveryTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXDeliveryMenuController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../Pictures/RegisterMenu.png" />
          </image>
       </ImageView>
+      <Button fx:id="backToDeliveryMenu" mnemonicParsing="false" onAction="#backToDeliveryMenu" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Label fx:id="DeliveryMenu" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="100.0" prefWidth="400.0" text="Delivery Menu" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
@@ -32,7 +33,6 @@
             <Button fx:id="showRestaurant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showRestaurant" prefHeight="80.0" prefWidth="240.0" text="show restaurant" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <Button fx:id="backToDeliveryMenu" mnemonicParsing="false" onAction="#backToDeliveryMenu" text="←" visible="false" />
       <HBox layoutX="620.0" prefHeight="400.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
