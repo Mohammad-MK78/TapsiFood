@@ -1,7 +1,200 @@
 #SnappFoodAdminMenu {
-    -fx-background-color: #ff2189;
+    -fx-background-color: #f15e22;
     -fx-background-radius: 50;
     -fx-border-radius: 50;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #f5cea6;
     -fx-font-size: 32;
+}
+#adminMenuAddManager {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#adminMenuRemoveManager {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#adminMenuSetDiscount {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#adminMenuShowDiscounts {
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#adminMenuShowRestaurants {
+    -fx-background-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-border-radius: 60;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#adminMenuOptions {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+}
+#adminMenuLogout {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#usernameInp {
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#passwordInp {
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#securityQuestionInp {
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font: 17px 'Arial Black';
+    -fx-text-fill: #ff0000;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+#usernameLabel {
+    -fx-font: 24px "Airfool";
+    -fx-text-fill: #f2906b;
+}
+#passwordLabel {
+    -fx-text-fill: #f2906b;
+    -fx-font: 24px "Airfool";
+}
+#securityQuestionLabel {
+    -fx-text-fill: #f2906b;
+    -fx-font: 24px "Airfool";
+}
+#securityQuestionNotice {
+    -fx-font-size: 14;
+    -fx-text-fill: #ff0000;
+}
+#selectManagerDone {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 20;
+}
+#selectManagerName {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 14;
+}
+#backToAdminSelectMenu {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#backToMenuSelect {
+    -fx-background-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-border-radius: 60;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#backToSelectMenu {
+    -fx-background-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-border-radius: 60;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#backToAdminMenu {
+    -fx-background-radius: 60;
+    -fx-text-fill: #f15e22;
+    -fx-border-radius: 60;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 24;
+}
+#totalRestaurantsLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#discountCodeLabel{
+    -fx-font: 24px "Airfool";
+    -fx-text-fill: #f2906b;
+}
+#discountAmountLabel{
+    -fx-font: 24px "Airfool";
+    -fx-text-fill: #f2906b;
+}
+#discountUsernameLabel {
+    -fx-font: 24px "Airfool";
+    -fx-text-fill: #f2906b;
+}
+#discountCodeTextField {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+}
+#discountAmountTextField {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+}
+#discountUsernameTextField {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+}
+#selectDiscountDone {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 24;
+}
+#totalDiscountsLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
 }

@@ -11,10 +11,7 @@ import java.util.regex.Pattern;
 
 public class SnappFoodAdminMenuController {
 
-    public static String restaurantManagerRegister(Matcher matcher) throws ClassNotFoundException, SQLException {
-        String username = matcher.group("username");
-        String password = matcher.group("password");
-        String security_question = matcher.group("securityQuestion");
+    public static String restaurantManagerRegister(String username, String password, String security_question) throws ClassNotFoundException, SQLException {
 
         if(LoginMenuEnums.getMatcher(username, LoginMenuEnums.VALID_USERNAME) == null)
             return "Register failed: invalid username format";

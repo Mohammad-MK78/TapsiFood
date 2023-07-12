@@ -12,53 +12,60 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/SnappFoodAdminTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXSnappFoodAdminMenuController">
    <children>
-      <Label fx:id="SnappFoodAdminMenu" alignment="CENTER" layoutX="200.0" layoutY="34.0" prefHeight="100.0" prefWidth="400.0" text="SnappFood Admin Menu">
+      <Label fx:id="SnappFoodAdminMenu" alignment="CENTER" layoutX="200.0" layoutY="20.0" prefHeight="100.0" prefWidth="400.0" text="SnappFood Admin Menu">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
       </Label>
-      <VBox fx:id="selectVBox" layoutX="300.0" layoutY="192.0" prefHeight="300.0" prefWidth="200.0" spacing="12.5">
+      <Button fx:id="backToAdminMenu" mnemonicParsing="false" onMouseClicked="#goBackToAdminMenu" text="←" visible="false" />
+      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
+      <VBox fx:id="optionsVBox" layoutX="740.0" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="add manager" />
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="remove manager" />
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="show restaurants" />
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="set discount" />
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="show discounts" />
+            <Button fx:id="adminMenuOptions" mnemonicParsing="false" onAction="#showOptions" prefHeight="60.0" prefWidth="60.0" text="⁝" />
+            <Button fx:id="adminMenuLogout" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="60.0" text="logout" visible="false" />
          </children>
       </VBox>
-      <HBox fx:id="registerHBox" layoutX="42.0" layoutY="167.0" prefHeight="350.0" prefWidth="516.0" visible="false">
+      <VBox fx:id="selectVBox" layoutX="280.0" layoutY="184.0" prefHeight="300.0" prefWidth="240.0" spacing="12.5">
+         <children>
+            <Button fx:id="adminMenuAddManager" mnemonicParsing="false" onAction="#addManager" prefHeight="60.0" prefWidth="240.0" text="add manager" />
+            <Button fx:id="adminMenuRemoveManager" mnemonicParsing="false" onAction="#removeManager" prefHeight="60.0" prefWidth="240.0" text="remove manager" />
+            <Button fx:id="adminMenuShowRestaurants" mnemonicParsing="false" onAction="#showRestaurants" prefHeight="60.0" prefWidth="240.0" text="show restaurants" />
+            <Button fx:id="adminMenuSetDiscount" mnemonicParsing="false" onAction="#setDiscount" prefHeight="60.0" prefWidth="240.0" text="set discount" />
+            <Button fx:id="adminMenuShowDiscounts" mnemonicParsing="false" onAction="#showDiscounts" prefHeight="60.0" prefWidth="240.0" text="show discounts" />
+         </children>
+      </VBox>
+      <HBox fx:id="adminAddManagerHBox" layoutX="42.0" layoutY="167.0" prefHeight="350.0" prefWidth="516.0" visible="false">
          <children>
             <VBox prefHeight="300.0" prefWidth="260.0" spacing="40.0">
                <children>
                   <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="260.0" text="Username:  " />
                   <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="260.0" text="Password:  " />
                   <Label fx:id="securityQuestionLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="265.0" text="Your School:  " />
-                  <Label fx:id="securityQuestionNotice" alignment="CENTER" prefHeight="30.0" prefWidth="260.0" text="in case you forgot your password :)" />
+                  <Label fx:id="securityQuestionNotice" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="260.0" text="in case you forgot your password :)" />
                </children>
             </VBox>
             <VBox prefHeight="300.0" prefWidth="220.0" spacing="40.0">
                <children>
                   <TextField fx:id="usernameInp" prefHeight="50.0" prefWidth="200.0" />
                   <PasswordField fx:id="passwordInp" prefHeight="50.0" prefWidth="200.0" />
-                  <TextField fx:id="securityQuestionInp" prefHeight="50.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="260.0" />
+                  <TextField fx:id="securityQuestionInp" onKeyPressed="#managerRegister" prefHeight="50.0" prefWidth="200.0" />
+                  <Label fx:id="registerResultLabel" alignment="CENTER" prefHeight="30.0" prefWidth="260.0" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <VBox fx:id="selectManagerVBox" alignment="CENTER" layoutX="310.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" spacing="30.0" visible="false">
+      <VBox fx:id="adminRemoveManagerVBox" alignment="CENTER" layoutX="280.0" layoutY="196.0" prefHeight="240.0" prefWidth="240.0" spacing="20.0" visible="false">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="240.0" spacing="20.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="80.0">
                      <children>
-                        <Button fx:id="backToSelectManager" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" text="name" />
+                        <Label fx:id="backToAdminSelectMenu" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" text="name:" />
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="120.0">
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="140.0">
                      <children>
                         <TextField fx:id="selectManagerName" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="manager name" />
                      </children>
@@ -68,19 +75,15 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="selectFood" mnemonicParsing="false" prefHeight="50.0" prefWidth="190.0" text="select" />
+            <Button fx:id="selectManagerDone" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="select" />
          </children>
          <padding>
             <Insets bottom="20.0" />
          </padding>
       </VBox>
-      <VBox fx:id="totalRestaurantVBox" layoutX="210.0" layoutY="60.0" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false">
+      <VBox fx:id="totalRestaurantVBox" layoutX="200.0" layoutY="100.0" prefHeight="480.0" prefWidth="400.0" spacing="20.0" visible="false">
          <children>
-            <HBox prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <Label fx:id="totalRestaurantsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Restaurants" />
-               </children>
-            </HBox>
+            <Label fx:id="totalRestaurantsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Restaurants" />
             <TableView fx:id="totalRestaurantsTableView" prefHeight="400.0" prefWidth="400.0">
                <columns>
                   <TableColumn prefWidth="100.0" text="name" />
@@ -91,39 +94,44 @@
             </TableView>
          </children>
          <padding>
-            <Insets top="10.0" />
+            <Insets top="20.0" />
          </padding>
       </VBox>
-      <HBox fx:id="setDiscountHBox" alignment="CENTER" layoutX="300.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+      <HBox fx:id="setDiscountHBox" alignment="CENTER" layoutX="280.0" layoutY="184.0" prefHeight="300.0" prefWidth="240.0" spacing="20.0" visible="false">
          <children>
-            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="80.0" spacing="5.0">
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="80.0" spacing="5.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" text="code" />
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" text="amount" />
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" text="username" />
-                  <Button fx:id="backToSelect" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" text="back" />
+                  <Label fx:id="discountCodeLabel" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" text="code" />
+                  <Label fx:id="discountAmountLabel" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" text="Label" />
+                  <Label fx:id="discountUsernameLabel" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" text="Label" />
+                  <Button fx:id="backToSelectMenu" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="←">
+                     <font>
+                        <Font size="28.0" />
+                     </font></Button>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="120.0" spacing="5.0">
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="140.0" spacing="5.0">
                <children>
-                  <TextField fx:id="selectDiscountCode" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="discount code" />
-                  <TextField fx:id="selectDiscountAmount" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="discount amount" />
-                  <TextField fx:id="selectUsername" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="username" />
-                  <Button fx:id="selectDiscount" mnemonicParsing="false" prefHeight="60.0" prefWidth="110.0" text="select" />
+                  <TextField fx:id="discountCodeTextField" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="discount code">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="discountAmountTextField" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="discount amount">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="discountUsernameTextField" alignment="CENTER" prefHeight="60.0" prefWidth="80.0" promptText="username">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Button fx:id="selectDiscountDone" mnemonicParsing="false" prefHeight="60.0" prefWidth="140.0" text="select" />
                </children>
-               <padding>
-                  <Insets left="5.0" right="5.0" />
-               </padding>
             </VBox>
          </children>
       </HBox>
-      <VBox fx:id="totalDiscountsVBox" layoutX="220.0" layoutY="70.0" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false">
+      <VBox fx:id="totalDiscountsVBox" layoutX="200.0" layoutY="94.0" prefHeight="480.0" prefWidth="400.0" spacing="15.0" visible="false">
          <children>
-            <HBox prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <Label fx:id="totalDiscountsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Discounts" />
-               </children>
-            </HBox>
+            <Label fx:id="totalDiscountsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Discounts" />
             <TableView fx:id="totalDiscountsTableView" prefHeight="400.0" prefWidth="400.0">
                <columns>
                   <TableColumn prefWidth="133.0" text="code" />
@@ -133,14 +141,8 @@
             </TableView>
          </children>
          <padding>
-            <Insets top="10.0" />
+            <Insets top="15.0" />
          </padding>
-      </VBox>
-      <VBox fx:id="optionsVBox" layoutX="740.0" layoutY="-1.0" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
-         <children>
-            <Button fx:id="customerMenuOptions" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="⁝" />
-            <Button fx:id="SnappFoodAdminMenuLogout" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="logout" visible="false" />
-         </children>
       </VBox>
    </children>
 </AnchorPane>

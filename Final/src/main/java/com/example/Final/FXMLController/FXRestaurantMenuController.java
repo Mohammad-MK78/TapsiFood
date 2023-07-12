@@ -30,7 +30,7 @@ public class FXRestaurantMenuController {
     @FXML
     TableView<Order> orderHistoryTableView, ongoingOrdersTableView;
     @FXML
-    TableView<String> commentsTableView;
+    TableView<String> commentsTableView; //TODO create class Comment :..)
 
     public static Restaurant restaurant;
     @FXML
@@ -46,6 +46,27 @@ public class FXRestaurantMenuController {
         TableColumn<Order, Integer> totalPrice = new TableColumn<>("totalPrice");
         totalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         totalPrice.setPrefWidth(100);
+
+        TableColumn<Order, String> Foods2 = new TableColumn<>("Foods");
+        Foods2.setCellValueFactory(new PropertyValueFactory<>("Foods"));
+        Foods2.setPrefWidth(200);
+        TableColumn<Order, String> customerName2 = new TableColumn<>("customerName");
+        customerName2.setCellValueFactory(new PropertyValueFactory<>("customerName"));
+        customerName2.setPrefWidth(100);
+        TableColumn<Order, Integer> totalPrice2 = new TableColumn<>("totalPrice");
+        totalPrice2.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        totalPrice2.setPrefWidth(100);
+
+        orderHistoryTableView.getColumns().clear();
+        orderHistoryTableView.getColumns().addAll(Foods, customerName, totalPrice);
+        orderHistoryTableView.getItems().clear();
+        orderHistoryTableView.getItems().addAll(); // TODO
+
+        ongoingOrdersTableView.getColumns().clear();
+        ongoingOrdersTableView.getColumns().addAll(Foods2, customerName2, totalPrice2);
+        ongoingOrdersTableView.getItems().clear();
+        ongoingOrdersTableView.getItems().addAll(); // TODO
+
     }
 
     public void addFood() {

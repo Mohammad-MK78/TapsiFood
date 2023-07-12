@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 public enum SnappFoodAdminMenuEnums {
     LOGOUT ("\\s*logout\\s*"),
     SHOW_CURRENT_MENU ("\\s*show\\s+current\\s+menu\\s*"),
-    ADD_RESTAURANT_MANAGER ("\\s*add\\s+restaurant\\s+manager\\s+(?<username>\\S+)\\s+(?<password>\\S+)\\s+(?<securityQuestion>\\S+)\\s*"),
     REMOVE_RESTAURANT_MANAGER ("\\s*remove\\s+restaurant\\s+manager\\s+(?<username>\\S+)\\s*"),
     VALID_USERNAME ("[\\w_]*[a-zA-Z][\\w_]*"),
     VALID_PASSWORD ("[\\w_]+"),

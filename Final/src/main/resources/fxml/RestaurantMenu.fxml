@@ -39,7 +39,7 @@
             <VBox fx:id="optionsVBox" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
                <children>
                   <Button fx:id="RestaurantMenuOptions" mnemonicParsing="false" onAction="#showOptions" text="⁝" />
-                  <Button fx:id="RestaurantMenuChangeType" mnemonicParsing="false" onAction="#showChangeType" text="change" />
+                  <Button fx:id="RestaurantMenuChangeType" mnemonicParsing="false" onAction="#showChangeType" text="change" visible="false" />
                   <Button fx:id="RestaurantMenuShowBalance" mnemonicParsing="false" onAction="#showBalance" text="balance" visible="false" />
                   <Button fx:id="RestaurantMenuShowType" mnemonicParsing="false" onAction="#showType" text="type" visible="false" />
                </children>

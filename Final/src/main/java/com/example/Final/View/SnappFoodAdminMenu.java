@@ -19,9 +19,6 @@ public class SnappFoodAdminMenu {
                 return;
             }
 
-            else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.ADD_RESTAURANT_MANAGER)) != null)
-                System.out.println(SnappFoodAdminMenuController.restaurantManagerRegister(matcher));
-
             else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.REMOVE_RESTAURANT_MANAGER)) != null)
                 System.out.printf(SnappFoodAdminMenuController.removeRestaurantManager(matcher));
 
