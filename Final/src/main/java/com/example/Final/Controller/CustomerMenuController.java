@@ -18,6 +18,10 @@ public class CustomerMenuController {
             currentUser = new Customer(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getDebt());
     }
 
+    public static Customer getCurrentUser() {
+        return currentUser;
+    }
+
     public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
 
         if(amount < 1)

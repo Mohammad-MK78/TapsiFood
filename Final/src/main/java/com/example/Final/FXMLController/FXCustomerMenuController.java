@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class FXCustomerMenuController {
-    //public static String restaurantName;
     @FXML
     Button customerMenuBack;
     @FXML
@@ -69,6 +68,23 @@ public class FXCustomerMenuController {
         restaurantsByTypeTableView.getItems().addAll(SnappFoodAdminMenuController.getRestaurantsByType(getSearchBox()));
 
         totalRestaurantsTableView.setRowFactory(tv -> {
+            TableRow<Restaurant> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if(event.getClickCount() == 2 && (!row.isEmpty())){
+                    FXCustomerRestaurantController.restaurant = row.getItem();
+                    FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/CustomerRestaurant.fxml"));
+                    Scene scene;
+                    try {
+                        scene = new Scene(Loader.load());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Main.getStage().setScene(scene);
+                }
+            });
+            return row;
+        });
+        restaurantsByTypeTableView.setRowFactory(tv -> {
             TableRow<Restaurant> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){

@@ -2,8 +2,7 @@ package com.example.Final.Model;
 
 public class Food {
     private Restaurant restaurant;
-    private String name;
-    private String category;
+    private String name, category;
     private int price;
     private int cost;
 

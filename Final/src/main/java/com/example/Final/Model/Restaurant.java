@@ -33,6 +33,7 @@ public class Restaurant{
         comments = new ArrayList<>();
         replies = new ArrayList<>();
     }
+
     public void addRating(int rate) {
         rating.add(rate);
     }
@@ -89,20 +90,20 @@ public class Restaurant{
     public void setType(String type) {
         this.type = type;
     }
-
+    public ArrayList<Food> getMenu() {
+        return menu;
+    }
+    public ArrayList<Food> getMainMeal() {
+        return MainMeal; //TODO
+    }
     public ArrayList<Food> getStarter() {
-        return Starter;
+        return Starter; //TODO
     }
-
-    public ArrayList<Food> getEntree() {
-        return MainMeal;
-    }
-
     public ArrayList<Food> getDessert() {
-        return Dessert;
+        return Dessert; //TODO
     }
     public ArrayList<String> getComments() {
-        return comments;
+        return comments; //TODO
     }
 
     public void reply(int num, String message) {
