@@ -75,7 +75,7 @@ public class FXLoginMenuController {
             Scene scene;
             switch (result){
                 case "admin":
-                    loader = new FXMLLoader(Main.class.getResource("/fxml/AdminMenu.fxml"));
+                    loader = new FXMLLoader(Main.class.getResource("/fxml/SnappFoodAdminMenu.fxml"));
                     scene = new Scene(loader.load());
                     Main.getStage().setScene(scene);
                     break;

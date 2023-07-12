@@ -102,5 +102,6 @@ public class RestaurantAdminMenuController {
         else {
             SnappFood.setCurrentRestaurant(SnappFood.getRestaurantByName(name));
             return "enter successful";
-        }    }
+        }
+    }
 }

@@ -1,8 +1,11 @@
 package com.example.Final.FXMLController;
 
 import com.example.Final.Controller.RestaurantAdminMenuController;
+import com.example.Final.Controller.RestaurantMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Restaurant;
+import com.example.Final.Model.RestaurantManager;
+import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -59,12 +62,12 @@ public class FXManagerMenuController {
         myRestaurants.getColumns().clear();
         myRestaurants.getColumns().addAll(name, type, rate, address);
         myRestaurants.getItems().clear();
-        myRestaurants.getItems().addAll();//TODO
+        myRestaurants.getItems().addAll();//TODO get all restaurants owned by this manager
 
         myRestaurantsPrime.getColumns().clear();
         myRestaurantsPrime.getColumns().addAll(name, type, rate, address);
         myRestaurantsPrime.getItems().clear();
-        myRestaurantsPrime.getItems().addAll();//TODO
+        myRestaurantsPrime.getItems().addAll();//TODO get all restaurants owned by this manager
 
         myRestaurants.setRowFactory(tv -> {
             TableRow<Restaurant> row = new TableRow<>();
@@ -111,7 +114,6 @@ public class FXManagerMenuController {
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
         myRestaurants.setVisible(!myRestaurants.isVisible());
-        myRestaurants.setTableMenuButtonVisible(true);
     }
     public void showOptions() {
         ManagerMenuLogout.setVisible(!ManagerMenuLogout.isVisible());

@@ -14,7 +14,7 @@
    <children>
       <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" />
       <Button fx:id="backToCustomerMenu" mnemonicParsing="false" onMouseClicked="#goBackToCustomerMenu" text="←" />
-      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" />
+      <Button fx:id="backToMenuSelect" mnemonicParsing="false" onMouseClicked="#goBackToMenuSelect" text="←" visible="false" />
       <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="195.0" prefHeight="280.0" prefWidth="240.0" spacing="20.0">
          <children>
             <Button fx:id="totalMenu" mnemonicParsing="false" onMouseClicked="#openTotalMenu" prefHeight="80.0" prefWidth="240.0" text="Menu" />

@@ -109,7 +109,25 @@
     -fx-pref-height: 60;
     -fx-font-size: 12;
 }
+#RestaurantMenuShowType {
+    -fx-background-color: #ffcccf;
+    -fx-border-color: #ff2189;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
 #showBalanceLabel {
+    -fx-background-color: #ffcccf;
+    -fx-text-fill: #ff2189;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-border-color: #ff2189;
+    -fx-font-size: 20;
+}
+#showTypeLabel {
     -fx-background-color: #ffcccf;
     -fx-text-fill: #ff2189;
     -fx-background-radius: 60;

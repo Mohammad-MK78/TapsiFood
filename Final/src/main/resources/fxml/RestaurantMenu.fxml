@@ -14,7 +14,7 @@
       <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="21.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" />
       <Button fx:id="backToManagerMenu" mnemonicParsing="false" onAction="#goBackToManagerMenu" prefHeight="60.0" prefWidth="60.0" text="←" />
       <Button fx:id="backToSelectMenu" mnemonicParsing="false" onAction="#goBackToSelectMenu" prefHeight="60.0" prefWidth="60.0" text="←" visible="false" />
-      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="174.0" prefHeight="360.0" prefWidth="240.0" spacing="20.0" visible="false">
+      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="174.0" prefHeight="360.0" prefWidth="240.0" spacing="20.0">
          <children>
             <Button fx:id="addFoodMenu" mnemonicParsing="false" onAction="#addFood" prefHeight="80.0" prefWidth="240.0" text="add food" />
             <Button fx:id="removeFoodMenu" mnemonicParsing="false" onAction="#removeFood" prefHeight="80.0" prefWidth="240.0" text="remove food" />
@@ -28,8 +28,9 @@
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
                   <Label fx:id="changeTypeStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" visible="false" />
-                  <TextField fx:id="changeTypeTextField" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" visible="false" />
+                  <TextField fx:id="changeTypeTextField" alignment="CENTER" onKeyPressed="#changeType" prefHeight="60.0" prefWidth="100.0" visible="false" />
                   <Label fx:id="showBalanceLabel" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" text="\$" visible="false" />
+                  <Label fx:id="showTypeLabel" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" visible="false" />
                </children>
                <padding>
                   <Insets top="40.0" />
@@ -38,8 +39,9 @@
             <VBox fx:id="optionsVBox" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
                <children>
                   <Button fx:id="RestaurantMenuOptions" mnemonicParsing="false" onAction="#showOptions" text="⁝" />
-                  <Button fx:id="RestaurantMenuChangeType" mnemonicParsing="false" onAction="#changeType" text="charge" visible="false" />
+                  <Button fx:id="RestaurantMenuChangeType" mnemonicParsing="false" onAction="#showChangeType" text="change" />
                   <Button fx:id="RestaurantMenuShowBalance" mnemonicParsing="false" onAction="#showBalance" text="balance" visible="false" />
+                  <Button fx:id="RestaurantMenuShowType" mnemonicParsing="false" onAction="#showType" text="type" visible="false" />
                </children>
             </VBox>
          </children>
@@ -69,7 +71,7 @@
             <Button fx:id="addNewFood" mnemonicParsing="false" onAction="#doAddNewFood" text="add" />
          </children>
       </VBox>
-      <VBox fx:id="removerFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="230.0" prefHeight="200.0" prefWidth="400.0" spacing="10.0" visible="false">
+      <VBox fx:id="removeFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="230.0" prefHeight="200.0" prefWidth="400.0" spacing="10.0" visible="false">
          <children>
             <HBox prefHeight="100.0" prefWidth="400.0" spacing="10.0">
                <children>

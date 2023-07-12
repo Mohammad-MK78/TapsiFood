@@ -18,10 +18,12 @@ public class RestaurantMenuController {
         return currentRestaurant.getCredit();
     }
 
-    public static String changeType(Matcher matcher) {
-        String type = matcher.group("type");
+    public static String changeType(String type) {
         currentRestaurant.changeType(type);
-        return "type changed successfully";
+        return "successful";
+    }
+    public static String showType() {
+        return currentRestaurant.getType();
     }
     public static String addFood(Matcher matcher) throws SQLException, ClassNotFoundException {
         String name = matcher.group("name");

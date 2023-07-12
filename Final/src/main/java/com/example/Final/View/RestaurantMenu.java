@@ -35,9 +35,6 @@ public class RestaurantMenu {
             else if ((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.REPLY_TO_COMMENT)) != null)
                 System.out.println(RestaurantMenuController.reply(matcher));
 
-            else if ((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.CHANGE_TYPE)) != null)
-                System.out.println(RestaurantMenuController.changeType(matcher));
-
             else if((matcher = RestaurantMenuEnums.getMatcher(command, RestaurantMenuEnums.REMOVE_FOOD)) != null)
                 System.out.printf(RestaurantMenuController.removeFood(matcher));
 

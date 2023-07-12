@@ -10,7 +10,6 @@ public enum RestaurantMenuEnums {
     ADD_FOOD ("\\s*add\\s+food\\s+(?<name>\\S+)\\s+(?<category>\\S+)\\s+(?<price>-?\\d+)\\s+(?<cost>-?\\d+)\\s*"),
     VALID_FOOD_NAME ("[a-z\\-]+"),
     SHOW_BALANCE ("\\s*show\\s+balance\\s*"),
-    CHANGE_TYPE ("\\s*change\\s+type\\s+(?<type>\\S+)\\s*"),
     SHOW_ORDER_HISTORY ("\\s*show\\s+history\\s*"),
     SHOW_ONGOING_ORDERS ("\\s*show\\s+ongoing\\s*"),
     SHOW_COMMENTS ("\\s*show\\s+comments\\s*"),
