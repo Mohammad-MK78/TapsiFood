@@ -90,8 +90,11 @@ public class FXManagerMenuController {
             TableRow<Restaurant> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    // RestaurantAdminMenuController.removeRestaurant();
-                    // TODO
+                    try {
+                        removeRestaurantCompleted(row.getItem().getName());
+                    } catch (SQLException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
             return row;
@@ -152,6 +155,11 @@ public class FXManagerMenuController {
         backToManagerMenu.setVisible(!backToManagerMenu.isVisible());
         removeRestaurant.setVisible(!removeRestaurant.isVisible());
         myRestaurantsPrimeVBox.setVisible(!myRestaurantsPrimeVBox.isVisible());
+    }
+    public void removeRestaurantCompleted(String name) throws SQLException, ClassNotFoundException {
+        String result = RestaurantAdminMenuController.removeRestaurant(name);
+        System.out.println(result);
+        initialize();
     }
     public void showChargeAccount() {
         chargeBalance.setVisible(!chargeBalance.isVisible());

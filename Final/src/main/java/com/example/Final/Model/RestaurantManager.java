@@ -14,6 +14,10 @@ public class RestaurantManager extends User{
         restaurants.add(restaurant);
     }
 
+    public ArrayList<Restaurant> getRestaurants() {
+        return restaurants;
+    }
+
     public Restaurant getRestaurantByName(String name) {
         for(Restaurant restaurant : restaurants)
             if(restaurant.getName().equals(name))

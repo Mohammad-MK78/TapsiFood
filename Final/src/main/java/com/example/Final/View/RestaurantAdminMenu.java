@@ -30,9 +30,6 @@ public class RestaurantAdminMenu {
                     RestaurantMenu.run(scanner);
             }
 
-            else if((matcher = RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.REMOVE_RESTAURANT)) != null)
-                System.out.println(RestaurantAdminMenuController.removeRestaurant(matcher));
-
 
             else if(RestaurantAdminMenuEnums.getMatcher(command, RestaurantAdminMenuEnums.SHOW_BALANCE) != null)
                 System.out.println(RestaurantAdminMenuController.showBalance());

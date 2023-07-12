@@ -1,5 +1,8 @@
 package com.example.Final.Model;
 
+import com.example.Final.Controller.RestaurantAdminMenuController;
+import com.example.Final.Controller.RestaurantMenuController;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -49,6 +52,19 @@ public class SnappFood {
             customers.remove(user);
         else
             restaurantManagers.remove(user);
+    }
+    public static void removeRestaurant(Restaurant restaurant) throws ClassNotFoundException, SQLException {
+        String name = restaurant.getName();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        String sqlRegAdmin = "SELECT * FROM tapsifood.restaurants where name='" + name + "'";
+        ResultSet usernameCheck = statement.executeQuery(sqlRegAdmin);
+        if (usernameCheck.next()) {
+            String remove = "DELETE FROM tapsifood.restaurants where name='" + name + "'";
+            statement.executeUpdate(remove);
+        }
+        RestaurantAdminMenuController.getCurrentUser().getRestaurants().remove(restaurant);
     }
 
     public static void setSnappFoodManager(SnappFoodManager snappFoodManager) {

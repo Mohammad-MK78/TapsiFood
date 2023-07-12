@@ -14,6 +14,11 @@ public class RestaurantAdminMenuController {
         User user = SnappFood.getCurrentUser();
         currentUser = new RestaurantManager(user.getUsername(), user.getPassword(), user.getSecurityQuestion(), user.getCredit());
     }
+
+    public static RestaurantManager getCurrentUser() {
+        return currentUser;
+    }
+
     public static String addRestaurant(String name, String type, int location) throws SQLException, ClassNotFoundException {
 
         if(RestaurantAdminMenuEnums.getMatcher(name, RestaurantAdminMenuEnums.VALID_NAME) == null)
@@ -97,15 +102,13 @@ public class RestaurantAdminMenuController {
             }
         }
     }
-    public static String removeRestaurant(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String restaurantName = matcher.group("name");
+    public static String removeRestaurant(String restaurantName) throws SQLException, ClassNotFoundException {
 
-        if(SnappFood.getRestaurantManagerByUsername(restaurantName) != null) {
-            SnappFood.removeUser(SnappFood.getRestaurantManagerByUsername(restaurantName));
-            return "";
+        if(SnappFood.getRestaurantByName(restaurantName) != null) {
+            SnappFood.removeRestaurant(SnappFood.getRestaurantByName(restaurantName));
+            return "Successful";
         }
-
-        return "remove restaurant failed: restaurant not found\n";
+        return "Failed";
     }
 
     public static String chargeAccount(int amount) throws SQLException, ClassNotFoundException {
