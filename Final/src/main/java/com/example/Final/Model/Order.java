@@ -2,7 +2,7 @@ package com.example.Final.Model;
 public class Order {
     private Food food;
     private String name;
-    private int number;
+    private int number, price, totalPrice;
     private Customer customer;
 
     public Order(Food food, int number, Customer customer) {
@@ -10,6 +10,18 @@ public class Order {
         this.number = number;
         this.customer = customer;
         this.name = food.getName();
+        this.price = food.getPrice();
+        this.totalPrice = this.price * this.number;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public int getPrice() {
+        return price;
+    }
+    public int getTotalPrice() {
+        return totalPrice;
     }
 
     public Food getFood() {

@@ -29,12 +29,25 @@ public class FXCartController {
     TableView<Order> currentCartTableView;
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
-        TableColumn<Order, String> name = new TableColumn<>("name");
+        TableColumn<Order, String> name = new TableColumn<>("Food Name");
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        name.setPrefWidth(400);
+        name.setPrefWidth(100);
+
+        TableColumn<Order, Integer> number = new TableColumn<>("Number");
+        number.setCellValueFactory(new PropertyValueFactory<>("number"));
+        number.setPrefWidth(100);
+
+        TableColumn<Order, String> price = new TableColumn<>("Price");
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        price.setPrefWidth(100);
+
+        TableColumn<Order, String> totalPrice = new TableColumn<>("Total Price");
+        totalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        totalPrice.setPrefWidth(100);
+
 
         currentCartTableView.getColumns().clear();
-        currentCartTableView.getColumns().addAll(name);
+        currentCartTableView.getColumns().addAll(name, number, price, totalPrice);
         currentCartTableView.getItems().clear();
         currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCart());
         System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
