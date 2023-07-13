@@ -37,6 +37,36 @@ public class Customer extends User{
     public Cart getCurrentCart() {
         return currentCart;
     }
+    public ArrayList<Order> getCart() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        Statement statement2 = connection.createStatement();
+
+        String getCustomerID = "SELECT * FROM tapsifood.accounts where username='" + getUsername() + "'";
+        int customerID = 0;
+        ResultSet getCID = statement.executeQuery(getCustomerID);
+        if (getCID.next())
+            customerID = getCID.getInt("id");
+
+        String sqlCheckOrders = "SELECT * FROM tapsifood.orders where customerID='" + customerID + "'";
+        ResultSet orderCheck = statement.executeQuery(sqlCheckOrders);
+        ArrayList<Order> orders = new ArrayList<>();
+        while (orderCheck.next()) {
+            int restaurantID = orderCheck.getInt("restaurantID");
+            String getRestaurantID = "SELECT * FROM tapsifood.restaurants where id='" + restaurantID + "'";
+            String restaurantName = "";
+            ResultSet getRID = statement2.executeQuery(getRestaurantID);
+            if (getRID.next())
+                restaurantName = getRID.getString("name");
+            String foodName = orderCheck.getString("foodName");
+            Food food = Restaurant.getFoodByName(foodName, restaurantName);
+            int number = orderCheck.getInt("number");
+            Customer customer = this;
+            orders.add(new Order(food, number, customer));
+        }
+        return orders;
+    }
     public ArrayList<Order> getCartOrder() {
         return currentCart.getCart();
     }

@@ -28,7 +28,7 @@ public class FXCartController {
     @FXML
     TableView<Order> currentCartTableView;
     @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
         TableColumn<Order, String> name = new TableColumn<>("name");
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         name.setPrefWidth(400);
@@ -36,7 +36,7 @@ public class FXCartController {
         currentCartTableView.getColumns().clear();
         currentCartTableView.getColumns().addAll(name);
         currentCartTableView.getItems().clear();
-        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
+        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCart());
         System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
     }
     public void openShowCart() {
