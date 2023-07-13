@@ -16,7 +16,7 @@ public class ShortestPath {
         boolean[] visited = new boolean[numNodes];
         int[] distance = new int[numNodes];
         Arrays.fill(distance, Integer.MAX_VALUE);
-        distance[start] = 0;
+        distance[start+1] = 0;
         for (int i = 0; i < numNodes - 1; i++) {
             int mindist = findMinDistance(distance, visited);
             visited[mindist] = true;
@@ -51,11 +51,11 @@ public class ShortestPath {
             path[i] = new ArrayList<>();
         }
         // Add the start node to the queue with a weight of 0
-        queue.offer(new Node(start, 0, new ArrayList<>(List.of(start))));
+        queue.offer(new Node(start+1, 0, new ArrayList<>(List.of(start+1))));
         while (!queue.isEmpty()) {
             Node curr = queue.poll();
             // If we have reached the destination node, return the path
-            if (curr.num == dest) {
+            if (curr.num == dest+1) {
                 return curr.path;
             }
             if (!visited[curr.num]) {

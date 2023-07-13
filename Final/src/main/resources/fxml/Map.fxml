@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXMapController">
-
+<AnchorPane fx:id="mapPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/Map.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXMapController">
+   <children>
+      <Button fx:id="backToDeliveryMenu" mnemonicParsing="false" onAction="#goBackToDeliveryMenu" prefHeight="60.0" prefWidth="60.0" text="←" />
+   </children>
 </AnchorPane>

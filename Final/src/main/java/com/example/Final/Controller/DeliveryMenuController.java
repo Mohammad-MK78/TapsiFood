@@ -15,13 +15,16 @@ public class DeliveryMenuController {
         currentUser = new Delivery(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getIs_busy());
     }
     public static void setDestination(int destination) {
-        currentUser.setRestaurant(destination);
+        currentUser.setDestination(destination);
     }
     public static int showDestination(){
         return currentUser.getDestination();
     }
     public static int showLocation() {
         return currentUser.getLocation();
+    }
+    public static int showRestaurant() {
+        return currentUser.getRestaurant();
     }
     public static int showBalance() {
         return currentUser.getCredit();
