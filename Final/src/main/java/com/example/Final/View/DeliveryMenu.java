@@ -20,14 +20,14 @@ public class DeliveryMenu {
                 System.out.println("user logged out successfully");
                 return;
             }
-            else if(DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_RESTAURANT) != null)
-                DeliveryMenuController.showRestaurant();
+            /*else if(DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_RESTAURANT) != null)
+                DeliveryMenuController.showRestaurant();*/
             else if(DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_DESTINATION) != null)
                 DeliveryMenuController.showDestination();
             else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_LOCATION) != null)
                 DeliveryMenuController.showLocation();
-            else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_PATH) != null)
-                DeliveryMenuController.show_path();
+            /*else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_PATH) != null)
+                DeliveryMenuController.show_path();*/
             else if (DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_TIME) != null)
                 DeliveryMenuController.show_distance();
             else if(DeliveryMenuEnums.getMatcher(command, DeliveryMenuEnums.SHOW_CURRENT_MENU) != null)

@@ -14,14 +14,14 @@ public class DeliveryMenuController {
         User user = SnappFood.getCurrentUser();
         currentUser = new Delivery(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getIs_busy());
     }
-    public static void showRestaurant() {
-        System.out.println("restaurant location : " + currentUser.getRestaurant());
+    public static void setDestination(int destination) {
+        currentUser.setRestaurant(destination);
     }
-    public static void showDestination() {
-        System.out.println("destination : " + currentUser.getDestination());
+    public static int showDestination(){
+        return currentUser.getDestination();
     }
-    public static void showLocation() {
-        System.out.println("location : " + currentUser.getLocation());
+    public static int showLocation() {
+        return currentUser.getLocation();
     }
     public static int showBalance() {
         return currentUser.getCredit();
@@ -34,20 +34,22 @@ public class DeliveryMenuController {
         currentUser.changeBalance(amount);
         return "Successful";
     }
-    public static void show_distance() throws IOException {
-        int location = currentUser.getRestaurant(), destination = currentUser.getDestination();
+    public static int[][] getCityGraph() throws IOException {
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
             if (cityGraph.city.cols >= 0)
                 System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
         }
-        ShortestPath gfg = new ShortestPath(graph);
+        return graph;
+    }
+    public static void show_distance() throws IOException {
+        int location = currentUser.getRestaurant(), destination = currentUser.getDestination();
+        ShortestPath gfg = new ShortestPath(getCityGraph());
         int distance = gfg.shortestPath(location, destination);
         System.out.println("distance : " + distance);
     }
-    public static void show_path() throws IOException {
-        int location = currentUser.getRestaurant(), destination = currentUser.getDestination();
+    public static ArrayList<Integer> show_path(int location, int destination) throws IOException {
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1001][1001];
         for(int i = 0; i < cityGraph.city.rows; i++) {
@@ -55,7 +57,7 @@ public class DeliveryMenuController {
                 System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
         }
         ShortestPath sp = new ShortestPath(graph);
-        ArrayList<Integer> path = sp.findShortestPath(location, destination);
-        System.out.println("path : " + path.toString());
+        //System.out.println("path : " + sp.findShortestPath(location, destination).toString());
+        return sp.findShortestPath(location, destination);
     }
 }

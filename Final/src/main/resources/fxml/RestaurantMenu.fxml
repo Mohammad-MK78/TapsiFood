@@ -18,7 +18,7 @@
             <Image url="@../Pictures/RegisterMenu.png" />
          </image>
       </ImageView>
-      <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="21.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" AnchorPane.topAnchor="20.0" />
+      <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="21.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="backToManagerMenu" mnemonicParsing="false" onAction="#goBackToManagerMenu" prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="backToSelectMenu" mnemonicParsing="false" onAction="#goBackToSelectMenu" prefHeight="60.0" prefWidth="60.0" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="174.0" prefHeight="360.0" prefWidth="240.0" spacing="20.0">
