@@ -36,8 +36,8 @@ public class FXCartController {
         currentCartTableView.getColumns().clear();
         currentCartTableView.getColumns().addAll(name);
         currentCartTableView.getItems().clear();
-        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
-        System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
+        System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
     }
     public void openShowCart() {
         backToSelectMenu.setVisible(true);

@@ -84,8 +84,11 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
-                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+                    try {
+                        addToCart(row.getItem());
+                    } catch (SQLException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
             return row;
@@ -95,8 +98,11 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
-                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+                    try {
+                        addToCart(row.getItem());
+                    } catch (SQLException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
             return row;
@@ -106,8 +112,11 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
-                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+                    try {
+                        addToCart(row.getItem());
+                    } catch (SQLException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
             return row;
@@ -117,13 +126,19 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
-                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+                    try {
+                        addToCart(row.getItem());
+                    } catch (SQLException | ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
             return row;
         });
 
+    }
+    public void addToCart(Food food) throws SQLException, ClassNotFoundException {
+        CustomerMenuController.getCurrentUser().addToCart(new Order(food, 1, CustomerMenuController.getCurrentUser()));
     }
     public void openTotalMenu() throws SQLException, ClassNotFoundException {
         selectMenuVBox.setVisible(false);

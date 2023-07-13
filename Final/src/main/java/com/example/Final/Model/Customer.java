@@ -1,6 +1,6 @@
 package com.example.Final.Model;
 
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class Customer extends User{
@@ -38,7 +38,7 @@ public class Customer extends User{
         return currentCart;
     }
     public ArrayList<Order> getCartOrder() {
-        return currentCart.getOrders();
+        return currentCart.getCart();
     }
     public ArrayList<Cart> getCarts() {
         return carts;
@@ -47,19 +47,63 @@ public class Customer extends User{
         this.carts.add(cart);
     }
 
-    public void addToCart(Order order) {
-        currentCart.addToCart(order);
+    public void addToCart(Order order) throws SQLException, ClassNotFoundException {
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        Food food = order.getFood();
+        String foodName = food.getName();
+        String restaurantName = food.getRestaurant().getName();
+
+        String getRestaurantID = "SELECT * FROM tapsifood.restaurants where name='" + restaurantName + "'";
+        int restaurantID = 0;
+        ResultSet getRID = statement.executeQuery(getRestaurantID);
+        if (getRID.next())
+            restaurantID = getRID.getInt("id");
+
+        String getFoodID = "SELECT * FROM tapsifood.foods where name='" + foodName + "'";
+        int foodID = 0;
+        ResultSet getFID = statement.executeQuery(getFoodID);
+        if (getFID.next())
+            foodID = getFID.getInt("id");
+
+        String getCustomerID = "SELECT * FROM tapsifood.accounts where username='" + order.getCustomer().getUsername() + "'";
+        int customerID = 0;
+        ResultSet getCID = statement.executeQuery(getCustomerID);
+        if (getCID.next())
+            customerID = getCID.getInt("id");
+
+        String getOrderID = "SELECT * FROM tapsifood.orders where restaurantID='"+restaurantID+"' AND foodID='"+foodID+"' AND customerID='"+customerID+"'";
+        ResultSet getOID = statement.executeQuery(getOrderID);
+        int orderID = 0, orderNumber = 0;
+        boolean orderExist = false;
+        if (getOID.next()) {
+            orderExist = true;
+            orderID = getOID.getInt("id");
+            orderNumber = getOID.getInt("number");
+        }
+
+        if (orderExist) {
+            String change = "UPDATE tapsifood.orders SET number='"+(orderNumber+1)+"' WHERE id='" + orderID + "'";
+            statement.executeUpdate(change);
+        }
+        else {
+            String addOrder = "INSERT INTO tapsifood.orders(restaurantID, foodID, foodName, customerID, price) VALUES ('"+restaurantID+"', '"+foodID+"', '"+foodName+"', '"+ customerID +"', '"+food.getPrice()+"')";
+            statement.executeUpdate(addOrder);
+            currentCart.addToCart(order);
+        }
     }
 
     public Order getOrderByFood(Food food) {
-        for(Order order : currentCart.getOrders())
+        for(Order order : currentCart.getCart())
             if(order.getFood().equals(food))
                 return order;
         return null;
     }
 
     public Order getOrderByFoodNameAndRestaurantName(String foodName, String restaurantName) {
-        for(Order order : currentCart.getOrders())
+        for(Order order : currentCart.getCart())
             if(order.getFood().getName().equals(foodName) &&
                 order.getFood().getRestaurant().getName().equals(restaurantName))
                 return order;
@@ -67,7 +111,7 @@ public class Customer extends User{
     }
 
     public void removeOrder(Order order) {
-        currentCart.removeOrder(order);
+        currentCart.removeFromCart(order);
     }
 
     public int getDebt() {
