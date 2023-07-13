@@ -84,7 +84,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label fx:id="foodNameLabel2" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="restaurant name :" />
+                        <Label fx:id="foodNameLabel2" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="food name:" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">

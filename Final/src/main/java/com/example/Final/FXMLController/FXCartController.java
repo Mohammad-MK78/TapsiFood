@@ -1,16 +1,18 @@
 package com.example.Final.FXMLController;
 
+import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Order;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class FXCartController {
     @FXML
@@ -20,13 +22,32 @@ public class FXCartController {
     @FXML
     Button backToSelectMenu;
     @FXML
+    TextField addDiscountTextField;
+    @FXML
+    Label showDeliveryLabel, showTimeLabel;
+    @FXML
     TableView<Order> currentCartTableView;
+    @FXML
+    void initialize() {
+        TableColumn<Order, String> name = new TableColumn<>("name");
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        name.setPrefWidth(200);
+        TableColumn<Order, Integer> num = new TableColumn<>("num");
+        num.setCellValueFactory(new PropertyValueFactory<>("num"));
+        num.setPrefWidth(200);
+
+        currentCartTableView.getColumns().clear();
+        currentCartTableView.getColumns().addAll(name, num);
+        currentCartTableView.getItems().clear();
+        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+    }
     public void openShowCart() {
         backToSelectMenu.setVisible(true);
         selectMenuVBox.setVisible(false);
         currentCartVBox.setVisible(true);
     }
     public void openShowTime() {
+        showTimeLabel.setText(""); //TODO
         backToSelectMenu.setVisible(true);
         selectMenuVBox.setVisible(false);
         showTimeHBox.setVisible(true);
@@ -36,7 +57,14 @@ public class FXCartController {
         selectMenuVBox.setVisible(false);
         purchaseVBox.setVisible(true);
     }
+    public void purchaseCompleted() {
+//        CustomerMenuController.purchaseCart(); TODO
+    }
     public void openShowDelivery() {
+        if (CustomerMenuController.getCurrentUser().getCurrentCart().getDelivery() == null)
+            showDeliveryLabel.setText("no delivery");
+        else
+            showDeliveryLabel.setText(CustomerMenuController.getCurrentUser().getCurrentCart().getDelivery().getUsername());
         backToSelectMenu.setVisible(true);
         selectMenuVBox.setVisible(false);
         showDeliveryHBox.setVisible(true);
@@ -45,6 +73,17 @@ public class FXCartController {
         backToSelectMenu.setVisible(true);
         selectMenuVBox.setVisible(false);
         orderStatusVBox.setVisible(true);
+    }
+    public void orderNotCollected() {
+        orderStatusVBox.setVisible(false);
+        selectMenuVBox.setVisible(true);
+        backToSelectMenu.setVisible(false);
+    }
+    public void orderCollected() throws SQLException, ClassNotFoundException {
+        orderStatusVBox.setVisible(false);
+        selectMenuVBox.setVisible(true);
+        backToSelectMenu.setVisible(false);
+        CustomerMenuController.collected();
     }
     public void goBackToSelectMenu() {
         backToSelectMenu.setVisible(false);

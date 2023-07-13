@@ -3,6 +3,7 @@ package com.example.Final.FXMLController;
 import com.example.Final.Controller.RestaurantAdminMenuController;
 import com.example.Final.Controller.RestaurantMenuController;
 import com.example.Final.Main;
+import com.example.Final.Model.Comment;
 import com.example.Final.Model.Order;
 import com.example.Final.Model.Restaurant;
 import com.example.Final.Model.SnappFood;
@@ -30,7 +31,7 @@ public class FXRestaurantMenuController {
     @FXML
     TableView<Order> orderHistoryTableView, ongoingOrdersTableView;
     @FXML
-    TableView<String> commentsTableView; //TODO create class Comment :..)
+    TableView<Comment> commentsTableView; //TODO create class Comment :..)
 
     public static Restaurant restaurant;
 
@@ -63,6 +64,21 @@ public class FXRestaurantMenuController {
         TableColumn<Order, Integer> totalPrice2 = new TableColumn<>("totalPrice");
         totalPrice2.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         totalPrice2.setPrefWidth(100);
+
+        TableColumn<Comment, String> comment = new TableColumn<>("comment");
+        comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
+        comment.setPrefWidth(150);
+        TableColumn<Comment, String> reply = new TableColumn<>("reply");
+        reply.setCellValueFactory(new PropertyValueFactory<>("reply"));
+        reply.setPrefWidth(150);
+        TableColumn<Comment, String> cusName = new TableColumn<>("username");
+        cusName.setCellValueFactory(new PropertyValueFactory<>("username"));
+        cusName.setPrefWidth(100);
+
+        commentsTableView.getColumns().clear();
+        commentsTableView.getColumns().addAll(comment, reply, cusName);
+        commentsTableView.getItems().clear();
+        commentsTableView.getItems().addAll(); // TODO
 
         orderHistoryTableView.getColumns().clear();
         orderHistoryTableView.getColumns().addAll(Foods, customerName, totalPrice);
@@ -138,13 +154,7 @@ public class FXRestaurantMenuController {
         backToSelectMenu.setVisible(true);
     }
     public void submitReply() {
-
-    }
-    public void doAddNewFood() {
-
-    }
-    public void doRemoveFood() {
-
+        // TODO
     }
     public void goBackToCommentsTableView() {
         commentsTableView.setVisible(true);

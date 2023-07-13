@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CartTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCartController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -47,8 +46,8 @@
             <Label fx:id="orderStatusLabel" alignment="CENTER" prefHeight="120.0" prefWidth="240.0" text="have you collected your food?" />
             <HBox alignment="CENTER" prefHeight="120.0" prefWidth="240.0" spacing="20.0">
                <children>
-                  <Button fx:id="orderCollected" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Yes :)" />
-                  <Button fx:id="orderNotCollected" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="No :(" />
+                  <Button fx:id="orderCollected" mnemonicParsing="false" onAction="#orderCollected" prefHeight="100.0" prefWidth="100.0" text="Yes :)" />
+                  <Button fx:id="orderNotCollected" mnemonicParsing="false" onAction="#orderNotCollected" prefHeight="100.0" prefWidth="100.0" text="No :(" />
                </children>
             </HBox>
          </children>
@@ -67,7 +66,7 @@
                   <TextField fx:id="addDiscountTextField" prefHeight="100.0" prefWidth="160.0" />
                </children>
             </HBox>
-            <Button fx:id="purchase" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="purchase" />
+            <Button fx:id="purchase" mnemonicParsing="false" onAction="#purchaseCompleted" prefHeight="80.0" prefWidth="80.0" text="purchase" />
             <Label fx:id="purchaseStatusLabel" prefHeight="40.0" prefWidth="300.0" text="Label" />
          </children>
       </VBox>

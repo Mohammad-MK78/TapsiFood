@@ -19,7 +19,7 @@ import java.sql.SQLException;
 
 public class FXSnappFoodAdminMenuController {
     @FXML
-    Button adminMenuLogout, backToAdminMenu, backToMenuSelect;
+    Button adminMenuLogout, backToAdminMenu;
     @FXML
     Label SnappFoodAdminMenu, registerResultLabel;
     @FXML
@@ -113,8 +113,7 @@ public class FXSnappFoodAdminMenuController {
         totalRestaurantVBox.setVisible(false);
         totalDiscountsVBox.setVisible(false);
         setDiscountHBox.setVisible(false);
-    }
-    public void goBackToMenuSelect() {
+        backToAdminMenu.setVisible(false);
     }
     public void managerRegister() throws SQLException, ClassNotFoundException {
         String username = usernameInp.getText();
