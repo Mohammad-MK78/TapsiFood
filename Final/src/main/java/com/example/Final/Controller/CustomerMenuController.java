@@ -245,26 +245,24 @@ public class CustomerMenuController {
         System.out.println("estimated time : " + distance + " minutes");
     }
 
-    public static String purchaseCart(String command) throws SQLException, ClassNotFoundException {
-        Matcher discountMatcher = Pattern.compile(CustomerMenuEnums.getString(CustomerMenuEnums.PURCHASE_CART_OPTION)).matcher(command);
+    public static String purchaseCart(String discountInp) throws SQLException, ClassNotFoundException {
         int discountAmount = 0;
         Discount discount = null;
-        if (currentUser.getCartOrder().size() == 0) {
+        if (currentUser.getCart().size() == 0) {
             return "purchase failed: cart is empty";
         }
 
-        if(discountMatcher.find()) {
-
-            if((discount = currentUser.getDiscountByCode(discountMatcher.group("discountCode"))) == null)
-                return "purchase failed: invalid discount code";
-
+        ResultSet discountExist = null; //TODO: SQL
+        if(discountExist.next()) {
             discountAmount = discount.getDiscountAmount();
         }
+        else
+            return "purchase failed: invalid discount code";
 
         if(currentUser.getCredit() < currentUser.getDebt() - discountAmount)
             return "purchase failed: inadequate money";
 
-        for (Delivery delivery : SnappFood.getDeliveries()) {
+        for (Delivery delivery : SnappFood.getDeliveries()) { //TODO
             if (!delivery.is_busy) {
                 currentUser.getCurrentCart().setDelivery(delivery);
                 delivery.setRestaurant(currentUser.getCurrentCart().getRestaurant().getLocation());
@@ -272,18 +270,18 @@ public class CustomerMenuController {
                 break;
             }
         }
-        for(Order order : currentUser.getCartOrder())
+        for(Order order : currentUser.getCartOrder()) //TODO: Charge restaurant account
             order.getFood().getRestaurant().changeBalance(order.getNumber() * (order.getFood().getPrice() - order.getFood().getCost()));
 
-        int price = currentUser.getDebt() + currentUser.getDebt() / 5;
+        int price = currentUser.getDebt() + currentUser.getDebt() / 5; //TODO: Delivery payment
         currentUser.changeBalance(discountAmount - price);
 
         currentUser.changeDebt(-currentUser.getDebt());
 
-        SnappFood.removeDiscount(discount);
-        currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));
-        currentUser.getCurrentCart().getRestaurant().addCartToOngoings(currentUser.getCurrentCart());
-        currentUser.getCurrentCart().resetCart();
+        SnappFood.removeDiscount(discount); //TODO: Batel Kardane Kode Takhfif
+        currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));//Todo: add cart to customer history
+        currentUser.getCurrentCart().getRestaurant().addCartToOngoings(currentUser.getCurrentCart()); //Todo: add cart to restaurant on going
+        currentUser.getCurrentCart().resetCart(); //TODO: clear customer cart
         return "purchase successful";
     }
     public static void showDelivery() {
@@ -301,7 +299,7 @@ public class CustomerMenuController {
         currentUser.addComment(message, restaurantName);
         return "comment added successfully";
     }
-    public static void collected() throws SQLException, ClassNotFoundException {
+    public static void collected() throws SQLException, ClassNotFoundException { //TODO: collect order
         currentUser.getDelivery().is_busy = false;
         currentUser.getDelivery().setLocation(currentUser.getLocation());
         int totalPrice = 0;

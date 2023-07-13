@@ -68,8 +68,9 @@ public class FXCartController {
         selectMenuVBox.setVisible(false);
         purchaseVBox.setVisible(true);
     }
-    public void purchaseCompleted() {
-//        CustomerMenuController.purchaseCart(); TODO
+    public void purchaseCompleted() throws SQLException, ClassNotFoundException {
+        String discount = addDiscountTextField.getText();
+        CustomerMenuController.purchaseCart(discount);
     }
     public void openShowDelivery() {
         if (CustomerMenuController.getCurrentUser().getCurrentCart().getDelivery() == null)
