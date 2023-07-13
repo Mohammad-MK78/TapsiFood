@@ -283,6 +283,7 @@ public class CustomerMenuController {
         SnappFood.removeDiscount(discount);
         currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));
         currentUser.getCurrentCart().getRestaurant().addCartToOngoings(currentUser.getCurrentCart());
+        currentUser.getCurrentCart().resetCart();
         return "purchase successful";
     }
     public static void showDelivery() {

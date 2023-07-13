@@ -31,15 +31,13 @@ public class FXCartController {
     void initialize() {
         TableColumn<Order, String> name = new TableColumn<>("name");
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        name.setPrefWidth(200);
-        TableColumn<Order, Integer> num = new TableColumn<>("num");
-        num.setCellValueFactory(new PropertyValueFactory<>("num"));
-        num.setPrefWidth(200);
+        name.setPrefWidth(400);
 
         currentCartTableView.getColumns().clear();
-        currentCartTableView.getColumns().addAll(name, num);
+        currentCartTableView.getColumns().addAll(name);
         currentCartTableView.getItems().clear();
         currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
+        System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
     }
     public void openShowCart() {
         backToSelectMenu.setVisible(true);

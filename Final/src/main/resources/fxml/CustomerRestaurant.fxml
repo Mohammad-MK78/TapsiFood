@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CustomerRestaurantTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCustomerRestaurantController">
    <children>
@@ -33,57 +29,26 @@
       <VBox fx:id="totalMenuVbox" layoutX="200.0" layoutY="135.0" prefHeight="450.0" prefWidth="400.0" visible="false">
          <children>
             <Label fx:id="totalMenuLabel" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="Menu" />
-            <TableView fx:id="totalMenuTableView" onMouseClicked="#foodSelected" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="totalMenuTableView" prefHeight="400.0" prefWidth="400.0" />
          </children>
       </VBox>
       <VBox fx:id="starterMenuVbox" layoutX="200.0" layoutY="135.0" prefHeight="450.0" prefWidth="400.0" visible="false">
          <children>
             <Label fx:id="starterMenuLabel" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="Starter Menu" />
-            <TableView fx:id="starterMenuTableView" onMouseClicked="#foodSelected" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="starterMenuTableView" prefHeight="400.0" prefWidth="400.0" />
          </children>
       </VBox>
       <VBox fx:id="mainMealMenuVbox" layoutX="200.0" layoutY="135.0" prefHeight="450.0" prefWidth="400.0" visible="false">
          <children>
             <Label fx:id="mainMealLabel" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="Starter Menu" />
-            <TableView fx:id="mainMealMenuTableView" onMouseClicked="#foodSelected" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="mainMealMenuTableView" prefHeight="400.0" prefWidth="400.0" />
          </children>
       </VBox>
       <VBox fx:id="dessertMenuVbox" layoutX="200.0" layoutY="135.0" prefHeight="450.0" prefWidth="400.0" visible="false">
          <children>
             <Label fx:id="dessertLabel" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="Starter Menu" />
-            <TableView fx:id="dessertMenuTableView" onMouseClicked="#foodSelected" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="dessertMenuTableView" prefHeight="400.0" prefWidth="400.0" />
          </children>
-      </VBox>
-      <VBox fx:id="selectFoodVBox" alignment="CENTER" layoutX="300.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" spacing="30.0" visible="false">
-         <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <VBox prefHeight="100.0" prefWidth="100.0">
-                     <children>
-                        <Button fx:id="backToSelectFood" mnemonicParsing="false" onMouseClicked="#goBackToSelectFood" prefHeight="60.0" prefWidth="60.0" text="←" />
-                     </children>
-                     <padding>
-                        <Insets left="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                     <children>
-                        <TextField fx:id="selectFoodNumber" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" promptText="number">
-                           <font>
-                              <Font size="16.0" />
-                           </font></TextField>
-                     </children>
-                     <padding>
-                        <Insets left="20.0" right="20.0" />
-                     </padding>
-                  </VBox>
-               </children>
-            </HBox>
-            <Button fx:id="selectFood" mnemonicParsing="false" onMouseClicked="#orderFood" prefHeight="50.0" prefWidth="160.0" text="select" />
-         </children>
-         <padding>
-            <Insets bottom="20.0" />
-         </padding>
       </VBox>
    </children>
 </AnchorPane>

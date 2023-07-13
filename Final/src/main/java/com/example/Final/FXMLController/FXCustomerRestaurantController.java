@@ -1,5 +1,6 @@
 package com.example.Final.FXMLController;
 
+import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.*;
 import javafx.fxml.FXML;
@@ -14,13 +15,11 @@ import java.sql.SQLException;
 
 public class FXCustomerRestaurantController {
     @FXML
-    VBox selectMenuVBox, totalMenuVbox, starterMenuVbox, mainMealMenuVbox, dessertMenuVbox, selectFoodVBox;
+    VBox selectMenuVBox, totalMenuVbox, starterMenuVbox, mainMealMenuVbox, dessertMenuVbox;
     @FXML
     Button backToCustomerMenu, backToMenuSelect;
     @FXML
     Label restaurantName;
-    @FXML
-    TextField selectFoodNumber;
     @FXML
     TableView<Food> dessertMenuTableView, mainMealMenuTableView, starterMenuTableView, totalMenuTableView;
 
@@ -85,7 +84,8 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    foodSelected();
+                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
+                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
                 }
             });
             return row;
@@ -95,7 +95,8 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    foodSelected();
+                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
+                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
                 }
             });
             return row;
@@ -105,7 +106,8 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    foodSelected();
+                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
+                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
                 }
             });
             return row;
@@ -115,7 +117,8 @@ public class FXCustomerRestaurantController {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
-                    foodSelected();
+                    CustomerMenuController.getCurrentUser().addToCart(new Order(row.getItem(), 1, CustomerMenuController.getCurrentUser()));
+                    System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getOrders());
                 }
             });
             return row;
@@ -123,28 +126,28 @@ public class FXCustomerRestaurantController {
 
     }
     public void openTotalMenu() throws SQLException, ClassNotFoundException {
-        selectFoodVBox.setVisible(false);
+        selectMenuVBox.setVisible(false);
         backToCustomerMenu.setVisible(false);
         backToMenuSelect.setVisible(true);
         totalMenuVbox.setVisible(true);
         initialize();
     }
     public void openStarterMenu() throws SQLException, ClassNotFoundException {
-        selectFoodVBox.setVisible(false);
+        selectMenuVBox.setVisible(false);
         backToCustomerMenu.setVisible(false);
         backToMenuSelect.setVisible(true);
         starterMenuVbox.setVisible(true);
         initialize();
     }
     public void openMainMealMenu() throws SQLException, ClassNotFoundException {
-        selectFoodVBox.setVisible(false);
+        selectMenuVBox.setVisible(false);
         backToCustomerMenu.setVisible(false);
         backToMenuSelect.setVisible(true);
         mainMealMenuVbox.setVisible(true);
         initialize();
     }
     public void openDessertMenu() throws SQLException, ClassNotFoundException {
-        selectFoodVBox.setVisible(false);
+        selectMenuVBox.setVisible(false);
         backToCustomerMenu.setVisible(false);
         backToMenuSelect.setVisible(true);
         dessertMenuVbox.setVisible(true);
@@ -164,17 +167,5 @@ public class FXCustomerRestaurantController {
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
     }
-    public void goBackToSelectFood() {
-        selectFoodVBox.setVisible(false);
-        backToMenuSelect.setVisible(false);
-        backToCustomerMenu.setVisible(true);
-        selectFoodNumber.setText("");
-    }
-    public void foodSelected() {
-        selectFoodVBox.setVisible(true);
-    }
-    public void orderFood() {
-        //CustomerMenuController.getCurrentUser().addToCart(new Order(, Integer.parseInt(selectFoodNumber.getText()), CustomerMenuController.getCurrentUser()));
-        //TODO
-    }
+
 }

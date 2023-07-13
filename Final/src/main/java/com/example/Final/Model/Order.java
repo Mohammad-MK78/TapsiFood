@@ -1,6 +1,7 @@
 package com.example.Final.Model;
 public class Order {
     private Food food;
+    private String name;
     private int number;
     private Customer customer;
 
@@ -8,6 +9,7 @@ public class Order {
         this.food = food;
         this.number = number;
         this.customer = customer;
+        this.name = food.getName();
     }
 
     public Food getFood() {
