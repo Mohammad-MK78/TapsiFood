@@ -93,3 +93,6 @@
     -fx-border-color: #f15e22;
     -fx-font-size: 24;
 }
+AnchorPane {
+    -fx-background-image: url('../Pictures/RegisterMenu.png');
+}

@@ -111,8 +111,8 @@
     -fx-border-radius: 60;
     -fx-font-size: 20;
 }
-#DeliveryMenuAnchorPane {
-    -fx-background-image: url('Pictures/RegisterMenu.png');
+AnchorPane {
+    -fx-background-image: url('../Pictures/RegisterMenu.png');
 }
 #showTimeLabel2 {
     -fx-text-fill: #f15e22;

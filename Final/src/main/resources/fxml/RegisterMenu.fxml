@@ -4,53 +4,46 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="registerMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/RegisterTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXRegisterMenuController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="856.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../Pictures/RegisterMenu.png" />
-         </image>
-      </ImageView>
       <Button fx:id="registerMenuExit" layoutX="718.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#exit" prefHeight="68.0" prefWidth="68.0" text="exit" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="backToMainMenu" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToMainMenu" layoutX="14.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="register" layoutX="240.0" layoutY="502.0" mnemonicParsing="false" onAction="#registerComplete" prefHeight="60.0" prefWidth="169.0" text="Register" visible="false" />
-      <Button fx:id="backToRegisterMenu" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToRegisterMenu" text="←" visible="false" />
+      <Button fx:id="backToRegisterMenu" layoutX="14.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToRegisterMenu" text="←" visible="false" />
       <VBox fx:id="registerChoices" alignment="CENTER" layoutX="310.0" layoutY="239.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="250.0" prefWidth="200.0" spacing="50.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
          <children>
             <Button fx:id="customerRegister" accessibleText="customer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#chooseRegister" prefHeight="100.0" prefWidth="200.0" text="Customer" VBox.vgrow="ALWAYS" />
             <Button fx:id="deliveryRegister" accessibleText="delivery" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#chooseRegister" prefHeight="100.0" prefWidth="200.0" text="Delivery" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <VBox fx:id="welcomeVBox" layoutX="210.0" layoutY="30.0" prefHeight="160.0" prefWidth="400.0" spacing="10.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
+      <VBox fx:id="welcomeVBox" layoutX="210.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="160.0" prefWidth="400.0" spacing="10.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
          <children>
             <Label fx:id="welcome" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" text="Register Menu" textFill="#ff0070" VBox.vgrow="ALWAYS" />
             <Label fx:id="registerSelect" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" text="Select from below ↓" textFill="#ff00f6" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <HBox fx:id="registerHBox" layoutX="34.0" layoutY="125.0" prefHeight="350.0" prefWidth="516.0" visible="false">
+      <HBox fx:id="registerHBox" layoutX="34.0" layoutY="125.0" prefHeight="350.0" prefWidth="500.0" spacing="20.0" visible="false" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="130.0">
          <children>
-            <VBox prefHeight="300.0" prefWidth="260.0" spacing="40.0">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="260.0" spacing="40.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="260.0" text="Username:  " />
-                  <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="260.0" text="Password:  " />
-                  <Label fx:id="locationLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="265.0" text="Location:  " />
-                  <Label fx:id="securityQuestionLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="265.0" text="Your School:  " />
-                  <Label fx:id="securityQuestionNotice" alignment="CENTER" prefHeight="30.0" prefWidth="260.0" text="in case you forgot your password :)" />
+                  <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="260.0" text="Username:  " VBox.vgrow="ALWAYS" />
+                  <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="260.0" text="Password:  " VBox.vgrow="ALWAYS" />
+                  <Label fx:id="locationLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="265.0" text="Location:  " VBox.vgrow="ALWAYS" />
+                  <Label fx:id="securityQuestionLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="265.0" text="Your School:  " VBox.vgrow="ALWAYS" />
+                  <Label fx:id="securityQuestionNotice" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="260.0" text="in case you forgot your password :)" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
-            <VBox prefHeight="300.0" prefWidth="220.0" spacing="40.0">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="220.0" spacing="40.0" HBox.hgrow="ALWAYS">
                <children>
-                  <TextField fx:id="usernameInp" prefHeight="50.0" prefWidth="200.0" />
-                  <PasswordField fx:id="passwordInp" prefHeight="50.0" prefWidth="200.0" />
-                  <TextField fx:id="locationInp" prefHeight="50.0" prefWidth="200.0" />
-                  <TextField fx:id="securityQuestionInp" prefHeight="50.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="260.0" />
+                  <TextField fx:id="usernameInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <PasswordField fx:id="passwordInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <TextField fx:id="locationInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <TextField fx:id="securityQuestionInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="260.0" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
          </children>

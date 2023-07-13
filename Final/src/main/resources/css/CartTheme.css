@@ -133,3 +133,106 @@
     -fx-border-radius: 90;
     -fx-font-size: 30;
 }
+#customerMenuOptions {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 24;
+}
+#customerMenuLogout {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#customerMenuCharge {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#customerMenuShowBalance {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#customerMenuChangeLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#customerMenuShowLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 12;
+}
+#chargeBalance {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+#changeLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+#changeLocationTextField {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+#showBalance {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+#showLocation {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+    -fx-font-size: 20;
+}
+AnchorPane {
+    -fx-background-image: url('../Pictures/RegisterMenu.png');
+}

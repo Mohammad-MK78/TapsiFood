@@ -13,11 +13,6 @@
 
 <AnchorPane fx:id="customerMenu" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/CustomerTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXCustomerMenuController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../Pictures/RegisterMenu.png" />
-         </image>
-      </ImageView>
       <Label fx:id="CustomerMenu" alignment="CENTER" layoutX="198.0" layoutY="22.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" text="Customer Menu" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="backToCustomerMenuSelect" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToCustomerMenuSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Button fx:id="backToRestaurantSelect" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToRestaurantSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
@@ -28,7 +23,7 @@
             <Button fx:id="showCart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCart" prefHeight="80.0" prefWidth="240.0" text="cart" VBox.vgrow="ALWAYS" />
             <Button fx:id="showOrderHistory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showOrderHistory" prefHeight="80.0" prefWidth="240.0" text="order history" VBox.vgrow="ALWAYS" />
          </children></VBox>
-      <VBox fx:id="CustomerRestaurantSelectVBox" alignment="CENTER" layoutX="198.0" layoutY="190.0" prefHeight="210.0" prefWidth="400.0" spacing="120.0" visible="false" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="195.0">
+      <VBox fx:id="CustomerRestaurantSelectVBox" alignment="CENTER" layoutX="198.0" layoutY="190.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="400.0" spacing="120.0" visible="false" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="195.0">
          <children>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="400.0" spacing="80.0" VBox.vgrow="ALWAYS">
                <children>
@@ -56,7 +51,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox fx:id="searchRestaurantByTypeVBox" layoutX="200.0" layoutY="50.0" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false">
+      <VBox fx:id="searchRestaurantByTypeVBox" layoutX="200.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="80.0">
          <children>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
@@ -70,7 +65,7 @@
             <Insets top="10.0" />
          </padding>
       </VBox>
-      <VBox fx:id="totalRestaurantVBox" layoutX="200.0" layoutY="50.0" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false">
+      <VBox fx:id="totalRestaurantVBox" layoutX="200.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="80.0">
          <children>
             <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
@@ -83,7 +78,7 @@
             <Insets top="10.0" />
          </padding>
       </VBox>
-      <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="440.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <HBox fx:id="optionsHBox" layoutX="620.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
@@ -113,13 +108,13 @@
             </VBox>
          </children>
       </HBox>
-      <VBox fx:id="discountsVBox" layoutX="200.0" layoutY="132.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
+      <VBox fx:id="discountsVBox" layoutX="200.0" layoutY="132.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="130.0">
          <children>
             <Label fx:id="discountsLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="400.0" text="discounts" textFill="#ff0070" VBox.vgrow="ALWAYS" />
             <TableView fx:id="discountsTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <VBox fx:id="orderHistoryVBox" layoutX="200.0" layoutY="132.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
+      <VBox fx:id="orderHistoryVBox" layoutX="200.0" layoutY="132.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="130.0">
          <children>
             <Label fx:id="orderHistoryLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="400.0" text="order history" textFill="#ff0070" VBox.vgrow="ALWAYS" />
             <TableView fx:id="orderHistoryTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />

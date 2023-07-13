@@ -190,3 +190,6 @@
     -fx-text-fill: #f15e22;
     -fx-font-size: 20;
 }
+AnchorPane {
+    -fx-background-image: url('../Pictures/RegisterMenu.png');
+}

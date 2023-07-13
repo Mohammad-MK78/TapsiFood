@@ -25,7 +25,7 @@ public class FXCustomerMenuController {
     @FXML
     Label showBalance, chargeStatus, showLocation, changeLocationStatus, CustomerMenu;
     @FXML
-    TextField chargeBalance, searchBox, changeLocationTextField;
+    TextField chargeBalance, changeLocationTextField, searchBox;
     @FXML
     VBox searchRestaurantByTypeVBox, totalRestaurantVBox, CustomerRestaurantSelectVBox, customerMenuSelect, discountsVBox, orderHistoryVBox;
     @FXML

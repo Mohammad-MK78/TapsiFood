@@ -3,11 +3,14 @@ package com.example.Final.FXMLController;
 import com.example.Final.Controller.CustomerMenuController;
 import com.example.Final.Main;
 import com.example.Final.Model.Order;
+import com.example.Final.Model.SnappFood;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -20,11 +23,11 @@ public class FXCartController {
     @FXML
     HBox showTimeHBox, showDeliveryHBox;
     @FXML
-    Button backToSelectMenu;
+    Button backToSelectMenu, customerMenuOptions, customerMenuLogout, customerMenuCharge, customerMenuShowBalance, customerMenuChangeLocation, customerMenuShowLocation;
     @FXML
-    TextField addDiscountTextField;
+    TextField addDiscountTextField, chargeBalance, changeLocationTextField;
     @FXML
-    Label showDeliveryLabel, showTimeLabel;
+    Label showDeliveryLabel, showTimeLabel, showBalance, chargeStatus, showLocation, changeLocationStatus;
     @FXML
     TableView<Order> currentCartTableView;
     @FXML
@@ -51,6 +54,82 @@ public class FXCartController {
         currentCartTableView.getItems().clear();
         currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCart());
         System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
+    }
+    public void showOptions() {
+        customerMenuLogout.setVisible(!customerMenuLogout.isVisible());
+        customerMenuCharge.setVisible(!customerMenuCharge.isVisible());
+        customerMenuShowBalance.setVisible(!customerMenuShowBalance.isVisible());
+        customerMenuChangeLocation.setVisible(!customerMenuChangeLocation.isVisible());
+        customerMenuShowLocation.setVisible(!customerMenuShowLocation.isVisible());
+        if (chargeBalance.isVisible())
+            chargeBalance.setVisible(!chargeBalance.isVisible());
+        if (showBalance.isVisible())
+            showBalance.setVisible(!showBalance.isVisible());
+        if (changeLocationTextField.isVisible())
+            changeLocationTextField.setVisible(!changeLocationTextField.isVisible());
+        if (showLocation.isVisible())
+            showLocation.setVisible(!showLocation.isVisible());
+    }
+    public void logout() throws IOException {
+        SnappFood.setCurrentUser(null);
+        CustomerMenuController.setCurrentUser();
+        FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
+        Scene scene = new Scene(Loader.load());
+        Main.getStage().setScene(scene);
+    }
+    public void showChargeAccount() {
+        chargeBalance.setVisible(!chargeBalance.isVisible());
+        chargeBalance.setText("");
+        chargeStatus.setText("");
+    }
+    public void chargeAccount(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            String result;
+            if (!chargeBalance.getText().matches("\\d+"))
+                result = "Invalid!";
+            else {
+                int amount = Integer.parseInt(chargeBalance.getText());
+                result = CustomerMenuController.chargeAccount(amount);
+            }
+            chargeStatus.setText(result);
+            chargeBalance.setText("");
+        }
+        updateBalance();
+    }
+    public void showBalance() {
+        updateBalance();
+        showBalance.setVisible(!showBalance.isVisible());
+    }
+    public void updateBalance() {
+        int balance = CustomerMenuController.showBalance();
+        showBalance.setText("$" + balance);
+    }
+    public void showLocation() {
+        updateLocation();
+        showLocation.setVisible(!showLocation.isVisible());
+    }
+    public void showChangeLocation() {
+        changeLocationTextField.setVisible(!changeLocationTextField.isVisible());
+        changeLocationTextField.setText("");
+        changeLocationStatus.setText("");
+    }
+    public void changeLocation(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            String result;
+            if (!changeLocationTextField.getText().matches("\\d+")) {
+                result = "Invalid!";
+            }
+            else {
+                int location = Integer.parseInt(changeLocationTextField.getText());
+                result = CustomerMenuController.changeLocation(location); //TODO location is not updating
+            }
+            changeLocationStatus.setText(result);
+            changeLocationTextField.setText("");
+        }
+        updateLocation();
+    }
+    public void updateLocation() {
+        showLocation.setText(String.valueOf(CustomerMenuController.getLocation()));
     }
     public void openShowCart() {
         backToSelectMenu.setVisible(true);

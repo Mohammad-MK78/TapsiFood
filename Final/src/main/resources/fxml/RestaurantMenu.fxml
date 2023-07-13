@@ -5,23 +5,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/RestaurantTheme.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Final.FXMLController.FXRestaurantMenuController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../Pictures/RegisterMenu.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="21.0" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="backToManagerMenu" mnemonicParsing="false" onAction="#goBackToManagerMenu" prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="backToSelectMenu" mnemonicParsing="false" onAction="#goBackToSelectMenu" prefHeight="60.0" prefWidth="60.0" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="174.0" prefHeight="360.0" prefWidth="240.0" spacing="20.0">
+      <Label fx:id="restaurantName" alignment="CENTER" layoutX="200.0" layoutY="21.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" text="Restaurant Name" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToManagerMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToManagerMenu" prefHeight="60.0" prefWidth="60.0" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToSelectMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToSelectMenu" prefHeight="60.0" prefWidth="60.0" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <VBox fx:id="selectMenuVBox" layoutX="280.0" layoutY="174.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="360.0" prefWidth="240.0" spacing="20.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
          <children>
             <Button fx:id="addFoodMenu" mnemonicParsing="false" onAction="#addFood" prefHeight="80.0" prefWidth="240.0" text="add food" />
             <Button fx:id="removeFoodMenu" mnemonicParsing="false" onAction="#removeFood" prefHeight="80.0" prefWidth="240.0" text="remove food" />
@@ -30,9 +23,9 @@
             <Button fx:id="commentMenu" mnemonicParsing="false" onAction="#showComments" prefHeight="80.0" prefWidth="240.0" text="comments" />
          </children>
       </VBox>
-      <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="400.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <HBox fx:id="optionsHBox" layoutX="620.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label fx:id="changeTypeStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" visible="false" />
                   <TextField fx:id="changeTypeTextField" alignment="CENTER" onKeyPressed="#changeType" prefHeight="60.0" prefWidth="100.0" visible="false" />
@@ -43,7 +36,7 @@
                   <Insets top="40.0" />
                </padding>
             </VBox>
-            <VBox fx:id="optionsVBox" prefHeight="270.0" prefWidth="60.0" spacing="10.0">
+            <VBox fx:id="optionsVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="270.0" prefWidth="60.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Button fx:id="RestaurantMenuOptions" mnemonicParsing="false" onAction="#showOptions" text="⁝" />
                   <Button fx:id="RestaurantMenuChangeType" mnemonicParsing="false" onAction="#showChangeType" text="change" visible="false" />
@@ -53,11 +46,11 @@
             </VBox>
          </children>
       </HBox>
-      <VBox fx:id="addFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="193.0" prefHeight="320.0" prefWidth="400.0" spacing="10.0" visible="false">
+      <VBox fx:id="addFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="193.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="320.0" prefWidth="400.0" spacing="10.0" visible="false" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
          <children>
-            <HBox prefHeight="200.0" prefWidth="400.0">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox prefHeight="300.0" prefWidth="200.0" spacing="20.0">
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="200.0" spacing="20.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="foodNameLabel" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="food name:" />
                         <Label fx:id="foodCategoryLabel" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="food category:" />
@@ -65,7 +58,7 @@
                         <Label fx:id="foodPriceLabel" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="food price:" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="300.0" prefWidth="200.0" spacing="20.0">
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="200.0" spacing="20.0" HBox.hgrow="ALWAYS">
                      <children>
                         <TextField fx:id="foodName" prefHeight="50.0" prefWidth="200.0" />
                         <TextField fx:id="foodCategory" prefHeight="50.0" prefWidth="200.0" />
@@ -75,12 +68,12 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="addNewFood" mnemonicParsing="false" onAction="#addFoodCompleted" text="add" />
+            <Button fx:id="addNewFood" mnemonicParsing="false" onAction="#addFoodCompleted" text="add" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <VBox fx:id="removeFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="230.0" prefHeight="200.0" prefWidth="400.0" spacing="10.0" visible="false">
+      <VBox fx:id="removeFoodVBox" alignment="CENTER" layoutX="200.0" layoutY="230.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="400.0" spacing="10.0" visible="false" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="400.0" spacing="10.0">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" spacing="10.0" VBox.vgrow="ALWAYS">
                <children>
                   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
@@ -94,18 +87,18 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="removeFoodDone" mnemonicParsing="false" onAction="#removeFoodCompleted" text="remove" />
+            <Button fx:id="removeFoodDone" mnemonicParsing="false" onAction="#removeFoodCompleted" text="remove" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
-      <TableView fx:id="orderHistoryTableView" layoutX="200.0" layoutY="154.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-      <TableView fx:id="ongoingOrdersTableView" layoutX="200.0" layoutY="153.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-      <TableView fx:id="commentsTableView" layoutX="200.0" layoutY="153.0" prefHeight="400.0" prefWidth="400.0" visible="false" />
-      <VBox fx:id="replyVBox" alignment="CENTER" layoutX="200.0" layoutY="203.0" prefHeight="300.0" prefWidth="400.0" spacing="10.0" visible="false">
+      <TableView fx:id="orderHistoryTableView" layoutX="200.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="160.0" />
+      <TableView fx:id="ongoingOrdersTableView" layoutX="200.0" layoutY="153.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="160.0" />
+      <TableView fx:id="commentsTableView" layoutX="200.0" layoutY="153.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="160.0" />
+      <VBox fx:id="replyVBox" alignment="CENTER" layoutX="200.0" layoutY="203.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="400.0" spacing="10.0" visible="false" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
          <children>
-            <Button fx:id="backToCommentsTableView" mnemonicParsing="false" onAction="#goBackToCommentsTableView" prefHeight="60.0" prefWidth="60.0" text="←" />
-            <Label fx:id="replyLabel" alignment="CENTER" prefHeight="60.0" prefWidth="400.0" text="your reply:" />
-            <TextField fx:id="reply" prefHeight="60.0" prefWidth="200.0" />
-            <Button fx:id="addReply" mnemonicParsing="false" onAction="#submitReply" prefHeight="60.0" prefWidth="60.0" text="submit" />
+            <Button fx:id="backToCommentsTableView" mnemonicParsing="false" onAction="#goBackToCommentsTableView" prefHeight="60.0" prefWidth="60.0" text="←" VBox.vgrow="ALWAYS" />
+            <Label fx:id="replyLabel" alignment="CENTER" prefHeight="60.0" prefWidth="400.0" text="your reply:" VBox.vgrow="ALWAYS" />
+            <TextField fx:id="reply" prefHeight="60.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <Button fx:id="addReply" mnemonicParsing="false" onAction="#submitReply" prefHeight="60.0" prefWidth="60.0" text="submit" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>

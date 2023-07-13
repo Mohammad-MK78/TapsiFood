@@ -98,3 +98,6 @@ Button {
     -fx-pref-width: 67;
     -fx-pref-height: 67;
 }
+AnchorPane {
+    -fx-background-image: url('../Pictures/RegisterMenu.png');
+}
