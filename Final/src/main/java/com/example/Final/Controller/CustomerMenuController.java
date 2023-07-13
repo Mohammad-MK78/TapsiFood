@@ -246,7 +246,7 @@ public class CustomerMenuController {
     }
 
     public static String purchaseCart(String discountInp) throws SQLException, ClassNotFoundException {
-        int discountAmount = 0;
+        int discountAmount;
         Discount discount = null;
         if (currentUser.getCart().size() == 0) {
             return "purchase failed: cart is empty";
