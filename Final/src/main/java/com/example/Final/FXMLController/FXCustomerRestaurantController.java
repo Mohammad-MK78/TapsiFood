@@ -64,29 +64,28 @@ public class FXCustomerRestaurantController {
         totalMenuTableView.getColumns().clear();
         totalMenuTableView.getColumns().addAll(name, category, price);
         totalMenuTableView.getItems().clear();
-        totalMenuTableView.getItems().addAll(restaurant.getMenu()); //TODO
+        totalMenuTableView.getItems().addAll(restaurant.getMenu());
 
         starterMenuTableView.getColumns().clear();
         starterMenuTableView.getColumns().addAll(starterName, starterPrice);
         starterMenuTableView.getItems().clear();
-        starterMenuTableView.getItems().addAll(restaurant.getStarter()); //TODO
+        starterMenuTableView.getItems().addAll(restaurant.getStarter());
 
         mainMealMenuTableView.getColumns().clear();
         mainMealMenuTableView.getColumns().addAll(mainMealName, mainMealPrice);
         mainMealMenuTableView.getItems().clear();
-        mainMealMenuTableView.getItems().addAll(restaurant.getMainMeal()); //TODO
+        mainMealMenuTableView.getItems().addAll(restaurant.getMainMeal());
 
         dessertMenuTableView.getColumns().clear();
         dessertMenuTableView.getColumns().addAll(dessertName, dessertPrice);
         dessertMenuTableView.getItems().clear();
-        dessertMenuTableView.getItems().addAll(restaurant.getDessert()); //TODO
+        dessertMenuTableView.getItems().addAll(restaurant.getDessert());
 
         totalMenuTableView.setRowFactory(tv -> {
             TableRow<Food> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
                     foodSelected();
-                    // TODO
                 }
             });
             return row;
@@ -97,7 +96,6 @@ public class FXCustomerRestaurantController {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
                     foodSelected();
-                    // TODO
                 }
             });
             return row;
@@ -108,7 +106,6 @@ public class FXCustomerRestaurantController {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
                     foodSelected();
-                    // TODO
                 }
             });
             return row;
@@ -119,7 +116,6 @@ public class FXCustomerRestaurantController {
             row.setOnMouseClicked(event -> {
                 if(event.getClickCount() == 2 && (!row.isEmpty())){
                     foodSelected();
-                    // TODO
                 }
             });
             return row;
