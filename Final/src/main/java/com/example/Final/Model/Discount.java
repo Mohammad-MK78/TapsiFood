@@ -16,6 +16,10 @@ public class Discount {
         return code;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
     public int getDiscountAmount() {
         return discountAmount;
     }

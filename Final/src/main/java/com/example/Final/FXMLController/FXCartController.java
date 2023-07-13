@@ -52,7 +52,7 @@ public class FXCartController {
         currentCartTableView.getColumns().clear();
         currentCartTableView.getColumns().addAll(name, number, price, totalPrice);
         currentCartTableView.getItems().clear();
-        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCart());
+        currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCartOrder());
         System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
     }
     public void showOptions() {

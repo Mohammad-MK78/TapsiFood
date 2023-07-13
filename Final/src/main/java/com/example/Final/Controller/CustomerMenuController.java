@@ -235,7 +235,7 @@ public class CustomerMenuController {
             index++;
         }
     }
-    public static void show_distance() throws IOException {
+    public static void show_distance() throws IOException, SQLException, ClassNotFoundException {
         if (currentUser.getCartOrder().size() == 0) {
             System.out.println("there is no ongoing order");
             return;
@@ -245,40 +245,58 @@ public class CustomerMenuController {
         System.out.println("estimated time : " + distance + " minutes");
     }
 
-    public static String purchaseCart(String discountInp) throws SQLException, ClassNotFoundException {
+    public static String purchaseCart(String code) throws SQLException, ClassNotFoundException {
         int discountAmount;
-        Discount discount = null;
-        if (currentUser.getCart().size() == 0) {
+        Discount discount;
+        if (currentUser.getCartOrder().size() == 0) {
             return "purchase failed: cart is empty";
         }
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
 
-        ResultSet discountExist = null; //TODO: SQL
+        String getCustomerID = "SELECT * FROM tapsifood.accounts where username='" + currentUser.getUsername() + "'";
+        int customerID = 0;
+        ResultSet getCID = statement.executeQuery(getCustomerID);
+        if (getCID.next())
+            customerID = getCID.getInt("id");
+
+        String getDiscount = "SELECT * FROM tapsifood.discount where customerID='"+customerID+"' AND code='"+ code +"'";
+        ResultSet discountExist = statement.executeQuery(getDiscount);
         if(discountExist.next()) {
-            discountAmount = discount.getDiscountAmount();
+            discountAmount = discountExist.getInt("amount");
+            discount = new Discount(currentUser, discountAmount, code);
         }
         else
             return "purchase failed: invalid discount code";
-
-        if(currentUser.getCredit() < currentUser.getDebt() - discountAmount)
+        int cartPrice = currentUser.getCurrentCart().getTotalPrice();
+        if(currentUser.getCredit() < cartPrice - discountAmount)
             return "purchase failed: inadequate money";
 
-        for (Delivery delivery : SnappFood.getDeliveries()) { //TODO
+        Delivery cartDelivery = null;
+        for (Delivery delivery : SnappFood.getDeliveries()) { //TODO: Choose Delivery
             if (!delivery.is_busy) {
                 currentUser.getCurrentCart().setDelivery(delivery);
                 delivery.setRestaurant(currentUser.getCurrentCart().getRestaurant().getLocation());
                 delivery.setDestination(currentUser.getLocation());
+                cartDelivery = delivery;
                 break;
             }
         }
-        for(Order order : currentUser.getCartOrder()) //TODO: Charge restaurant account
+        for(Order order : currentUser.getCartOrder())
             order.getFood().getRestaurant().changeBalance(order.getNumber() * (order.getFood().getPrice() - order.getFood().getCost()));
 
-        int price = currentUser.getDebt() + currentUser.getDebt() / 5; //TODO: Delivery payment
-        currentUser.changeBalance(discountAmount - price);
+        int deliveryPrice = Math.abs(cartDelivery.getLocation() - currentUser.getLocation()) * 10;
+        int totalPrice = cartPrice + deliveryPrice - discountAmount;
+        if(currentUser.getCredit() < totalPrice)
+            return "purchase failed: inadequate money";
 
-        currentUser.changeDebt(-currentUser.getDebt());
+        cartDelivery.changeBalance(deliveryPrice);
+        if (totalPrice < 0)
+            totalPrice = 0;
+        currentUser.changeBalance(-1 * totalPrice);
 
-        SnappFood.removeDiscount(discount); //TODO: Batel Kardane Kode Takhfif
+        SnappFood.removeDiscount(discount);
         currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));//Todo: add cart to customer history
         currentUser.getCurrentCart().getRestaurant().addCartToOngoings(currentUser.getCurrentCart()); //Todo: add cart to restaurant on going
         currentUser.getCurrentCart().resetCart(); //TODO: clear customer cart

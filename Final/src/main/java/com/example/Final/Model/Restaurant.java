@@ -252,7 +252,20 @@ public class Restaurant{
     public String toString() {
         return this.getName() + ": type = " + type + " | balance = " + this.getCredit();
     }
-    public void changeBalance(int amount) {
-        credit += amount;
+    public void changeBalance(int amount) throws ClassNotFoundException, SQLException {
+        Restaurant restaurant = this;
+        this.credit += amount;
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+
+        String sqlRestaurantCheck = "SELECT * FROM tapsifood.restaurants where name='"+restaurant.getName()+"'";
+        ResultSet restaurantCheck = statement.executeQuery(sqlRestaurantCheck);
+        if (restaurantCheck.next()) {
+            int oldCredit = restaurantCheck.getInt("credit");
+            String change = "UPDATE tapsifood.restaurants SET credit='"+(amount + oldCredit)+"' WHERE name='"+restaurant.getName()+"'";
+            statement.executeUpdate(change);
+        }
     }
 }

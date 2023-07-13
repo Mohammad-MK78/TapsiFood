@@ -1,7 +1,6 @@
 package com.example.Final.Model;
 
 import com.example.Final.Controller.RestaurantAdminMenuController;
-import com.example.Final.Controller.RestaurantMenuController;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -29,7 +28,31 @@ public class SnappFood {
                 return discount;
         return null;
     }
-    public static ArrayList<Delivery> getDeliveries() {
+
+    public static void updateDeliveries() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+
+        String sqlCheckDelivery = "SELECT * FROM tapsifood.accounts where position='delivery'";
+        ResultSet deliveryCheck = statement.executeQuery(sqlCheckDelivery);
+
+        ArrayList<Delivery> deliveries = new ArrayList<>();
+
+        while (deliveryCheck.next()) {
+            String username = deliveryCheck.getString("username");
+            String password = deliveryCheck.getString("password");
+            int location = deliveryCheck.getInt("location");
+            String securityQuestion = deliveryCheck.getString("security_question");
+            int credit = deliveryCheck.getInt("credit");
+            int is_busy = deliveryCheck.getInt("is_busy");
+            deliveries.add(new Delivery(username, password, location, securityQuestion, credit, is_busy));
+        }
+        SnappFood.deliveries = deliveries;
+    }
+
+    public static ArrayList<Delivery> getDeliveries() throws SQLException, ClassNotFoundException {
+        updateDeliveries();
         return deliveries;
     }
     public static ArrayList<RestaurantManager> getRestaurantManagers() {
@@ -169,10 +192,29 @@ public class SnappFood {
         SnappFood.currentRestaurant = currentRestaurant;
     }
 
-    public static void removeDiscount(Discount discount) {
-        if(discount != null) {
-            discounts.remove(discount);
-            ((Customer) currentUser).removeDiscount(discount);
+    public static void removeDiscount(Discount discount) throws ClassNotFoundException, SQLException {
+        if (discount != null){
+            String username = discount.getUsername();
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+            Statement statement = connection.createStatement();
+
+            String getCustomerID = "SELECT * FROM tapsifood.accounts where username='" + username + "'";
+            int customerID = 0;
+            ResultSet getCID = statement.executeQuery(getCustomerID);
+            if (getCID.next())
+                customerID = getCID.getInt("id");
+
+            String sqlDiscountCheck = "SELECT * FROM tapsifood.discount where customerID='" + customerID + "' AND code='" + discount.getCode() + "'";
+            ResultSet discountCheck = statement.executeQuery(sqlDiscountCheck);
+
+            if (discountCheck.next()) {
+                discounts.remove(discount);
+                ((Customer) currentUser).removeDiscount(discount);
+                String remove = "DELETE FROM tapsifood.accounts WHERE username='" + username + "'";
+                statement.executeUpdate(remove);
+            }
         }
     }
 }

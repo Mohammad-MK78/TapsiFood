@@ -14,6 +14,11 @@ public class Cart {
         delivery = null;
         Foods = "";
     }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
     public void addToCart(Order order) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");

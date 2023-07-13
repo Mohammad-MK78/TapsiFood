@@ -34,10 +34,15 @@ public class Customer extends User{
                 return discount;
         return null;
     }
+
+    public void updateCurrentCart() throws SQLException, ClassNotFoundException {
+        this.currentCart = new Cart(getCartOrder());
+    }
+
     public Cart getCurrentCart() {
         return currentCart;
     }
-    public ArrayList<Order> getCart() throws SQLException, ClassNotFoundException {
+    public ArrayList<Order> getCartOrder() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
@@ -65,10 +70,8 @@ public class Customer extends User{
             Customer customer = this;
             orders.add(new Order(food, number, customer));
         }
+        updateCurrentCart();
         return orders;
-    }
-    public ArrayList<Order> getCartOrder() {
-        return currentCart.getCart();
     }
     public ArrayList<Cart> getCarts() {
         return carts;
