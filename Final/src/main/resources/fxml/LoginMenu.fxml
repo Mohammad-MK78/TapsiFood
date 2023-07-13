@@ -18,32 +18,32 @@
             <Image url="@../Pictures/RegisterMenu.png" />
          </image>
       </ImageView>
-      <Label fx:id="loginMenu" alignment="CENTER" layoutX="250.0" layoutY="30.0" prefHeight="100.0" prefWidth="300.0" text="Login Menu" textFill="#fff696" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="loginMenuExit" layoutX="740.0" mnemonicParsing="false" onAction="#exit" text="exit" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="login" layoutX="355.0" layoutY="484.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginComplete" text="login" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
-      <Button fx:id="backToMainMenu" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <HBox layoutX="68.0" layoutY="183.0" prefHeight="300.0" prefWidth="500.0">
+      <Label fx:id="loginMenu" alignment="CENTER" layoutX="250.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="300.0" text="Login Menu" textFill="#fff696" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="loginMenuExit" layoutX="740.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#exit" text="exit" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="login" layoutX="355.0" layoutY="484.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginComplete" text="login" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
+      <Button fx:id="backToMainMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToMainMenu" text="←" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <HBox layoutX="68.0" layoutY="183.0" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="185.0">
          <children>
             <VBox prefHeight="190.0" prefWidth="250.0" spacing="6.33">
                <children>
-                  <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="Username:   " />
-                  <Label alignment="CENTER" prefHeight="20.0" prefWidth="250.0" />
-                  <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="Password:   " />
-                  <Hyperlink fx:id="forgotPassword" alignment="CENTER_RIGHT" onAction="#showSecurityQuestionForForgottenPassword" prefHeight="20.0" prefWidth="250.0" text="forgot your password? bk     " />
-                  <Label fx:id="securityLabel" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="your elementary school:   " visible="false" />
-                  <Label alignment="CENTER" prefHeight="20.0" prefWidth="250.0" />
-                  <Label fx:id="yourPassword" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="250.0" text="Set New Password:   " visible="false" />
+                  <Label fx:id="usernameLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="250.0" text="Username:   " VBox.vgrow="ALWAYS" />
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="passwordLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="250.0" text="Password:   " VBox.vgrow="ALWAYS" />
+                  <Hyperlink fx:id="forgotPassword" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#showSecurityQuestionForForgottenPassword" prefHeight="20.0" prefWidth="250.0" text="forgot your password? bk     " VBox.vgrow="ALWAYS" />
+                  <Label fx:id="securityLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="250.0" text="your elementary school:   " visible="false" VBox.vgrow="ALWAYS" />
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="yourPassword" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="250.0" text="Set New Password:   " visible="false" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
             <VBox prefHeight="170.0" prefWidth="250.0" spacing="6.33">
                <children>
-                  <TextField fx:id="usernameInp" prefHeight="50.0" prefWidth="200.0" />
-                  <Label fx:id="notAppropriateUsername" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" visible="false" />
-                  <PasswordField fx:id="passwordInp" onKeyPressed="#loginWithEnterKey" prefHeight="50.0" prefWidth="200.0" />
-                  <Label fx:id="notAppropriatePassword" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="wrong password!!!" visible="false" />
-                  <TextField fx:id="securityQuestionInp" onKeyPressed="#forgotPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
-                  <Label fx:id="wrongSecurityQuestion" alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="vaghean koskholi" visible="false" />
-                  <TextField fx:id="recoverPasswordInp" onKeyPressed="#setNewPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" />
+                  <TextField fx:id="usernameInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="notAppropriateUsername" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="250.0" visible="false" VBox.vgrow="ALWAYS" />
+                  <PasswordField fx:id="passwordInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#loginWithEnterKey" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="notAppropriatePassword" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="250.0" text="wrong password!!!" visible="false" VBox.vgrow="ALWAYS" />
+                  <TextField fx:id="securityQuestionInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#forgotPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="wrongSecurityQuestion" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="250.0" text="vaghean koskholi" visible="false" VBox.vgrow="ALWAYS" />
+                  <TextField fx:id="recoverPasswordInp" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#setNewPasswordWithEnter" prefHeight="50.0" prefWidth="200.0" visible="false" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
          </children>

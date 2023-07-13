@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,11 +14,14 @@
             <Image url="@../Pictures/MainMenu.png" />
          </image>
       </ImageView>
-      <HBox alignment="CENTER" layoutX="200.0" layoutY="278.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="400.0" spacing="120.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="280.0">
+      <HBox alignment="CENTER" layoutX="200.0" layoutY="278.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" spacing="120.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="280.0">
          <children>
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#goToLoginMenu" prefHeight="100.0" prefWidth="100.0" text="login" HBox.hgrow="ALWAYS" />
-            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#goToRegisterMenu" prefHeight="100.0" prefWidth="100.0" text="register" HBox.hgrow="ALWAYS" />
+            <Button fx:id="loginButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goToLoginMenu" prefHeight="100.0" prefWidth="100.0" text="login" HBox.hgrow="ALWAYS" />
+            <Button fx:id="registerButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goToRegisterMenu" prefHeight="100.0" prefWidth="100.0" text="register" HBox.hgrow="ALWAYS" />
          </children>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
       </HBox>
    </children>
 </AnchorPane>

@@ -18,38 +18,38 @@
             <Image url="@../Pictures/RegisterMenu.png" />
          </image>
       </ImageView>
-      <Label fx:id="CustomerMenu" alignment="CENTER" layoutX="198.0" layoutY="22.0" prefHeight="100.0" prefWidth="400.0" text="Customer Menu" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="backToCustomerMenuSelect" mnemonicParsing="false" onAction="#goBackToCustomerMenuSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="backToRestaurantSelect" mnemonicParsing="false" onAction="#goBackToRestaurantSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <VBox fx:id="customerMenuSelect" layoutX="278.0" layoutY="157.0" prefHeight="400.0" prefWidth="240.0" spacing="20.0">
+      <Label fx:id="CustomerMenu" alignment="CENTER" layoutX="198.0" layoutY="22.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="400.0" text="Customer Menu" textFill="#ff0070" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToCustomerMenuSelect" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToCustomerMenuSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToRestaurantSelect" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goBackToRestaurantSelect" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <VBox fx:id="customerMenuSelect" layoutX="278.0" layoutY="157.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="380.0" prefWidth="240.0" spacing="20.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="160.0">
          <children>
-            <Button fx:id="selectRestaurant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectRestaurant" prefHeight="80.0" prefWidth="240.0" text="select restaurant" />
-            <Button fx:id="showDiscounts" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDiscounts" prefHeight="80.0" prefWidth="240.0" text="discounts" />
-            <Button fx:id="showCart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCart" prefHeight="80.0" prefWidth="240.0" text="cart" />
-            <Button fx:id="showOrderHistory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showOrderHistory" prefHeight="80.0" prefWidth="240.0" text="order history" />
+            <Button fx:id="selectRestaurant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectRestaurant" prefHeight="80.0" prefWidth="240.0" text="select restaurant" VBox.vgrow="ALWAYS" />
+            <Button fx:id="showDiscounts" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showDiscounts" prefHeight="80.0" prefWidth="240.0" text="discounts" VBox.vgrow="ALWAYS" />
+            <Button fx:id="showCart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showCart" prefHeight="80.0" prefWidth="240.0" text="cart" VBox.vgrow="ALWAYS" />
+            <Button fx:id="showOrderHistory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showOrderHistory" prefHeight="80.0" prefWidth="240.0" text="order history" VBox.vgrow="ALWAYS" />
          </children></VBox>
-      <VBox fx:id="CustomerRestaurantSelectVBox" alignment="CENTER" layoutX="198.0" layoutY="130.0" prefHeight="400.0" prefWidth="400.0" spacing="120.0" visible="false">
+      <VBox fx:id="CustomerRestaurantSelectVBox" alignment="CENTER" layoutX="198.0" layoutY="190.0" prefHeight="210.0" prefWidth="400.0" spacing="120.0" visible="false" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="195.0">
          <children>
-            <HBox prefHeight="210.0" prefWidth="400.0" spacing="80.0">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="400.0" spacing="80.0" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox prefHeight="210.0" prefWidth="160.0" spacing="25.0">
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="160.0" spacing="25.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="restaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#totalRestaurants" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="restaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#totalRestaurants" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                            <image>
                               <Image url="@../Pictures/restaurantsICON.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="restaurantsLabel" alignment="CENTER" prefHeight="30.0" prefWidth="160.0" text="restaurants" />
+                        <Label fx:id="restaurantsLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="160.0" text="restaurants" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="210.0" prefWidth="160.0" spacing="20.0">
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="160.0" spacing="20.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <ImageView fx:id="searchRestaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#showRestaurants" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="searchRestaurants" fitHeight="160.0" fitWidth="160.0" onMouseClicked="#showRestaurants" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                            <image>
                               <Image url="@../Pictures/searchICON.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="restaurantsSearchLabel" alignment="CENTER" prefHeight="30.0" prefWidth="160.0" text="search by type" />
+                        <Label fx:id="restaurantsSearchLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="160.0" text="search by type" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
                </children>
@@ -58,13 +58,13 @@
       </VBox>
       <VBox fx:id="searchRestaurantByTypeVBox" layoutX="200.0" layoutY="50.0" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false">
          <children>
-            <HBox prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
-                  <TextField fx:id="searchBox" prefHeight="60.0" prefWidth="340.0" HBox.hgrow="ALWAYS" />
-                  <Button fx:id="searchDone" mnemonicParsing="false" onMouseClicked="#searchRestaurantsByType" prefHeight="50.0" prefWidth="50.0" text="✓" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="searchBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="340.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="searchDone" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#searchRestaurantsByType" prefHeight="50.0" prefWidth="50.0" text="✓" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <TableView fx:id="restaurantsByTypeTableView" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="restaurantsByTypeTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
          </children>
          <padding>
             <Insets top="10.0" />
@@ -72,12 +72,12 @@
       </VBox>
       <VBox fx:id="totalRestaurantVBox" layoutX="200.0" layoutY="50.0" prefHeight="500.0" prefWidth="400.0" spacing="40.0" visible="false">
          <children>
-            <HBox prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="totalRestaurantsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="400.0" text="Restaurants" />
+                  <Label fx:id="totalRestaurantsLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" text="Restaurants" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <TableView fx:id="totalRestaurantsTableView" prefHeight="400.0" prefWidth="400.0" />
+            <TableView fx:id="totalRestaurantsTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
          </children>
          <padding>
             <Insets top="10.0" />
@@ -85,41 +85,44 @@
       </VBox>
       <HBox fx:id="optionsHBox" layoutX="620.0" prefHeight="440.0" prefWidth="180.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <VBox prefHeight="440.0" prefWidth="100.0" spacing="10.0">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label fx:id="chargeStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" />
-                  <TextField fx:id="chargeBalance" alignment="CENTER" onKeyPressed="#chargeAccount" prefHeight="60.0" prefWidth="100.0" visible="false" />
-                  <Label fx:id="showBalance" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" text="\$" visible="false" />
-                  <TextField fx:id="changeLocationTextField" alignment="CENTER" onKeyPressed="#changeLocation" prefHeight="60.0" prefWidth="100.0" visible="false" />
-                  <Label fx:id="showLocation" alignment="CENTER" prefHeight="60.0" prefWidth="100.0" visible="false" />
-                  <Label fx:id="changeLocationStatus" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textFill="RED" />
+                  <Label fx:id="chargeStatus" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="100.0" textFill="RED" VBox.vgrow="ALWAYS" />
+                  <TextField fx:id="chargeBalance" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#chargeAccount" prefHeight="60.0" prefWidth="100.0" visible="false" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="showBalance" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="100.0" text="\$" visible="false" VBox.vgrow="ALWAYS" />
+                  <TextField fx:id="changeLocationTextField" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#changeLocation" prefHeight="60.0" prefWidth="100.0" visible="false" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="showLocation" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="100.0" visible="false" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="changeLocationStatus" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="100.0" textFill="RED" VBox.vgrow="ALWAYS" />
                </children>
                <padding>
                   <Insets top="110.0" />
                </padding>
             </VBox>
-            <VBox fx:id="optionsVBox" prefHeight="440.0" prefWidth="60.0" spacing="10.0">
+            <VBox fx:id="optionsVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="60.0" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="customerMenuOptions" mnemonicParsing="false" onAction="#showOptions" text="⁝" />
-                  <Button fx:id="customerMenuLogout" mnemonicParsing="false" onAction="#logout" text="logout" visible="false" />
-                  <Button fx:id="customerMenuCharge" mnemonicParsing="false" onAction="#showChargeAccount" text="charge" visible="false" />
-                  <Button fx:id="customerMenuShowBalance" mnemonicParsing="false" onAction="#showBalance" text="balance" visible="false" />
-                  <Button fx:id="customerMenuChangeLocation" mnemonicParsing="false" onAction="#showChangeLocation" text="change" visible="false" />
-                  <Button fx:id="customerMenuShowLocation" mnemonicParsing="false" onAction="#showLocation" text="location" visible="false" />
+                  <Button fx:id="customerMenuOptions" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showOptions" text="⁝" visible="false" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="customerMenuLogout" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#logout" text="logout" visible="false" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="customerMenuCharge" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showChargeAccount" text="charge" visible="false" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="customerMenuShowBalance" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showBalance" text="balance" visible="false" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="customerMenuChangeLocation" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showChangeLocation" text="change" visible="false" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="customerMenuShowLocation" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showLocation" text="location" visible="false" VBox.vgrow="ALWAYS" />
                </children>
+               <padding>
+                  <Insets bottom="30.0" />
+               </padding>
             </VBox>
          </children>
       </HBox>
       <VBox fx:id="discountsVBox" layoutX="200.0" layoutY="132.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
          <children>
-            <Label fx:id="discountsLabel" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="discounts" textFill="#ff0070" />
-            <TableView fx:id="discountsTableView" prefHeight="400.0" prefWidth="400.0" />
+            <Label fx:id="discountsLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="400.0" text="discounts" textFill="#ff0070" VBox.vgrow="ALWAYS" />
+            <TableView fx:id="discountsTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
       <VBox fx:id="orderHistoryVBox" layoutX="200.0" layoutY="132.0" prefHeight="450.0" prefWidth="400.0" spacing="10.0" visible="false">
          <children>
-            <Label fx:id="orderHistoryLabel" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="order history" textFill="#ff0070" />
-            <TableView fx:id="orderHistoryTableView" prefHeight="400.0" prefWidth="400.0" />
+            <Label fx:id="orderHistoryLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="400.0" text="order history" textFill="#ff0070" VBox.vgrow="ALWAYS" />
+            <TableView fx:id="orderHistoryTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>

@@ -24,7 +24,7 @@
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
       </Label>
-      <VBox fx:id="selectItem" layoutX="280.0" layoutY="135.0" prefHeight="440.0" prefWidth="240.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
+      <VBox fx:id="selectItem" layoutX="280.0" layoutY="135.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="240.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0">
          <children>
             <Button fx:id="showPath" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showPath" prefHeight="80.0" prefWidth="240.0" text="show path" VBox.vgrow="ALWAYS" />
             <Button fx:id="showTime" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showTime" prefHeight="80.0" prefWidth="240.0" text="show time" VBox.vgrow="ALWAYS" />
@@ -55,28 +55,28 @@
             </VBox>
          </children>
       </HBox>
-      <HBox fx:id="showTimeHBox" layoutX="200.0" layoutY="250.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+      <HBox fx:id="showTimeHBox" layoutX="200.0" layoutY="250.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
          <children>
-            <Label fx:id="showTimeLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="estimated time:" />
-            <Label fx:id="showTimeLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="time" />
+            <Label fx:id="showTimeLabel1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="estimated time:" HBox.hgrow="ALWAYS" />
+            <Label fx:id="showTimeLabel2" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="time" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <HBox fx:id="showDestinationHBox" layoutX="200.0" layoutY="250.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+      <HBox fx:id="showDestinationHBox" layoutX="200.0" layoutY="250.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
          <children>
-            <Label fx:id="showDestinationLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="destination:" />
-            <Label fx:id="showDestinationLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="destination" />
+            <Label fx:id="showDestinationLabel1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="destination:" HBox.hgrow="ALWAYS" />
+            <Label fx:id="showDestinationLabel2" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="destination" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <HBox fx:id="showRestaurantHBox" layoutX="200.0" layoutY="260.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+      <HBox fx:id="showRestaurantHBox" layoutX="200.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
          <children>
-            <Label fx:id="showRestaurantLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="restaurant:" />
-            <Label fx:id="showRestaurantLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="restaurant" />
+            <Label fx:id="showRestaurantLabel1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="restaurant:" HBox.hgrow="ALWAYS" />
+            <Label fx:id="showRestaurantLabel2" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="restaurant" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
-      <HBox fx:id="showLocationHBox" layoutX="200.0" layoutY="260.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+      <HBox fx:id="showLocationHBox" layoutX="200.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="400.0" visible="false" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="260.0">
          <children>
-            <Label fx:id="showLocationLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="location:" />
-            <Label fx:id="showLocationLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="location" />
+            <Label fx:id="showLocationLabel1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="location:" HBox.hgrow="ALWAYS" />
+            <Label fx:id="showLocationLabel2" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" text="location" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </children>
