@@ -81,7 +81,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="selectManagerDone" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" text="select" />
+            <Button fx:id="selectManagerDone" mnemonicParsing="false" onAction="#removeManagerCompleted" prefHeight="50.0" prefWidth="160.0" text="remove" />
          </children>
          <padding>
             <Insets bottom="20.0" />
@@ -130,7 +130,7 @@
                      <font>
                         <Font size="16.0" />
                      </font></TextField>
-                  <Button fx:id="selectDiscountDone" mnemonicParsing="false" prefHeight="60.0" prefWidth="140.0" text="select" />
+                  <Button fx:id="selectDiscountDone" mnemonicParsing="false" onAction="#setDiscountCompleted" prefHeight="60.0" prefWidth="140.0" text="set" />
                </children>
             </VBox>
          </children>

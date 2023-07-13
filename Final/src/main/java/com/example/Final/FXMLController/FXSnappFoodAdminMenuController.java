@@ -91,6 +91,12 @@ public class FXSnappFoodAdminMenuController {
         backToAdminMenu.setVisible(true);
         selectVBox.setVisible(false);
     }
+    public void removeManagerCompleted() {
+        // TODO
+        adminRemoveManagerVBox.setVisible(false);
+        selectVBox.setVisible(true);
+        backToAdminMenu.setVisible(false);
+    }
     public void showRestaurants() {
         totalRestaurantVBox.setVisible(true);
         backToAdminMenu.setVisible(true);
@@ -100,6 +106,12 @@ public class FXSnappFoodAdminMenuController {
         setDiscountHBox.setVisible(true);
         backToAdminMenu.setVisible(true);
         selectVBox.setVisible(false);
+    }
+    public void setDiscountCompleted() {
+        // TODO
+        setDiscountHBox.setVisible(false);
+        backToAdminMenu.setVisible(false);
+        selectVBox.setVisible(true);
     }
     public void showDiscounts() {
         totalDiscountsVBox.setVisible(true);
