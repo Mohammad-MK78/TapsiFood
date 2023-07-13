@@ -18,7 +18,7 @@
             <Image url="@../Pictures/RegisterMenu.png" />
          </image>
       </ImageView>
-      <Button fx:id="backToDeliveryMenu" mnemonicParsing="false" onAction="#backToDeliveryMenu" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Button fx:id="backToDeliveryMenu" mnemonicParsing="false" onAction="#goBackToDeliveryMenu" text="←" visible="false" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Label fx:id="DeliveryMenu" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="100.0" prefWidth="400.0" text="Delivery Menu" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
@@ -53,6 +53,30 @@
                   <Button fx:id="DeliveryMenuShowBalance" mnemonicParsing="false" onAction="#showBalance" text="balance" visible="false" />
                </children>
             </VBox>
+         </children>
+      </HBox>
+      <HBox fx:id="showTimeHBox" layoutX="200.0" layoutY="250.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+         <children>
+            <Label fx:id="showTimeLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="estimated time:" />
+            <Label fx:id="showTimeLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="time" />
+         </children>
+      </HBox>
+      <HBox fx:id="showDestinationHBox" layoutX="200.0" layoutY="250.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+         <children>
+            <Label fx:id="showDestinationLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="destination:" />
+            <Label fx:id="showDestinationLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="destination" />
+         </children>
+      </HBox>
+      <HBox fx:id="showRestaurantHBox" layoutX="200.0" layoutY="260.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+         <children>
+            <Label fx:id="showRestaurantLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="restaurant:" />
+            <Label fx:id="showRestaurantLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="restaurant" />
+         </children>
+      </HBox>
+      <HBox fx:id="showLocationHBox" layoutX="200.0" layoutY="260.0" prefHeight="80.0" prefWidth="400.0" visible="false">
+         <children>
+            <Label fx:id="showLocationLabel1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="location:" />
+            <Label fx:id="showLocationLabel2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" text="location" />
          </children>
       </HBox>
    </children>

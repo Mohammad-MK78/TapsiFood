@@ -1,36 +1,31 @@
 package com.example.Final.FXMLController;
 
-
 import com.example.Final.Controller.DeliveryMenuController;
 import com.example.Final.Main;
-import com.example.Final.Model.Node;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
 
 public class FXDeliveryMenuController {
     @FXML
-    Label showBalance, chargeStatus;
+    Label showBalance, chargeStatus, showLocationLabel2, showRestaurantLabel2, showDestinationLabel2, showTimeLabel2;
     @FXML
     TextField chargeBalance;
     @FXML
     VBox selectItem;
+    @FXML
+    HBox showTimeHBox, showDestinationHBox, showRestaurantHBox, showLocationHBox;
     @FXML
     Button DeliveryMenuOptions, DeliveryMenuLogout, DeliveryMenuCharge, DeliveryMenuShowBalance, backToDeliveryMenu;
     @FXML
@@ -41,22 +36,34 @@ public class FXDeliveryMenuController {
         FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/Map.fxml"));
         Scene scene = new Scene(Loader.load());
         Main.getStage().setScene(scene);
-/*        Scene scene = new Scene(group, 1280, 720);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        Main.setStage(stage);*/
     }
-    public void showTime() {
-
+    public void showTime() throws IOException {
+        //DeliveryMenuController.setDestination(473);
+        //DeliveryMenuController.setRestaurant(111);
+        showTimeLabel2.setText(DeliveryMenuController.show_distance());
+        selectItem.setVisible(!selectItem.isVisible());
+        backToDeliveryMenu.setVisible(!backToDeliveryMenu.isVisible());
+        showTimeHBox.setVisible(!showTimeHBox.isVisible());
     }
     public void showLocation() {
-
+        //showLocationLabel2.setText(DeliveryMenuController.showLocation());
+        selectItem.setVisible(!selectItem.isVisible());
+        backToDeliveryMenu.setVisible(!backToDeliveryMenu.isVisible());
+        showLocationHBox.setVisible(!showLocationHBox.isVisible());
     }
     public void showDestination() {
-
+        //DeliveryMenuController.setDestination(473);
+        showDestinationLabel2.setText(DeliveryMenuController.showDestination());
+        selectItem.setVisible(!selectItem.isVisible());
+        backToDeliveryMenu.setVisible(!backToDeliveryMenu.isVisible());
+        showDestinationHBox.setVisible(!showDestinationHBox.isVisible());
     }
     public void showRestaurant() {
-
+        //DeliveryMenuController.setRestaurant(111);
+        showRestaurantLabel2.setText(DeliveryMenuController.showRestaurant());
+        selectItem.setVisible(!selectItem.isVisible());
+        backToDeliveryMenu.setVisible(!backToDeliveryMenu.isVisible());
+        showRestaurantHBox.setVisible(!showRestaurantHBox.isVisible());
     }
     public void showOptions() {
         DeliveryMenuLogout.setVisible(!DeliveryMenuLogout.isVisible());
@@ -99,7 +106,12 @@ public class FXDeliveryMenuController {
         int balance = DeliveryMenuController.showBalance();
         showBalance.setText("$" + balance);
     }
-    public void backToDeliveryMenu() {
-
+    public void goBackToDeliveryMenu() {
+        selectItem.setVisible(true);
+        backToDeliveryMenu.setVisible(false);
+        showRestaurantHBox.setVisible(false);
+        showDestinationHBox.setVisible(false);
+        showLocationHBox.setVisible(false);
+        showTimeHBox.setVisible(false);
     }
 }

@@ -24,10 +24,9 @@ public class FXMapController {
     Group group = new Group();
     @FXML
     void initialize() throws IOException {
-        DeliveryMenuController.setDestination(473);
-        int start = DeliveryMenuController.showLocation();
-        int end = 248; //DeliveryMenuController.showRestaurant();
-        int end2 = DeliveryMenuController.showDestination();
+        int start = Integer.parseInt(DeliveryMenuController.showLocation());
+        int end = 248; //Integer.parseInt(DeliveryMenuController.showRestaurant());
+        int end2 = 473; //Integer.parseInt(DeliveryMenuController.showDestination());
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1000][1000];
         for (int i = 0; i < 1000; i++){

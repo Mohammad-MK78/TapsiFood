@@ -114,3 +114,51 @@
 #DeliveryMenuAnchorPane {
     -fx-background-image: url('Pictures/RegisterMenu.png');
 }
+#showTimeLabel2 {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 24;
+}
+#showTimeLabel1 {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 24;
+}
+#showDestinationLabel1 {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 24;
+}
+#showDestinationLabel2 {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 24;
+}
+#showRestaurantLabel1 {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 24;
+}
+#showRestaurantLabel2 {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 24;
+}
+#showLocationLabel1 {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 24;
+}
+#showLocationLabel2 {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 24;
+}

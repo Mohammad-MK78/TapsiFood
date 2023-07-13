@@ -240,14 +240,8 @@ public class CustomerMenuController {
             System.out.println("there is no ongoing order");
             return;
         }
-        int location = currentUser.getCurrentCart().getRestaurant().getLocation(), destination = currentUser.getLocation();
-        CityGraph cityGraph = new CityGraph();
-        int[][] graph = new int[1001][1001];
-        for(int i = 0; i < cityGraph.city.rows; i++) {
-            if (cityGraph.city.cols >= 0) System.arraycopy(cityGraph.city.m[i], 0, graph[i], 0, cityGraph.city.cols);
-        }
-        ShortestPath sp = new ShortestPath(graph);
-        int distance = sp.shortestPath(location, destination);
+        ShortestPath shortestPath = new ShortestPath(DeliveryMenuController.getCityGraph());
+        int distance = shortestPath.shortestPath(currentUser.getCurrentCart().getDelivery().getLocation(), currentUser.getCurrentCart().getRestaurant().getLocation()) + shortestPath.shortestPath(currentUser.getCurrentCart().getRestaurant().getLocation(), currentUser.getLocation());
         System.out.println("estimated time : " + distance + " minutes");
     }
 

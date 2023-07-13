@@ -23,10 +23,6 @@ public class Main extends Application {
         return stage;
     }
 
-    public static void setStage(Stage stage) {
-        Main.stage = stage;
-    }
-
     public static void main(String[] args) {
         launch();
     }
