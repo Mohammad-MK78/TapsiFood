@@ -35,8 +35,8 @@ public class Customer extends User{
         return null;
     }
 
-    public void updateCurrentCart() throws SQLException, ClassNotFoundException {
-        this.currentCart = new Cart(getCartOrder());
+    public void setCurrentCart(Cart currentCart) {
+        this.currentCart = getCurrentCart();
     }
 
     public Cart getCurrentCart() {
@@ -70,7 +70,6 @@ public class Customer extends User{
             Customer customer = this;
             orders.add(new Order(food, number, customer));
         }
-        updateCurrentCart();
         return orders;
     }
     public ArrayList<Cart> getCarts() {

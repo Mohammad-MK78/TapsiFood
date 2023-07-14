@@ -38,7 +38,15 @@ public class Cart {
         if (OrderIDCheck.next())
             orderID = OrderIDCheck.getInt("id");
 
-        String addToCart = "INSERT INTO tapsifood.cart(orderIDs) VALUES ('"+orderID+"')";
+        String sqlCustomerID = "SELECT * FROM tapsifood.orders where foodName='" + foodName + "' AND restaurantID = '"+ restaurantID +"'";
+        ResultSet customerIDCheck = statement.executeQuery(sqlCustomerID);
+        int customerID = 0, cardNumber = 0;
+        if (customerIDCheck.next()) {
+            customerID = customerIDCheck.getInt("id");
+            cardNumber = customerIDCheck.getInt("numOfCards");
+        }
+
+        String addToCart = "INSERT INTO tapsifood.cart(orderID, customerID, cardNumber) VALUES ('"+orderID+"', '"+customerID+"', '"+cardNumber+"')";
         statement.executeUpdate(addToCart);
 
         cart.add(order);
