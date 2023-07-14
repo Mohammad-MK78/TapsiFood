@@ -15,7 +15,20 @@ public class SnappFood {
     private static ArrayList<Delivery> deliveries = new ArrayList<>();
     private static ArrayList<Discount> discounts = new ArrayList<>();
 
-    public static void addDiscount(Discount discount) {
+    public static void addDiscount(Discount discount) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+
+        String getCustomerID = "SELECT * FROM tapsifood.accounts where username='" + discount.getDiscountUser().getUsername() + "'";
+        int customerID = 0;
+        ResultSet getCID = statement.executeQuery(getCustomerID);
+        if (getCID.next())
+            customerID = getCID.getInt("id");
+
+        String sql = "INSERT INTO tapsifood.discount(customerID, amount, code) VALUES ('"+customerID+"', '"+discount.getDiscountAmount()+"', '"+discount.getCode()+"')";
+        statement.executeUpdate(sql);
+
         discounts.add(discount);
         discount.getDiscountUser().addDiscount(discount);
     }
@@ -211,8 +224,7 @@ public class SnappFood {
 
             if (discountCheck.next()) {
                 discounts.remove(discount);
-                ((Customer) currentUser).removeDiscount(discount);
-                String remove = "DELETE FROM tapsifood.accounts WHERE username='" + username + "'";
+                String remove = "DELETE FROM tapsifood.discount WHERE customerID='" + customerID + "' AND code='" + discount.getCode() + "'";
                 statement.executeUpdate(remove);
             }
         }

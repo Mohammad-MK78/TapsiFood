@@ -27,9 +27,6 @@ public class SnappFoodAdminMenu {
                 SnappFoodAdminMenuController.showRestaurant(command);
 
 
-            else if((matcher = SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.SET_DISCOUNT)) != null)
-                System.out.println(SnappFoodAdminMenuController.addDiscount(matcher));
-
             else if(SnappFoodAdminMenuEnums.getMatcher(command, SnappFoodAdminMenuEnums.SHOW_DISCOUNTS) != null)
                 SnappFoodAdminMenuController.showDiscounts();
 

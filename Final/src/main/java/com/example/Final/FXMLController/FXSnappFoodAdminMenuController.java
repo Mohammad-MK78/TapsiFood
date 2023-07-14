@@ -107,8 +107,12 @@ public class FXSnappFoodAdminMenuController {
         backToAdminMenu.setVisible(true);
         selectVBox.setVisible(false);
     }
-    public void setDiscountCompleted() {
-        // TODO
+    public void setDiscountCompleted() throws SQLException, ClassNotFoundException {
+        String customerUsername = discountUsernameTextField.getText();
+        String code = discountCodeTextField.getText();
+        int amount = Integer.parseInt(discountAmountTextField.getText());
+        String result = SnappFoodAdminMenuController.addDiscount(customerUsername, code, amount);
+        System.out.println(result);
         setDiscountHBox.setVisible(false);
         backToAdminMenu.setVisible(false);
         selectVBox.setVisible(true);

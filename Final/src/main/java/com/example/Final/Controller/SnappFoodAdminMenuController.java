@@ -124,19 +124,13 @@ public class SnappFoodAdminMenuController {
         }
     }
 
-    public static String addDiscount(Matcher matcher) throws SQLException, ClassNotFoundException {
-        String customerUsername = matcher.group("username");
-        int discountAmount = Integer.parseInt(matcher.group("amount"));
-        String code = matcher.group("code");
+    public static String addDiscount(String customerUsername, String code, int discountAmount) throws SQLException, ClassNotFoundException {
 
         if(SnappFood.getCustomerByUsername(customerUsername) == null)
             return "set discount failed: username not found";
 
         else if(discountAmount < 1)
             return "set discount failed: invalid amount";
-
-        else if(SnappFoodAdminMenuEnums.getMatcher(code, SnappFoodAdminMenuEnums.VALID_DISCOUNT_CODE) == null)
-            return "set discount failed: invalid code format";
 
         else {
             SnappFood.addDiscount(new Discount(SnappFood.getCustomerByUsername(customerUsername), discountAmount, code));

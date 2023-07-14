@@ -12,8 +12,6 @@ public enum SnappFoodAdminMenuEnums {
     VALID_TYPE ("[a-z\\-]+"),
     SHOW_RESTAURANT ("\\s*show\\s+restaurant(\\s+-t\\s+(?<type>\\S+))?\\s*"),
     SHOW_RESTAURANT_OPTION ("\\s+-t\\s+(?<type>\\S+)"),
-    SET_DISCOUNT ("\\s*set\\s+discount\\s+(?<username>\\S+)\\s+(?<amount>-?\\d+)\\s+(?<code>\\S+)\\s*"),
-    VALID_DISCOUNT_CODE ("[a-zA-Z\\d]+"),
     SHOW_DISCOUNTS ("\\s*show\\s+discounts\\s*");
 
     private String string;
