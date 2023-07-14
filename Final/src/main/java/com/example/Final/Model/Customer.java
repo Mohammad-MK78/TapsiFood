@@ -35,8 +35,8 @@ public class Customer extends User{
         return null;
     }
 
-    public void setCurrentCart(Cart currentCart) {
-        this.currentCart = getCurrentCart();
+    public void setCurrentCart() throws SQLException, ClassNotFoundException {
+        this.currentCart = new Cart(getCartOrder());
     }
 
     public Cart getCurrentCart() {
@@ -53,6 +53,7 @@ public class Customer extends User{
         ResultSet getCID = statement.executeQuery(getCustomerID);
         if (getCID.next())
             customerID = getCID.getInt("id");
+
 
         String sqlCheckOrders = "SELECT * FROM tapsifood.orders where customerID='" + customerID + "'";
         ResultSet orderCheck = statement.executeQuery(sqlCheckOrders);
@@ -75,7 +76,7 @@ public class Customer extends User{
     public ArrayList<Cart> getCarts() {
         return carts;
     }
-    public void addCart(Cart cart) {
+    public void addCart(Cart cart) throws ClassNotFoundException, SQLException {
         this.carts.add(cart);
     }
 
@@ -166,5 +167,37 @@ public class Customer extends User{
     }
     public void addRating(int rate, int orderNumber) {
         this.carts.get(orderNumber-1).getRestaurant().addRating(rate);
+    }
+
+    public void finishPurchase(Cart currentCart) throws SQLException, ClassNotFoundException {
+        addCart(currentCart);
+//        setCurrentCart();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
+        Statement statement = connection.createStatement();
+        Statement statement2 = connection.createStatement();
+        Statement statement3 = connection.createStatement();
+        String username = currentCart.getCustomer().getUsername();
+
+        String getCustomerID = "SELECT * FROM tapsifood.accounts where username='" + username + "'";
+        int customerID = 0;
+        ResultSet getCID = statement.executeQuery(getCustomerID);
+        if (getCID.next())
+            customerID = getCID.getInt("id");
+
+        String statusSQL = "SELECT * FROM tapsifood.cart where customerID='"+customerID+"' AND status='0'";
+        ResultSet getStat = statement2.executeQuery(statusSQL);
+        while (getStat.next()) {
+            String change = "UPDATE tapsifood.cart SET status='1' where customerID='"+customerID+"' AND status='0'";
+            statement.executeUpdate(change);
+        }
+
+        String orders = "SELECT * FROM tapsifood.orders where customerID='" + customerID + "'";
+        ResultSet getOrders = statement3.executeQuery(orders);
+        while (getOrders.next()) {
+            String remove = "DELETE FROM tapsifood.orders WHERE customerID='" + customerID +"'";
+            statement.executeUpdate(remove);
+        }
+        getCartOrder();
     }
 }

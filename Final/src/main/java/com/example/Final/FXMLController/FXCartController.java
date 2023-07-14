@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class FXCartController {
     @FXML
@@ -53,7 +54,6 @@ public class FXCartController {
         currentCartTableView.getColumns().addAll(name, number, price, totalPrice);
         currentCartTableView.getItems().clear();
         currentCartTableView.getItems().addAll(CustomerMenuController.getCurrentUser().getCartOrder());
-        System.out.println(CustomerMenuController.getCurrentUser().getCurrentCart().getCart());
     }
     public void showOptions() {
         customerMenuLogout.setVisible(!customerMenuLogout.isVisible());
@@ -131,7 +131,8 @@ public class FXCartController {
     public void updateLocation() {
         showLocation.setText(String.valueOf(CustomerMenuController.getLocation()));
     }
-    public void openShowCart() {
+    public void openShowCart() throws SQLException, ClassNotFoundException {
+        initialize();
         backToSelectMenu.setVisible(true);
         selectMenuVBox.setVisible(false);
         currentCartVBox.setVisible(true);
@@ -149,7 +150,8 @@ public class FXCartController {
     }
     public void purchaseCompleted() throws SQLException, ClassNotFoundException {
         String discount = addDiscountTextField.getText();
-        CustomerMenuController.purchaseCart(discount);
+        String result = CustomerMenuController.purchaseCart(discount);
+        System.out.println(result);
     }
     public void openShowDelivery() {
         if (CustomerMenuController.getCurrentUser().getCurrentCart().getDelivery() == null)

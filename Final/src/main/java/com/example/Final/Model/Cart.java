@@ -9,8 +9,8 @@ public class Cart {
     private int time;
     private String Foods, customerName;
     private int totalPrice;
-    public Cart(ArrayList<Order> cart) {
-        this.cart = cart;
+    public Cart(ArrayList<Order> orders) {
+        this.cart = orders;
         delivery = null;
         Foods = "";
     }
@@ -23,6 +23,7 @@ public class Cart {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
+        Statement statement2 = connection.createStatement();
         String foodName = order.getFood().getName();
         String restaurantName = order.getFood().getRestaurant().getName();
 
@@ -42,11 +43,15 @@ public class Cart {
         ResultSet customerIDCheck = statement.executeQuery(sqlCustomerID);
         int customerID = 0, cardNumber = 0;
         if (customerIDCheck.next()) {
-            customerID = customerIDCheck.getInt("id");
-            cardNumber = customerIDCheck.getInt("numOfCards");
+            customerID = customerIDCheck.getInt("customerID");
+            String sqlCustomer = "SELECT * FROM tapsifood.accounts where id='" + customerID + "'";
+            ResultSet customerCheck = statement2.executeQuery(sqlCustomer);
+            if (customerCheck.next()) {
+                cardNumber = customerCheck.getInt("numOfCarts");
+            }
         }
 
-        String addToCart = "INSERT INTO tapsifood.cart(orderID, customerID, cardNumber) VALUES ('"+orderID+"', '"+customerID+"', '"+cardNumber+"')";
+        String addToCart = "INSERT INTO tapsifood.cart(orderID, customerID, cartNumber) VALUES ('"+orderID+"', '"+customerID+"', '"+cardNumber+"')";
         statement.executeUpdate(addToCart);
 
         cart.add(order);

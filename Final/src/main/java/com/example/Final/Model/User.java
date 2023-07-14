@@ -87,7 +87,6 @@ public class User {
             statement.executeUpdate(change);
         }
     }
-
     public int getLocation() {
         return location;
     }

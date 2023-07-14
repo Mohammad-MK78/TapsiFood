@@ -17,9 +17,6 @@ public class DeliveryMenuController {
     public static void setDestination(int destination) {
         currentUser.setDestination(destination);
     }
-    public static void setRestaurant(int restaurant) {
-        currentUser.setRestaurant(restaurant);
-    }
     public static String showDestination(){
         return String.valueOf(currentUser.getDestination());
     }
@@ -27,7 +24,7 @@ public class DeliveryMenuController {
         return String.valueOf(currentUser.getLocation());
     }
     public static String showRestaurant() {
-        return String.valueOf(currentUser.getRestaurant());
+        return String.valueOf(currentUser.getLocation());
     }
     public static int showBalance() {
         return currentUser.getCredit();
@@ -50,7 +47,7 @@ public class DeliveryMenuController {
         return graph;
     }
     public static String show_distance() throws IOException {
-        int location = currentUser.getRestaurant(), destination = currentUser.getDestination(), restaurant = currentUser.getRestaurant();
+        int location = currentUser.getLocation(), destination = currentUser.getDestination(), restaurant = currentUser.getLocation();
         ShortestPath shortestPath = new ShortestPath(getCityGraph());
         int distance = shortestPath.shortestPath(location, restaurant) + shortestPath.shortestPath(restaurant, destination);
         return (distance + "mins");

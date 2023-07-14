@@ -246,8 +246,8 @@ public class CustomerMenuController {
     }
 
     public static String purchaseCart(String code) throws SQLException, ClassNotFoundException {
-        int discountAmount;
-        Discount discount;
+        int discountAmount = 0;
+        Discount discount = null;
         if (currentUser.getCartOrder().size() == 0) {
             return "purchase failed: cart is empty";
         }
@@ -260,15 +260,16 @@ public class CustomerMenuController {
         ResultSet getCID = statement.executeQuery(getCustomerID);
         if (getCID.next())
             customerID = getCID.getInt("id");
-
-        String getDiscount = "SELECT * FROM tapsifood.discount where customerID='"+customerID+"' AND code='"+ code +"'";
-        ResultSet discountExist = statement.executeQuery(getDiscount);
-        if(discountExist.next()) {
-            discountAmount = discountExist.getInt("amount");
-            discount = new Discount(currentUser, discountAmount, code);
+        if (!code.equals(" ")) {
+            String getDiscount = "SELECT * FROM tapsifood.discount where customerID='" + customerID + "' AND code='" + code + "'";
+            ResultSet discountExist = statement.executeQuery(getDiscount);
+            if (discountExist.next()) {
+                discountAmount = discountExist.getInt("amount");
+                discount = new Discount(currentUser, discountAmount, code);
+            } else
+                return "purchase failed: invalid discount code";
         }
-        else
-            return "purchase failed: invalid discount code";
+        currentUser.setCurrentCart();
         int cartPrice = currentUser.getCurrentCart().getTotalPrice();
         if(currentUser.getCredit() < cartPrice - discountAmount)
             return "purchase failed: inadequate money";
@@ -277,7 +278,7 @@ public class CustomerMenuController {
         for (Delivery delivery : SnappFood.getDeliveries()) { //TODO: Choose Delivery
             if (!delivery.is_busy) {
                 currentUser.getCurrentCart().setDelivery(delivery);
-                delivery.setRestaurant(currentUser.getCurrentCart().getRestaurant().getLocation());
+                delivery.setLocation(currentUser.getCurrentCart().getRestaurant().getLocation());
                 delivery.setDestination(currentUser.getLocation());
                 cartDelivery = delivery;
                 break;
@@ -285,8 +286,8 @@ public class CustomerMenuController {
         }
         for(Order order : currentUser.getCartOrder())
             order.getFood().getRestaurant().changeBalance(order.getNumber() * (order.getFood().getPrice() - order.getFood().getCost()));
-
-        int deliveryPrice = Math.abs(cartDelivery.getLocation() - currentUser.getLocation()) * 10;
+        int PPM = 1; //price per meter
+        int deliveryPrice = Math.abs(cartDelivery.getLocation() - currentUser.getLocation()) * PPM;
         int totalPrice = cartPrice + deliveryPrice - discountAmount;
         if(currentUser.getCredit() < totalPrice)
             return "purchase failed: inadequate money";
@@ -297,9 +298,10 @@ public class CustomerMenuController {
         currentUser.changeBalance(-1 * totalPrice);
 
         SnappFood.removeDiscount(discount);
-        currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));//Todo: add cart to customer history
+        currentUser.finishPurchase(currentUser.getCurrentCart());
+//        currentUser.getCarts().add(new Cart(currentUser.getCartOrder()));//Todo: add cart to customer history
         currentUser.getCurrentCart().getRestaurant().addCartToOngoings(currentUser.getCurrentCart()); //Todo: add cart to restaurant on going
-        currentUser.getCurrentCart().resetCart(); //TODO: clear customer cart
+//        currentUser.getCurrentCart().resetCart(); //TODO: clear customer cart
         return "purchase successful";
     }
     public static void showDelivery() {
