@@ -15,6 +15,10 @@ public class Cart {
         Foods = "";
     }
 
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
     public int getTotalPrice() {
         return totalPrice;
     }

@@ -37,6 +37,11 @@ public class Customer extends User{
 
     public void setCurrentCart() throws SQLException, ClassNotFoundException {
         this.currentCart = new Cart(getCartOrder());
+        int totlaP = 0;
+        for (Order order : getCartOrder()){
+            totlaP += order.getTotalPrice();
+        }
+        currentCart.setTotalPrice(totlaP);
     }
 
     public Cart getCurrentCart() {
@@ -69,7 +74,8 @@ public class Customer extends User{
             Food food = Restaurant.getFoodByName(foodName, restaurantName);
             int number = orderCheck.getInt("number");
             Customer customer = this;
-            orders.add(new Order(food, number, customer));
+            Order order = new Order(food, number, customer);
+            orders.add(order);
         }
         return orders;
     }
@@ -198,6 +204,15 @@ public class Customer extends User{
             String remove = "DELETE FROM tapsifood.orders WHERE customerID='" + customerID +"'";
             statement.executeUpdate(remove);
         }
+
+        String numOfCartSQL = "SELECT * FROM tapsifood.accounts where id='"+customerID+"'";
+        ResultSet getNumOfCart = statement2.executeQuery(numOfCartSQL);
+        if (getNumOfCart.next()) {
+            int oldNum = getNumOfCart.getInt("numOfCarts");
+            String change = "UPDATE tapsifood.accounts SET numOfCarts='"+(oldNum+1)+"' where id='"+customerID+"'";
+            statement.executeUpdate(change);
+        }
+
         getCartOrder();
     }
 }

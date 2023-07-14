@@ -13,7 +13,13 @@ public class DeliveryMenuController {
     public static void setCurrentUser() {
         User user = SnappFood.getCurrentUser();
         currentUser = new Delivery(user.getUsername(), user.getPassword(), user.getLocation(), user.getSecurityQuestion(), user.getCredit(), user.getIs_busy());
+        currentUser.setDestination(127);
     }
+
+    public static Delivery getCurrentUser() {
+        return currentUser;
+    }
+
     public static void setDestination(int destination) {
         currentUser.setDestination(destination);
     }

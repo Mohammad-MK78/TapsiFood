@@ -4,6 +4,7 @@ import com.example.Final.Controller.CityGraph;
 import com.example.Final.Controller.DeliveryMenuController;
 import com.example.Final.Controller.ShortestPath;
 import com.example.Final.Main;
+import com.example.Final.Model.Delivery;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -24,9 +25,11 @@ public class FXMapController {
     Group group = new Group();
     @FXML
     void initialize() throws IOException {
-        int start = Integer.parseInt(DeliveryMenuController.showLocation());
-        int end = 248; //Integer.parseInt(DeliveryMenuController.showRestaurant());
-        int end2 = 473; //Integer.parseInt(DeliveryMenuController.showDestination());
+        Delivery delivery = DeliveryMenuController.getCurrentUser();
+        int start = delivery.getLocation(); //Integer.parseInt(DeliveryMenuController.showLocation());
+        int end = delivery.getDestination(); //Integer.parseInt(DeliveryMenuController.showRestaurant());
+        int end2 = delivery.getLocation(); //Integer.parseInt(DeliveryMenuController.showDestination());
+        System.out.println(end + " " + end2);
         CityGraph cityGraph = new CityGraph();
         int[][] graph = new int[1000][1000];
         for (int i = 0; i < 1000; i++){

@@ -271,6 +271,7 @@ public class CustomerMenuController {
         }
         currentUser.setCurrentCart();
         int cartPrice = currentUser.getCurrentCart().getTotalPrice();
+
         if(currentUser.getCredit() < cartPrice - discountAmount)
             return "purchase failed: inadequate money";
 
@@ -289,6 +290,9 @@ public class CustomerMenuController {
         int PPM = 1; //price per meter
         int deliveryPrice = Math.abs(cartDelivery.getLocation() - currentUser.getLocation()) * PPM;
         int totalPrice = cartPrice + deliveryPrice - discountAmount;
+        System.out.println("Total Price: " + totalPrice);
+        System.out.println("Cart Price: " + cartPrice);
+        System.out.println("Delivery Price: " + deliveryPrice);
         if(currentUser.getCredit() < totalPrice)
             return "purchase failed: inadequate money";
 
