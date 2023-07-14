@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="Ah">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/SnappFoodAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/SnappFoodAdminMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXSnappFoodAdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXSnappFoodAdminMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/SnappFoodAdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/SnappFoodAdminMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/View/SnappFoodAdminMenuEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/View/SnappFoodAdminMenuEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCustomerMenuController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

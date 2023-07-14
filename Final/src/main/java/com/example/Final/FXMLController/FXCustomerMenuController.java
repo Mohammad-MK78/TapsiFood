@@ -63,6 +63,21 @@ public class FXCustomerMenuController {
         addressC2.setCellValueFactory(new PropertyValueFactory<>("location"));
         addressC2.setPrefWidth(133);
 
+        TableColumn<Discount, String> username = new TableColumn<>("username");
+        username.setCellValueFactory(new PropertyValueFactory<>("username"));
+        username.setPrefWidth(133);
+        TableColumn<Discount, String> code = new TableColumn<>("code");
+        code.setCellValueFactory(new PropertyValueFactory<>("code"));
+        code.setPrefWidth(133);
+        TableColumn<Discount, Integer> discountAmount = new TableColumn<>("discountAmount");
+        discountAmount.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
+        discountAmount.setPrefWidth(133);
+
+        discountsTableView.getColumns().clear();
+        discountsTableView.getColumns().addAll(username, code, discountAmount);
+        discountsTableView.getItems().clear();
+        discountsTableView.getItems().addAll(); // TODO
+
         totalRestaurantsTableView.getColumns().clear();
         totalRestaurantsTableView.getColumns().addAll(nameC,typeC,rateC,addressC);
         totalRestaurantsTableView.getItems().clear();
