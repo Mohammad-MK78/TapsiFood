@@ -28,12 +28,9 @@ public class FXAdminRegisterMenuController {
     PasswordField passwordInp;
     @FXML
     Label registerStatus;
-    Boolean adminRegistered; // TODO admin has registered or not
-/*    @FXML
-    void initialize() throws SQLException, ClassNotFoundException, IOException {
-        registerCompleted();
-    }*/
-    public void enterApp() throws IOException {
+    Boolean adminRegistered;
+    public void enterApp() throws IOException, SQLException, ClassNotFoundException {
+        checkAdminRegistered();
         FXMLLoader Loader;
         Scene scene;
         if (adminRegistered) {
@@ -46,28 +43,23 @@ public class FXAdminRegisterMenuController {
             registerHBox.setVisible(true);
         }
     }
-    public void registerCompleted() throws SQLException, ClassNotFoundException, IOException {
+    public void checkAdminRegistered() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
         String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where position='admin'";
         ResultSet regAdminCheck = statement.executeQuery(sqlRegAdmin);
-        if (regAdminCheck.next()) {
+        adminRegistered = regAdminCheck.next();
+
+    }
+    public void registerCompleted() throws SQLException, ClassNotFoundException, IOException {
+        String username = usernameInp.getText();
+        String password = passwordInp.getText();
+        String result = LoginMenuController.setSnappFoodAdmin(username, password);
+        if (result.equals("TapsiFood admin register successful")) {
             FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
             Scene scene = new Scene(Loader.load());
             Main.getStage().setScene(scene);
-        }
-        else {
-            String username = usernameInp.getText();
-            String password = passwordInp.getText();
-            String result = LoginMenuController.setSnappFoodAdmin(username, password);
-            if (result.equals("TapsiFood admin register successful")) {
-                FXMLLoader Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
-                Scene scene = new Scene(Loader.load());
-                Main.getStage().setScene(scene);
-            }
-            else
-                registerStatus.setText(result);
         }
     }
     public void registerWithEnter(KeyEvent keyEvent) throws SQLException, IOException, ClassNotFoundException {
