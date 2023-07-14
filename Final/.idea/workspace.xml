@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="805ff47d-20f4-4a78-858b-d0e81ddc6be8" name="Changes" comment="ADD SQL TODO LIST">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXAdminRegisterMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/AdminRegisterMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AdminRegisterMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Controller/CustomerMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/FXMLController/FXCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Discount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Discount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Model/SnappFood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Final/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Final/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/LoginTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/RegisterTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/RegisterMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/RegisterMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="FxmlFile" />
         <option value="CSS File" />
-        <option value="Class" />
       </list>
     </option>
   </component>

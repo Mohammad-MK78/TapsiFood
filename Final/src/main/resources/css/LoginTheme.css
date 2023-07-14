@@ -29,11 +29,11 @@
     -fx-text-fill: #f15e22;
     -fx-background-color: #f5cea6;
     -fx-border-color: #f15e22;
-       -fx-background-radius: 90;
-       -fx-border-radius: 90;
-       -fx-pref-width: 60;
-       -fx-pref-height: 60;
-       -fx-font-size: 18;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 18;
 }
 #usernameInp {
     -fx-text-fill: #f15e22;

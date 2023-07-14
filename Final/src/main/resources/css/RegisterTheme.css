@@ -83,7 +83,7 @@ Button {
     -fx-font-size: 18;
 }
 #backToMainMenu {
-    -fx-font: 20px "Airfool";
+    -fx-font: 27px "Airfool";
     -fx-text-fill: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
@@ -91,12 +91,12 @@ Button {
     -fx-pref-height: 67;
 }
 #backToRegisterMenu {
-    -fx-font: 20px "Airfool";
+    -fx-font: 27px "Airfool";
     -fx-text-fill: #f15e22;
     -fx-background-radius: 90;
     -fx-border-radius: 90;
-    -fx-pref-width: 67;
-    -fx-pref-height: 67;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
 }
 AnchorPane {
     -fx-background-image: url('../Pictures/RegisterMenu.png');

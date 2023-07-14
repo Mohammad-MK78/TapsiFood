@@ -1,0 +1,59 @@
+#AdminRegisterMenu {
+    -fx-background-color: #f15e22;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36;
+}
+#registerButton {
+    -fx-background-color: #f5cea6;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-text-fill: #f15e22;
+    -fx-font: 20px "Airfool";
+}
+#usernameInp {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 20;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+}
+#passwordInp {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-font-size: 20;
+    -fx-background-radius: 60;
+    -fx-border-radius: 60;
+}
+#usernameLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#passwordLabel {
+    -fx-text-fill: #f15e22;
+    -fx-font-size: 20;
+}
+#register {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-font-size: 24;
+}
+#back {
+    -fx-text-fill: #f15e22;
+    -fx-background-color: #f5cea6;
+    -fx-border-color: #f15e22;
+    -fx-background-radius: 90;
+    -fx-border-radius: 90;
+    -fx-pref-width: 60;
+    -fx-pref-height: 60;
+    -fx-font-size: 26;
+}
+AnchorPane {
+    -fx-background-image: url('../Pictures/RegisterMenu.png');
+}
