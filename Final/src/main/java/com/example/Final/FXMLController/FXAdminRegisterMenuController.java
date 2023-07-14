@@ -19,7 +19,7 @@ import java.sql.*;
 
 public class FXAdminRegisterMenuController {
     @FXML
-    Button registerButton, back;
+    Button registerButton;
     @FXML
     HBox registerHBox;
     @FXML
@@ -28,21 +28,28 @@ public class FXAdminRegisterMenuController {
     PasswordField passwordInp;
     @FXML
     Label registerStatus;
-    @FXML
+    Boolean adminRegistered; // TODO admin has registered or not
+/*    @FXML
     void initialize() throws SQLException, ClassNotFoundException, IOException {
         registerCompleted();
-    }
-    public void openRegisterBox() {
-        back.setVisible(!back.isVisible());
-        registerButton.setVisible(!registerButton.isVisible());
-        registerHBox.setVisible(!registerHBox.isVisible());
+    }*/
+    public void enterApp() throws IOException {
+        FXMLLoader Loader;
+        Scene scene;
+        if (adminRegistered) {
+            Loader = new FXMLLoader(Main.class.getResource("/fxml/MainMenu.fxml"));
+            scene = new Scene(Loader.load());
+            Main.getStage().setScene(scene);
+        }
+        else {
+            registerButton.setVisible(false);
+            registerHBox.setVisible(true);
+        }
     }
     public void registerCompleted() throws SQLException, ClassNotFoundException, IOException {
-
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "Mohammad78");
         Statement statement = connection.createStatement();
-
         String sqlRegAdmin = "SELECT * FROM tapsifood.accounts where position='admin'";
         ResultSet regAdminCheck = statement.executeQuery(sqlRegAdmin);
         if (regAdminCheck.next()) {
@@ -67,6 +74,5 @@ public class FXAdminRegisterMenuController {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             registerCompleted();
         }
-
     }
 }
